@@ -1,0 +1,49 @@
+{
+  "id": "pr-6048-public-review",
+  "name": "协议恢复验收（专用测试）",
+  "auth": {
+    "method": "none"
+  },
+  "runtimes": {
+    "codex": {
+      "baseUrl": "http://127.0.0.1:9/v1",
+      "wireProtocol": "openai-chat",
+      "models": [
+        {
+          "id": "review-no-override",
+          "name": "跟随连接默认",
+          "contextWindow": 32768
+        },
+        {
+          "id": "review-custom-route",
+          "name": "自定义协议与地址",
+          "contextWindow": 32768,
+          "api": "openai-responses",
+          "route": {
+            "baseUrl": "http://127.0.0.1:9/custom/v1",
+            "wireProtocol": "openai-responses",
+            "requestPath": "/custom/responses"
+          }
+        }
+      ]
+    },
+    "pi": {
+      "baseUrl": "http://127.0.0.1:9/v1",
+      "wireProtocol": "openai-chat",
+      "models": [
+        {
+          "id": "review-pi-model",
+          "name": "Pi 独立配置",
+          "contextWindow": 32768,
+          "api": "anthropic-messages",
+          "piApi": "anthropic-messages",
+          "route": {
+            "baseUrl": "http://127.0.0.1:9/custom",
+            "wireProtocol": "anthropic-messages",
+            "requestPath": "/custom/messages"
+          }
+        }
+      ]
+    }
+  }
+}

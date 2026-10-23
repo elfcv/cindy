@@ -1,0 +1,36 @@
+{
+  "id": "pr-6048-public-review",
+  "routing": {
+    "codex": {
+      "upstream": "http://127.0.0.1:9/v1",
+      "authStrategy": "none",
+      "wireProtocol": "openai-chat"
+    },
+    "pi": {
+      "upstream": "http://127.0.0.1:9/v1",
+      "authStrategy": "none",
+      "wireProtocol": "openai-chat"
+    }
+  },
+  "models": {
+    "codex": [
+      {
+        "id": "review-no-override",
+        "name": "跟随连接默认",
+        "contextWindow": 32768
+      },
+      {
+        "id": "review-custom-route",
+        "name": "自定义协议与地址",
+        "contextWindow": 32768
+      }
+    ],
+    "pi": [
+      {
+        "id": "review-pi-model",
+        "name": "Pi 独立配置",
+        "contextWindow": 32768
+      }
+    ]
+  }
+}

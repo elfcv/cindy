@@ -1,0 +1,57 @@
+{
+  "head": "f40107d41eabb9b22a25b4166341cd0f9e152fa9",
+  "date": "2026-10-24",
+  "runtime": "CN macOS arm64 isolated Electron; real production renderer/preload/main IPC",
+  "fixture": "Dedicated no-key loopback fixture; no inference requests",
+  "checks": [
+    "Codex clears api/piApi/route only; context and other model/Pi/connection preserved",
+    "Pi clears api/piApi/route only; Codex and connection preserved"
+  ],
+  "screenshots": [
+    {
+      "file": "codex-override-dark.png",
+      "bytes": 98946,
+      "sha256": "2c7ad6373b4b960eeb861c920cd12c0e6f0227bdb8d75a04259a18e926c4ceb9"
+    },
+    {
+      "file": "codex-override-light.png",
+      "bytes": 109964,
+      "sha256": "4c875d8401a9ec20b21dd45803dfa8b261319516d2a8d65f6ce1def6a86f39d3"
+    },
+    {
+      "file": "codex-restore-menu-dark.png",
+      "bytes": 229045,
+      "sha256": "4ae7328349ac78fb4cc0aecc7558d56cd1f9f2dc123ba7f3018b0e45c6f4868f"
+    },
+    {
+      "file": "codex-restore-menu-light.png",
+      "bytes": 315894,
+      "sha256": "57fd26da11025a2f4764a3113cd57389a5063f9c75633d098086115547ac69c8"
+    },
+    {
+      "file": "codex-restored-dark.png",
+      "bytes": 99425,
+      "sha256": "1cadee08e3e7843fd7b3bbe74c8946f19a3372af4060e7b2804a4f88d7efe4da"
+    },
+    {
+      "file": "codex-restored-light.png",
+      "bytes": 109713,
+      "sha256": "0ec6b07c5432ebed7a9b5e1c1937aa784123483e289fe95ff27260665358609f"
+    },
+    {
+      "file": "connection-default-light.png",
+      "bytes": 207000,
+      "sha256": "111cd3d088edbeec86e73e542756b423389bc588b8682f24b2b0373bea3bc789"
+    },
+    {
+      "file": "pi-override-light.png",
+      "bytes": 107777,
+      "sha256": "2abea6ade57468b9001976958231d8e35d1d93c992e93506654e3f13aa2848bc"
+    },
+    {
+      "file": "pi-restored-light.png",
+      "bytes": 104505,
+      "sha256": "6a3b705be5a8d664305c7d30ed04c84150814b80ef95a229618ce0338c64f141"
+    }
+  ]
+}
