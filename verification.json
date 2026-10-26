@@ -1,0 +1,32 @@
+{
+  "base": "82d44ec3eedb923e268ae963114a09849ee62655",
+  "branch": "perf/desktop-stream-render",
+  "sourceSha256": {
+    "apps/desktop/src/renderer/components/chat/messageViewportGeometry.ts": "eeb12371149200133bfcb5d1179af4c7f6360321742ffdef981d3621b2a0da5b",
+    "apps/desktop/src/renderer/components/chat/useMessageViewport.ts": "d8c894a4e3b2d4f44c590bc2ce45e5a6f9ce80d89284e13da0c9a6f309b346d1",
+    "apps/desktop/src/renderer/__tests__/messageViewportVirtualization.test.tsx": "dc57adc1a6b74258f5a616c23a251de12adaeb3ec8ff7314a68b91e992003b67"
+  },
+  "relatedTests": {
+    "files": 10,
+    "passed": 164
+  },
+  "regression": {
+    "beforeFailed": 2,
+    "afterPassed": 35,
+    "standaloneSeconds": 3.48
+  },
+  "typecheck": "passed",
+  "lint": "passed",
+  "testHygiene": "passed with actual PR base",
+  "uiCheck": "UNCOVERED; full Electron light/dark used instead",
+  "runtimeComparison": "comparison.json",
+  "limits": [
+    "Dev + CDP CPU Profiler",
+    "synthetic store ingress, no supplier inference",
+    "long-task timing does not establish an improvement",
+    "not Release/FPS/energy/heap validation"
+  ],
+  "head": "9593abe92e3b0d02318c2d6821d8d80158e5025a",
+  "dco": "passed; one signed commit",
+  "diffReview": "completed; three intended files, no instrumentation in production"
+}
