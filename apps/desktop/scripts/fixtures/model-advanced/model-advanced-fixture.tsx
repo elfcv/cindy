@@ -18,12 +18,21 @@ function InterfaceFixture() {
     disabled={false} paymentRequired={false}/>;
 }
 
+let compactionPct: number | null = null;
+const contextView = () => ({ limit: 272000, isCustomized: false,
+  compaction: { pct: compactionPct ?? 90, isCustomized: compactionPct !== null },
+  codexContext: { contextWindow: 272000, usableContextWindow: 258400,
+    autoCompactTokenLimit: Math.floor(272000 * (compactionPct ?? 90) / 100),
+    modelMaxContextWindow: 1050000, source: 'config', fallbackModel: false },
+});
+
 void mountPage({
   host: { maker: {
-    getModelContextLimit: async () => ({ limit:272000, isCustomized:false,
-      codexContext:{contextWindow:272000, usableContextWindow:258400,
-        autoCompactTokenLimit:244800, modelMaxContextWindow:1050000,
-        source:'config', fallbackModel:false} }),
+    getModelContextLimit: async () => contextView(),
+    setModelCompaction: async (_target: unknown, pct: number | null) => {
+      compactionPct = pct;
+      return contextView();
+    },
     onProvidersChanged: subscription('providersChanged'),
     updateCustomProvider: async (config: CustomProviderConfig) => {
       if (!saveInterface) throw new Error('Interface fixture is not mounted');

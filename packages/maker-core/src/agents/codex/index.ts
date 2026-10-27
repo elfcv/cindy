@@ -2176,6 +2176,120 @@ export class CodexAgent extends BaseAgent {
     host => this.listSkillsForHost(host, workingDir, forceReload));
   }
 
+  /**
+   * 本机的 Skill、插件与 MCP 逐项关闭(线程级覆盖)。不传 keep 时全部关闭(Review)；受邀者的
+   * 托管会话用 keep 保留它自己的 Skill、Codex 自带 Skill 与经隧道的 MCP。
+   */
+  private async buildLocalCapabilityIsolationConfig(
+    host: AppServerHost,
+    workingDir: string,
+    keep?: {
+      skill: (skillPath: string, scope?: SkillMetadata['scope']) => boolean;
+      mcpServer: (serverName: string) => boolean;
+      plugin?: (pluginId: string) => boolean;
+      allSkills?: true;
+    },
+  ): Promise<Record<string, unknown>> {
+    const { skills, errors } = keep?.allSkills ? { skills: [], errors: [] } : await this.listSkillsForHost(
+      host,
+      workingDir,
+      false,
+      CRITICAL_THREAD_RPC_TIMEOUT_MS,
+    );
+    const unscopedSkillError = errors.find((error) => !error.path);
+    if (unscopedSkillError && !keep?.skill('')) throw new Error(unscopedSkillError.message);
+
+    const configResponse = await host.request<{ config?: Record<string, unknown> }>(
+      Method.ConfigRead,
+      { includeLayers: false },
+      { timeoutMs: CRITICAL_THREAD_RPC_TIMEOUT_MS },
+    );
+    const effectiveConfig = asRecord(configResponse.config);
+    const configuredMcp = asRecord(effectiveConfig.mcp_servers);
+    const configuredPlugins = asRecord(effectiveConfig.plugins);
+    const configuredMcpServerNames = new Set(
+      Object.entries(configuredMcp)
+        .filter(([, serverConfig]) => hasCodexMcpTransport(serverConfig))
+        .map(([serverName]) => serverName),
+    );
+    const transportConfiguredMcpServerNames = new Set(configuredMcpServerNames);
+    for (const pluginConfig of Object.values(configuredPlugins)) {
+      const pluginMcp = asRecord(asRecord(pluginConfig).mcp_servers);
+      for (const [serverName, serverConfig] of Object.entries(pluginMcp)) {
+        if (!hasCodexMcpTransport(serverConfig)) continue;
+        transportConfiguredMcpServerNames.add(serverName);
+      }
+    }
+    const unconfiguredRuntimeMcpServerNames = new Set<string>();
+    let cursor: string | null = null;
+    do {
+      const status: CodexMcpServerStatusListResponse =
+        await host.request<CodexMcpServerStatusListResponse>(
+        Method.McpServerStatusList,
+        { cursor, limit: 100, detail: 'toolsAndAuthOnly', threadId: null },
+        { timeoutMs: CRITICAL_THREAD_RPC_TIMEOUT_MS },
+      );
+      for (const server of status.data) {
+        if (
+          !transportConfiguredMcpServerNames.has(server.name) &&
+          server.name !== CODEX_APPS_MCP_SERVER_NAME
+        ) {
+          unconfiguredRuntimeMcpServerNames.add(server.name);
+        }
+      }
+      cursor = status.nextCursor;
+    } while (cursor !== null);
+    if (unconfiguredRuntimeMcpServerNames.size > 0) {
+      throw new Error(
+        `Codex reported runtime MCP servers without transport-bearing config: ${[
+          ...unconfiguredRuntimeMcpServerNames,
+        ].sort().join(', ')}`,
+      );
+    }
+
+    const skillPaths = new Set([
+      ...skills.filter((skill) => !keep?.skill(skill.path, skill.scope)).map((skill) => skill.path),
+      ...errors.flatMap((error) => (error.path && !keep?.skill(error.path) ? [error.path] : [])),
+    ]);
+    const pluginIds = new Set(Object.keys(configuredPlugins));
+    for (const skillPath of skillPaths) {
+      const pluginId = pluginIdFromCodexSkillPath(skillPath);
+      if (pluginId) pluginIds.add(pluginId);
+    }
+
+    const isolationConfig: Record<string, unknown> = {};
+    if (skillPaths.size > 0) {
+      isolationConfig['skills.config'] = [...skillPaths]
+        .sort()
+        .map((skillPath) => ({ path: skillPath, enabled: false }));
+    }
+    // Only configured MCP entries have a command/url transport that can
+    // accept a per-thread `.enabled=false` merge. `codex_apps` is an
+    // app-server builtin surfaced by mcpServerStatus/list but absent from
+    // config/read; synthesizing an override for it makes Codex 0.145.0
+    // reject thread/start with "invalid transport". Apps are isolated by
+    // `features.apps=false` instead.
+    for (const serverName of configuredMcpServerNames) {
+      if (keep?.mcpServer(serverName)) continue;
+      isolationConfig[
+        `mcp_servers.${renderReviewConfigSegment(serverName)}.enabled`
+      ] = false;
+    }
+    for (const pluginId of pluginIds) {
+      if (!keep?.plugin?.(pluginId)) {
+        isolationConfig[`plugins.${quoteReviewConfigSegment(pluginId)}.enabled`] = false;
+      }
+      const pluginMcp = asRecord(asRecord(configuredPlugins[pluginId]).mcp_servers);
+      for (const [serverName, serverConfig] of Object.entries(pluginMcp)) {
+        if (!hasCodexMcpTransport(serverConfig)) continue;
+        isolationConfig[
+          `plugins.${quoteReviewConfigSegment(pluginId)}.mcp_servers.${renderReviewConfigSegment(serverName)}.enabled`
+        ] = false;
+      }
+    }
+    return isolationConfig;
+  }
+
   private async listSkillsForHost(
     host: AppServerHost,
     workingDir: string,
@@ -3815,6 +3929,7 @@ assertRouteCurrent();
      */
     let activeTurnModel: string | undefined = opts.model;
     let activeTurnContextLimit = this.deps.resolveModelContextLimit?.(opts.providerId, opts.model) ?? null;
+    let activeTurnCompactionPct = this.deps.resolveModelCompactionPct?.(opts.providerId, opts.model) ?? 90;
     /**
      * 任务级工作上下文预算（tokens）：host 已按目录上限与模型级上限收敛。
      * 优先于模型级上限/目录默认；host 在预算变化时直接触发重建，不走热切。
@@ -5510,122 +5625,13 @@ assertRouteCurrent();
         );
       }
     }
-    /**
-     * 本机的 Skill、插件与 MCP 逐项关闭(线程级覆盖)。不传 keep 时全部关闭(Review)；受邀者的
-     * 托管会话用 keep 保留它自己的 Skill、Codex 自带 Skill 与经隧道的 MCP。
-     */
-    const buildLocalCapabilityIsolationConfig = async (keep?: {
-      skill: (skillPath: string, scope?: SkillMetadata['scope']) => boolean;
-      mcpServer: (serverName: string) => boolean;
-      plugin?: (pluginId: string) => boolean;
-      allSkills?: true;
-    }): Promise<Record<string, unknown>> => {
-      const { skills, errors } = keep?.allSkills ? { skills: [], errors: [] } : await this.listSkillsForHost(
-        host,
-        opts.workingDir,
-        false,
-        CRITICAL_THREAD_RPC_TIMEOUT_MS,
-      );
-      const unscopedSkillError = errors.find((error) => !error.path);
-      if (unscopedSkillError && !keep?.skill('')) throw new Error(unscopedSkillError.message);
-
-      const configResponse = await host.request<{ config?: Record<string, unknown> }>(
-        Method.ConfigRead,
-        { includeLayers: false },
-        { timeoutMs: CRITICAL_THREAD_RPC_TIMEOUT_MS },
-      );
-      const effectiveConfig = asRecord(configResponse.config);
-      const configuredMcp = asRecord(effectiveConfig.mcp_servers);
-      const configuredPlugins = asRecord(effectiveConfig.plugins);
-      const configuredMcpServerNames = new Set(
-        Object.entries(configuredMcp)
-          .filter(([, serverConfig]) => hasCodexMcpTransport(serverConfig))
-          .map(([serverName]) => serverName),
-      );
-      const transportConfiguredMcpServerNames = new Set(configuredMcpServerNames);
-      for (const pluginConfig of Object.values(configuredPlugins)) {
-        const pluginMcp = asRecord(asRecord(pluginConfig).mcp_servers);
-        for (const [serverName, serverConfig] of Object.entries(pluginMcp)) {
-          if (!hasCodexMcpTransport(serverConfig)) continue;
-          transportConfiguredMcpServerNames.add(serverName);
-        }
-      }
-      const unconfiguredRuntimeMcpServerNames = new Set<string>();
-      let cursor: string | null = null;
-      do {
-        const status: CodexMcpServerStatusListResponse =
-          await host.request<CodexMcpServerStatusListResponse>(
-          Method.McpServerStatusList,
-          { cursor, limit: 100, detail: 'toolsAndAuthOnly', threadId: null },
-          { timeoutMs: CRITICAL_THREAD_RPC_TIMEOUT_MS },
-        );
-        for (const server of status.data) {
-          if (
-            !transportConfiguredMcpServerNames.has(server.name) &&
-            server.name !== CODEX_APPS_MCP_SERVER_NAME
-          ) {
-            unconfiguredRuntimeMcpServerNames.add(server.name);
-          }
-        }
-        cursor = status.nextCursor;
-      } while (cursor !== null);
-      if (unconfiguredRuntimeMcpServerNames.size > 0) {
-        throw new Error(
-          `Codex reported runtime MCP servers without transport-bearing config: ${[
-            ...unconfiguredRuntimeMcpServerNames,
-          ].sort().join(', ')}`,
-        );
-      }
-
-      const skillPaths = new Set([
-        ...skills.filter((skill) => !keep?.skill(skill.path, skill.scope)).map((skill) => skill.path),
-        ...errors.flatMap((error) => (error.path && !keep?.skill(error.path) ? [error.path] : [])),
-      ]);
-      const pluginIds = new Set(Object.keys(configuredPlugins));
-      for (const skillPath of skillPaths) {
-        const pluginId = pluginIdFromCodexSkillPath(skillPath);
-        if (pluginId) pluginIds.add(pluginId);
-      }
-
-      const isolationConfig: Record<string, unknown> = {};
-      if (skillPaths.size > 0) {
-        isolationConfig['skills.config'] = [...skillPaths]
-          .sort()
-          .map((skillPath) => ({ path: skillPath, enabled: false }));
-      }
-      // Only configured MCP entries have a command/url transport that can
-      // accept a per-thread `.enabled=false` merge. `codex_apps` is an
-      // app-server builtin surfaced by mcpServerStatus/list but absent from
-      // config/read; synthesizing an override for it makes Codex 0.145.0
-      // reject thread/start with "invalid transport". Apps are isolated by
-      // `features.apps=false` instead.
-      for (const serverName of configuredMcpServerNames) {
-        if (keep?.mcpServer(serverName)) continue;
-        isolationConfig[
-          `mcp_servers.${renderReviewConfigSegment(serverName)}.enabled`
-        ] = false;
-      }
-      for (const pluginId of pluginIds) {
-        if (!keep?.plugin?.(pluginId)) {
-          isolationConfig[`plugins.${quoteReviewConfigSegment(pluginId)}.enabled`] = false;
-        }
-        const pluginMcp = asRecord(asRecord(configuredPlugins[pluginId]).mcp_servers);
-        for (const [serverName, serverConfig] of Object.entries(pluginMcp)) {
-          if (!hasCodexMcpTransport(serverConfig)) continue;
-          isolationConfig[
-            `plugins.${quoteReviewConfigSegment(pluginId)}.mcp_servers.${renderReviewConfigSegment(serverName)}.enabled`
-          ] = false;
-        }
-      }
-      return isolationConfig;
-    };
     if (reviewMode || opts[LOCAL_AGENT_CLIENT]) {
       try {
         assertCurrentHost('local capability isolation');
         // Native execution retains its project Skills and installed native plugins.
         // Only the automatically inherited credential-bearing MCP connections are excluded.
         const nativeClient = opts[LOCAL_AGENT_CLIENT] && !opts[LOCAL_AGENT_CLIENT]!.hostToolsOnly;
-        const reviewCapabilityConfig = await buildLocalCapabilityIsolationConfig(nativeClient
+        const reviewCapabilityConfig = await this.buildLocalCapabilityIsolationConfig(host, opts.workingDir, nativeClient
           ? { skill: () => true, plugin: () => true, mcpServer: () => false, allSkills: true }
           : undefined);
         capabilityRoutingConfig = {
@@ -5648,7 +5654,7 @@ assertRouteCurrent();
         assertCurrentHost('Shared-user capability isolation');
         // 受邀者目录里没有本机用户的全局说明；没有受邀者目录(旧接线)时仍按 fail-closed 检查。
         await assertNoCodexUserInstructions(sessionCodexHome);
-        const guestCapabilityConfig = await buildLocalCapabilityIsolationConfig({
+        const guestCapabilityConfig = await this.buildLocalCapabilityIsolationConfig(host, opts.workingDir, {
           skill: (skillPath, scope) => guestSkillAllowed!(skillPath, scope),
           mcpServer: (serverName) => hosted.mcpServers.includes(serverName),
         });
@@ -6088,10 +6094,8 @@ assertRouteCurrent();
       if (descendantThreadId === threadId || descendantMcpThreadIds.has(descendantThreadId)) return;
       descendantMcpThreadIds.add(descendantThreadId);
       registerCodexMcpContext(descendantThreadId, 'descendant');
-      if (opts.fastModePolicy?.isAllowed() === false) {
-        void host.request(Method.ThreadSettingsUpdate, { threadId: descendantThreadId, serviceTier: null })
-          .catch(error => log.warn('descendant standard-mode update failed', { error: String(error) }));
-      }
+      // Native descendants inherit the root tier. V2 rejects direct child
+      // settings updates; the trusted request exit also clamps stale tiers.
     };
     const unregisterDescendantCodexMcpContexts = (): void => {
       for (const descendantThreadId of descendantMcpThreadIds) {
@@ -6571,6 +6575,9 @@ assertRouteCurrent();
     }
 
     let customProviderThreadConfig: Record<string, unknown> = {};
+    const currentCompactionPct = () => this.deps.resolveModelCompactionPct?.(
+      mutableProviderId, mutableCatalogModel ?? mutableModel,
+    ) ?? null;
     const currentContextLimit = (): number | null => {
       // 任务级预算优先：本任务的工作窗口由用户显式选定，host 已收敛到目录上限内。
       if (mutableContextWindowBudget !== null) return mutableContextWindowBudget;
@@ -6589,6 +6596,7 @@ assertRouteCurrent();
     };
     let appliedContextLimit = currentContextLimit();
     activeTurnContextLimit = effectiveThreadContextWindow(appliedContextLimit);
+    activeTurnCompactionPct = currentCompactionPct() ?? 90;
 
     /** 设备托管：线程与每轮都选中任务所在电脑上的 exec-server 环境(工作目录与根都是那台电脑的路径)。 */
     function hostedEnvironmentParams(): { environments?: Array<Record<string, unknown>> } {
@@ -6768,7 +6776,7 @@ assertRouteCurrent();
               model_context_window: Math.floor(threadContextWindow),
               model_auto_compact_token_limit: Math.max(
                 1,
-                Math.floor(threadContextWindow * 0.9),
+                Math.floor(threadContextWindow * ((currentCompactionPct() ?? 90) / 100)),
               ),
             }
           : {}),
@@ -7296,10 +7304,12 @@ assertRouteCurrent();
      *   回带的 thread/settings/updated 通知会乱序到达, reconcile 出现中间态闪现 (实测过
      *   null→fast→default)。串行后 server 按序处理、通知按序回, 最终态一次到位。
      * - serviceTier 双 Option: 调用方传 'fast' (开) / null (清空); 不传该 key = 不变。
-     * - **失败吞错**: settings/update 失败绝不抛 — turn/start 携带仍是兜底, 会话不受
-     *   影响。server 回 ack 后真正状态经 thread/settings/updated 通知回带 (见 handlers)。
+     * - 只更新根线程，子线程由原生继承；V2 禁止直接更新子线程。
+     * - settings/update 失败通常只记录警告，后续 turn/start 与可信请求出口继续兜底。
+     *   仅在必须禁止 Fast 且没有请求代理时抛错，避免把未受保护的发送当作成功。
+     *   server 回 ack 后真正状态经 thread/settings/updated 通知回带 (见 handlers)。
      *
-     * 返回入队任务的 promise (链已 catch, 永不 reject), 调用方可 await 到本次发送完成。
+     * 返回本次入队任务的 promise；队列本身恢复后续任务，不吞必须执行的失败。
      */
     let settingsUpdateChain: Promise<void> = Promise.resolve();
     const pushThreadSettings = (patch: Omit<ThreadSettingsUpdateParams, 'threadId'>, requireApplied = false): Promise<void> => {
@@ -7309,15 +7319,16 @@ assertRouteCurrent();
         if (skipIfStaleHost('thread/settings/update')) return;
         try {
           const effectivePatch = opts.fastModePolicy?.isAllowed() === false ? { ...patch, serviceTier: null } : patch;
-          await Promise.all([threadId, ...(requireApplied ? descendantMcpThreadIds : [])].map(id =>
-            host.request<ThreadSettingsUpdateResponse>(Method.ThreadSettingsUpdate, { threadId: id, ...effectivePatch })));
+          await host.request<ThreadSettingsUpdateResponse>(Method.ThreadSettingsUpdate, { threadId, ...effectivePatch });
         } catch (e) {
-          log.warn('thread/settings/update failed (turn/start carry remains fallback)', {
+          const mustApplyNative = requireApplied && !hostUsesCodexProxy;
+          log.warn('thread/settings/update failed', {
             threadId,
             patchKeys: Object.keys(patch),
+            mustApplyNative,
             error: e instanceof Error ? e.message : String(e),
           });
-          if (requireApplied) throw e;
+          if (mustApplyNative) throw e;
         }
       });
       settingsUpdateChain = run.catch(() => undefined);
@@ -13638,6 +13649,7 @@ assertRouteCurrent();
         // 立即改这两个值也不会串到还在产出的本 turn (见 activeTurnModel / capContextWindow)。
         activeTurnModel = mutableCatalogModel;
         activeTurnContextLimit = effectiveThreadContextWindow(appliedContextLimit);
+        activeTurnCompactionPct = currentCompactionPct() ?? 90;
         activeTurnProviderId = mutableProviderId;
         const markTurnConfigAccepted = (): void => {
           threadMayHaveRollout = true;
@@ -14069,6 +14081,7 @@ assertRouteCurrent();
               // 窗口归属必须跟着改写走, 否则查不到目录条目、沿用 app-server 的基础模型窗口。
               activeTurnModel = mutableCatalogModel;
               activeTurnContextLimit = effectiveThreadContextWindow(appliedContextLimit);
+              activeTurnCompactionPct = currentCompactionPct() ?? 90;
               activeTurnProviderId = mutableProviderId;
               if (serviceTierState.value !== undefined) {
                 turnParams.serviceTier = serviceTierState.value ?? null;
@@ -14545,7 +14558,7 @@ assertRouteCurrent();
         const model = activeTurnModel ?? mutableModel;
         const reportedWindow = lastNativeContextWindow;
         const contextLimit = activeTurnContextLimit;
-        const compactRatio = 0.9;
+        const compactRatio = activeTurnCompactionPct / 100;
         try {
           const response = await host.request<{ config?: Record<string, unknown> }>(
             Method.ConfigRead, { includeLayers: false, cwd: opts.workingDir }, { timeoutMs: 5_000 },
@@ -14961,8 +14974,18 @@ assertRouteCurrent();
             lastTurnId,
             ...(rollbackMethodRemoved || supportsCodexForkExcludeTurns(initResp.userAgent) ? { excludeTurns: true } : {}),
             ...(opts.workingDir ? { cwd: opts.workingDir } : {}),
+            // Native fork reloads the host defaults rather than inheriting the
+            // source thread's overrides. Reapply the task's execution environment,
+            // MCP routes and capability isolation before the new runtime starts.
+            ...currentThreadWorkspaceConfig(),
+            ...(threadModelProvider ? { modelProvider: threadModelProvider } : {}),
+            ...(mutableModel && mutableModel !== 'gpt-5' ? { model: mutableModel } : {}),
+            ...(serviceTierState.value !== undefined ? { serviceTier: serviceTierState.value } : {}),
+            ...(developerInstructions && !useProxyChannel ? { developerInstructions } : {}),
           };
-          const forkResp = await host.request<ThreadForkResponse>(Method.ThreadFork, forkParams);
+          const forkResp = await withMcpDiscoveryContext(() => host.request<ThreadForkResponse>(
+            Method.ThreadFork, forkParams, criticalThreadRpcOptions(),
+          ));
           replacementThread = forkResp.thread;
         }
         const nextThreadId = replacementThread.id || previousThreadId;
@@ -15305,6 +15328,7 @@ assertRouteCurrent();
                 deviceHostedGuestProviderId: opts.providerId,
                 deviceHostedGuestSessionId: forkBaseHostKey,
                 deviceHostedGuestModelIds: opts.model ? [opts.model] : [],
+                nativeStorageOnly: true,
               } : {}),
               routeIsCurrent: selection.isCurrent,
               routeSignal: forkRouteSignal,
@@ -15352,6 +15376,22 @@ assertRouteCurrent();
             const usedNativeForkAnchor = Boolean(
               lastTurnId && !opts.stripEncryptedReasoning && supportsCodexNativeTurnFork(initResp.userAgent),
             );
+            let guestForkConfig: Record<string, unknown> | undefined;
+            if (guestCodexHome) {
+              // Fork starts a native runtime even without a turn. It must not
+              // initialize the provider's MCP or connectors while copying history;
+              // the child receives its consumer routes when startSession resumes it.
+              await assertNoCodexUserInstructions(forkCodexHome);
+              const features = await listCodexFeatures(cursor => host.request(
+                Method.ExperimentalFeatureList, { cursor, limit: 100 },
+                { timeoutMs: CRITICAL_THREAD_RPC_TIMEOUT_MS },
+              ));
+              guestForkConfig = {
+                ...await this.buildLocalCapabilityIsolationConfig(host, opts.workingDir ?? guestCodexHome),
+                ...CODEX_DEVICE_HOSTED_GUEST_THREAD_CONFIG,
+                ...codexGuestFeatureOverrides(features),
+              };
+            }
             const params: ThreadForkParams = {
               threadId: opts.sourceSdkSessionId,
               ...(preparedSourcePath ? { path: preparedSourcePath } : {}),
@@ -15362,6 +15402,7 @@ assertRouteCurrent();
               // 一次性 host 的隔离仍兜住故障半径。
               ...(supportsCodexForkExcludeTurns(initResp.userAgent) ? { excludeTurns: true } : {}),
               ...(opts.workingDir ? { cwd: opts.workingDir } : {}),
+              ...(guestForkConfig ? { config: guestForkConfig } : {}),
             };
             // Once dispatched, a lost response may still mean a child was allocated.
             stage = 'thread-fork';
