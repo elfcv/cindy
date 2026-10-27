@@ -1,0 +1,268 @@
+{
+  "base": "6e5065489dbebf172565ecfefe9f9d5f2d848acb",
+  "head": "4fbca9bdde9e49090ae05c9bf72c55e9a48bd2ee",
+  "platform": "macOS Apple M1, isolated Electron development build, synthetic data only",
+  "boundary": "Real MessageStream and native cross-origin iframe scroll chaining. Synthetic frame inserted into an actual message row; not a live MCP server or full McpAppCard protocol test.",
+  "baseline": [
+    {
+      "phase": "baseline",
+      "trial": 1,
+      "before": {
+        "top": 228,
+        "height": 5048,
+        "anchorTop": -200,
+        "theme": "cindy-light",
+        "classes": "",
+        "outerWheelCount": 0,
+        "crossOrigin": true
+      },
+      "after": {
+        "top": 228,
+        "height": 5048,
+        "anchorTop": -200,
+        "theme": "cindy-light",
+        "classes": "",
+        "outerWheelCount": 0,
+        "crossOrigin": true
+      }
+    }
+  ],
+  "fixedLightAndRestore": [
+    {
+      "scenario": "iframe wheel down/up",
+      "theme": "light",
+      "trial": 1,
+      "before": {
+        "top": 228,
+        "height": 5048,
+        "anchorTop": -200,
+        "theme": "cindy-light",
+        "classes": "",
+        "outerWheelCount": 0,
+        "crossOrigin": true
+      },
+      "after": {
+        "top": 628,
+        "height": 5048,
+        "anchorTop": -600,
+        "theme": "cindy-light",
+        "classes": "",
+        "outerWheelCount": 0,
+        "crossOrigin": true
+      },
+      "up": {
+        "top": 478,
+        "height": 5048,
+        "anchorTop": -450,
+        "theme": "cindy-light",
+        "classes": "",
+        "outerWheelCount": 0,
+        "crossOrigin": true
+      }
+    },
+    {
+      "scenario": "iframe wheel down/up",
+      "theme": "light",
+      "trial": 2,
+      "before": {
+        "top": 228,
+        "height": 5048,
+        "anchorTop": -200,
+        "theme": "cindy-light",
+        "classes": "",
+        "outerWheelCount": 0,
+        "crossOrigin": true
+      },
+      "after": {
+        "top": 628,
+        "height": 5048,
+        "anchorTop": -600,
+        "theme": "cindy-light",
+        "classes": "",
+        "outerWheelCount": 0,
+        "crossOrigin": true
+      },
+      "up": {
+        "top": 478,
+        "height": 5048,
+        "anchorTop": -450,
+        "theme": "cindy-light",
+        "classes": "",
+        "outerWheelCount": 0,
+        "crossOrigin": true
+      }
+    },
+    {
+      "scenario": "iframe wheel down/up",
+      "theme": "light",
+      "trial": 3,
+      "before": {
+        "top": 228,
+        "height": 5048,
+        "anchorTop": -200,
+        "theme": "cindy-light",
+        "classes": "",
+        "outerWheelCount": 0,
+        "crossOrigin": true
+      },
+      "after": {
+        "top": 628,
+        "height": 5048,
+        "anchorTop": -600,
+        "theme": "cindy-light",
+        "classes": "",
+        "outerWheelCount": 0,
+        "crossOrigin": true
+      },
+      "up": {
+        "top": 478,
+        "height": 5048,
+        "anchorTop": -450,
+        "theme": "cindy-light",
+        "classes": "",
+        "outerWheelCount": 0,
+        "crossOrigin": true
+      }
+    },
+    {
+      "scenario": "late layout expansion retains anchor then yields to iframe wheel",
+      "before": {
+        "top": 228,
+        "height": 5048,
+        "anchorTop": -200,
+        "theme": "cindy-light",
+        "classes": "",
+        "outerWheelCount": 0,
+        "crossOrigin": true
+      },
+      "grown": {
+        "top": 228,
+        "height": 5248,
+        "anchorTop": -200,
+        "theme": "cindy-light",
+        "classes": "",
+        "outerWheelCount": 0,
+        "crossOrigin": true
+      },
+      "resumed": {
+        "top": 528,
+        "height": 5248,
+        "anchorTop": -500,
+        "theme": "cindy-light",
+        "classes": "",
+        "outerWheelCount": 0,
+        "crossOrigin": true
+      }
+    },
+    {
+      "scenario": "keyed task remount retains latest reading position and allows frame wheel",
+      "leaving": {
+        "top": 628,
+        "height": 5048,
+        "anchorTop": -600,
+        "theme": "cindy-light",
+        "classes": "",
+        "outerWheelCount": 0,
+        "crossOrigin": true
+      },
+      "returning": {
+        "top": 628,
+        "height": 5034,
+        "anchorTop": -600,
+        "theme": "cindy-light",
+        "classes": "",
+        "outerWheelCount": 0,
+        "crossOrigin": true
+      },
+      "afterReturnWheel": {
+        "top": 528,
+        "height": 5034,
+        "anchorTop": -500,
+        "theme": "cindy-light",
+        "classes": "",
+        "outerWheelCount": 0,
+        "crossOrigin": true
+      }
+    }
+  ],
+  "fixedDark": [
+    {
+      "phase": "fixed-dark",
+      "trial": 1,
+      "before": {
+        "top": 228,
+        "height": 5048,
+        "anchorTop": -200,
+        "theme": "cindy-dark",
+        "classes": "dark",
+        "outerWheelCount": 0,
+        "crossOrigin": true
+      },
+      "after": {
+        "top": 628,
+        "height": 5048,
+        "anchorTop": -600,
+        "theme": "cindy-dark",
+        "classes": "dark",
+        "outerWheelCount": 0,
+        "crossOrigin": true
+      }
+    },
+    {
+      "phase": "fixed-dark",
+      "trial": 2,
+      "before": {
+        "top": 228,
+        "height": 5048,
+        "anchorTop": -200,
+        "theme": "cindy-dark",
+        "classes": "dark",
+        "outerWheelCount": 0,
+        "crossOrigin": true
+      },
+      "after": {
+        "top": 628,
+        "height": 5048,
+        "anchorTop": -600,
+        "theme": "cindy-dark",
+        "classes": "dark",
+        "outerWheelCount": 0,
+        "crossOrigin": true
+      }
+    },
+    {
+      "phase": "fixed-dark",
+      "trial": 3,
+      "before": {
+        "top": 228,
+        "height": 5048,
+        "anchorTop": -200,
+        "theme": "cindy-dark",
+        "classes": "dark",
+        "outerWheelCount": 0,
+        "crossOrigin": true
+      },
+      "after": {
+        "top": 628,
+        "height": 5048,
+        "anchorTop": -600,
+        "theme": "cindy-dark",
+        "classes": "dark",
+        "outerWheelCount": 0,
+        "crossOrigin": true
+      }
+    }
+  ],
+  "checks": {
+    "vitest": {
+      "files": 11,
+      "passed": 193,
+      "preexistingSkipped": 1
+    },
+    "desktopTypecheck": "pass",
+    "targetedESLint": "pass",
+    "testHygiene": "pass,359 files",
+    "dco": "pass",
+    "uiCheck": "UNCOVERED; supplemented by full Electron probe"
+  }
+}
