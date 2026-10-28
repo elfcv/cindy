@@ -1,0 +1,22 @@
+import fs from 'node:fs/promises';import {execFileSync} from 'node:child_process';import {connect} from './cdp.mjs';
+const c=await connect(),out={};const screenshot=name=>execFileSync('xcrun',['simctl','io','9772E400-9F44-4623-88B8-8D283D29130F','screenshot',new URL(name,import.meta.url).pathname],{stdio:'pipe'});
+try{
+for(const variant of ['before','after']){
+ await c.evaluate(`__chatPerf.use(${JSON.stringify(variant)});true`);
+ out[variant]=await c.asyncEval(`__nativeChat.measure(()=>__nativeChat.mount(__nativeChat.make(1,__nativeChat.paragraph(800)),{focusKey:undefined,theme:'light',streaming:false}))`,90000);
+ screenshot(variant+'-long.png');
+}
+out.scroll=await c.asyncEval(`(async()=>{const h=__nativeChat;h.mount(h.make(300),{focusKey:undefined,theme:'light',streaming:false});await h.wait(1200);const initial=h.api.getMetrics();h.api.scrollTo(6000);await h.wait(1200);const middle=h.api.getMetrics();h.api.scrollTo(0);await h.wait(1200);return {initial,middle,returned:h.api.getMetrics(),text:h.visibleText().slice(0,200)}})()`);
+if(out.scroll.middle.offsetY<1000||out.scroll.returned.offsetY>60)throw Error('Native scroll did not move/return');
+screenshot('after-history.png');
+out.streaming=await c.asyncEval(`(async()=>{const h=__nativeChat;const cache={current:null};const window=__perfRequire('/session/messageRenderStreamingCache.ts').buildMobileStreamingRenderWindow;let messages=h.messages(300);const text=h.paragraph(200);const samples=[];h.metrics.resetMobileMarkdownRenderMetrics();for(let i=0;i<4;i++){const streaming=i<3;const body=text+(i===0?'':i===1?' **未完成':' **流式收尾完成**');messages=[...messages.slice(0,-1),{...messages.at(-1),content:{text:body}}];const result=window({cacheKey:'fixture',messages,options:{isSessionStreaming:streaming,sessionId:'synthetic'},prefixCache:cache});if(i===0)h.mount(result.items,{streaming,focusKey:result.items.at(-1).key});else h.show(result.items,{streaming});await h.wait(850);samples.push({streaming,prefixItems:result.stablePrefixItemCount,rows:result.items.length,list:h.api.getMetrics(),parse:h.metrics.getMobileMarkdownRenderMetrics()});}return {samples,streaming:h.state.streaming,tail:h.state.items.at(-1).message.body,visible:h.visibleText().slice(-1000),parse:h.metrics.getMobileMarkdownRenderMetrics()};})()`,90000);
+if(out.streaming.streaming||!out.streaming.tail.includes('流式收尾完成'))throw Error('Streaming final missing');
+screenshot('after-stream.png');
+const rich='## 合成回归样本\n\n**强调**、_斜体_、`code`、$x+1$，以及 [说明](https://example.invalid)。\n\n| 项目 | 结果 |\n|---|---|\n| 输出 | 一致 |\n\n```cindy-ui\n{"version":1,"seq":1,"op":"create","id":"count","kind":"stat","props":{"label":"合成统计","value":42}}\n{"seq":2,"op":"create","id":"chart","kind":"chart","props":{"label":"合成趋势","variant":"bar","data":[{"label":"A","value":3},{"label":"B","value":5}]}}\n```\n\n回归完成。';
+out.rich=await c.asyncEval(`(async()=>{const h=__nativeChat;h.mount(h.make(1,${JSON.stringify(rich)}),{focusKey:undefined,theme:'dark',streaming:false});await h.wait(1800);return {text:h.visibleText(),list:h.api.getMetrics()};})()`);
+screenshot('after-rich-dark.png');
+out.switch=await c.asyncEval(`(async()=>{const h=__nativeChat;h.mount(h.make(1,'切换到伙伴 B'),{focusKey:undefined,theme:'light',streaming:false});await h.wait(900);const b=h.visibleText();h.mount(h.make(1,'返回伙伴 A'),{focusKey:undefined});await h.wait(900);return {b,a:h.visibleText(),list:h.api.getMetrics()};})()`);
+await fs.writeFile(new URL('functional.json',import.meta.url),JSON.stringify(out,null,2));
+if(!out.switch.b.includes('切换到伙伴 B')||!out.switch.a.includes('返回伙伴 A'))throw Error('Conversation remount missing');
+await fs.writeFile(new URL('functional.json',import.meta.url),JSON.stringify(out,null,2));console.log('FUNCTIONAL_OK');
+}finally{c.close()}
