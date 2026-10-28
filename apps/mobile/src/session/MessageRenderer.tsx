@@ -6422,9 +6422,8 @@ function renderInline(
   }
   // Only interactive spans need the share-row cancellation context. Plain
   // formatting must not subscribe thousands of nodes to that gesture scope.
-  const interactive = inline.type === 'link' || inline.type === 'image' || inline.type === 'code';
+  const SpanText = ctx.SpanText ?? MessageBodyText;
   const StaticSpan = ctx.SpanText === MarkdownSelectableSpan ? UITextView : (ctx.SpanText ?? Text);
-  const SpanText = interactive ? (ctx.SpanText ?? MessageBodyText) : StaticSpan;
   const openImage = ctx.onOpenImage ?? (ctx.onOpenPayload
     ? (url: string, alt?: string) => {
         const title = mobileMarkdownImageTitle(url, alt);
@@ -6441,7 +6440,7 @@ function renderInline(
       // carry explicit block styles because their flattening contract differs.
       return !ctx.SpanText && !ctx.baseStyle
         ? inline.text
-        : <SpanText maxFontSizeMultiplier={MAX_FONT_SIZE_MULTIPLIER} key={spanKey(`text:${index}`)} style={ctx.baseStyle}>{inline.text}</SpanText>;
+        : <StaticSpan maxFontSizeMultiplier={MAX_FONT_SIZE_MULTIPLIER} key={spanKey(`text:${index}`)} style={ctx.baseStyle}>{inline.text}</StaticSpan>;
     case 'link': {
       if (inline.managedMediaKind) {
         const mediaKind = inline.managedMediaKind;
@@ -6526,9 +6525,9 @@ function renderInline(
       );
     }
     case 'strong':
-      return <SpanText maxFontSizeMultiplier={MAX_FONT_SIZE_MULTIPLIER} key={spanKey(`strong:${index}`)} style={[ctx.baseStyle, styles.markdownStrong]}>{inline.text}</SpanText>;
+      return <StaticSpan maxFontSizeMultiplier={MAX_FONT_SIZE_MULTIPLIER} key={spanKey(`strong:${index}`)} style={[ctx.baseStyle, styles.markdownStrong]}>{inline.text}</StaticSpan>;
     case 'emphasis':
-      return <SpanText maxFontSizeMultiplier={MAX_FONT_SIZE_MULTIPLIER} key={spanKey(`em:${index}`)} style={[ctx.baseStyle, styles.markdownEmphasis]}>{inline.text}</SpanText>;
+      return <StaticSpan maxFontSizeMultiplier={MAX_FONT_SIZE_MULTIPLIER} key={spanKey(`em:${index}`)} style={[ctx.baseStyle, styles.markdownEmphasis]}>{inline.text}</StaticSpan>;
     case 'code':
       if (!classifyInlineCodePathCandidate(inline.text)) {
         return <StaticSpan maxFontSizeMultiplier={MAX_FONT_SIZE_MULTIPLIER} key={spanKey(`code:${index}`)} style={[ctx.baseStyle, styles.markdownInlineCode]}>{inline.text}</StaticSpan>;
@@ -6544,15 +6543,15 @@ function renderInline(
         />
       );
     case 'strikethrough':
-      return <SpanText maxFontSizeMultiplier={MAX_FONT_SIZE_MULTIPLIER} key={spanKey(`strike:${index}`)} style={[ctx.baseStyle, styles.markdownStrike]}>{inline.text}</SpanText>;
+      return <StaticSpan maxFontSizeMultiplier={MAX_FONT_SIZE_MULTIPLIER} key={spanKey(`strike:${index}`)} style={[ctx.baseStyle, styles.markdownStrike]}>{inline.text}</StaticSpan>;
     case 'math':
       // inline 公式:原生 Text 流内嵌不了 KaTeX,用 Unicode 近似(上标 ²、
       // 希腊字母、√ 等)保持文本流/选择/性能;复杂公式的精确渲染走 display
       // 块的 WebView KaTeX。
       return (
-        <SpanText maxFontSizeMultiplier={MAX_FONT_SIZE_MULTIPLIER} key={spanKey(`math:${index}`)} style={[ctx.baseStyle, styles.markdownMathInline]}>
+        <StaticSpan maxFontSizeMultiplier={MAX_FONT_SIZE_MULTIPLIER} key={spanKey(`math:${index}`)} style={[ctx.baseStyle, styles.markdownMathInline]}>
           {latexToUnicodeApproximation(inline.text)}
-        </SpanText>
+        </StaticSpan>
       );
     case 'image': {
       const managedPreview = ctx.renderManagedImage?.(inline);
