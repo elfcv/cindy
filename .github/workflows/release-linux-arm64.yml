@@ -1,0 +1,128 @@
+name: release-linux-arm64
+
+# Linux arm64 packages must be built on an aarch64 host.
+# Assets: cindy-<version>-linux-arm64-cn.deb and cindy-<version>-linux-arm64-global.deb
+# CDN manifest publication remains a maintainer step.
+# Requires secret CINDY_LOG_UPLOAD_JSON. Linux beta stays x64-only.
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: Release version x.y.z. A published release uses its tag when this is empty.
+        required: false
+        type: string
+  release:
+    types: [published]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release-linux-arm64-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  package:
+    name: Linux arm64 ${{ matrix.region }}
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 180
+    strategy:
+      fail-fast: false
+      matrix:
+        region: [cn, global]
+    env:
+      NODE_OPTIONS: '--max-old-space-size=8192'
+      CINDY_LOG_UPLOAD_JSON: ${{ secrets.CINDY_LOG_UPLOAD_JSON }}
+    steps:
+      - name: Checkout client
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          lfs: true
+
+      - name: Install native packaging tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            build-essential \
+            dpkg-dev \
+            fakeroot \
+            pkg-config \
+            libjson-c-dev \
+            libpng-dev \
+            libturbojpeg0-dev \
+            libwayland-dev \
+            libxkbcommon-dev
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@0977fd99725f1db4007ccb2928dbb4e90d06cc86 # v6
+        with:
+          run_install: false
+
+      - name: Setup Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 22
+          cache: pnpm
+          cache-dependency-path: pnpm-lock.yaml
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Resolve version and write log-upload config
+        run: |
+          set -eu
+          if [ -n "${{ inputs.version }}" ]; then
+            version="${{ inputs.version }}"
+          elif [ "${{ github.event_name }}" = "release" ]; then
+            version="${GITHUB_REF_NAME#v}"
+          else
+            echo "workflow_dispatch requires the version input" >&2
+            exit 1
+          fi
+          case "$version" in
+            [0-9]*.[0-9]*.[0-9]*) ;;
+            *) echo "invalid version: $version" >&2; exit 1 ;;
+          esac
+          echo "version=$version" >> "$GITHUB_ENV"
+          if [ -z "${CINDY_LOG_UPLOAD_JSON:-}" ]; then
+            echo "Missing repository secret CINDY_LOG_UPLOAD_JSON" >&2
+            exit 1
+          fi
+          printf '%s\n' "$CINDY_LOG_UPLOAD_JSON" > config/log-upload.json
+
+      - name: Package Linux arm64
+        run: |
+          set -eu
+          node apps/desktop/scripts/package-desktop.mjs \
+            --platform linux \
+            --arch arm64 \
+            --region "${{ matrix.region }}" \
+            --version "$version" \
+            --skip-smoke \
+            --no-sign
+          src="apps/desktop/release/artifacts/${{ matrix.region }}/$version/linux-arm64/cindy-$version-arm64.deb"
+          dest="cindy-$version-linux-arm64-${{ matrix.region }}.deb"
+          test -f "$src"
+          cp "$src" "$dest"
+          sha256sum "$dest" | tee "$dest.sha256"
+
+      - name: Upload GitHub Release asset
+        if: github.event_name == 'release'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -eu
+          gh release upload "$GITHUB_REF_NAME" \
+            "cindy-$version-linux-arm64-${{ matrix.region }}.deb" \
+            "cindy-$version-linux-arm64-${{ matrix.region }}.deb.sha256" \
+            --clobber
+
+      - name: Upload workflow artifact
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: cindy-linux-arm64-${{ matrix.region }}
+          path: |
+            cindy-${{ env.version }}-linux-arm64-${{ matrix.region }}.deb
+            cindy-${{ env.version }}-linux-arm64-${{ matrix.region }}.deb.sha256

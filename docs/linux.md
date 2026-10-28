@@ -243,6 +243,19 @@ their disk usage and retain a suitable backup before cleaning them.
   Debian system updates and native GNOME/KDE login checks. Synthetic packages
   are not a substitute for these release acceptance checks.
 
+## Linux arm64 release assets
+
+Official GitHub Releases before this workflow shipped only linux-x64 debs.
+Linux arm64 is built on an aarch64 runner by
+.github/workflows/release-linux-arm64.yml and uploaded as:
+
+- cindy-<version>-linux-arm64-cn.deb
+- cindy-<version>-linux-arm64-global.deb
+
+The workflow does not publish manifest-linux-arm64.json. After the immutable
+deb is on the release, maintainers still upload it to each regional CDN and
+replace that region's stable manifest last. Linux beta remains x64-only.
+
 ## Website / OSS publication
 
 1. Upload `apps/desktop/resources/linux/install-omarchy.sh`, with LF line endings
