@@ -64,6 +64,10 @@ git diff --check
 - [Dark rich-content sample](after-rich-dark.png)
 - [Production companion route: Dash](route-visual-bot-dash.png)
 
+## Harness reuse
+
+The published phase2 scripts use the parent folder's CDP helper/native harness. They retain this lab's explicit worktree path and dedicated simulator ID; adjust those for another machine. The differential script's baseline import is a local copy of `messageMarkdown.ts` and `markdownRegexSearch.ts` from commit `2b79f51a`, with `@/` imports resolved to the same mobile source tree. These harness files are evidence tools, not shipped production code.
+
 ## Remaining limits and CI
 
 No real-device, Release/Profile or Android simulator performance run, real provider inference, real remote image download, or production network benchmark. Plain long paragraphs do not show a meaningful mounting win; their full parse adds a small prefix-scanning overhead. Unsupported complex syntax near the beginning of a paragraph limits reuse, by design. Large formatted trees remain expensive despite fewer wrappers. No claim that all phone chat stutter is fixed.

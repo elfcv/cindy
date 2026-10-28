@@ -1,13 +1,13 @@
 import fs from 'node:fs/promises';
 import {execFileSync} from 'node:child_process';
 const variant=process.argv[2]??'probe';
-import {connect} from '../mobile-chat-history-2026-10-29/cdp.mjs';
+import {connect} from '../cdp.mjs';
 const c=await connect(),results=[];
 try{
 await c.evaluate(`globalThis.__perfRequire=(suffix)=>{const found=Array.from(__r.getModules()).filter(([id,m])=>m.verboseName&&('/'+m.verboseName).endsWith(suffix));if(found.length!==1)throw Error('Module '+suffix);return __r(found[0][0]);};true`);
 await fs.writeFile(new URL(variant+'-identity.json',import.meta.url),JSON.stringify(await c.evaluate(`({identity:__perfRequire('/debug/mobileRuntimeIdentity.ts').mobileRuntimeIdentity(),dev:__DEV__,hermes:HermesInternal.getRuntimeProperties()})`),null,2));
 await c.evaluate(`globalThis.__auditOriginalElement=Array.from(__REACT_DEVTOOLS_GLOBAL_HOOK__.renderers.keys()).flatMap(id=>Array.from(__REACT_DEVTOOLS_GLOBAL_HOOK__.getFiberRoots(id)))[0].current.memoizedState.element;true`);
-await c.evaluate(await fs.readFile(new URL('../mobile-chat-history-2026-10-29/native-harness.js',import.meta.url),'utf8'));
+await c.evaluate(await fs.readFile(new URL('../native-harness.js',import.meta.url),'utf8'));
 await c.asyncEval(`new Promise(r=>setTimeout(r,1500))`);
 await c.asyncEval(`__nativeChat.measure(()=>__nativeChat.mount(__nativeChat.make(1,__nativeChat.paragraph(80))))`);
 for(let sample=0;sample<3;sample++)for(const shape of sample%2?['formatted','plain','formatted-image']:['plain','formatted-image','formatted']){

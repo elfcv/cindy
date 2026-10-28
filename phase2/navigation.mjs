@@ -1,4 +1,4 @@
-import fs from 'node:fs/promises';import {execFileSync} from 'node:child_process';import {connect} from '../mobile-chat-history-2026-10-29/cdp.mjs';const c=await connect();try{
+import fs from 'node:fs/promises';import {execFileSync} from 'node:child_process';import {connect} from '../cdp.mjs';const c=await connect();try{
 await c.evaluate(`globalThis.__perfRequire=(suffix)=>{const found=Array.from(__r.getModules()).filter(([id,m])=>m.verboseName&&('/'+m.verboseName).endsWith(suffix));if(found.length!==1)throw Error('Module '+suffix);return __r(found[0][0]);};true`);
 console.log(await c.evaluate(`Array.from(__r.getModules()).filter(([id,m])=>m.verboseName&&m.verboseName.includes('imperative-api')).map(([id,m])=>m.verboseName)`));
 const out=[];for(const id of ['cindy-default','visual-bot-dash']){

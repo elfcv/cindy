@@ -1,8 +1,8 @@
-import fs from 'node:fs/promises';import {execFileSync} from 'node:child_process';import {connect} from '../mobile-chat-history-2026-10-29/cdp.mjs';
+import fs from 'node:fs/promises';import {execFileSync} from 'node:child_process';import {connect} from '../cdp.mjs';
 const c=await connect(),out={};const screenshot=name=>execFileSync('xcrun',['simctl','io','9772E400-9F44-4623-88B8-8D283D29130F','screenshot',new URL(name,import.meta.url).pathname],{stdio:'pipe'});
 try{
 await c.evaluate(`globalThis.__perfRequire=suffix=>{const found=Array.from(__r.getModules()).filter(([id,m])=>m.verboseName&&('/'+m.verboseName).endsWith(suffix));if(found.length!==1)throw Error(suffix);return __r(found[0][0]);};globalThis.__functionalOriginal=Array.from(__REACT_DEVTOOLS_GLOBAL_HOOK__.renderers.keys()).flatMap(id=>Array.from(__REACT_DEVTOOLS_GLOBAL_HOOK__.getFiberRoots(id)))[0].current.memoizedState.element;true`);
-await c.evaluate(await fs.readFile(new URL('../mobile-chat-history-2026-10-29/native-harness.js',import.meta.url),'utf8'));
+await c.evaluate(await fs.readFile(new URL('../native-harness.js',import.meta.url),'utf8'));
 await c.asyncEval(`new Promise(r=>setTimeout(r,1500))`);
 out.scroll=await c.asyncEval(`(async()=>{const h=__nativeChat;h.mount(h.make(300),{focusKey:undefined,theme:'light',streaming:false});await h.wait(1200);const initial=h.api.getMetrics();h.api.scrollTo(6000);await h.wait(1200);const middle=h.api.getMetrics();h.api.scrollTo(0);await h.wait(1200);return {initial,middle,returned:h.api.getMetrics(),text:h.visibleText().slice(0,200)}})()`);
 if(out.scroll.middle.offsetY<1000||out.scroll.returned.offsetY>60)throw Error('Native scroll did not move/return');
