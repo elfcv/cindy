@@ -1,0 +1,102 @@
+[
+  {
+    "id": "cindy-default",
+    "renderers": [
+      {
+        "companion": true,
+        "items": 3,
+        "name": "MessageRenderer",
+        "testID": "session.messageList"
+      },
+      {
+        "testID": "session.messageList"
+      },
+      {
+        "testID": "session.messageList"
+      },
+      {
+        "testID": "session.messageList"
+      },
+      {
+        "name": "ListComponent2",
+        "testID": "session.messageList"
+      },
+      {
+        "testID": "session.messageList"
+      },
+      {
+        "name": "ComposerPullThroughScrollView",
+        "testID": "session.messageList"
+      },
+      {
+        "name": "AnimatedScrollViewWithOrWithoutInvertedRefreshControl",
+        "testID": "session.messageList"
+      },
+      {
+        "name": "AnimatedComponent",
+        "testID": "session.messageList"
+      },
+      {
+        "name": "Wrapper",
+        "testID": "session.messageList"
+      },
+      {
+        "name": "ScrollView",
+        "testID": "session.messageList"
+      },
+      {
+        "testID": "session.messageList"
+      }
+    ]
+  },
+  {
+    "id": "visual-bot-dash",
+    "renderers": [
+      {
+        "companion": true,
+        "items": 3,
+        "name": "MessageRenderer",
+        "testID": "session.messageList"
+      },
+      {
+        "testID": "session.messageList"
+      },
+      {
+        "testID": "session.messageList"
+      },
+      {
+        "testID": "session.messageList"
+      },
+      {
+        "name": "ListComponent2",
+        "testID": "session.messageList"
+      },
+      {
+        "testID": "session.messageList"
+      },
+      {
+        "name": "ComposerPullThroughScrollView",
+        "testID": "session.messageList"
+      },
+      {
+        "name": "AnimatedScrollViewWithOrWithoutInvertedRefreshControl",
+        "testID": "session.messageList"
+      },
+      {
+        "name": "AnimatedComponent",
+        "testID": "session.messageList"
+      },
+      {
+        "name": "Wrapper",
+        "testID": "session.messageList"
+      },
+      {
+        "name": "ScrollView",
+        "testID": "session.messageList"
+      },
+      {
+        "testID": "session.messageList"
+      }
+    ]
+  }
+]

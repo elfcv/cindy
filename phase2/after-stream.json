@@ -1,0 +1,92 @@
+[
+  {
+    "calls": 285,
+    "equal": true,
+    "maxMs": 4.357457876205444,
+    "parsed": 2608260,
+    "reusedInline": 2580943,
+    "sample": 0,
+    "step": 64,
+    "totalMs": 561.4117069244385
+  },
+  {
+    "calls": 72,
+    "equal": true,
+    "maxMs": 4.398957967758179,
+    "parsed": 672516,
+    "reusedInline": 652435,
+    "sample": 0,
+    "step": 256,
+    "totalMs": 178.2704153060913
+  },
+  {
+    "calls": 18,
+    "equal": true,
+    "maxMs": 6.149374961853027,
+    "parsed": 174852,
+    "reusedInline": 156573,
+    "sample": 0,
+    "step": 1024,
+    "totalMs": 82.4944167137146
+  },
+  {
+    "calls": 285,
+    "equal": true,
+    "maxMs": 19.45062494277954,
+    "parsed": 2608260,
+    "reusedInline": 2580943,
+    "sample": 1,
+    "step": 64,
+    "totalMs": 649.8342521190643
+  },
+  {
+    "calls": 72,
+    "equal": true,
+    "maxMs": 4.5130839347839355,
+    "parsed": 672516,
+    "reusedInline": 652435,
+    "sample": 1,
+    "step": 256,
+    "totalMs": 179.7278835773468
+  },
+  {
+    "calls": 18,
+    "equal": true,
+    "maxMs": 6.16054105758667,
+    "parsed": 174852,
+    "reusedInline": 156573,
+    "sample": 1,
+    "step": 1024,
+    "totalMs": 82.13658356666565
+  },
+  {
+    "calls": 285,
+    "equal": true,
+    "maxMs": 4.285834074020386,
+    "parsed": 2608260,
+    "reusedInline": 2580943,
+    "sample": 2,
+    "step": 64,
+    "totalMs": 556.8390772342682
+  },
+  {
+    "calls": 72,
+    "equal": true,
+    "maxMs": 4.443041801452637,
+    "parsed": 672516,
+    "reusedInline": 652435,
+    "sample": 2,
+    "step": 256,
+    "totalMs": 178.35521125793457
+  },
+  {
+    "calls": 18,
+    "equal": true,
+    "maxMs": 6.177916049957275,
+    "parsed": 174852,
+    "reusedInline": 156573,
+    "sample": 2,
+    "step": 1024,
+    "totalMs": 82.50379228591919
+  }
+]

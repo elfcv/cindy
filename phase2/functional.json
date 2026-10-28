@@ -1,0 +1,129 @@
+{
+  "scroll": {
+    "initial": {
+      "contentHeight": 70054.328125,
+      "offsetY": 0,
+      "viewportHeight": 759.6666666666666
+    },
+    "middle": {
+      "contentHeight": 70566.328125,
+      "offsetY": 6000,
+      "viewportHeight": 759.6666666666666
+    },
+    "returned": {
+      "contentHeight": 70566.328125,
+      "offsetY": 0,
+      "viewportHeight": 759.6666666666666
+    },
+    "text": "伙伴聊天 · 合成数据 · fixture-1\n合成问题 19\n回复 19：\n内容\n 与 \ncode\n。 \n说明\n\n\n\n• \n步骤一\n\n\n\n• \n步骤二\n合成问题 20\n回复 20：\n内容\n 与 \ncode\n。 \n说明\n\n\n\n• \n步骤一\n\n\n\n• \n步骤二\n合成问题 21\n回复 21：\n内容\n 与 \ncode\n。 \n说明\n\n\n\n• \n步骤一\n\n\n\n• \n步骤二\n合成问题 22\n回复 6：\n内容\n"
+  },
+  "streaming": {
+    "parse": {
+      "fullParseCount": 20,
+      "incrementalParseCount": 0,
+      "parseDurationMsMax": 16.07170796394348,
+      "parseDurationMsTotal": 34.594834089279175,
+      "parsedSourceUtf16Length": 13921,
+      "renderItemRebuildCount": 69,
+      "reusedBlockCount": 0
+    },
+    "samples": [
+      {
+        "list": {
+          "contentHeight": 72545.6640625,
+          "offsetY": 70492.33333333333,
+          "viewportHeight": 759.6666666666666
+        },
+        "parse": {
+          "fullParseCount": 18,
+          "incrementalParseCount": 0,
+          "parseDurationMsMax": 13.782291889190674,
+          "parseDurationMsTotal": 17.48308515548706,
+          "parsedSourceUtf16Length": 5072,
+          "renderItemRebuildCount": 18,
+          "reusedBlockCount": 0
+        },
+        "prefixItems": 0,
+        "rows": 600,
+        "streaming": true
+      },
+      {
+        "list": {
+          "contentHeight": 72545.6640625,
+          "offsetY": 70492.33333333333,
+          "viewportHeight": 759.6666666666666
+        },
+        "parse": {
+          "fullParseCount": 19,
+          "incrementalParseCount": 0,
+          "parseDurationMsMax": 13.782291889190674,
+          "parseDurationMsTotal": 18.523126125335693,
+          "parsedSourceUtf16Length": 9494,
+          "renderItemRebuildCount": 35,
+          "reusedBlockCount": 0
+        },
+        "prefixItems": 598,
+        "rows": 600,
+        "streaming": true
+      },
+      {
+        "list": {
+          "contentHeight": 72545.6640625,
+          "offsetY": 70492.33333333333,
+          "viewportHeight": 759.6666666666666
+        },
+        "parse": {
+          "fullParseCount": 20,
+          "incrementalParseCount": 0,
+          "parseDurationMsMax": 16.07170796394348,
+          "parseDurationMsTotal": 34.594834089279175,
+          "parsedSourceUtf16Length": 13921,
+          "renderItemRebuildCount": 52,
+          "reusedBlockCount": 0
+        },
+        "prefixItems": 598,
+        "rows": 600,
+        "streaming": true
+      },
+      {
+        "list": {
+          "contentHeight": 72545.6640625,
+          "offsetY": 70492.33333333333,
+          "viewportHeight": 759.6666666666666
+        },
+        "parse": {
+          "fullParseCount": 20,
+          "incrementalParseCount": 0,
+          "parseDurationMsMax": 16.07170796394348,
+          "parseDurationMsTotal": 34.594834089279175,
+          "parsedSourceUtf16Length": 13921,
+          "renderItemRebuildCount": 69,
+          "reusedBlockCount": 0
+        },
+        "prefixItems": 0,
+        "rows": 600,
+        "streaming": false
+      }
+    ],
+    "streaming": false,
+    "tail": "**字段0** 和 `value0` **字段1** 和 `value1` **字段2** 和 `value2` **字段3** 和 `value3` **字段4** 和 `value4` **字段5** 和 `value5` **字段6** 和 `value6` **字段7** 和 `value7` **字段8** 和 `value8` **字段9** 和 `value9` **字段10** 和 `value10` **字段11** 和 `value11` **字段12** 和 `value12` **字段13** 和 `value13` **字段14** 和 `value14` **字段15** 和 `value15` **字段16** 和 `value16` **字段17** 和 `value17` **字段18** 和 `value18` **字段19** 和 `value19` **字段20** 和 `value20` **字段21** 和 `value21` **字段22** 和 `value22` **字段23** 和 `value23` **字段24** 和 `value24` **字段25** 和 `value25` **字段26** 和 `value26` **字段27** 和 `value27` **字段28** 和 `value28` **字段29** 和 `value29` **字段30** 和 `value30` **字段31** 和 `value31` **字段32** 和 `value32` **字段33** 和 `value33` **字段34** 和 `value34` **字段35** 和 `value35` **字段36** 和 `value36` **字段37** 和 `value37` **字段38** 和 `value38` **字段39** 和 `value39` **字段40** 和 `value40` **字段41** 和 `value41` **字段42** 和 `value42` **字段43** 和 `value43` **字段44** 和 `value44` **字段45** 和 `value45` **字段46** 和 `value46` **字段47** 和 `value47` **字段48** 和 `value48` **字段49** 和 `value49` **字段50** 和 `value50` **字段51** 和 `value51` **字段52** 和 `value52` **字段53** 和 `value53` **字段54** 和 `value54` **字段55** 和 `value55` **字段56** 和 `value56` **字段57** 和 `value57` **字段58** 和 `value58` **字段59** 和 `value59` **字段60** 和 `value60` **字段61** 和 `value61` **字段62** 和 `value62` **字段63** 和 `value63` **字段64** 和 `value64` **字段65** 和 `value65` **字段66** 和 `value66` **字段67** 和 `value67` **字段68** 和 `value68` **字段69** 和 `value69` **字段70** 和 `value70` **字段71** 和 `value71` **字段72** 和 `value72` **字段73** 和 `value73` **字段74** 和 `value74` **字段75** 和 `value75` **字段76** 和 `value76` **字段77** 和 `value77` **字段78** 和 `value78` **字段79** 和 `value79` **字段80** 和 `value80` **字段81** 和 `value81` **字段82** 和 `value82` **字段83** 和 `value83` **字段84** 和 `value84` **字段85** 和 `value85` **字段86** 和 `value86` **字段87** 和 `value87` **字段88** 和 `value88` **字段89** 和 `value89` **字段90** 和 `value90` **字段91** 和 `value91` **字段92** 和 `value92` **字段93** 和 `value93` **字段94** 和 `value94` **字段95** 和 `value95` **字段96** 和 `value96` **字段97** 和 `value97` **字段98** 和 `value98` **字段99** 和 `value99` **字段100** 和 `value100` **字段101** 和 `value101` **字段102** 和 `value102` **字段103** 和 `value103` **字段104** 和 `value104` **字段105** 和 `value105` **字段106** 和 `value106` **字段107** 和 `value107` **字段108** 和 `value108` **字段109** 和 `value109` **字段110** 和 `value110` **字段111** 和 `value111` **字段112** 和 `value112` **字段113** 和 `value113` **字段114** 和 `value114` **字段115** 和 `value115` **字段116** 和 `value116` **字段117** 和 `value117` **字段118** 和 `value118` **字段119** 和 `value119` **字段120** 和 `value120` **字段121** 和 `value121` **字段122** 和 `value122` **字段123** 和 `value123` **字段124** 和 `value124` **字段125** 和 `value125` **字段126** 和 `value126` **字段127** 和 `value127` **字段128** 和 `value128` **字段129** 和 `value129` **字段130** 和 `value130` **字段131** 和 `value131` **字段132** 和 `value132` **字段133** 和 `value133` **字段134** 和 `value134` **字段135** 和 `value135` **字段136** 和 `value136` **字段137** 和 `value137` **字段138** 和 `value138` **字段139** 和 `value139` **字段140** 和 `value140` **字段141** 和 `value141` **字段142** 和 `value142` **字段143** 和 `value143` **字段144** 和 `value144` **字段145** 和 `value145` **字段146** 和 `value146` **字段147** 和 `value147` **字段148** 和 `value148` **字段149** 和 `value149` **字段150** 和 `value150` **字段151** 和 `value151` **字段152** 和 `value152` **字段153** 和 `value153` **字段154** 和 `value154` **字段155** 和 `value155` **字段156** 和 `value156` **字段157** 和 `value157` **字段158** 和 `value158` **字段159** 和 `value159` **字段160** 和 `value160` **字段161** 和 `value161` **字段162** 和 `value162` **字段163** 和 `value163` **字段164** 和 `value164` **字段165** 和 `value165` **字段166** 和 `value166` **字段167** 和 `value167` **字段168** 和 `value168` **字段169** 和 `value169` **字段170** 和 `value170` **字段171** 和 `value171` **字段172** 和 `value172` **字段173** 和 `value173` **字段174** 和 `value174` **字段175** 和 `value175` **字段176** 和 `value176` **字段177** 和 `value177` **字段178** 和 `value178` **字段179** 和 `value179` **字段180** 和 `value180` **字段181** 和 `value181` **字段182** 和 `value182` **字段183** 和 `value183` **字段184** 和 `value184` **字段185** 和 `value185` **字段186** 和 `value186` **字段187** 和 `value187` **字段188** 和 `value188` **字段189** 和 `value189` **字段190** 和 `value190` **字段191** 和 `value191` **字段192** 和 `value192` **字段193** 和 `value193` **字段194** 和 `value194` **字段195** 和 `value195` **字段196** 和 `value196` **字段197** 和 `value197` **字段198** 和 `value198` **字段199** 和 `value199`  ![图](https://example.invalid/a.png) **流式收尾完成**",
+    "visible": " \n字段166\n 和 \nvalue166\n \n字段167\n 和 \nvalue167\n \n字段168\n 和 \nvalue168\n \n字段169\n 和 \nvalue169\n \n字段170\n 和 \nvalue170\n \n字段171\n 和 \nvalue171\n \n字段172\n 和 \nvalue172\n \n字段173\n 和 \nvalue173\n \n字段174\n 和 \nvalue174\n \n字段175\n 和 \nvalue175\n \n字段176\n 和 \nvalue176\n \n字段177\n 和 \nvalue177\n \n字段178\n 和 \nvalue178\n \n字段179\n 和 \nvalue179\n \n字段180\n 和 \nvalue180\n \n字段181\n 和 \nvalue181\n \n字段182\n 和 \nvalue182\n \n字段183\n 和 \nvalue183\n \n字段184\n 和 \nvalue184\n \n字段185\n 和 \nvalue185\n \n字段186\n 和 \nvalue186\n \n字段187\n 和 \nvalue187\n \n字段188\n 和 \nvalue188\n \n字段189\n 和 \nvalue189\n \n字段190\n 和 \nvalue190\n \n字段191\n 和 \nvalue191\n \n字段192\n 和 \nvalue192\n \n字段193\n 和 \nvalue193\n \n字段194\n 和 \nvalue194\n \n字段195\n 和 \nvalue195\n \n字段196\n 和 \nvalue196\n \n字段197\n 和 \nvalue197\n \n字段198\n 和 \nvalue198\n \n字段199\n 和 \nvalue199\n  \n \n流式收尾完成\n回复 291：\n内容\n 与 \ncode\n。 \n说明\n\n\n\n• \n步骤一\n\n\n\n• \n步骤二\n合成问题 292\n回复 292：\n内容\n 与 \ncode\n。 \n说明\n\n\n\n• \n步骤一\n\n\n\n• \n步骤二\n合成问题 293\n回复 293：\n内容\n 与 \ncode\n。 \n说明\n\n\n\n• \n步骤一\n\n\n\n• \n步骤二\n合成问题 294\n回复 294：\n内容\n 与 \ncode\n。 \n说明\n\n\n\n• \n步骤一\n\n\n\n• \n步骤二\n合成问题 295\n回复 295：\n内容\n 与 \ncode\n。 \n说明\n\n\n\n• \n步骤一\n\n\n\n• \n步骤二\n合成问题 296"
+  },
+  "rich": {
+    "list": {
+      "contentHeight": 759.6666870117188,
+      "offsetY": 0,
+      "viewportHeight": 759.6666666666666
+    },
+    "text": "伙伴聊天 · 合成数据 · fixture-3\n2023年11月15日 06:13\n合成问题 0\n合成回归样本\n\n\n\n强调\n、\n斜体\n、\ncode\n、\nx+1\n，以及 \n说明\n。\n项目\n结果\n输出\n一致\n合成统计\n42\n合成趋势\nA\n3\nB\n5\n回归完成。"
+  },
+  "switch": {
+    "a": "伙伴聊天 · 合成数据 · fixture-5\n2023年11月15日 06:13\n合成问题 0\n返回伙伴 A",
+    "b": "伙伴聊天 · 合成数据 · fixture-4\n2023年11月15日 06:13\n合成问题 0\n切换到伙伴 B",
+    "list": {
+      "contentHeight": 759.6666870117188,
+      "offsetY": 16,
+      "viewportHeight": 759.6666666666666
+    }
+  }
+}

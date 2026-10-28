@@ -1,0 +1,9 @@
+import fs from 'node:fs/promises';import {execFileSync} from 'node:child_process';import {connect} from '../mobile-chat-history-2026-10-29/cdp.mjs';const c=await connect();try{
+await c.evaluate(`globalThis.__perfRequire=(suffix)=>{const found=Array.from(__r.getModules()).filter(([id,m])=>m.verboseName&&('/'+m.verboseName).endsWith(suffix));if(found.length!==1)throw Error('Module '+suffix);return __r(found[0][0]);};true`);
+console.log(await c.evaluate(`Array.from(__r.getModules()).filter(([id,m])=>m.verboseName&&m.verboseName.includes('imperative-api')).map(([id,m])=>m.verboseName)`));
+const out=[];for(const id of ['cindy-default','visual-bot-dash']){
+ const value=await c.asyncEval(`(async()=>{const router=__perfRequire('/expo-router/build/imperative-api.js').router;router.push({pathname:'/sessions/[sessionId]',params:{sessionId:'visual-teammate-session',deviceId:'cindy-visual-mock-mac',deviceName:'CINDY Visual Mock Mac',resourceCollectionId:'teammates',resourceId:${JSON.stringify(id)},resourceKind:'bot'}});await new Promise(r=>setTimeout(r,2200));const rows=[];function walk(f){if(!f)return;if(f.memoizedProps?.testID==='session.messageList'||f.type?.name==='MessageRenderer')rows.push({name:f.type?.name,testID:f.memoizedProps.testID,companion:f.memoizedProps.companion,items:f.memoizedProps.items?.length});walk(f.child);walk(f.sibling)}for(const id of __REACT_DEVTOOLS_GLOBAL_HOOK__.renderers.keys())for(const r of __REACT_DEVTOOLS_GLOBAL_HOOK__.getFiberRoots(id))walk(r.current);return rows;})()`);
+ out.push({id,renderers:value});execFileSync('xcrun',['simctl','io','9772E400-9F44-4623-88B8-8D283D29130F','screenshot',new URL('route-'+id+'.png',import.meta.url).pathname],{stdio:'pipe'});
+}
+await fs.writeFile(new URL('navigation.json',import.meta.url),JSON.stringify(out,null,2));console.log(out);
+}finally{c.close()}

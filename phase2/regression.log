@@ -1,0 +1,23 @@
+
+ RUN  v3.2.7 /Users/elfcv/Documents/Codex/cindy-mobile-chat-history/apps/mobile
+
+ ✓ src/__tests__/shareSelectionTap.test.ts (2 tests) 3ms
+ ✓ src/__tests__/shareSelectionStore.test.ts (2 tests) 1ms
+ ✓ src/__tests__/mobileMarkdownRenderMetrics.test.ts (1 test) 5ms
+ ✓ src/__tests__/messageMarkdown.test.ts (137 tests) 303ms
+ ✓ src/__tests__/chatPathCandidate.test.ts (78 tests) 35ms
+ ✓ src/__tests__/selectableMarkdownHtml.test.ts (24 tests) 18ms
+ ✓ src/__tests__/userMessageCollapse.test.ts (18 tests) 46ms
+stdout | src/__tests__/markdownBlockContent.test.tsx > streaming Markdown React block boundaries > re-renders only the changing tail while retaining the text view and completed spans
+[markdown-block-perf] {"updates":30,"stableParagraphs":160,"before":{"blocks":4830,"reactDomMs":173.15433299999995},"after":{"blocks":30,"reactDomMs":15.602292000000034}}
+
+ ✓ src/__tests__/markdownBlockContent.test.tsx (7 tests) 327ms
+(node:61002) ExperimentalWarning: localStorage is not available because --localstorage-file was not provided.
+(Use `node --trace-warnings ...` to show where the warning was created)
+ ✓ src/__tests__/messageSourceLabelsRender.test.tsx (33 tests) 220ms
+
+ Test Files  9 passed (9)
+      Tests  302 passed (302)
+   Start at  01:50:08
+   Duration  5.27s (transform 5.23s, setup 0ms, collect 13.43s, tests 958ms, environment 2.25s, prepare 615ms)
+
