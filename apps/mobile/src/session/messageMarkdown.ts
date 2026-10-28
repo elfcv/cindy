@@ -92,6 +92,8 @@ export interface ParseMobileMarkdownOptions {
   blockIndexOffset?: number;
   charOffset?: number;
   sourceIsNormalized?: boolean;
+  /** Previous committed parse, used only for immutable paragraph inline prefixes. */
+  previous?: MobileMarkdownParseResult;
 }
 
 export interface MobileMarkdownBlockRange {
@@ -116,6 +118,42 @@ export interface MobileMarkdownParseResult {
   incremental: boolean;
   reusedBlockCount: number;
   parsedSourceUtf16Length: number;
+  reusedInlineUtf16Length?: number;
+}
+
+interface ParagraphInlineSnapshot {
+  source: string;
+  safeOffset: number;
+  stable: MobileMarkdownInline[];
+}
+
+// Owned by the caller's block lifetime, not a process-wide text cache.
+const paragraphInlineSnapshots = new WeakMap<MobileMarkdownBlock, ParagraphInlineSnapshot>();
+
+// Deliberately narrow: these atoms have no unresolved opener or context-sensitive
+// URL/path boundary. Only commit through whitespace after complete atoms. Other
+// syntax remains in the reparsed tail; do not split arbitrary Markdown by length.
+function safeParagraphInlineEnd(input: string, from: number): number {
+  const atom = /(?:[\p{L}\p{N},，。;；、=+\-]+|\s+|\*\*[\p{L}\p{N} ,，。;；、=+\-]+\*\*|`[\p{L}\p{N} ,，。;；、=+\-]+`)/uy;
+  let cursor = from;
+  let safe = from;
+  while (cursor < input.length) {
+    atom.lastIndex = cursor;
+    const match = atom.exec(input);
+    if (!match) break;
+    cursor = atom.lastIndex;
+    if (/\s$/.test(match[0])) safe = cursor;
+  }
+  return safe;
+}
+
+function joinParagraphInlines(left: MobileMarkdownInline[], right: MobileMarkdownInline[]): MobileMarkdownInline[] {
+  const end = left.at(-1);
+  const start = right[0];
+  if (end?.type === 'text' && !end.marks && start?.type === 'text' && !start.marks) {
+    return [...left.slice(0, -1), { type: 'text', text: end.text + start.text }, ...right.slice(1)];
+  }
+  return [...left, ...right];
 }
 
 interface ParsedTableBlock {
@@ -174,6 +212,12 @@ export function parseMobileMarkdownDocument(
   const lines = normalized.split('\n');
   const blocks: MobileMarkdownBlock[] = [];
   const ranges: MobileMarkdownBlockRange[] = [];
+  const previousParagraphs = new Map<number, ParagraphInlineSnapshot>();
+  options?.previous?.blocks.forEach((block, index) => {
+    const snapshot = paragraphInlineSnapshots.get(block);
+    if (snapshot) previousParagraphs.set(options!.previous!.ranges[index].startLine, snapshot);
+  });
+  let reusedInlineUtf16Length = 0;
   const checkpoints: MobileMarkdownParseCheckpoint[] = [{
     charOffset,
     lineIndex: lineOffset,
@@ -217,12 +261,30 @@ export function parseMobileMarkdownDocument(
     const text = paragraph.join('\n').trim();
     paragraph = [];
     if (!text) return;
-    pushBlock({
+    let snapshot: ParagraphInlineSnapshot | undefined;
+    let inlines: MobileMarkdownInline[];
+    if (!paragraphStartsInComment && text.length >= 1024) {
+      const previous = previousParagraphs.get(lineNumber(paragraphStart));
+      const retained = previous && text.startsWith(previous.source) ? previous : undefined;
+      const from = retained?.safeOffset ?? 0;
+      const safeOffset = safeParagraphInlineEnd(text, from);
+      const stable = joinParagraphInlines(retained?.stable ?? [],
+        safeOffset > from ? parseMobileMarkdownInlines(text.slice(from, safeOffset)) : []);
+      inlines = joinParagraphInlines(stable,
+        safeOffset < text.length ? parseMobileMarkdownInlines(text.slice(safeOffset)) : []);
+      snapshot = { source: text, safeOffset, stable };
+      reusedInlineUtf16Length += from;
+    } else {
+      inlines = parseMobileMarkdownInlines(text, paragraphStartsInComment);
+    }
+    const block: MobileMarkdownBlock = {
       type: 'paragraph',
       key: `p:${lineNumber(lineIndex)}:${blockNumber()}`,
       ...(withSrc ? { srcLine: lineNumber(paragraphStart) } : {}),
-      inlines: parseMobileMarkdownInlines(text, paragraphStartsInComment),
-    }, paragraphStart, lineIndex);
+      inlines,
+    };
+    if (snapshot) paragraphInlineSnapshots.set(block, snapshot);
+    pushBlock(block, paragraphStart, lineIndex);
   };
 
   for (let index = 0; index < lines.length; index++) {
@@ -446,6 +508,7 @@ export function parseMobileMarkdownDocument(
     incremental: false,
     reusedBlockCount: 0,
     parsedSourceUtf16Length: normalized.length,
+    reusedInlineUtf16Length,
   };
 }
 
@@ -491,7 +554,7 @@ export function parseMobileMarkdownIncremental(
       )
     ));
 
-  if (!checkpoint) return parseMobileMarkdownDocument(input);
+  if (!checkpoint) return parseMobileMarkdownDocument(input, { previous });
 
   let suffixCharOffset = checkpoint.charOffset;
   let suffix = normalizedInput.slice(suffixCharOffset);
@@ -514,6 +577,7 @@ export function parseMobileMarkdownIncremental(
       lineOffset: checkpoint.lineIndex,
       blockIndexOffset: checkpoint.blockCount,
       charOffset: suffixCharOffset,
+      previous,
     },
   );
 
@@ -536,6 +600,7 @@ export function parseMobileMarkdownIncremental(
     incremental: true,
     reusedBlockCount: checkpoint.blockCount,
     parsedSourceUtf16Length: suffixResult.parsedSourceUtf16Length,
+    reusedInlineUtf16Length: suffixResult.reusedInlineUtf16Length,
   };
 }
 
