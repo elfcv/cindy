@@ -1,0 +1,15 @@
+
+ RUN  v3.2.7 /Users/elfcv/Documents/Codex/cindy-mobile-chat-history/apps/mobile
+
+ ✓ src/__tests__/shareSelectionTap.test.ts (2 tests) 2ms
+ ✓ src/__tests__/shareSelectionStore.test.ts (2 tests) 3ms
+ ✓ src/__tests__/messageNativeLifecycleContracts.test.ts (5 tests) 20ms
+(node:66489) ExperimentalWarning: localStorage is not available because --localstorage-file was not provided.
+(Use `node --trace-warnings ...` to show where the warning was created)
+ ✓ src/__tests__/messageSourceLabelsRender.test.tsx (33 tests) 214ms
+
+ Test Files  4 passed (4)
+      Tests  42 passed (42)
+   Start at  02:05:12
+   Duration  4.98s (transform 1.74s, setup 0ms, collect 2.93s, tests 239ms, environment 623ms, prepare 476ms)
+
