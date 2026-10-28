@@ -2552,7 +2552,58 @@ describe('DeviceLinkClient', () => {
     }
   });
 
-  it('入站 link 的可靠重试耗尽只重置该 peer link:relay 连接不拆,发 transport-timeout link-close,重开后 live 帧按原 seq 重放', async () => {
+  
+  it('outbound reliable retry exhaustion resets only that peer and keeps the relay', async () => {
+    vi.useFakeTimers();
+    const warn = vi.fn();
+    const resets = [];
+    const h = makeHarness({
+      timing: {
+        pingIntervalMs: 60_000,
+        reconnectBaseMs: 5,
+        reconnectMaxMs: 5,
+        transportRetryIntervalMs: 5,
+        transportMaxRetryAttempts: 2,
+      },
+      logger: { debug: vi.fn(), info: vi.fn(), warn, error: vi.fn() },
+    });
+    h.client.onPeerTransportReset(({ deviceId }) => { resets.push(deviceId); });
+    try {
+      h.client.start();
+      await vi.advanceTimersByTimeAsync(0);
+      h.current().ack();
+      const opened = h.client.openLink('dev-b', { controllerName: 'Test', protocolVersion: 1, appVersion: '1' });
+      const request = h.current().sent.find((env) => env.kind === 'link-open');
+      h.current().push({
+        v: PROTOCOL_VERSION,
+        kind: 'link-accept',
+        id: request.id,
+        src: 'dev-b',
+        payload: {
+          appVersion: '1',
+          allowlistHash: 'hash',
+          capabilities: [DEVICE_LINK_CAPABILITY_RELIABLE_TRANSPORT],
+          transportStreamId: 'outbound-stall',
+        },
+      });
+      await opened;
+      const socket = h.current();
+      h.client.sendPush('dev-b', 'maker:event', { n: 1 });
+      await vi.advanceTimersByTimeAsync(50);
+      expect(socket.terminated).toBe(false);
+      expect(socket.closed).toBeNull();
+      expect(h.sockets).toHaveLength(1);
+      expect(h.client.isLinkReady('dev-b')).toBe(false);
+      expect(resets).toEqual(['dev-b']);
+      expect(warn).toHaveBeenCalledWith(expect.stringMatching(/ACK timeout; resetting peer link .*dst=dev-b/));
+      expect(warn).not.toHaveBeenCalledWith(expect.stringMatching(/forcing reconnect/));
+    } finally {
+      h.client.stop();
+      vi.useRealTimers();
+    }
+  });
+
+it('入站 link 的可靠重试耗尽只重置该 peer link:relay 连接不拆,发 transport-timeout link-close,重开后 live 帧按原 seq 重放', async () => {
     vi.useFakeTimers();
     const warn = vi.fn();
     const h = makeHarness({
