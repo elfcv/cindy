@@ -2105,3 +2105,27 @@ it.each([
 ])('keeps overlapping and consumed-prefix rendering for %s', (source, expected) => {
   expect(parseMobileMarkdownInlines(source as string)).toEqual(expected);
 });
+
+// A pending image used to be validated/normalized for every earlier inline even
+// after its regex match was cached. Measure actual normalization work, not time.
+it('validates a distant image once per paragraph without losing following images', () => {
+  const url = 'https://example.invalid/pending.png';
+  const source = '**one** `two` '.repeat(30) + `![photo](${url}) ![next](src/next.png)`;
+  const replace = String.prototype.replace;
+  let normalizations = 0;
+  const spy = vi.spyOn(String.prototype, 'replace').mockImplementation(function (this: string, ...args: Parameters<typeof replace>) {
+    if (String(this) === url) normalizations += 1;
+    return Reflect.apply(replace, this, args);
+  });
+  try {
+    const parsed = parseMobileMarkdownInlines(source);
+    expect(parsed.filter(token => token.type === 'strong')).toHaveLength(30);
+    expect(parsed.filter(token => token.type === 'code')).toHaveLength(30);
+    expect(parsed.slice(-3)).toEqual([
+      { type: 'image', alt: 'photo', url },
+      { type: 'text', text: ' ' },
+      { type: 'image', alt: 'next', url: 'src/next.png' },
+    ]);
+    expect(normalizations).toBeLessThanOrEqual(2);
+  } finally { spy.mockRestore(); }
+});
