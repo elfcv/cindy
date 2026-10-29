@@ -5308,15 +5308,8 @@ export class DeviceLinkClient {
     // 能力门:旧控制端(未声明 transport-timeout-close-v1)把未知 reason 当永久
     // 关闭且不会自动重开——relay/presence 保持在线时订阅与在途请求会静默挂死。
     // 对这类对端保留整连接重连的兼容恢复路径(presence 闪断触发其既有 rehydrate)。
-    // Outbound peers are opened by this device. A single peer that stops
-    // ACKing must not drop the shared relay: the host can reopen that peer
-    // with link-open. Tearing the relay down makes every other device
-    // reconnect, then this side waits 30s for a link-accept the stalled
-    // peer cannot send. Legacy inbound controllers that do not understand
-    // transport-timeout still need a presence flicker via full reconnect.
     if (
-      peer.linkAcceptedInbound
-      && !peer.supportsTransportTimeoutClose
+      (!peer.linkAcceptedInbound || !peer.supportsTransportTimeoutClose)
       && this.opts.peerFailurePolicy !== 'isolate-peer'
     ) {
       this.forceReconnectForReliableTimeout(dst, seq);

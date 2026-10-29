@@ -871,12 +871,6 @@ export function initDeviceLinkService(options: DeviceLinkServiceOptions = {}): v
     // Mutual control shares one peer link: a locally exhausted inbound stream
     // also invalidates this Desktop's remote view, without reopening other peers.
     broadcast(DEVICE_LINK_PUSH.PEER_LINK_RESET, { deviceId });
-    // Outbound ACK exhaustion now isolates this peer instead of dropping the
-    // relay. Reopen only this device, with the same backoff and authorization
-    // checks as a transport-timeout close.
-    if (!hasOutboundControlIntent(deviceId)) return;
-    if (readDeviceLinkSettings().disabledControlDeviceIds.includes(deviceId)) return;
-    transportTimeoutReopen.trigger(deviceId);
   });
 
   client.onStatusChange((status) => {
