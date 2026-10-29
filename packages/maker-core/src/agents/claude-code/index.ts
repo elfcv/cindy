@@ -45,8 +45,6 @@ import type {
 } from '@anthropic-ai/claude-agent-sdk';
 import { discoverSubagentDefinitions } from './subagent-definitions.js';
 import { spawnObservedClaudeProcess } from './local-process-spawn.js';
-import { buildClaudeHarnessHooks } from './harness-hooks.js';
-import { createHarnessHookBridge } from '../shared/harness-hooks.js';
 import { claudeMcpServerToolsReport, type ClaudeMcpServerStatusEntry } from './mcp-server-tools.js';
 import {
   reportSubagentModelDiagnostics,
@@ -103,6 +101,7 @@ import type {
   AskUserQuestionItem,
   UsageSnapshot,
   RewindFilesResult,
+  RewindCommitOptions,
   ForkSdkSessionOptions,
   ForkSdkSessionResult,
 } from '../../types/events.js';
@@ -1742,6 +1741,7 @@ export class ClaudeCodeAgent extends BaseAgent {
     // 再开后 Lead 工具仍指向第一次的 workflow / worker"的 bug。必须用 Object.assign
     // 原地改, 让所有持有这个 ref 的闭包共享同一份最新状态。
     const vo: Record<string, unknown> = { ...(opts.vendorOptions ?? {}) };
+    const requireNativeResume = vo._cindyRequireNativeResume === true && !!opts.resumeSessionId;
 
     log.info('startSession', {
       model: sdkModel,
@@ -1912,7 +1912,7 @@ export class ClaudeCodeAgent extends BaseAgent {
     };
     const buildMcpServers = (): Record<string, McpServerConfig> | undefined => {
       const client = opts[LOCAL_AGENT_CLIENT];
-      if (client) {
+      if (client && (!hosted || client.hostToolsOnly)) {
         hostMcpServerNames = new Set([client.mcpName ?? 'client']);
         registeredMcpServerNames = hostMcpServerNames;
         nonHarnessMcpServerNames = hostMcpServerNames;
@@ -2241,9 +2241,7 @@ export class ClaudeCodeAgent extends BaseAgent {
       if (mcpPolicy === 'prompt-each-time') return decide('ask', 'This tool requires Cindy confirmation.');
       return { continue: true };
     };
-    const harnessHookBridge = createHarnessHookBridge();
-    const harnessHooksEnabled = !reviewMode && !hosted && !opts.remoteHostId;
-    const baseLocalClaudeHooks = reviewMode
+    const localClaudeHooks = reviewMode
       ? mergeClaudeHookSets(
           { PreToolUse: [{ hooks: [reviewReadOnlyHook] }] },
           nativeCliAuth ? workspaceSettingsConfigChangeHooks : undefined,
@@ -2286,8 +2284,6 @@ export class ClaudeCodeAgent extends BaseAgent {
           // Last: earlier guards may deny; this only routes what remains.
           { PreToolUse: [{ hooks: [nativeAutoPolicyHook] }] },
         );
-    const localClaudeHooks = mergeClaudeHookSets(baseLocalClaudeHooks,
-      harnessHooksEnabled ? buildClaudeHarnessHooks(request => harnessHookBridge.run(request)) : undefined);
     const deniedCapabilityRoute = (toolName: string) => {
       const route = findClaudeMcpCapabilityRoute(
         this.deps.capabilityRouting,
@@ -3328,18 +3324,6 @@ export class ClaudeCodeAgent extends BaseAgent {
     // SSE idle watchdog 触发时也会主动清, 防止 SDK drain 期间又起 timer。
     // rewind preview/commit 业务层用 isTurnRunning() 前置守卫, 不在 turn 跑时操作 SDK。
     let turnInFlight = false;
-    let harnessCompaction: {
-      boundary: boolean;
-      result: boolean;
-      failed: boolean;
-      resolve: (value: { noop?: boolean }) => void;
-      reject: (error: Error) => void;
-    } | undefined;
-    function failHarnessCompaction(): void {
-      const pending = harnessCompaction;
-      harnessCompaction = undefined;
-      pending?.reject(new Error('Claude compaction did not finish on the current query'));
-    }
     // send() 处于 beginNewTurn→userInputAccepted 之间时置 true。
     // abort() 在此期间跳过 turnInFlight 清除:并发 send 负责在错误路径上
     // (finishSendBeforeUserInput) 自行清 turnInFlight 并 emit boundary,
@@ -4524,7 +4508,8 @@ export class ClaudeCodeAgent extends BaseAgent {
             ? { disallowedTools: [...claudeDisallowedTools] }
             : {}),
           // 受邀者(另一个账号)：自带工具只开白名单里的，其余都作用于本机或本机用户的账号。
-          ...(hosted?.guest ? { tools: [...DEVICE_HOSTED_GUEST_CLAUDE_TOOLS] } : {}),
+          ...(hosted?.guest && !opts[LOCAL_AGENT_CLIENT]?.hostToolsOnly
+            ? { tools: [...DEVICE_HOSTED_GUEST_CLAUDE_TOOLS] } : {}),
           // 设备托管：个人配置(用户级设置、hooks)属于任务所在电脑，不加载本机用户级设置；
           // 项目级设置来自同步过来的影子目录(只保留权限规则)。
           settingSources: reviewMode || !!opts.botRuntimeProfile || opts[LOCAL_AGENT_CLIENT]?.hostToolsOnly
@@ -4622,8 +4607,6 @@ export class ClaudeCodeAgent extends BaseAgent {
     // closed=true 后 finally 的 eventQueue.end() 收尾 → Session 自动 close → 下次 send
     // 走 IPC lazy create-session 重建 handle。
     function teardownDeadHandle(logLabel: string): void {
-      harnessHookBridge.close();
-      failHarnessCompaction();
       // Provider death is not a successful user cancellation. Session status
       // and the queued terminal error/done must decide observer settlement.
       resetClaudeGenerationTiming(runtimeState.generation);
@@ -5353,19 +5336,6 @@ export class ClaudeCodeAgent extends BaseAgent {
       // consumer sees an unclaimed idle event and finalizes the product turn
       // before the continuation starts.
       push(e: AgentEvent) {
-        if (harnessCompaction) {
-          if (e.type === 'compact_boundary') harnessCompaction.boundary = true;
-          if (e.type === 'error' && isTerminalAgentErrorEvent(e)) harnessCompaction.failed = true;
-          if (e.type === 'done') {
-            harnessCompaction.result = true;
-            const result = e.data as { is_error?: boolean } | undefined;
-            if (result?.is_error) harnessCompaction.failed = true;
-            return true;
-          }
-          // A control operation must not finish the previous product turn or
-          // publish command response text as a new assistant answer.
-          if (e.type === 'status' || e.type === 'text' || e.type === 'error') return true;
-        }
         if (deferResumeFailureBoundary) {
           deferredResumeFailureEvents.push(e);
           return true;
@@ -5542,13 +5512,6 @@ export class ClaudeCodeAgent extends BaseAgent {
       }
       turnInFlight = false;
       clearUpstreamResponseIdle();
-      if (harnessCompaction) {
-        const pending = harnessCompaction;
-        harnessCompaction = undefined;
-        if (pending.failed || !pending.result) pending.reject(new Error('Claude compaction failed or was cancelled'));
-        else pending.resolve(pending.boundary ? {} : { noop: true });
-        return;
-      }
       // 本轮已经是静默 /compact。瞬时失败由 onCompactCanceled 打开重试，等下一轮用户
       // turn 结束再压；这里立刻再注入会把 401/过载打成紧循环。
       if (!endingHostAutoCompact) triggerAutoCompactIfNeeded();
@@ -6064,7 +6027,10 @@ export class ClaudeCodeAgent extends BaseAgent {
       expectedResumeSessionId: string,
       source: 'transcript_preflight' | 'sdk_runtime',
     ): Promise<boolean> {
-      if (resumeRecoveryAttempted || !opts.onInvalidResumeSession) return false;
+      // Transferred history belongs to the host switch transaction. It must
+      // choose/confirm fallback; the adapter cannot silently erase that history.
+      if ((requireNativeResume && resumeValidationPending)
+        || resumeRecoveryAttempted || !opts.onInvalidResumeSession) return false;
       try {
         const cleared = await opts.onInvalidResumeSession(expectedResumeSessionId);
         if (!cleared) {
@@ -6467,40 +6433,6 @@ export class ClaudeCodeAgent extends BaseAgent {
       });
     };
     const handle: AgentSessionHandle = {
-      harnessHooks: harnessHooksEnabled ? ['tool.before', 'compaction.before'] : [],
-      setHarnessHookHandler: handler => harnessHookBridge.setHandler(handler),
-      ...(harnessHooksEnabled ? {
-        requestHarnessCompaction: () => {
-          if (closed || turnInFlight || harnessCompaction || pendingRewindTo ||
-              idleResumeRebuildGate || cancellationRebuildGate || runningBackgroundTasks.size > 0) {
-            return Promise.reject(new Error('SESSION_RUNNING: Claude is not idle for compaction'));
-          }
-          return new Promise<{ noop?: boolean }>((resolve, reject) => {
-            harnessCompaction = { boundary: false, result: false, failed: false, resolve, reject };
-            // Reserve the existing query lane synchronously. Both host automatic
-            // compaction and all user sends honor turnInFlight; Claude owns the
-            // command, native PreCompact hooks, transcript and context adoption.
-            turnInFlight = true;
-            let dispatched = false;
-            try {
-              beginNewTurn(mutableFastMode ? 'priority' : 'standard');
-              resetToolLoopGuards();
-              dispatched = inputQueue.push({ type: 'user', message: { role: 'user', content: '/compact' }, parent_tool_use_id: null });
-              if (!dispatched) throw new Error('Claude compaction input queue is closed');
-              armUpstreamResponseIdle();
-            } catch (error) {
-              // Only a rejected dispatch can release the lane without a native
-              // terminal. Once queued, a lost acknowledgement is not replayable.
-              if (!dispatched) {
-                harnessCompaction = undefined;
-                turnInFlight = false;
-                clearUpstreamResponseIdle();
-              }
-              reject(error instanceof Error ? error : new Error('Claude compaction dispatch failed'));
-            }
-          });
-        },
-      } : {}),
       disabledSkillPaths: disabledSkillSnapshot,
       // IM turn policies carry requester authority the native classifier cannot see.
       getAutoReviewOwner: () => usesNativeClaudeAutoReview() && !activeTurnPermissionPolicy ? 'native' : 'cindy',
@@ -7372,8 +7304,6 @@ export class ClaudeCodeAgent extends BaseAgent {
 
       async close() {
         if (closed) return;
-        harnessHookBridge.close();
-        failHarnessCompaction();
         // Closing/dead sessions settle through Session status (or their queued
         // terminal event), never through the successful task-stop path.
         resetClaudeGenerationTiming(runtimeState.generation);
@@ -7957,7 +7887,11 @@ export class ClaudeCodeAgent extends BaseAgent {
         }
       },
 
-      async commitRewindFiles(userUuid: string, priorAssistantUuid: string): Promise<undefined> {
+      async commitRewindFiles(
+        userUuid: string,
+        priorAssistantUuid: string,
+        rewindOpts?: RewindCommitOptions,
+      ): Promise<undefined> {
         // 同 previewRewindFiles:重建窗口内不得对死掉/半替换的 q 做 rewindFiles/close,
         // 否则 pendingRewindTo 会指向一个已不存在的会话时点。等替换 query 就绪再走。
         while (idleResumeRebuildGate) {
@@ -7974,9 +7908,23 @@ export class ClaudeCodeAgent extends BaseAgent {
           await q.rewindFiles(userUuid, { dryRun: false });
           log.debug('commitRewindFiles: SDK rewindFiles ok');
         } catch (err) {
+          if (rewindOpts?.rewindsToNativeThreadStart) {
+            // 只回滚文件的路径没有下一次 send 的 forkSession 兜底重试,吞掉错误会让
+            // 宿主继续关闭会话、软删消息,用户看到回退成功但文件没恢复。
+            log.warn('commitRewindFiles: rewindFiles failed on files-only rewind', {
+              error: err instanceof Error ? err.message : String(err),
+            });
+            throw err;
+          }
           log.warn('commitRewindFiles: rewindFiles failed, continuing (forkSession on next send will retry)', {
             error: err instanceof Error ? err.message : String(err),
           });
+        }
+        if (rewindOpts?.rewindsToNativeThreadStart) {
+          // 目标之前没有可续接的 assistant:不设续接点,由宿主关闭会话并清掉原生
+          // 会话 id,下次发送开全新原生会话。
+          log.info('commitRewindFiles ◀ files only; host restarts the native session');
+          return undefined;
         }
         // ② **先**设 rewind transition 再 close —— q.close() 会让正在跑的 forward loop
         //    for-await 抛 "Claude Code process aborted by user", 这是预期行为不是错误。
@@ -8003,6 +7951,19 @@ export class ClaudeCodeAgent extends BaseAgent {
       },
     };
 
+    if (requireNativeResume) {
+      try {
+        // query() returns before resume is checked; the CLI rejects a bad resume
+        // through initializationResult(), even with no user turn dispatched.
+        await q.initializationResult();
+        if (closed || sdkSessionId !== opts.resumeSessionId) {
+          throw new Error('Native history resume did not restore the transferred session');
+        }
+      } catch (error) {
+        await handle.close();
+        throw error;
+      }
+    }
     return handle;
   }
 

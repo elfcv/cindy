@@ -18,6 +18,7 @@ import { z } from 'zod';
 import type { XdtHelperToolRegistry } from '../lizi_xdtHelperToolRegistry.js';
 import type { XdtHelperHistoryDeps, HistoryRole } from './_history_types.js';
 import { okPayload, errorPayload } from './_payload.js';
+import { parseIsoMs } from './_history_time.js';
 import { stringArrayParam } from './_array-param.js';
 import { encodeCursor, decodeCursor } from './_history_cursor.js';
 import { resolveHistoryScope } from './_history_scope.js';
@@ -83,6 +84,7 @@ const DESCRIPTION = [
   '  要拿某条 message 的 workdir / agentKind / title, 用 sessions[message.sessionId] 查。',
   '',
   '【分页】游标分页, 默认 200/次, 最大 1000。串联 nextCursor 多次调用拿全量, 信息不丢。',
+  '源设备可按完整记录的 64 KiB 软预算提前分页；单条超大记录仍完整返回。limit 是条数上限，继续读 nextCursor，不要按返回条数判断结束。',
   '默认按 createdAt desc + id desc, 同毫秒多消息靠 id 兜底排序稳定。',
 ].join('\n');
 
@@ -299,11 +301,4 @@ export function registerGetChatHistoryTool(
       });
     },
   });
-}
-
-function parseIsoMs(s: string | undefined): number | null | 'invalid' {
-  if (s === undefined || s === '') return null;
-  const t = new Date(s).getTime();
-  if (!Number.isFinite(t)) return 'invalid';
-  return t;
 }

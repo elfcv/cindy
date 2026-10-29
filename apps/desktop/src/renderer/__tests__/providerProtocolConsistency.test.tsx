@@ -76,8 +76,10 @@ describe('issue #6015: saved connection protocol versus model protocol', () => {
       const dialog = render(<ProviderConnectionDialog
         initial={providerViewToCustomProviderConfig(source)} focusAgent="codex"
         onSaved={vi.fn()} onClose={vi.fn()} />);
+      fireEvent.click(screen.getByRole('button', { name: 'settings.providers.custom.advanced.label' }));
       const chat = screen.getByRole('button', { name: 'settings.providers.custom.wireProtocol.chat' });
       expect(screen.getByText('settings.providers.custom.wireProtocol.defaultLabel')).toBeTruthy();
+      expect(screen.getByText('settings.providers.custom.wireProtocol.precedenceHelp')).toBeTruthy();
       fireEvent.click(chat);
       expect(chat.getAttribute('aria-pressed')).toBe('true');
       fireEvent.click(screen.getByRole('button', { name: 'settings.providers.custom.save' }));
@@ -94,6 +96,7 @@ describe('issue #6015: saved connection protocol versus model protocol', () => {
       const reopened = render(<ProviderConnectionDialog
         initial={providerViewToCustomProviderConfig(refreshed)} focusAgent="codex"
         onSaved={vi.fn()} onClose={vi.fn()} />);
+      fireEvent.click(screen.getByRole('button', { name: 'settings.providers.custom.advanced.label' }));
       expect(screen.getByRole('button', { name: 'settings.providers.custom.wireProtocol.chat' })
         .getAttribute('aria-pressed')).toBe('true');
       reopened.unmount();

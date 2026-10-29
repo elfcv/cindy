@@ -280,6 +280,7 @@ export interface SlackToolBridgeLike {
  * (大结果落盘的钳制根)。
  */
 export interface SlackHookMcpDeps {
+  compressInlineImage?: CompressInlineImageFn;
   withAccountDataAccess?: import('./account-data-access.js').AccountDataAccess;
   getSessionContext?: () => LiziMcpSessionContext;
   getBridge(): SlackToolBridgeLike | null;
@@ -963,8 +964,6 @@ export interface LiziMcpSessionContext {
   mcpCallerKind?: LiziMcpCallerKind;
   /** True only when the harness bridge has installed provenance enforcement. */
   mcpCallerAttested?: boolean;
-  /** In-process host callback; only the attested Codex root route may use it. */
-  nativeHarnessHook?: (input: unknown, metadata: unknown) => Promise<Record<string, unknown>>;
 }
 
 export interface CodexHttpMcpConfig {

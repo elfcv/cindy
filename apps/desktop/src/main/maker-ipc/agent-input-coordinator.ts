@@ -261,6 +261,7 @@ export interface AgentInputSendOpts {
    * 也不参与任何权限判定;刻意不复用 `origin`(那是 scheduler 的 turn origin)。
    */
   sourceOrigin?: AgentInputQueuedMessage['origin'];
+  [FORWARDED_REQUEST_RECEIPT]?: AgentInputQueuedMessage['autoReviewUserText'];
   sourcePlugin?: AgentInputQueuedMessage['sourcePlugin'];
   sharedTaskAuthor?: AgentInputQueuedMessage['sharedTaskAuthor'];
   /** Main-owned clear token captured when this input became active. */
@@ -1351,6 +1352,12 @@ export class AgentInputCoordinator {
       retrySourceClientId: item.retrySourceClientId ?? item.supersedesUserClientId };
   }
 
+  /** Account-scoped tools may not borrow the Host identity from plugin or shared guest input. */
+  isActiveInputAccountScoped(sessionId: string): boolean {
+    const item = this.states.get(sessionId)?.activeTurn?.item;
+    return !!item && !item.sourcePlugin && !item.sharedTaskAuthor;
+  }
+
   /**
    * Owner-only Host actions (app update) require the active input itself to be text
    * this account's user typed on Desktop or a same-account remote device. Automation,
@@ -1369,7 +1376,12 @@ export class AgentInputCoordinator {
    * Host actions such as app update.
    */
   isActiveInputOwnerContinuation(sessionId: string): boolean {
-    return this.activeInputHasOwnerAuthor(sessionId, true);
+    const item = this.states.get(sessionId)?.activeTurn?.item;
+    // A relay is not fresh owner input (updates and other owner-only actions
+    // still use isActiveInputOwnerAuthored), but task actions retain its scope.
+    const relayed = !!item && !item.sourcePlugin && !item.sharedTaskAuthor
+      && verifiedOwnerRequestText(item.autoReviewUserText) !== undefined;
+    return relayed || this.activeInputHasOwnerAuthor(sessionId, true);
   }
 
   private activeInputHasOwnerAuthor(sessionId: string, allowContinuation: boolean): boolean {
@@ -2648,6 +2660,10 @@ export class AgentInputCoordinator {
         ...(appMessageGuard ? { [MCP_APP_MESSAGE_GUARD]: appMessageGuard } : {}),
         ...(item.sharedTaskAuthor ? { sharedTaskAuthor: item.sharedTaskAuthor } : {}),
         [AUTO_REVIEW_SOURCE_CONTENT]: queuedAutoReviewText(item),
+        ...(verifiedOwnerRequestText(item.autoReviewUserText) !== undefined ? {
+          [AUTO_REVIEW_USER_INTENT]: verifiedOwnerRequestText(item.autoReviewUserText),
+          [FORWARDED_REQUEST_RECEIPT]: item.autoReviewUserText,
+        } : {}),
         ...(item.autoReviewUserText && typeof item.autoReviewUserText === 'object' && item.autoReviewUserText.kind === 'delegated-continuation'
           ? { [AUTO_REVIEW_DELEGATED_CONTINUATION]: true as const } : {}),
         ...(typeof item.autoReviewUserText !== 'object' && readAutoReviewUserText(item.persistedContent) === null
@@ -3238,17 +3254,28 @@ export class AgentInputCoordinator {
     let continueItem: AgentInputQueuedMessage | null = null;
     let progressKnown = false;
     const previousAutoResumeInfo = opts?.auto ? state.autoResumePending : null;
+    const providerRestart = state.errorReason === 'remote_agent_restarted';
+    // Keep quota/error details for other recoveries. A provider restart already
+    // has a localized reconnect label on Desktop and Mobile; it is not an error
+    // summary to append to an otherwise successful continuation.
     // 额度重置后的续跑记录带上当初的限额原文，作为活动行展开详情里的原因。
     const automaticResumeInfo = opts?.auto
       ? previousAutoResumeInfo
       : usageWait
-        ? { ...usageWait.info, ...(state.error ? { error: state.error } : {}) }
+        ? { ...usageWait.info, ...(state.error && !providerRestart ? { error: state.error } : {}) }
         : null;
     const attemptToken = opts?.auto ? (opts.attemptToken ?? null) : null;
-    const continuationOnly = Boolean(
+    const continuationOnly = providerRestart || Boolean(
       opts?.auto && isAcceptedTurnContinuationOnlyReason(previousAutoResumeInfo?.reason),
     );
     let continueText = CONTINUE_AFTER_ERROR_PROMPT;
+    if (providerRestart) {
+      continueText += '\n\n[Host recovery] The provider process stopped or restarted during the previous turn.'
+        + (automatic ? ' Cindy is automatically continuing the interrupted task in the original conversation.'
+          : ' Continue the interrupted task in the original conversation.')
+        + ' Some tools may already have executed on the task computer without their results reaching you.'
+        + ' Check the current files, processes and external state before continuing; do not repeat side effects.';
+    }
     let recoveryCheckpoint: RecoveryCheckpoint | undefined;
     if (recovery.kind === 'active-turn') {
       let hasProgress = false;
@@ -5119,6 +5146,8 @@ export class AgentInputCoordinator {
         } } : {}),
         ...(head.supersedesUserClientId ? { retryUserClientId: head.supersedesUserClientId } : {}),
         [AUTO_REVIEW_SOURCE_CONTENT]: queuedAutoReviewText(head),
+        ...(verifiedOwnerRequestText(head.autoReviewUserText) !== undefined
+          ? { [AUTO_REVIEW_USER_INTENT]: verifiedOwnerRequestText(head.autoReviewUserText) } : {}),
         ...(head.autoReviewUserText && typeof head.autoReviewUserText === 'object' && head.autoReviewUserText.kind === 'delegated-continuation'
           ? { [AUTO_REVIEW_DELEGATED_CONTINUATION]: true as const } : {}),
         messageUuid: active.messageUuid,
