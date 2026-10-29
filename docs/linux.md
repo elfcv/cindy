@@ -243,18 +243,25 @@ their disk usage and retain a suitable backup before cleaning them.
   Debian system updates and native GNOME/KDE login checks. Synthetic packages
   are not a substitute for these release acceptance checks.
 
-## Linux arm64 release assets
+## Linux arm64 trial builds
 
-Official GitHub Releases before this workflow shipped only linux-x64 debs.
-Linux arm64 is built on an aarch64 runner by
-.github/workflows/release-linux-arm64.yml and uploaded as:
+Run [`package-linux-arm64`](../.github/workflows/package-linux-arm64.yml)
+manually from the Actions tab, selecting the branch to validate. It builds both
+regions on `ubuntu-24.04-arm` with the existing Desktop packaging entry point.
+No release version or private log-upload configuration is required.
 
-- cindy-<version>-linux-arm64-cn.deb
-- cindy-<version>-linux-arm64-global.deb
+Download `cindy-linux-arm64-cn` or `cindy-linux-arm64-global` from the workflow
+run's artifacts within seven days. Each contains the versionless `.deb`, its
+SHA-256 file and `build-info.json` with the source commit. The workflow checks
+the build identity, installer size and digest, and Debian `Architecture: arm64`
+before uploading. These packages use version `0.0.0`, have automatic updates
+disabled, and are for manual validation only. Packaged launch smoke tests are
+skipped; a successful workflow does not verify installation or app startup.
 
-The workflow does not publish manifest-linux-arm64.json. After the immutable
-deb is on the release, maintainers still upload it to each regional CDN and
-replace that region's stable manifest last. Linux beta remains x64-only.
+Official release packages, GitHub Release attachments and CDN manifests remain
+the responsibility of the private release CI. This workflow only uploads
+Actions artifacts and does not run when a release is published. Linux beta
+remains x64-only.
 
 ## Website / OSS publication
 
