@@ -18403,9 +18403,9 @@ export function registerMakerIpc(maker: Maker, options: RegisterMakerIpcOptions)
       } satisfies CindyLearnInvocationGrant;
     },
     createDbMessage: createUserMessageDurably,
-    rewindPersistedUserMessageAfterClear: (sessionId, clientId, options) =>
+    rewindPersistedUserMessageAfterClear: (sessionId, clientId) =>
       enqueueDurableWrite(`user-rewind:${sessionId}:${clientId}`, () =>
-        rewindPersistedUserMessageAfterClear(sessionId, clientId, options),
+        rewindPersistedUserMessageAfterClear(sessionId, clientId),
       ),
     isClearBoundaryCurrent: (sessionId, expected, expectedGeneration) => {
       const coordinator = agentInputCoordinatorHolder;
