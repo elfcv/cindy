@@ -3,6 +3,7 @@ import { mountPage, subscription } from '../../ui-page/harness';
 import { ModelAdvancedDrawer } from '../../../src/renderer/components/settings/ModelAdvancedDrawer';
 import { buildUnionRows } from '../../../src/renderer/components/settings/UnifiedModelList';
 import { BUNDLED_CATALOG, buildUserProvider, resolveModelMetadata, type CustomProviderConfig, type CatalogModel, type ProviderView } from '@cindy/model-providers';
+import { setDataOwnerGeneration } from '../../../src/renderer/contexts/dataOwnerGeneration';
 
 // In-memory host only: exercises V6 interface reset without accounts or requests.
 let saveInterface: ((config: CustomProviderConfig) => void) | undefined;
@@ -18,6 +19,9 @@ function InterfaceFixture() {
     disabled={false} paymentRequired={false}/>;
 }
 
+let imageInput: boolean | null = null;
+let finishOldImageSave: (() => void) | null = null;
+const authChanges = subscription('authChanged');
 let compactionPct: number | null = null;
 const contextView = () => ({ limit: 272000, isCustomized: false,
   compaction: { pct: compactionPct ?? 90, isCustomized: compactionPct !== null },
@@ -27,7 +31,26 @@ const contextView = () => ({ limit: 272000, isCustomized: false,
 });
 
 void mountPage({
-  host: { maker: {
+  host: ctx => {
+    if (ctx.case === 'owner-repair') setDataOwnerGeneration('fixture-owner', 1);
+    return {
+      onAuthStateChange: (listener: (state: unknown) => void) => authChanges(state => {
+        // Reproduce AuthContext publishing its accepted fence before hook recovery.
+        setDataOwnerGeneration('fixture-owner', 2);
+        listener(state);
+        queueMicrotask(() => finishOldImageSave?.());
+      }),
+      maker: {
+    getModelImageInputOverride: async () => ({ value: imageInput, mixed: false }),
+    setModelImageInputOverride: async (_target: unknown, value: boolean | null) => {
+      imageInput = value;
+      if (ctx.case === 'owner-repair' && value === false) {
+        return new Promise<{ value: boolean; mixed: boolean }>(resolve => {
+          finishOldImageSave = () => resolve({ value: true, mixed: false });
+        });
+      }
+      return { value, mixed: false };
+    },
     getModelContextLimit: async () => contextView(),
     setModelCompaction: async (_target: unknown, pct: number | null) => {
       compactionPct = pct;
@@ -39,7 +62,8 @@ void mountPage({
       saveInterface(config);
       return { ok: true };
     },
-  } },
+    } };
+  },
   render: ctx => {
     if (ctx.case === 'interface-reset') return <InterfaceFixture />;
     const id = ctx.case === 'sol' ? 'gpt-6.1-sol' : ctx.case === 'legacy-sol' ? 'gpt-6-sol' : 'gpt-6-astra';
