@@ -23,7 +23,11 @@ export default {
       await ui.capture('interface-menu');
       await page.getByRole('menuitem', {name: await ui.t('settings.providers.models.advanced.protocol.restoreRoute'), exact:true}).click();
       await page.getByText(await ui.t('settings.providers.models.advanced.protocol.sourceCatalog'), {exact:true}).waitFor();
-      if (!(await button.textContent()).includes('Responses')) throw Error('Reset did not follow the catalog interface');
+      const descriptionId = await page.getByRole('switch', {name: /Codex/}).getAttribute('aria-describedby');
+      if (!descriptionId || !(await page.locator(`[id="${descriptionId}"]`).textContent()).includes('Responses')) {
+        throw Error('Reset did not follow the catalog interface');
+      }
+      if (await button.count()) throw Error('The restored catalog interface should be a read-only label');
       await ui.capture('catalog-restored');
       return;
     }
