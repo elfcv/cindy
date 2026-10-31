@@ -40,7 +40,7 @@ export const CAPABILITIES: readonly CapabilityEntry[] = [
     oneLiner: 'Grok 有浏览器跳转和设备短码两种登录方式；agent 可发授权页与短码并查询完成状态。',
     detail: [
       '浏览器跳转登录在「设置 → 模型供应商」的 Grok 连接中可用；仅伙伴对话可调用 cindy 网关的 connect_account({kind:"host", id:"grok"}) 弹出连接卡，普通任务请使用设置页或下述设备码登录。',
-      '设备码登录适合远程协助：agent 通过 cindy_helper 的 auth 类 start_grok_device_login 取得 xAI 授权页和短码，发给用户；用户在授权页输入短码并确认，Cindy 在本机自动轮询并保存凭证。',
+      '设备码登录适合远程协助：agent 通过 cindy_helper 的 ask_owner（kind="connect"，service="grok"）取得 xAI 授权页和短码，发给用户；用户在授权页输入短码并确认，Cindy 在本机自动轮询并保存凭证。',
       'agent 可用 get_grok_login_status 查询连接状态，用户要求停止时可用 cancel_grok_device_login。长期 access token 和 refresh token 不会出现在工具返回值或聊天里；不要要求用户粘贴长期凭证。',
     ].join(' '),
   },
@@ -55,6 +55,18 @@ export const CAPABILITIES: readonly CapabilityEntry[] = [
       `【查源码排障】帮助文档(get_capabilities scope=help)没写到、或要确认 ${BRAND_NAME} 某个入口或行为的实际实现时, 可以只读查看 GitHub 上与用户版本对应的源码: 每个发布版本都有 tag(如 v0.1.118-beta; 当前版本号用 check_app_update 的 currentVersion 取), 用 gh 或网页按 tag 读取, 不要拿最新 main 对照旧版本。回答时说明结论来自源码; 服务端行为不在仓库里, 查不到就直说。`,
       `【版本号不要猜】本条不含版本号。所有版本都显示在侧栏左下角账号卡片上; CN 版的"设置 → 关于"也有, 国际版该页不展示(只有更新开关与 agent 二进制版本), 别把用户支使过去空找。agent 自己要版本号就调 check_app_update 读 currentVersion。用 submit_github_issue 提反馈时客户端版本 / OS / 界面语言由系统自动附加, 不用 agent 填。`,
       `【模型怎么来】登录官方 ${BRAND_NAME} 服务按量透明扣费、授权已付费的 Claude Code / Codex Coding Plan 继续用(不重复付费)、接自己的 API key, 或跑本地模型。价格见对应区域官网。`,
+    ].join(' '),
+  },
+  {
+    key: 'computer-use',
+    title: 'Computer Use(操作本机桌面:窗口、点击、输入、截图)',
+    oneLiner:
+      '桌面操作只走 cindy_computer;工具列表里没有它就是 Computer Use 没开,引导用户到「设置 → 内置工具」开启并授权,不用 shell 模拟键鼠。',
+    detail: [
+      `【怎么判断没开】cindy_computer 这个 MCP 只在 Computer Use 开启时注册;当前工具列表里找不到 mcp__cindy_computer__* 时,说明用户没开,不是 ${BRAND_NAME} 没有这个能力。不要改用 osascript 按键、cliclick、CGEvent 脚本或 cua-driver CLI 代替,这些会被拒绝。`,
+      '【怎么引导】告诉用户这一步需要操作桌面,请在「设置 → 内置工具 → Computer Use」打开开关;macOS 还会要求授予「辅助功能」和「屏幕录制」权限,设置页里有逐步引导。给用户这条链接可直接跳到那一页:cindy://settings/builtin-tools(桌面端点击即打开;手机或 IM 里收到时回到电脑上点)。开关和权限都要用户本人操作,agent 不能代为开启。',
+      '【开启之后】Codex 任务的工具桥会自动刷新;Claude Code 任务的 MCP 列表在任务启动时固定,开启后让用户再发一条消息或新建任务,然后用 cindy_computer 的 list_tools 确认它已出现,再继续。',
+      '【能做什么】list_windows / get_window_state 读窗口与无障碍树和截图,click / set_value / type_text / press_key / hotkey / scroll 操作目标窗口。Electron 与网页里的文本用 set_value;iOS 模拟器窗口不接受合成输入,用 xcrun simctl 或 AXe;有人正在用电脑时前台输入会被拒(USER_INPUT_ACTIVE),锁屏类快捷键被拒(HOTKEY_BLOCKED)。',
     ].join(' '),
   },
   {
