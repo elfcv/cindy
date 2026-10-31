@@ -384,6 +384,7 @@ describe('cindy_scheduler MCP server (in-process smoke)', () => {
     expect((await create({ silentWhenIdle: true })).persistentSession).toBe(true);
     expect((await create({ silentWhenIdle: true, persistentSession: false })).persistentSession).toBe(false);
     expect((await create({ silentWhenIdle: true, targetSessionId: 'sess-bound' })).persistentSession).toBe(false);
+    expect((await create({ silentWhenIdle: true, modelAgentDeviceId: '', model: 'gpt-5.5' })).persistentSession).toBe(false);
     expect((await create({})).persistentSession).toBe(false);
     expect((await create({ silentWhenIdle: false })).persistentSession).toBe(false);
 

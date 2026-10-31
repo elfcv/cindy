@@ -233,11 +233,13 @@ export function registerScheduleCreateTool(
         // 检查类(silentWhenIdle=true)没有显式绑定时默认复用同一个会话:每次触发都新建任务会让
         // 没变化的检查在侧栏刷出一串空对话。只在调用方没有表态时补默认,显式 false/绑定一律保留;
         // 提醒类(silentWhenIdle 缺省/false)不受影响。script 模式不支持 persistentSession,同样跳过。
+        // 持续会话下「本机位置」须带完整 Harness+model(引擎校验);只给了本机位置时不补,保持原来可创建。
         if (
           input.silentWhenIdle === true &&
           input.persistentSession === undefined &&
           !input.targetSessionId?.trim() &&
-          (input.executionMode ?? 'agent') === 'agent'
+          (input.executionMode ?? 'agent') === 'agent' &&
+          !(input.modelAgentDeviceId === '' && (!input.modelAgentKind || !input.model?.trim()))
         ) {
           input = { ...input, persistentSession: true };
         }
