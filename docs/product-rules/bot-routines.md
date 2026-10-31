@@ -249,6 +249,10 @@ Pi 将 routine_list、routine_save、routine_sources、routine_history、routine
 
 明确判定为检查型的新建 agent 自动化由创建入口显式启用“检查没事不说话”；
 未分类的通用创建入口和仅执行脚本的任务保持原通知行为，避免吞掉提醒或定时发送。
+Agent 经 `schedule_create` 新建的检查（`silentWhenIdle=true`）若既未绑定会话、也未表态
+`persistentSession`，工具层补成持续会话，后续检查复用同一任务，不再每次在侧栏新建一条
+没有变化的对话（2026-11-01）；显式 `persistentSession=false`、绑定已有任务、提醒类与仅脚本任务不变，
+引擎与 UI 的默认值不变。
 伙伴例行任务沿用原本的静默通知默认值，并把选择和可选 `preRunHook` 暴露到
 同一份 routine 定义与桌面高级设置。显式提醒/定时发送应设置
 `silentWhenIdle=false`。没有批量迁移旧规则：普通旧调度保留已存选择，旧伙伴
