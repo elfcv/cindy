@@ -412,9 +412,6 @@
     "apps/desktop/src/main/reviewer/__tests__/reviewPdfProcessPackaging.test.ts": {
       "sourceReads": 6
     },
-    "apps/desktop/src/main/scheduler-host/__tests__/preRunHook.test.ts": {
-      "realWaits": 1
-    },
     "apps/desktop/src/main/skillhub/__tests__/activationPreferences.test.ts": {
       "resetModules": 2
     },
