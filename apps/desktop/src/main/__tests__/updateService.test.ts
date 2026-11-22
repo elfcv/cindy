@@ -1,4 +1,5 @@
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, vi } from 'vitest';
+import { EventEmitter } from 'node:events';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
@@ -1157,6 +1158,112 @@ describe('checkForUpdate Linux installer flow', () => {
       service.stopUpdateService();
       exitSpy.mockRestore();
     }
+  });
+
+  // 2026-11-22 伙伴复盘 22:远程点了更新,应用先退出、密码框才弹出,没人输密码就停机 8 分钟。
+  // 生产入口:update-relaunch IPC → executeUpdateLinux 的 pkexec 分支;可观察结果:进程是否
+  // 退出、补丁是否保留、尝试计数、状态与错误码。脚本本身见 updateScriptLinux.test.ts。
+  describe('Debian package: administrator authorization before exit', () => {
+    function fakeUpdateScript() {
+      const child = Object.assign(new EventEmitter(), {
+        pid: 424242,
+        stdout: new EventEmitter(),
+        unref: vi.fn(),
+      });
+      spawnProcess.mockImplementationOnce(() => child as never);
+      return child;
+    }
+
+    async function startDebRelaunch() {
+      download.mockImplementation(async ({ targetPath }: { targetPath: string }) => {
+        fs.mkdirSync(path.dirname(targetPath), { recursive: true });
+        fs.writeFileSync(targetPath, 'deb');
+        return { path: targetPath, size: 123 };
+      });
+      checkDebianManagedInstallation.mockReturnValue({ status: 'managed' });
+      const child = fakeUpdateScript();
+      const service = await freshUpdateService('linux', 'x64');
+      const exitSpy = vi.spyOn(process, 'exit').mockImplementation((() => undefined) as never);
+      service.initUpdateService();
+      const manifest = linuxInstallerManifest();
+      manifest.app.installer.sha256 = 'ab'.repeat(32);
+      await expect(service.checkForUpdate(manifest)).resolves.toBe('ready');
+      ipcListeners.get('update-relaunch')?.({}, 'dark');
+      await vi.waitFor(() => expect(spawnProcess).toHaveBeenCalledOnce());
+      expect(spawnProcess).toHaveBeenCalledWith(
+        expect.any(String), expect.any(Array), expect.objectContaining({ stdio: ['ignore', 'pipe', 'ignore'] }),
+      );
+      child.emit('spawn');
+      const patchInfo = () => JSON.parse(
+        fs.readFileSync(path.join(TEST_USER_DATA, 'updates', 'patch-info.json'), 'utf8'),
+      ) as { applyAttempts?: number; fileName: string };
+      // Waiting for the password: still running, nothing counted yet.
+      expect(exitSpy).not.toHaveBeenCalled();
+      expect(patchInfo().applyAttempts).toBeUndefined();
+      return { service, child, exitSpy, patchInfo };
+    }
+
+    it('exits only after the script reports the authorized marker', async () => {
+      const { service, child, exitSpy, patchInfo } = await startDebRelaunch();
+      try {
+        child.stdout.emit('data', Buffer.from('CINDY_UPDATE_'));
+        expect(exitSpy).not.toHaveBeenCalled();
+        child.stdout.emit('data', Buffer.from('AUTHORIZED\n'));
+        expect(exitSpy).toHaveBeenCalledWith(0);
+        expect(patchInfo().applyAttempts).toBe(1);
+        expect(child.unref).toHaveBeenCalled();
+      } finally {
+        service.stopUpdateService();
+        exitSpy.mockRestore();
+      }
+    });
+
+    it.each([
+      {
+        name: 'the prompt is dismissed or cannot be shown',
+        killsGroup: false,
+        end: (child: EventEmitter) => { child.emit('exit', 12, null); },
+      },
+      {
+        name: 'nobody answers within the timeout',
+        killsGroup: true,
+        end: () => { vi.advanceTimersByTime(3 * 60 * 1000); },
+      },
+    ])('keeps running with the staged .deb when $name', async ({ end, killsGroup }) => {
+      const killSpy = vi.spyOn(process, 'kill').mockImplementation(() => true);
+      const { service, child, exitSpy, patchInfo } = await startDebRelaunch();
+      try {
+        end(child);
+        expect(ipcHandlers.get('update-get-status')?.()).toMatchObject({
+          status: 'ready', version: '0.0.65', errorCode: 'linux_authorization_required',
+        });
+        expect(exitSpy).not.toHaveBeenCalled();
+        expect(patchInfo().applyAttempts).toBeUndefined();
+        expect(fs.existsSync(path.join(TEST_USER_DATA, 'updates', patchInfo().fileName))).toBe(true);
+        // A late marker after the decision must not quit the app.
+        child.stdout.emit('data', Buffer.from('CINDY_UPDATE_AUTHORIZED\n'));
+        expect(exitSpy).not.toHaveBeenCalled();
+        const groupKills = killSpy.mock.calls.filter(([pid]) => pid === -child.pid);
+        expect(groupKills.length > 0).toBe(killsGroup);
+      } finally {
+        service.stopUpdateService();
+        exitSpy.mockRestore();
+        killSpy.mockRestore();
+      }
+    });
+
+    it('drops the package without exiting when the elevated check rejects it', async () => {
+      const { service, child, exitSpy } = await startDebRelaunch();
+      try {
+        child.emit('exit', 14, null);
+        expect(ipcHandlers.get('update-get-status')?.()).toMatchObject({ status: 'error', errorCode: 'updater_spawn_failed' });
+        expect(exitSpy).not.toHaveBeenCalled();
+        expect(fs.existsSync(path.join(TEST_USER_DATA, 'updates', 'patch-info.json'))).toBe(false);
+      } finally {
+        service.stopUpdateService();
+        exitSpy.mockRestore();
+      }
+    });
   });
 
   it('downloads the Linux installer .deb instead of a hotfix zip', async () => {

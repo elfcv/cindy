@@ -10890,6 +10890,12 @@
       "retry": "Vérifier à nouveau",
       "later": "Plus tard"
     },
+    "linuxAuthorization": {
+      "title": "Mot de passe administrateur requis pour la mise à jour",
+      "description": "L'installation de cette mise à jour nécessite de saisir un mot de passe administrateur sur cet ordinateur. La demande de mot de passe a été annulée, a expiré ou n'a pas pu s'afficher ; rien n'a donc été installé. {{appName}} continue de fonctionner avec la version actuelle et la mise à jour téléchargée a été conservée. Réessayez lorsque vous serez devant cet ordinateur.",
+      "retry": "Réessayer",
+      "later": "Plus tard"
+    },
     "windowsRuntimeMissing": {
       "title": "Microsoft Visual C++ Runtime requis",
       "description": "Il manque sur ce PC le Microsoft Visual C++ Runtime requis par l'outil de mise à jour. La mise à jour téléchargée sera conservée. Installez le Runtime x64 officiel de Microsoft, puis vérifiez à nouveau.",
@@ -10924,6 +10930,7 @@
         "notRestarted": "La mise à jour a été téléchargée, mais {{appName}} n'a pas redémarré (par exemple, vous vous êtes déconnecté ou avez changé de compte).",
         "notReady": "La mise à jour téléchargée n'est plus disponible.",
         "updaterNotStarted": "L'outil de mise à jour n'a pas démarré ; {{appName}} n'a donc pas redémarré.",
+        "linuxAuthorizationRequired": "L'installation de la mise à jour nécessite de saisir un mot de passe administrateur sur cet ordinateur ; il n'a pas été saisi, donc {{appName}} continue de fonctionner avec la version actuelle.",
         "unsupported": "Cette installation ne prend pas en charge les mises à jour depuis l'application.",
         "generic": "Une erreur s'est produite pendant l'installation.",
         "relaunchInProgress": "{{appName}} redémarrait déjà pour installer une mise à jour depuis les Paramètres ou l'installation automatique en veille ; cette demande n'a donc pas lancé d'installation distincte."

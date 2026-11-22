@@ -5,12 +5,37 @@ import type { LinuxUserInstallation } from './linuxInstallation';
 /**
  * updateScriptLinux — pure builder for the Linux .deb update-apply bash script.
  *
- * Linux has no cindy-updater binary. After the Electron process exits, this
- * script either applies a managed user install without elevation, or asks
- * polkit to replace a Debian-owned package, then relaunches the stable entry.
+ * Linux has no cindy-updater binary. A managed user install is applied
+ * without elevation after the Electron process exits. A Debian-owned package
+ * asks polkit for administrator authorization while the app is still running;
+ * only after the elevated shell has started and verified the staged .deb does
+ * the script tell the app to exit, then it installs and relaunches the stable
+ * entry. A cancelled, timed-out or impossible authorization ends the script
+ * with the app untouched.
  *
  * Extracted so the generated script can be regression-tested without Electron.
  */
+
+/**
+ * Line the update script writes to its stdout (a pipe read by the app) once
+ * the elevated shell is running and has verified the staged .deb. The app
+ * exits only after reading it.
+ */
+export const LINUX_UPDATE_AUTHORIZED_MARKER = 'CINDY_UPDATE_AUTHORIZED';
+
+/**
+ * Exit codes of the .deb update script for failures that happen before the
+ * app was told to exit. The app is still running in every one of them.
+ */
+export const LINUX_UPDATE_PREAUTH_EXIT = {
+  pkexecMissing: 10,
+  stagedDebMissing: 11,
+  /** pkexec was dismissed, timed out, killed, or had no authentication agent. */
+  authorizationNotGranted: 12,
+  channelSetupFailed: 13,
+  /** Authorized, but the elevated copy/size/hash check rejected the package. */
+  stagedDebRejected: 14,
+} as const;
 
 export interface LinuxUpdateScriptTimings {
   /** Seconds to wait for the old PID before escalating to SIGKILL. */
@@ -134,6 +159,156 @@ export function buildLinuxUpdateScript(params: LinuxUpdateScriptParams): string 
   // keeps only the latest run. Chromium reports a display-backend failure only there.
   const qAppLog = shellSingleQuote(path.posix.join(path.posix.dirname(logPath), 'cindy-relaunch.log'));
 
+  // 等旧进程退出:120 秒仍在就 SIGKILL,SIGKILL 后还在就放弃更新(此时什么都没装)。
+  const waitForAppExit = [
+    'WAITED=0',
+    `while kill -0 ${pid} 2>/dev/null; do`,
+    '    sleep 1',
+    '    WAITED=$((WAITED+1))',
+    `    if [ "$WAITED" -eq ${t.exitKillAfterSeconds} ]; then`,
+    `        echo "[$(date)] PID ${pid} still alive after ${t.exitKillAfterSeconds}s — exit appears hung, sending SIGKILL" >> ${qLog}`,
+    `        kill -9 ${pid} 2>/dev/null`,
+    '    fi',
+    `    if [ "$WAITED" -ge ${t.exitAbortAfterSeconds} ]; then`,
+    `        echo "[$(date)] FATAL: PID ${pid} survived SIGKILL — aborting update" >> ${qLog}`,
+    '        exit 1',
+    '    fi',
+    'done',
+    `echo "[$(date)] Process ${pid} exited, waiting for filesystem to settle" >> ${qLog}`,
+    'sleep 2',
+  ];
+  const userInstallBody = (u: LinuxUserInstallation & { version: string }): string[] => [
+    `echo "[$(date)] Update script started, waiting for PID ${pid}" >> ${qLog}`,
+    `printf '[%s] deb=%s exe=%s\\n' "$(date)" ${qDeb} ${qExe} >> ${qLog}`,
+    '',
+    ...waitForAppExit,
+    '',
+    // Source is embedded in the packaged application, never loaded
+    // from a mutable external helper or a pinned system Node installation.
+    `INSTALLER=${shellSingleQuote(userInstallerSource)}`,
+    `bash -c "$INSTALLER" cindy-user-install --apply ${qDeb} ${qSha} ${sizeBytes} ${shellSingleQuote(u.prefix)} ${shellSingleQuote(u.version)} ${shellSingleQuote(u.region)} ${shellSingleQuote(u.current)} >> ${qLog} 2>&1 &`,
+    'INSTALL_PID=$!',
+    `echo "$INSTALL_PID" > "$INSTALL_PID_FILE"`,
+  ];
+  const debInstallBody = (): string[] => [
+    `echo "[$(date)] Update script started, requesting authorization while PID ${pid} keeps running" >> ${qLog}`,
+    `printf '[%s] deb=%s exe=%s\\n' "$(date)" ${qDeb} ${qExe} >> ${qLog}`,
+    '',
+    'PKEXEC=/usr/bin/pkexec',
+    'if [ ! -x "$PKEXEC" ]; then',
+    '    PKEXEC=$(command -v pkexec 2>/dev/null || true)',
+    'fi',
+    'if [ -z "$PKEXEC" ] || [ ! -x "$PKEXEC" ]; then',
+    `    echo "[$(date)] FATAL: pkexec not found — cannot install .deb; Cindy keeps running" >> ${qLog}`,
+    `    exit ${LINUX_UPDATE_PREAUTH_EXIT.pkexecMissing}`,
+    'fi',
+    '',
+    `if [ ! -f ${qDeb} ]; then`,
+    `    echo "[$(date)] FATAL: staged .deb missing before install; Cindy keeps running" >> ${qLog}`,
+    `    exit ${LINUX_UPDATE_PREAUTH_EXIT.stagedDebMissing}`,
+    'fi',
+    // 提权边界校验:整个「复制 → 哈希 → 安装」都在同一个 root shell 里完成。
+    // .deb 先拷进 root 自有的 0700 临时目录,哈希与安装读的是同一份 root 所有
+    // 的副本,用户侧进程无法在哈希后换包;期望摘要与路径经 argv 传入。
+    // 提权 shell 只写 stdout/stderr,由外层用户 shell 重定向到日志——
+    // root 自己从不打开用户可替换的日志路径(符号链接攻击面)。
+    'ELEVATED=\'set -eu',
+    'TMP=$(mktemp -d "${TMPDIR:-/tmp}/cindy-deb.XXXXXX")',
+    'chmod 700 "$TMP"',
+    'cleanup_e() { rm -rf "$TMP"; }',
+    'trap cleanup_e EXIT',
+    // 快速失败检查;权威防线是下面的 dd nofollow 原子打开。
+    'if [ -L "$2" ] || [ ! -f "$2" ]; then',
+    '    echo "staged package is not a regular file" >&2',
+    '    exit 1',
+    'fi',
+    // 原子打开:O_NOFOLLOW 拒绝符号链接(ELOOP),O_NONBLOCK 让 FIFO
+    // 立即失败而不是挂起。count 按清单大小封顶,字符设备(如 /dev/zero)
+    // 也只会读 预期大小+2MiB,随后的大小/哈希校验兜底。
+    'CAP=$(( ($3 / 1048576) + 2 ))',
+    'dd if="$2" of="$TMP/update.deb" iflag=nofollow,nonblock bs=1048576 count="$CAP" 2>/dev/null',
+    'WRITTEN=$(stat -c %s "$TMP/update.deb")',
+    'if [ "$WRITTEN" != "$3" ]; then',
+    '    echo "size mismatch: expected $3 got $WRITTEN" >&2',
+    '    exit 1',
+    'fi',
+    `ACTUAL=$(sha256sum "$TMP/update.deb" | awk "{print \\$1}")`,
+    'if [ "$ACTUAL" != "$1" ]; then',
+    '    echo "sha256 mismatch: expected $1 got $ACTUAL" >&2',
+    '    exit 1',
+    'fi',
+    // 走到这里说明授权已拿到、副本已校验。先告诉外层 shell(再由它通知应用退出),
+    // 然后阻塞读 stdin 等外层确认应用已退出。读到 EOF 或别的内容(外层被杀、应用
+    // 没退出成)就不安装,直接退出——此时什么都没改。
+    `echo ${LINUX_UPDATE_AUTHORIZED_MARKER}`,
+    'IFS= read -r GO || exit 75',
+    'if [ "$GO" != go ]; then',
+    '    exit 75',
+    'fi',
+    'exec </dev/null',
+    'if [ -x /usr/bin/apt-get ]; then',
+    '    apt-get install --yes --allow-downgrades "$TMP/update.deb"',
+    'elif [ -x /usr/bin/dpkg ]; then',
+    '    dpkg --install "$TMP/update.deb"',
+    'else',
+    '    exit 127',
+    'fi\'',
+    '',
+    // 授权通道:pkexec 会关掉 3 号以上的 fd,只能用 stdin/stdout。两条 FIFO 放在
+    // 本用户 0700 私有目录里;双方打开后立即删目录,root 从不按路径打开它们。
+    // 打开顺序与子进程一致(先 go 后 out),FIFO 的阻塞式 open 不会互等。
+    `CHAN=$(mktemp -d "\${TMPDIR:-/tmp}/cindy-auth.XXXXXX") || { echo "[$(date)] FATAL: cannot create authorization channel; Cindy keeps running" >> ${qLog}; exit ${LINUX_UPDATE_PREAUTH_EXIT.channelSetupFailed}; }`,
+    `if ! mkfifo -m 600 "$CHAN/go" "$CHAN/out"; then`,
+    '    rm -rf "$CHAN"',
+    `    echo "[$(date)] FATAL: cannot create authorization channel; Cindy keeps running" >> ${qLog}`,
+    `    exit ${LINUX_UPDATE_PREAUTH_EXIT.channelSetupFailed}`,
+    'fi',
+    `echo "[$(date)] requesting administrator authorization via pkexec" >> ${qLog}`,
+    `"$PKEXEC" /bin/bash -c "$ELEVATED" bash ${qSha} ${qDeb} ${sizeBytes} < "$CHAN/go" > "$CHAN/out" 2>> ${qLog} &`,
+    'INSTALL_PID=$!',
+    `echo "$INSTALL_PID" > "$INSTALL_PID_FILE"`,
+    'exec 4> "$CHAN/go"',
+    'exec 5< "$CHAN/out"',
+    'rm -rf "$CHAN"',
+    'AUTHORIZED=0',
+    'while IFS= read -r LINE <&5; do',
+    `    if [ "$LINE" = ${LINUX_UPDATE_AUTHORIZED_MARKER} ]; then`,
+    '        AUTHORIZED=1',
+    '        break',
+    '    fi',
+    `    printf '%s\\n' "$LINE" >> ${qLog}`,
+    'done',
+    'if [ "$AUTHORIZED" -ne 1 ]; then',
+    '    exec 4>&-',
+    '    wait "$INSTALL_PID"',
+    '    AUTH_EXIT=$?',
+    '    rm -f "$INSTALL_PID_FILE"',
+    // pkexec:126 = 对话框被取消,127 = 未授权 / 没有认证代理(没有图形会话);
+    // >128 = 被信号结束(例如超时)。其余非零是提权后的校验拒绝了安装包。
+    '    if [ "$AUTH_EXIT" -eq 126 ] || [ "$AUTH_EXIT" -eq 127 ] || [ "$AUTH_EXIT" -gt 128 ]; then',
+    `        echo "[$(date)] authorization not granted (pkexec exit $AUTH_EXIT) — Cindy keeps running, nothing installed" >> ${qLog}`,
+    `        exit ${LINUX_UPDATE_PREAUTH_EXIT.authorizationNotGranted}`,
+    '    fi',
+    `    echo "[$(date)] elevated check rejected the staged package (exit $AUTH_EXIT) — Cindy keeps running, nothing installed" >> ${qLog}`,
+    `    exit ${LINUX_UPDATE_PREAUTH_EXIT.stagedDebRejected}`,
+    'fi',
+    // 授权之后 root 的输出照常进日志;排水进程必须关掉 4 号 fd,否则外层意外退出时
+    // root 读不到 EOF,会一直等下去、让心跳永远持锁。
+    `cat <&5 4>&- >> ${qLog} 2>/dev/null &`,
+    'exec 5<&-',
+    `echo "[$(date)] authorization granted — asking Cindy to exit" >> ${qLog}`,
+    // 应用可能已经不在(崩溃 / 用户退出):忽略 SIGPIPE,继续照常安装并拉起。
+    `( trap '' PIPE; printf '%s\\n' ${LINUX_UPDATE_AUTHORIZED_MARKER} ) 2>/dev/null`,
+    'exec 1>/dev/null',
+    '',
+    ...waitForAppExit,
+    `echo "[$(date)] starting elevated install" >> ${qLog}`,
+    // root 若已提前退出,写 go 会触发 SIGPIPE;忽略它,下面的 wait 拿到非零退出码,
+    // 走「安装失败 → 拉起旧版本」。
+    `( trap '' PIPE; printf 'go\\n' >&4 ) 2>/dev/null`,
+    'exec 4>&-',
+  ];
+
   return [
     '#!/bin/bash',
     'set -u',
@@ -233,89 +408,7 @@ export function buildLinuxUpdateScript(params: LinuxUpdateScriptParams): string 
     '}',
     'trap cleanup EXIT',
     '',
-    `echo "[$(date)] Update script started, waiting for PID ${pid}" >> ${qLog}`,
-    `printf '[%s] deb=%s exe=%s\\n' "$(date)" ${qDeb} ${qExe} >> ${qLog}`,
-    '',
-    'WAITED=0',
-    `while kill -0 ${pid} 2>/dev/null; do`,
-    '    sleep 1',
-    '    WAITED=$((WAITED+1))',
-    `    if [ "$WAITED" -eq ${t.exitKillAfterSeconds} ]; then`,
-    `        echo "[$(date)] PID ${pid} still alive after ${t.exitKillAfterSeconds}s — exit appears hung, sending SIGKILL" >> ${qLog}`,
-    `        kill -9 ${pid} 2>/dev/null`,
-    '    fi',
-    `    if [ "$WAITED" -ge ${t.exitAbortAfterSeconds} ]; then`,
-    `        echo "[$(date)] FATAL: PID ${pid} survived SIGKILL — aborting update" >> ${qLog}`,
-    '        exit 1',
-    '    fi',
-    'done',
-    `echo "[$(date)] Process ${pid} exited, waiting for filesystem to settle" >> ${qLog}`,
-    'sleep 2',
-    '',
-    ...(userInstallation ? [
-      // Source is embedded in the packaged application, never loaded
-      // from a mutable external helper or a pinned system Node installation.
-      `INSTALLER=${shellSingleQuote(userInstallerSource)}`,
-      `bash -c "$INSTALLER" cindy-user-install --apply ${qDeb} ${qSha} ${sizeBytes} ${shellSingleQuote(userInstallation.prefix)} ${shellSingleQuote(userInstallation.version)} ${shellSingleQuote(userInstallation.region)} ${shellSingleQuote(userInstallation.current)} >> ${qLog} 2>&1 &`,
-    ] : [
-    'PKEXEC=/usr/bin/pkexec',
-    'if [ ! -x "$PKEXEC" ]; then',
-    '    PKEXEC=$(command -v pkexec 2>/dev/null || true)',
-    'fi',
-    'if [ -z "$PKEXEC" ] || [ ! -x "$PKEXEC" ]; then',
-    `    echo "[$(date)] FATAL: pkexec not found — cannot install .deb" >> ${qLog}`,
-    '    relaunch_app',
-    '    exit 1',
-    'fi',
-    '',
-    `if [ ! -f ${qDeb} ]; then`,
-    `    echo "[$(date)] FATAL: staged .deb missing before install" >> ${qLog}`,
-    '    relaunch_app',
-    '    exit 1',
-    'fi',
-    // 提权边界校验:整个「复制 → 哈希 → 安装」都在同一个 root shell 里完成。
-    // .deb 先拷进 root 自有的 0700 临时目录,哈希与安装读的是同一份 root 所有
-    // 的副本,用户侧进程无法在哈希后换包;期望摘要与路径经 argv 传入。
-    // 提权 shell 只写 stdout/stderr,由外层用户 shell 重定向到日志——
-    // root 自己从不打开用户可替换的日志路径(符号链接攻击面)。
-    'ELEVATED=\'set -eu',
-    'TMP=$(mktemp -d "${TMPDIR:-/tmp}/cindy-deb.XXXXXX")',
-    'chmod 700 "$TMP"',
-    'cleanup_e() { rm -rf "$TMP"; }',
-    'trap cleanup_e EXIT',
-    // 快速失败检查;权威防线是下面的 dd nofollow 原子打开。
-    'if [ -L "$2" ] || [ ! -f "$2" ]; then',
-    '    echo "staged package is not a regular file" >&2',
-    '    exit 1',
-    'fi',
-    // 原子打开:O_NOFOLLOW 拒绝符号链接(ELOOP),O_NONBLOCK 让 FIFO
-    // 立即失败而不是挂起。count 按清单大小封顶,字符设备(如 /dev/zero)
-    // 也只会读 预期大小+2MiB,随后的大小/哈希校验兜底。
-    'CAP=$(( ($3 / 1048576) + 2 ))',
-    'dd if="$2" of="$TMP/update.deb" iflag=nofollow,nonblock bs=1048576 count="$CAP" 2>/dev/null',
-    'WRITTEN=$(stat -c %s "$TMP/update.deb")',
-    'if [ "$WRITTEN" != "$3" ]; then',
-    '    echo "size mismatch: expected $3 got $WRITTEN" >&2',
-    '    exit 1',
-    'fi',
-    `ACTUAL=$(sha256sum "$TMP/update.deb" | awk "{print \\$1}")`,
-    'if [ "$ACTUAL" != "$1" ]; then',
-    '    echo "sha256 mismatch: expected $1 got $ACTUAL" >&2',
-    '    exit 1',
-    'fi',
-    'if [ -x /usr/bin/apt-get ]; then',
-    '    apt-get install --yes --allow-downgrades "$TMP/update.deb"',
-    'elif [ -x /usr/bin/dpkg ]; then',
-    '    dpkg --install "$TMP/update.deb"',
-    'else',
-    '    exit 127',
-    'fi\'',
-    '',
-    `echo "[$(date)] invoking elevated installer via pkexec" >> ${qLog}`,
-    `"$PKEXEC" /bin/bash -c "$ELEVATED" bash ${qSha} ${qDeb} ${sizeBytes} >> ${qLog} 2>&1 &`,
-    ]),
-    'INSTALL_PID=$!',
-    `echo "$INSTALL_PID" > "$INSTALL_PID_FILE"`,
+    ...(userInstallation ? userInstallBody(userInstallation) : debInstallBody()),
     'wait "$INSTALL_PID"',
     'INSTALL_EXIT=$?',
     'rm -f "$INSTALL_PID_FILE"',

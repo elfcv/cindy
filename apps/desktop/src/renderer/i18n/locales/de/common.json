@@ -10808,6 +10808,12 @@
       "retry": "Erneut prüfen",
       "later": "Später"
     },
+    "linuxAuthorization": {
+      "title": "Zum Aktualisieren ist das Administratorpasswort nötig",
+      "description": "Für die Installation dieses Updates muss auf diesem Computer ein Administratorpasswort eingegeben werden. Die Passwortabfrage wurde abgebrochen, ist abgelaufen oder konnte nicht angezeigt werden, daher wurde nichts installiert. {{appName}} läuft weiter mit der aktuellen Version, und das heruntergeladene Update wurde beibehalten. Versuche es erneut, wenn du an diesem Computer bist.",
+      "retry": "Erneut versuchen",
+      "later": "Später"
+    },
     "windowsRuntimeMissing": {
       "title": "Microsoft Visual C++ Runtime erforderlich",
       "description": "Auf diesem PC fehlt die vom Updater benötigte Microsoft Visual C++ Runtime. Das heruntergeladene Update bleibt erhalten. Installiere die offizielle x64 Runtime von Microsoft und prüfe dann erneut.",
@@ -10842,6 +10848,7 @@
         "notRestarted": "Das Update wurde heruntergeladen, aber {{appName}} wurde nicht neu gestartet (zum Beispiel, weil du dich abgemeldet oder das Konto gewechselt hast).",
         "notReady": "Das heruntergeladene Update ist nicht mehr verfügbar.",
         "updaterNotStarted": "Der Updater wurde nicht gestartet, daher wurde {{appName}} nicht neu gestartet.",
+        "linuxAuthorizationRequired": "Für die Installation muss auf diesem Computer ein Administratorpasswort eingegeben werden. Das ist nicht geschehen, daher läuft {{appName}} weiter mit der aktuellen Version.",
         "unsupported": "Diese Installation unterstützt keine Updates innerhalb der App.",
         "generic": "Bei der Installation ist etwas schiefgelaufen.",
         "relaunchInProgress": "{{appName}} wurde bereits für ein Update über die Einstellungen oder die automatische Installation bei Inaktivität neu gestartet. Daher hat diese Anfrage keine separate Installation ausgelöst."

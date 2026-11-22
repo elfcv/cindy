@@ -54,6 +54,7 @@ const FAILURE_REASON_KEYS: Record<string, string> = {
   updater_spawn_failed: 'updaterNotStarted',
   unsupported: 'unsupported',
   linux_installation_unsupported: 'unsupported',
+  linux_authorization_required: 'linuxAuthorizationRequired',
   windows_vc_runtime_missing: 'unsupported',
 };
 

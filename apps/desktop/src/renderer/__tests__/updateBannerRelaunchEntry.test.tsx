@@ -189,6 +189,27 @@ describe('UpdateBanner relaunch entry', () => {
     document.documentElement.classList.remove('dark');
   });
 
+  // 伙伴复盘 22:Linux 管理员密码框被取消 / 超时 / 弹不出时,主进程不退出、保留补丁并回报
+  // linux_authorization_required。横幅要说明原因;「重试」照常先查进行中的任务再重启,「稍后」不重启。
+  it.each([
+    { action: 'update.linuxAuthorization.retry', relaunches: true },
+    { action: 'update.linuxAuthorization.later', relaunches: false },
+  ])('explains a declined Linux password prompt and $action', async ({ action, relaunches }) => {
+    updateStatus.current.errorCode = 'linux_authorization_required';
+    anyActivityBlockingRelaunch.mockResolvedValue(false);
+    render(<UpdateBanner isCollapsed={false} />);
+    await screen.findByText('update.linuxAuthorization.title');
+    fireEvent.click(screen.getByRole('button', { name: action }));
+    await waitFor(() => expect(screen.queryByText('update.linuxAuthorization.title')).toBeNull());
+    if (relaunches) {
+      await waitFor(() => expect(relaunchToUpdate).toHaveBeenCalledTimes(1));
+      expect(anyActivityBlockingRelaunch).toHaveBeenCalledTimes(1);
+    } else {
+      await Promise.resolve();
+      expect(relaunchToUpdate).not.toHaveBeenCalled();
+    }
+  });
+
   it('prompts for the VC++ Runtime, keeps the banner, and rechecks on demand', async () => {
     updateStatus.current = {
       status: 'ready',

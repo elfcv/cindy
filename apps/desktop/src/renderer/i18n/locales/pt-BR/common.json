@@ -10890,6 +10890,12 @@
       "retry": "Verificar novamente",
       "later": "Mais tarde"
     },
+    "linuxAuthorization": {
+      "title": "Senha de administrador necessária para atualizar",
+      "description": "Para instalar esta atualização, é preciso digitar uma senha de administrador neste computador. A solicitação de senha foi cancelada, expirou ou não pôde ser exibida, então nada foi instalado. {{appName}} continua funcionando na versão atual e a atualização baixada foi mantida. Tente novamente quando estiver neste computador.",
+      "retry": "Tentar novamente",
+      "later": "Mais tarde"
+    },
     "windowsRuntimeMissing": {
       "title": "Microsoft Visual C++ Runtime necessário",
       "description": "Este PC não tem o Microsoft Visual C++ Runtime exigido pelo atualizador. A atualização baixada será mantida. Instale o Runtime x64 oficial da Microsoft e verifique novamente.",
@@ -10924,6 +10930,7 @@
         "notRestarted": "A atualização foi baixada, mas {{appName}} não reiniciou (por exemplo, você saiu ou trocou de conta).",
         "notReady": "A atualização baixada não está mais disponível.",
         "updaterNotStarted": "O atualizador não iniciou, então {{appName}} não reiniciou.",
+        "linuxAuthorizationRequired": "Para instalar a atualização, é preciso digitar uma senha de administrador neste computador, o que não aconteceu, então {{appName}} continua funcionando na versão atual.",
         "unsupported": "Esta instalação não oferece suporte a atualizações pelo aplicativo.",
         "generic": "Algo deu errado durante a instalação.",
         "relaunchInProgress": "{{appName}} já estava reiniciando para instalar uma atualização pelas Configurações ou pela instalação automática durante a inatividade, então esta solicitação não fez uma instalação separada."

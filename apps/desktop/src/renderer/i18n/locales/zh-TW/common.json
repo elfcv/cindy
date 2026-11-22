@@ -10765,6 +10765,12 @@
       "retry": "重新檢查",
       "later": "稍後"
     },
+    "linuxAuthorization": {
+      "title": "需要管理員密碼才能更新",
+      "description": "安裝這次更新需要在這台電腦上輸入管理員密碼。密碼框被取消、逾時或沒能彈出，所以沒有安裝任何內容。{{appName}} 仍在目前版本正常執行，已下載的更新也已保留。回到這台電腦前再試一次即可。",
+      "retry": "重試",
+      "later": "稍後"
+    },
     "windowsRuntimeMissing": {
       "title": "需要安裝 Microsoft Visual C++ 執行階段",
       "description": "這台電腦缺少更新程式所需的 Microsoft Visual C++ 執行階段。已下載的更新套件會保留；請安裝 Microsoft 官方 x64 執行階段後重新檢查。",
@@ -10799,6 +10805,7 @@
         "notRestarted": "更新已下載，但 {{appName}} 沒有重新啟動（例如期間登出或切換了帳號）。",
         "notReady": "已下載的更新不再可用。",
         "updaterNotStarted": "更新器沒有啟動，{{appName}} 未重新啟動。",
+        "linuxAuthorizationRequired": "安裝更新需要在這台電腦上輸入管理員密碼，但沒有輸入，{{appName}} 仍在目前版本執行。",
         "unsupported": "目前的安裝環境不支援應用程式內更新。",
         "generic": "安裝過程中發生錯誤。",
         "relaunchInProgress": "{{appName}} 已經在透過設定頁或閒置自動安裝重新啟動更新，這次請求沒有另外安裝。"

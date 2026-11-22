@@ -10808,6 +10808,12 @@
       "retry": "Check again",
       "later": "Later"
     },
+    "linuxAuthorization": {
+      "title": "Administrator password needed to update",
+      "description": "Installing this update needs an administrator password entered on this computer. The password prompt was cancelled, timed out, or could not be shown, so nothing was installed. {{appName}} kept running on the current version and the downloaded update has been kept. Try again when you're at this computer.",
+      "retry": "Try again",
+      "later": "Later"
+    },
     "windowsRuntimeMissing": {
       "title": "Microsoft Visual C++ Runtime Required",
       "description": "This PC is missing the Microsoft Visual C++ Runtime required by the updater. The downloaded update will be kept. Install Microsoft's official x64 Runtime, then check again.",
@@ -10842,6 +10848,7 @@
         "notRestarted": "The update was downloaded but {{appName}} did not restart (for example, you signed out or switched accounts).",
         "notReady": "The downloaded update is no longer available.",
         "updaterNotStarted": "The updater did not start, so {{appName}} did not restart.",
+        "linuxAuthorizationRequired": "Installing the update needs an administrator password entered on this computer, which was not provided, so {{appName}} kept running on the current version.",
         "unsupported": "This installation does not support in-app updates.",
         "generic": "Something went wrong during installation.",
         "relaunchInProgress": "{{appName}} was already restarting to install an update from Settings or idle auto-install, so this request did not install separately."

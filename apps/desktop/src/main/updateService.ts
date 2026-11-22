@@ -23,7 +23,7 @@
 import { app, BrowserWindow, ipcMain, powerMonitor } from 'electron';
 import path from 'node:path';
 import fs from 'node:fs';
-import { spawn } from 'node:child_process';
+import { spawn, type ChildProcess } from 'node:child_process';
 import { isCindyPersonalRuntime } from './cindy-make/versionRuntimeIdentity.js';
 import os from 'node:os';
 
@@ -81,7 +81,13 @@ import {
 import { throwIpcError } from './utils/ipcValidate';
 import { noteExpectedExit } from './startup-diagnostics';
 import { buildMacOSUpdateScript } from './updateScriptMacOS';
-import { buildLinuxUpdateScript, linuxRelaunchDisplayArgs, normalizeLinuxDebSha256 } from './updateScriptLinux';
+import {
+  buildLinuxUpdateScript,
+  LINUX_UPDATE_AUTHORIZED_MARKER,
+  LINUX_UPDATE_PREAUTH_EXIT,
+  linuxRelaunchDisplayArgs,
+  normalizeLinuxDebSha256,
+} from './updateScriptLinux';
 import {
   checkDebianManagedInstallation,
   findLinuxUserInstallation,
@@ -1925,8 +1931,9 @@ function executeUpdateLinux(debPath: string, installation: LinuxUserInstallation
     }
     // Count the attempt only after the recheck confirms we will launch.
     // Incrementing earlier let three transient recheck failures burn the
-    // staged .deb on the next startup.
-    incrementApplyAttempts();
+    // staged .deb on the next startup. The pkexec path counts it once
+    // authorization is granted: a declined password prompt never restarts.
+    if (installation) incrementApplyAttempts();
     script = buildLinuxUpdateScript({
       pid, debPath, sha256, sizeBytes, exePath, lockFilePath, logPath,
       userInstallation: installation ? { ...installation, version: readyVersion! } : undefined,
@@ -1956,9 +1963,11 @@ function executeUpdateLinux(debPath: string, installation: LinuxUserInstallation
 
   // 脚本不落盘:内容经 argv 传给 bash -c,同一用户进程没有可替换的
   // 目录项,也就不能借 pkexec 授权执行自己的内容。
+  // pkexec 路径先在应用仍运行时拿管理员授权,授权结果经脚本 stdout 回报。
+  const needsElevation = installation === null;
   const child = spawn('/bin/bash', ['-c', script, 'cindy-linux-update'], {
     detached: true,
-    stdio: 'ignore',
+    stdio: needsElevation ? ['ignore', 'pipe', 'ignore'] : 'ignore',
   });
 
   // 三个终态里只有第一个赢。超时 / error 之后再收到迟到的 spawn 事件,
@@ -1984,6 +1993,10 @@ function executeUpdateLinux(debPath: string, installation: LinuxUserInstallation
     if (settled) return;
     settled = true;
     clearTimeout(spawnTimeout);
+    if (needsElevation) {
+      awaitLinuxElevatedAuthorization(child, clearPrecreatedLock);
+      return;
+    }
     child.unref();
     forceQuit();
   });
@@ -1996,6 +2009,97 @@ function executeUpdateLinux(debPath: string, installation: LinuxUserInstallation
     clearPrecreatedLock();
     handleApplyFailure(err.code ?? 'unknown');
   });
+}
+
+/**
+ * How long the app keeps running while the polkit password prompt waits.
+ * Nobody at the computer (a remote or phone-initiated update) must not hold
+ * the app in "restarting" until the agent itself gives up.
+ */
+export const LINUX_UPDATE_AUTHORIZATION_TIMEOUT_MS = 3 * 60 * 1000;
+
+/**
+ * pkexec path: the update script requests authorization while this process is
+ * still running and prints the authorized marker only after the elevated shell
+ * has started and verified the staged .deb. Exit only then. If the script ends
+ * first (dismissed, no authentication agent, rejected package) or the prompt
+ * outlives the timeout, keep running on the current version.
+ */
+function awaitLinuxElevatedAuthorization(child: ChildProcess, clearPrecreatedLock: () => void): void {
+  log.info(
+    'Linux update: waiting up to %d s for administrator authorization before exiting',
+    LINUX_UPDATE_AUTHORIZATION_TIMEOUT_MS / 1000,
+  );
+  // A retry after a declined prompt: drop the stale notice while the new prompt waits.
+  if (lastErrorCode === 'linux_authorization_required') {
+    setStatus('ready', { version: readyVersion ?? undefined });
+  }
+  let decided = false;
+  let output = '';
+  const decide = (): boolean => {
+    if (decided) return false;
+    decided = true;
+    clearTimeout(authTimeout);
+    return true;
+  };
+  const authTimeout = setTimeout(() => {
+    if (!decide()) return;
+    log.warn('Linux update: administrator authorization not granted within %d s; Cindy keeps running',
+      LINUX_UPDATE_AUTHORIZATION_TIMEOUT_MS / 1000);
+    // SIGKILL the whole group: the script, its heartbeat and a still-waiting
+    // pkexec are all owned by this user. An elevated shell that was authorized
+    // at this instant cannot be signalled, but it installs only after reading
+    // "go" from the script, which is now dead, so it exits without installing.
+    // Nothing can be replacing files while this process is alive, so the lock
+    // is safe to drop.
+    if (child.pid !== undefined) {
+      try { process.kill(-child.pid, 'SIGKILL'); } catch { /* already gone */ }
+    }
+    clearPrecreatedLock();
+    try { fs.unlinkSync(`${getUpdateLockPath()}.install`); } catch { /* ignore */ }
+    handleLinuxAuthorizationNotGranted();
+  }, LINUX_UPDATE_AUTHORIZATION_TIMEOUT_MS);
+
+  child.stdout?.on('data', (chunk: Buffer) => {
+    if (decided) return;
+    output = (output + chunk.toString('utf8')).slice(-1024);
+    if (!output.split('\n').slice(0, -1).includes(LINUX_UPDATE_AUTHORIZED_MARKER)) return;
+    decide();
+    log.info('Linux update: administrator authorization granted, exiting for install');
+    incrementApplyAttempts();
+    child.unref();
+    forceQuit();
+  });
+
+  child.on('exit', (code, signal) => {
+    if (!decide()) return;
+    if (code === LINUX_UPDATE_PREAUTH_EXIT.authorizationNotGranted) {
+      log.warn('Linux update: administrator authorization was not granted; Cindy keeps running');
+      handleLinuxAuthorizationNotGranted();
+      return;
+    }
+    log.error('Linux update script ended before authorization (code=%s signal=%s); Cindy keeps running',
+      code, signal);
+    clearPrecreatedLock();
+    handleApplyFailure(`linux_preauth_exit_${code ?? signal ?? 'unknown'}`);
+  });
+}
+
+/**
+ * The password prompt was dismissed, timed out, or could not be shown (no
+ * graphical session / authentication agent). Nothing was installed and this
+ * process never exited: release the restart fence, keep the verified .deb
+ * staged, and tell the user the update needs the password on this computer.
+ */
+function handleLinuxAuthorizationNotGranted(): void {
+  cancelStartupBinaryUpdateCheck?.();
+  cancelStartupBinaryUpdateCheck = undefined;
+  isRelaunching = false;
+  autoRelaunchInProgress = false;
+  void clearSubagentLaunchFence().catch((err: unknown) => {
+    log.error('clearing the Subagent launch fence after a declined Linux authorization failed: %s', String(err));
+  });
+  setStatus('ready', { version: readyVersion ?? undefined, errorCode: 'linux_authorization_required' });
 }
 
 interface RelaunchOptions {

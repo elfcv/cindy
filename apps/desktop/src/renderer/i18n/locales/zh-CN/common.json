@@ -10765,6 +10765,12 @@
       "retry": "重新检查",
       "later": "稍后"
     },
+    "linuxAuthorization": {
+      "title": "需要管理员密码才能更新",
+      "description": "安装这次更新需要在这台电脑上输入管理员密码。密码框被取消、超时或没能弹出，所以没有安装任何内容。{{appName}} 仍在当前版本正常运行，已下载的更新也已保留。回到这台电脑前再试一次即可。",
+      "retry": "重试",
+      "later": "稍后"
+    },
     "windowsRuntimeMissing": {
       "title": "需要安装 Microsoft Visual C++ 运行库",
       "description": "这台电脑缺少更新程序所需的 Microsoft Visual C++ 运行库。已下载的更新包会保留；请安装微软官方 x64 运行库后重新检查。",
@@ -10799,6 +10805,7 @@
         "notRestarted": "更新已下载，但 {{appName}} 没有重启（例如期间退出或切换了账号）。",
         "notReady": "已下载的更新不再可用。",
         "updaterNotStarted": "更新器没有启动，{{appName}} 未重启。",
+        "linuxAuthorizationRequired": "安装更新需要在这台电脑上输入管理员密码，但没有输入，{{appName}} 仍在当前版本运行。",
         "unsupported": "当前安装环境不支持应用内更新。",
         "generic": "安装过程中出现错误。",
         "relaunchInProgress": "{{appName}} 已经在通过设置页或空闲自动安装重启更新，本次请求没有另外安装。"

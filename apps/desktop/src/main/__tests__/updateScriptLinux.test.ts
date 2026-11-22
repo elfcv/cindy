@@ -8,6 +8,7 @@ import {
   buildLinuxUpdateScript,
   shellSingleQuote,
   DEFAULT_LINUX_UPDATE_SCRIPT_TIMINGS,
+  LINUX_UPDATE_PREAUTH_EXIT,
   linuxRelaunchDisplayArgs,
   type LinuxUpdateScriptParams,
 } from '../updateScriptLinux';
@@ -95,9 +96,9 @@ describe('buildLinuxUpdateScript structure', () => {
     // 只取 ELEVATED 提权段本体(到结束引号为止),外层用户 shell 的重定向不在此列。
     const elevated = script.slice(script.indexOf('ELEVATED='), script.indexOf("fi'", script.indexOf('ELEVATED=')) + 3);
     expect(elevated).not.toContain('cindy-update.log');
-    // 日志重定向由外层用户 shell 完成,提权进程只写 stdout/stderr。
+    // 日志重定向由外层用户 shell 完成,提权进程只写 stdout(授权通道)/stderr。
     expect(script).toContain(
-      `"$PKEXEC" /bin/bash -c "$ELEVATED" bash '${STAGED_SHA}' '/tmp/cindy-0.0.2-amd64.deb' ${STAGED_SIZE} >> '/tmp/cindy-update.log' 2>&1`,
+      `"$PKEXEC" /bin/bash -c "$ELEVATED" bash '${STAGED_SHA}' '/tmp/cindy-0.0.2-amd64.deb' ${STAGED_SIZE} < "$CHAN/go" > "$CHAN/out" 2>> '/tmp/cindy-update.log' &`,
     );
   });
 
@@ -120,7 +121,7 @@ describe('buildLinuxUpdateScript structure', () => {
     expect(elevated).toContain('dd if="$2" of="$TMP/update.deb" iflag=nofollow,nonblock');
     expect(elevated).toContain('if [ "$WRITTEN" != "$3" ]; then');
     expect(script).toContain(
-      `"$PKEXEC" /bin/bash -c "$ELEVATED" bash '${STAGED_SHA}' '/tmp/cindy-0.0.2-amd64.deb' ${STAGED_SIZE} >> '/tmp/cindy-update.log' 2>&1`,
+      `"$PKEXEC" /bin/bash -c "$ELEVATED" bash '${STAGED_SHA}' '/tmp/cindy-0.0.2-amd64.deb' ${STAGED_SIZE} < "$CHAN/go" > "$CHAN/out" 2>> '/tmp/cindy-update.log' &`,
     );
   });
 
@@ -168,6 +169,48 @@ describe('buildLinuxUpdateScript structure', () => {
     const logIdx = script.indexOf("Update script started");
     expect(lockIdx).toBeGreaterThan(-1);
     expect(logIdx).toBeGreaterThan(lockIdx);
+  });
+
+  // 2026-11-22 伙伴复盘 22:旧脚本先等应用退出再调 pkexec,没人输密码时应用停机 8 分钟。
+  // 协议:授权(以及提权侧的大小/哈希校验)在应用仍运行时完成,标记行经 stdout 交给应用,
+  // 应用退出后脚本才向提权 shell 发 go。顺序一旦倒回去,停机问题就回来了。
+  it('asks for authorization while the app runs and installs only after it has exited', () => {
+    const pkexecIdx = script.indexOf('"$PKEXEC" /bin/bash');
+    const notifyIdx = script.indexOf("printf '%s\\n' CINDY_UPDATE_AUTHORIZED");
+    const waitIdx = script.indexOf('while kill -0 12345');
+    const goIdx = script.indexOf("printf 'go\\n' >&4");
+    expect(pkexecIdx).toBeGreaterThan(-1);
+    expect(notifyIdx).toBeGreaterThan(pkexecIdx);
+    expect(waitIdx).toBeGreaterThan(notifyIdx);
+    expect(goIdx).toBeGreaterThan(waitIdx);
+    // 提权侧:校验通过才宣告授权,读到 go 才安装;EOF(外层已死)直接退出不装。
+    const elevated = script.slice(script.indexOf('ELEVATED='), script.indexOf('"$PKEXEC" /bin/bash'));
+    const hashIdx = elevated.indexOf('if [ "$ACTUAL" != "$1" ]');
+    const markerIdx = elevated.indexOf('echo CINDY_UPDATE_AUTHORIZED');
+    const readIdx = elevated.indexOf('IFS= read -r GO || exit 75');
+    expect(markerIdx).toBeGreaterThan(hashIdx);
+    expect(readIdx).toBeGreaterThan(markerIdx);
+    expect(elevated.indexOf('apt-get install')).toBeGreaterThan(readIdx);
+    // 排水进程不能持有 go 的写端,否则外层意外退出后 root 永远等不到 EOF。
+    expect(script).toContain('cat <&5 4>&- >>');
+  });
+
+  it('never relaunches or touches the running app before authorization', () => {
+    // 授权前任何失败都只退出脚本:应用还在运行,再拉起一个会撞上单实例或重复运行。
+    const preAuth = script.slice(script.indexOf('Update script started'), script.indexOf("printf '%s\\n' CINDY_UPDATE_AUTHORIZED"));
+    expect(preAuth).not.toContain('relaunch_app');
+    expect(preAuth).not.toContain('kill -9');
+    for (const code of Object.values(LINUX_UPDATE_PREAUTH_EXIT)) expect(preAuth).toContain(`exit ${code}`);
+    // 取消(126)、未授权或无认证代理(127)、被信号结束(>128)都归为「没拿到授权」。
+    expect(preAuth).toContain('if [ "$AUTH_EXIT" -eq 126 ] || [ "$AUTH_EXIT" -eq 127 ] || [ "$AUTH_EXIT" -gt 128 ]; then');
+  });
+
+  it('keeps the managed user install on the exit-then-install order without pkexec', () => {
+    const portable = buildLinuxUpdateScript(makeParams({
+      userInstallation: { prefix: '/home/user/Cindy', current: 'releases/1.0.0-aaa', region: 'global', version: '1.0.1' },
+    }));
+    expect(portable).not.toContain('CINDY_UPDATE_AUTHORIZED');
+    expect(portable.indexOf('while kill -0 12345')).toBeLessThan(portable.indexOf('cindy-user-install --apply'));
   });
 
   it('rejects a missing or malformed sha256 instead of installing unverified bytes', () => {

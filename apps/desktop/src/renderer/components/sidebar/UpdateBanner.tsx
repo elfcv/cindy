@@ -130,6 +130,7 @@ export function UpdateBanner({
   const [showTranslocatedDialog, setShowTranslocatedDialog] = useState(false);
   const [showWindowsRuntimeDialog, setShowWindowsRuntimeDialog] = useState(false);
   const [showLinuxInstallationDialog, setShowLinuxInstallationDialog] = useState(false);
+  const [showLinuxAuthorizationDialog, setShowLinuxAuthorizationDialog] = useState(false);
   const { t } = useTranslation();
 
   const [showSpawnFailedDialog, setShowSpawnFailedDialog] = useState(false);
@@ -144,11 +145,18 @@ export function UpdateBanner({
     status === 'ready' && errorCode === 'windows_vc_runtime_missing';
   const isLinuxInstallationUnsupported =
     status === 'ready' && errorCode === 'linux_installation_unsupported';
+  // Linux 的管理员密码框被取消、超时或弹不出来:应用没退出,补丁仍在,可以再试。
+  const isLinuxAuthorizationRequired =
+    status === 'ready' && errorCode === 'linux_authorization_required';
   const isPreparing = status === 'superseding';
 
   useEffect(() => {
     if (autoOpenPrerequisiteDialogs && isLinuxInstallationUnsupported) setShowLinuxInstallationDialog(true);
   }, [autoOpenPrerequisiteDialogs, isLinuxInstallationUnsupported]);
+
+  useEffect(() => {
+    if (autoOpenPrerequisiteDialogs && isLinuxAuthorizationRequired) setShowLinuxAuthorizationDialog(true);
+  }, [autoOpenPrerequisiteDialogs, isLinuxAuthorizationRequired]);
 
   useEffect(() => {
     if (autoOpenPrerequisiteDialogs && isWindowsRuntimeMissing) setShowWindowsRuntimeDialog(true);
@@ -403,6 +411,22 @@ export function UpdateBanner({
           onTertiary={() => {
             void probeBeforeRelaunch();
           }}
+        />
+      )}
+      {isLinuxAuthorizationRequired && (
+        <ConfirmDialog
+          open={showLinuxAuthorizationDialog}
+          onOpenChange={setShowLinuxAuthorizationDialog}
+          title={t('update.linuxAuthorization.title')}
+          description={t('update.linuxAuthorization.description')}
+          confirmText={t('update.linuxAuthorization.retry')}
+          cancelText={t('update.linuxAuthorization.later')}
+          autoFocusConfirm
+          onConfirm={() => {
+            setShowLinuxAuthorizationDialog(false);
+            void probeBeforeRelaunch();
+          }}
+          onCancel={() => setShowLinuxAuthorizationDialog(false)}
         />
       )}
       {isWindowsRuntimeMissing && (

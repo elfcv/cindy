@@ -10890,6 +10890,12 @@
       "retry": "Verificar novamente",
       "later": "Mais tarde"
     },
+    "linuxAuthorization": {
+      "title": "É necessária a palavra-passe de administrador para atualizar",
+      "description": "Para instalar esta atualização, é necessário introduzir uma palavra-passe de administrador neste computador. O pedido de palavra-passe foi cancelado, expirou ou não pôde ser apresentado, pelo que nada foi instalado. A {{appName}} continua a funcionar na versão atual e a atualização transferida foi mantida. Tente novamente quando estiver junto deste computador.",
+      "retry": "Tentar novamente",
+      "later": "Mais tarde"
+    },
     "windowsRuntimeMissing": {
       "title": "Microsoft Visual C++ Runtime necessário",
       "description": "Este PC não tem o Microsoft Visual C++ Runtime necessário para o atualizador. A atualização transferida será mantida. Instale o Runtime x64 oficial da Microsoft e volte a verificar.",
@@ -10924,6 +10930,7 @@
         "notRestarted": "A atualização foi transferida, mas {{appName}} não reiniciou (por exemplo, porque terminou sessão ou mudou de conta).",
         "notReady": "A atualização transferida já não está disponível.",
         "updaterNotStarted": "O atualizador não iniciou, pelo que {{appName}} não reiniciou.",
+        "linuxAuthorizationRequired": "Para instalar a atualização, é necessário introduzir uma palavra-passe de administrador neste computador, o que não aconteceu, pelo que a {{appName}} continua a funcionar na versão atual.",
         "unsupported": "Esta instalação não suporta atualizações na aplicação.",
         "generic": "Ocorreu um erro durante a instalação.",
         "relaunchInProgress": "{{appName}} já estava a reiniciar para instalar uma atualização a partir das Definições ou da instalação automática em inatividade, pelo que este pedido não efetuou uma instalação separada."
