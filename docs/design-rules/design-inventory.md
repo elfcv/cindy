@@ -178,6 +178,7 @@
 | apps/mobile/app/_layout.tsx | layout; visible mounted feedback is a separate overlay surface |
 | apps/mobile/app/automations/[deviceId].tsx | legacy automation link redirect; no screen |
 | apps/mobile/app/group-execution-preview.tsx | MOBILE_VISUAL_MOCK_ENABLED group execution fixture; not production UI |
+| apps/mobile/app/group-settings-preview.tsx | MOBILE_VISUAL_MOCK_ENABLED direct group settings fixture; not production UI |
 | apps/mobile/app/listperf.tsx | __DEV__ list performance harness; not production UI |
 | apps/mobile/app/plugin-management-preview.tsx | gated plugin settings visual fixture; not production UI |
 | apps/mobile/app/plugin-preview-regression.tsx | MOBILE_VISUAL_MOCK_ENABLED card preview fixture; not production UI |

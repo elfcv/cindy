@@ -1604,6 +1604,7 @@ export function mobileRouteCoverage(repoRoot, catalog = mobileCatalogSurfaces())
   const mockPreviews = new Map([
     ['splash-preview.tsx', 'MOBILE_VISUAL_MOCK_ENABLED preview; not production UI'],
     ['group-execution-preview.tsx', 'MOBILE_VISUAL_MOCK_ENABLED group execution fixture; not production UI'],
+    ['group-settings-preview.tsx', 'MOBILE_VISUAL_MOCK_ENABLED direct group settings fixture; not production UI'],
     ['plugin-preview-regression.tsx', 'MOBILE_VISUAL_MOCK_ENABLED card preview fixture; not production UI'],
     ['retro-skin-preview.tsx', 'MOBILE_VISUAL_MOCK_ENABLED folded remote desktop skin fixture'],
   ]);
