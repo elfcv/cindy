@@ -1,0 +1,2 @@
+<node index="40" text="" resource-id="botGroup.avatarMention.qa-check" class="android.view.ViewGroup" content-desc="核对伙伴" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" bounds="[42,809][116,882]" />
+<node index="55" text="" resource-id="botGroup.avatarMention.qa-research" class="android.view.ViewGroup" content-desc="资料伙伴" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" bounds="[42,1941][116,2015]" />
