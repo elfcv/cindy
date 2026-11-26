@@ -1,0 +1,5 @@
+A-swipe-right try1: focus=[] said=[]
+A-swipe-right try2: focus=[] said=[]
+A-swipe-right try3: focus=[] said=[]
+A-swipe-left try1: focus=[] said=[]
+A-swipe-left try2: focus=[] said=[]
