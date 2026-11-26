@@ -1,0 +1,7 @@
+cycle 1 collapse:mInputShown=false expand:mInputShown=true text_len=55
+cycle 2 collapse:mInputShown=false expand:mInputShown=true text_len=55
+cycle 3 collapse:mInputShown=false expand:mInputShown=true text_len=55
+cycle 4 collapse:mInputShown=false expand:mInputShown=true text_len=55
+cycle 5 collapse:mInputShown=false expand:mInputShown=true text_len=55
+cycle 6 collapse:mInputShown=false expand:mInputShown=true text_len=55
+after 6 cycles typed Z: text="AAAA teh quik brwn fox jumpd ovr and moar wrds Z"

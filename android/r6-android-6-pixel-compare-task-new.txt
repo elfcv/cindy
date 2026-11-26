@@ -1,0 +1,32 @@
+== task
+0-empty            region=(0, 2099, 1080, 2284) diff_pixels=0 bbox=None (before-a vs after-a)
+1-one-line         region=(0, 1057, 1080, 1384) diff_pixels=0 bbox=None (before-a vs after-a)
+2-grow             region=(0, 999, 1080, 1383) diff_pixels=0 bbox=None (before-a vs after-a)
+3-grow             region=(0, 999, 1080, 1383) diff_pixels=0 bbox=None (before-a vs after-a)
+4-grow             region=(0, 941, 1080, 1383) diff_pixels=0 bbox=None (before-a vs after-a)
+5-grow             region=(0, 884, 1080, 1384) diff_pixels=0 bbox=None (before-a vs after-a)
+6-grow             region=(0, 826, 1080, 1384) diff_pixels=0 bbox=None (before-a vs after-a)
+7-drag-up          region=(0, 529, 1080, 1383) diff_pixels=53153 bbox=(42, 26, 1038, 813) (before-b vs after-b)
+8-collapsed        region=(0, 2099, 1080, 2283) diff_pixels=7551 bbox=(230, 61, 824, 135) (before-a vs after-a)
+9-expanded-again   region=(0, 1041, 1080, 1383) diff_pixels=6990 bbox=(86, 100, 974, 182) (before-a vs after-a)
+10-pasted          region=(0, 999, 1080, 1383) diff_pixels=0 bbox=None (before-a vs after-a)
+== new
+0-empty            region=(42, 1968, 1038, 2284) diff_pixels=0 bbox=None (before-a vs after-a)
+1-one-line         region=(42, 1048, 1038, 1509) diff_pixels=0 bbox=None (before-a vs after-a)
+2-grow             region=(42, 993, 1038, 1509) diff_pixels=0 bbox=None (before-a vs after-a)
+3-grow             region=(42, 935, 1038, 1509) diff_pixels=0 bbox=None (before-a vs after-a)
+4-grow             region=(42, 935, 1038, 1509) diff_pixels=0 bbox=None (before-a vs after-a)
+5-grow             region=(42, 877, 1038, 1509) diff_pixels=0 bbox=None (before-a vs after-a)
+6-grow             region=(42, 819, 1038, 1509) diff_pixels=0 bbox=None (before-a vs after-a)
+7-drag-up          region=(42, 516, 1038, 1509) diff_pixels=55231 bbox=(0, 141, 996, 509) (before-a vs after-a)
+8-collapsed        region=(42, 1968, 1038, 2284) diff_pixels=0 bbox=None (before-a vs after-a)
+9-expanded-again   region=(42, 1036, 1038, 1509) diff_pixels=0 bbox=None (before-a vs after-a)
+10-pasted          region=(42, 993, 1038, 1509) diff_pixels=0 bbox=None (before-a vs after-a)
+== same build twice (after vs after2), task page
+7-drag-up          diff_pixels=76764 bbox=(42, 26, 1038, 813)
+8-collapsed        diff_pixels=0 bbox=None
+9-expanded-again   diff_pixels=0 bbox=None
+6-grow             diff_pixels=0 bbox=None
+== before vs before2 (same old build twice), task page
+8-collapsed        diff_pixels=10899 bbox=(230, 61, 826, 135)
+9-expanded-again   diff_pixels=10593 bbox=(86, 100, 974, 187)
