@@ -1,0 +1,24 @@
+Mock 108a4b5ceb, iPhone SE 3, iOS 27.2. Metro log window around the last JS stall (line 362).
+Metro does not record timestamps for these lines. Paths and identity values sanitized.
+
+  342 iOS Bundled 47ms apps/mobile/src/session/incomingShareCleanup.ts (1 module)
+  343 iOS Bundled 21ms node_modules/expo-image-manipulator/build/index.js (1 module)
+  344 iOS Bundled 22ms node_modules/expo-file-system/build/index.js (1 module)
+  345  WARN  [js-stall] JS thread stalled ~3.0s (event-loop tick gap)
+  346 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  347 iOS Bundled 136ms apps/mobile/index.js (1 module)
+  348 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  349  WARN  Require cycle: ../../packages/model-providers/src/modelMetadataLayers.ts -> ../../packages/model-providers/src/modelGeneration.ts -> ../../packages/model-providers/src/modelMetadataLayers.ts
+  350 
+  351 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+  352  WARN  Require cycle: src/session/BotGroupMessageText.tsx -> src/session/MessageRenderer.tsx -> src/session/CompanionThreads.tsx -> src/session/BotGroupMessageText.tsx
+  353 
+  354 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+  355  WARN  Deep imports from the 'react-native' package are deprecated ('react-native/Libraries/Text/requireNativeTextEffect'). Source: /Users/<local-user>/Documents/Codex/cindy-plugin-market-ios-qa/source/apps/mobile/src/session/MarkdownListParagraph.tsx 32:24
+  356 iOS Bundled 83ms apps/mobile/src/session/incomingShareNative.ts (1 module)
+  357 iOS Bundled 350ms apps/mobile/src/session/historyDiskStoreExpo.ts (1 module)
+  358 iOS Bundled 166ms apps/mobile/src/session/incomingShareCleanup.ts (1 module)
+  359  WARN  Sending `onAnimatedValueUpdate` with no listeners registered.
+  360 iOS Bundled 68ms node_modules/expo-image-manipulator/build/index.js (1 module)
+  361 iOS Bundled 47ms node_modules/expo-file-system/build/index.js (1 module)
+  362  WARN  [js-stall] JS thread stalled ~4.1s (event-loop tick gap)
