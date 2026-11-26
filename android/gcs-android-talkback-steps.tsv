@@ -1,0 +1,23 @@
+on-tab	TAB1	focus=class="android.view.ViewGroup"  description="关闭面板"	said=关闭面板 按钮 点按两次即可激活 
+on-tab	TAB2	focus=class="android.view.ViewGroup"  description="返回"	said=返回 按钮 
+on-tab	TAB3	focus=class="android.view.ViewGroup"  text="text=[没有 @ 人的时候, 大家都可以接话]	said=已收起 没有 @ 人的时候 按钮 点按两次即可激活 
+on-tab	TAB4	focus=	said=可以操作 做出手势 三指点按 即可查看 
+on-tab	TAB5	focus=class="android.view.ViewGroup"  description="群里的 Cindy"	said=已开启 群里的 Cindy 开关 
+on-tab-rerun	TAB1	focus=class="android.view.ViewGroup"  text="text=[发言方式, 自动]	box=[54,1980][1026,2115]	said=已收起 发言方式 按钮 点按两次即可激活 
+on-tab-rerun	TAB2	focus=	box=[54,1980][1026,2115]	said=可以操作 做出手势 三指点按 即可查看 
+on-tab-rerun	TAB3	focus=class="android.view.ViewGroup"  text="text=[归档群]	box=[54,2139][1026,2271]	said=归档群 按钮 点按两次即可激活 
+on-tab-rerun	TAB4	focus=class="android.view.ViewGroup"  description="关闭面板"	box=[0,1065][1077,2397]	said=关闭面板 按钮 点按两次即可激活 
+on-tab-rerun	TAB5	focus=class="android.view.ViewGroup"  description="返回"	box=[54,1128][144,1218]	said=返回 按钮 点按两次即可激活 
+on-tab-rerun	TAB6	focus=class="android.view.ViewGroup"  text="text=[没有 @ 人的时候, 大家都可以接话]	box=[54,1233][1026,1365]	said=已收起 没有 @ 人的时候 按钮 点按两次即可激活 
+on-tap	TAP	focus=	box=[54,1233][1026,1365]	said=	switch=checked="true" enabled="true" 
+offline-tab	TAB1	focus=class="android.view.ViewGroup"  description="关闭面板"	box=[0,1065][1077,2397]	said=关闭面板 按钮 点按两次即可激活 
+offline-tab	TAB2	focus=class="android.view.ViewGroup"  description="返回"	box=[54,1128][144,1218]	said=返回 按钮 
+offline-tab	TAB3	focus=	box=[54,1128][144,1218]	said=伙伴怎么接话 没有 @ 人的时候 大家都可以接话 没什么可补充的伙伴不会说话 每轮最多聊 3 圈 10 条 
+offline-tab	TAB4	focus=class="android.view.ViewGroup"  description="关闭面板"	box=[0,1065][1077,2397]	said=关闭面板 按钮 点按两次即可激活 
+offline-tab	TAB5	focus=class="android.view.ViewGroup"  description="返回"	box=[54,1128][144,1218]	said=返回 按钮 点按两次即可激活 
+offline-tab	TAB6	focus=	box=[54,1128][144,1218]	said=伙伴怎么接话 没有 @ 人的时候 大家都可以接话 没什么可补充的伙伴不会说话 每轮最多聊 3 圈 10 条 
+offline-tab	TAB7	focus=class="android.view.ViewGroup"  description="关闭面板"	box=[0,1065][1077,2397]	said=关闭面板 按钮 点按两次即可激活 
+offline-tab	TAB8	focus=class="android.view.ViewGroup"  description="返回"	box=[54,1128][144,1218]	said=返回 返回 按钮 点按两次即可激活 
+offline-tab	TAB9	focus=	box=[54,1128][144,1218]	said=伙伴怎么接话 没有 @ 人的时候 大家都可以接话 没什么可补充的伙伴不会说话 每轮最多聊 3 圈 10 条 
+offline-tab	TAB10	focus=class="android.view.ViewGroup"  description="关闭面板"	box=[0,1065][1077,2397]	said=关闭面板 按钮 点按两次即可激活 
+offline-tap	TAP	focus=	box=[0,1065][1077,2397]	said=	switch=checked="true" enabled="false" 
