@@ -1,0 +1,5 @@
+TAB1 | class="android.view.View"   | Back 按钮 底部动作条 拖动手柄 点按两次即可激活 点按两次并按住即可显示提示 可以操作 做出手势 
+TAB2 | class="android.view.ViewGroup"  text="text=[取消] | 取消 按钮 点按两次即可激活 
+TAB3 |  | 确认插件权限 Demo Vault Bridge v 1 .4 .2 安装到 Mac Studio 来自 Cindy 插件市场 demo vault bridge Node 程序可常驻后台 插件启用期间会一直运行 
+TAB4 |  | 可在本机运行随插件附带的 Node 程序 本机 Node 程序可获得 4 个已保存凭证 Node 程序可常驻后台 可在后台自动让 Agent 开始新一轮工作 
+TAB5 | class="android.view.ViewGroup"  text="text=[允许并继续] | 允许并继续 按钮 点按两次即可激活 
