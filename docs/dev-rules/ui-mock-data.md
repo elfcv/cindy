@@ -138,7 +138,7 @@ pnpm mobile:sim:whoami -- --mock --json
 
 - 群内执行：`cindy://companions/groups/execution-qa?deviceId=cindy-visual-mock-mac`；后缀 `-work`／`-talk` 查看长分工与讨论队列，`-member`／`-legacy` 查看普通成员与旧宿主的默认停止，`-peer` 查看无操作权限的群友仍可见的公共 Cindy 消息与两条独立执行。仅合成内存回执，不访问真实权限或模型。
 - 窄屏正文：`cindy://group-execution-preview?width=320&groupId=execution-qa`（`width` 可选 `393`）。复用真实群聊页，把正文容器限宽；设备窗口、系统安全区和原生导航栏仍取当前模拟器，不将它当作另一机型的整屏验收。
-- 直连群设置：`cindy://group-settings-preview?state=on`，点「群管理」查看「群里的 Cindy」；`state` 可选 `on`／`off`（管理员可改）、`offline`（断线只读）、`legacy`（服务器无此能力，不显示这一行）、`conflict`（保存遇到冲突，开关应回到原值）。挂载实际设置面板，设置只在内存里，不连接 Chat Server 或电脑。普通成员看不到「群管理」入口，不另设场景。
+- 直连群设置：`cindy://group-settings-preview?state=on`，点「群管理」查看「群里的 Cindy」；`state` 可选 `on`／`off`（管理员可改）、`offline`（断线只读）、`legacy`（服务器无此能力，不显示这一行）、`conflict`（保存遇到冲突，开关应回到原值）。挂载实际设置面板，设置只在内存里，不连接 Chat Server 或电脑。普通成员看不到「群管理」入口，不另设场景。`state=members` 打开「成员」并搜「Cindy」：群里的 Cindy 与几位同名个人伙伴（其中一位也用 Cindy 头像）和一位真人，成员按服务器形状经真实直连投影生成。
 
 ## 可复用的展示项目：Orbit Garden
 
