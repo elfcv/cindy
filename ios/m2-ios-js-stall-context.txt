@@ -1,0 +1,1221 @@
+==== m2-ios-js-stall-01 ====
+Metro mock 00daccee9b. Local receive times. Source lines 29–69. Paths, identity and credential-related data sanitized.
+Case at warning: initial launch. Most recent entry bundle: 04:50:39.747 app entry bundle.
+
+   29 2026-11-27T04:37:42.707 | (node:26750) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+   30 2026-11-27T04:37:42.707 | (Use `node --trace-warnings ...` to show where the warning was created)
+   31 2026-11-27T04:50:34.410 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+   32 2026-11-27T04:50:34.570  WARN  Attempted to import the module "<test-worktree>/node_modules/@noble/hashes/crypto.js" which is not listed in the "exports" of "<test-worktree>/node_modules/@noble/hashes" under the requested subpath "./crypto.js". Falling back to file-based resolution. Consider updating the call site or asking the package maintainer(s) to expose this API.
+   33 2026-11-27T04:50:37.085 iOS Bundled 2671ms apps/mobile/index.js (6016 modules)
+   34 2026-11-27T04:50:39.587 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+   35 2026-11-27T04:50:39.747 iOS Bundled 118ms apps/mobile/index.js (1 module)
+   36 2026-11-27T04:50:41.001 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+   37 2026-11-27T04:50:41.626  WARN  Require cycle: ../../packages/model-providers/src/modelMetadataLayers.ts -> ../../packages/model-providers/src/modelGeneration.ts -> ../../packages/model-providers/src/modelMetadataLayers.ts
+   38 2026-11-27T04:50:41.626 
+   39 2026-11-27T04:50:41.626 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+   40 2026-11-27T04:50:44.898  WARN  Require cycle: src/session/BotGroupMessageText.tsx -> src/session/MessageRenderer.tsx -> src/session/CompanionThreads.tsx -> src/session/BotGroupMessageText.tsx
+   41 2026-11-27T04:50:44.898 
+   42 2026-11-27T04:50:44.898 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+   43 2026-11-27T04:50:44.898  WARN  Deep imports from the 'react-native' package are deprecated ('react-native/Libraries/Text/requireNativeTextEffect'). Source: /Users/<local-user>/Documents/Codex/cindy-plugin-market-ios-qa/source/apps/mobile/src/session/MarkdownListParagraph.tsx 32:24
+   44 2026-11-27T04:50:45.846 iOS Bundled 321ms apps/mobile/src/session/incomingShareNative.ts (514 modules)
+   45 2026-11-27T04:50:45.846 iOS Bundled 199ms apps/mobile/src/session/historyDiskStoreExpo.ts (528 modules)
+   46 2026-11-27T04:50:46.776 iOS Bundled 311ms apps/mobile/src/session/incomingShareCleanup.ts (535 modules)
+   47 2026-11-27T04:50:47.872 iOS Bundled 146ms node_modules/expo-image-manipulator/build/index.js (587 modules)
+   48 2026-11-27T04:50:47.873 iOS Bundled 177ms node_modules/expo-file-system/build/index.js (1 module)
+   49 2026-11-27T04:50:50.034  WARN  [js-stall] JS thread stalled ~3.4s (event-loop tick gap)
+   50 2026-11-27T04:50:53.291  WARN  [js-stall] JS thread stalled ~2.5s (event-loop tick gap)
+   51 2026-11-27T04:51:02.391 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+   52 2026-11-27T04:51:02.546 iOS Bundled 123ms apps/mobile/index.js (1 module)
+   53 2026-11-27T04:51:03.639 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+   54 2026-11-27T04:51:04.574  WARN  Require cycle: ../../packages/model-providers/src/modelMetadataLayers.ts -> ../../packages/model-providers/src/modelGeneration.ts -> ../../packages/model-providers/src/modelMetadataLayers.ts
+   55 2026-11-27T04:51:04.574 
+   56 2026-11-27T04:51:04.575 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+   57 2026-11-27T04:51:08.218  WARN  Require cycle: src/session/BotGroupMessageText.tsx -> src/session/MessageRenderer.tsx -> src/session/CompanionThreads.tsx -> src/session/BotGroupMessageText.tsx
+   58 2026-11-27T04:51:08.218 
+   59 2026-11-27T04:51:08.218 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+   60 2026-11-27T04:51:08.218  WARN  Deep imports from the 'react-native' package are deprecated ('react-native/Libraries/Text/requireNativeTextEffect'). Source: /Users/<local-user>/Documents/Codex/cindy-plugin-market-ios-qa/source/apps/mobile/src/session/MarkdownListParagraph.tsx 32:24
+   61 2026-11-27T04:51:08.995 iOS Bundled 23ms apps/mobile/src/session/incomingShareNative.ts (1 module)
+   62 2026-11-27T04:51:08.996 iOS Bundled 37ms apps/mobile/src/session/historyDiskStoreExpo.ts (1 module)
+   63 2026-11-27T04:51:09.784 iOS Bundled 37ms apps/mobile/src/session/incomingShareCleanup.ts (1 module)
+   64 2026-11-27T04:51:10.880 iOS Bundled 18ms node_modules/expo-image-manipulator/build/index.js (1 module)
+   65 2026-11-27T04:51:10.881 iOS Bundled 16ms node_modules/expo-file-system/build/index.js (1 module)
+   66 2026-11-27T04:51:12.919  WARN  [js-stall] JS thread stalled ~3.1s (event-loop tick gap)
+   67 2026-11-27T04:52:01.685 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+   68 2026-11-27T04:52:01.840 iOS Bundled 212ms apps/mobile/index.js (1 module)
+   69 2026-11-27T04:52:03.410 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+
+==== m2-ios-js-stall-02 ====
+Metro mock 00daccee9b. Local receive times. Source lines 30–70. Paths, identity and credential-related data sanitized.
+Case at warning: initial launch. Most recent entry bundle: 04:50:39.747 app entry bundle.
+
+   30 2026-11-27T04:37:42.707 | (Use `node --trace-warnings ...` to show where the warning was created)
+   31 2026-11-27T04:50:34.410 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+   32 2026-11-27T04:50:34.570  WARN  Attempted to import the module "<test-worktree>/node_modules/@noble/hashes/crypto.js" which is not listed in the "exports" of "<test-worktree>/node_modules/@noble/hashes" under the requested subpath "./crypto.js". Falling back to file-based resolution. Consider updating the call site or asking the package maintainer(s) to expose this API.
+   33 2026-11-27T04:50:37.085 iOS Bundled 2671ms apps/mobile/index.js (6016 modules)
+   34 2026-11-27T04:50:39.587 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+   35 2026-11-27T04:50:39.747 iOS Bundled 118ms apps/mobile/index.js (1 module)
+   36 2026-11-27T04:50:41.001 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+   37 2026-11-27T04:50:41.626  WARN  Require cycle: ../../packages/model-providers/src/modelMetadataLayers.ts -> ../../packages/model-providers/src/modelGeneration.ts -> ../../packages/model-providers/src/modelMetadataLayers.ts
+   38 2026-11-27T04:50:41.626 
+   39 2026-11-27T04:50:41.626 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+   40 2026-11-27T04:50:44.898  WARN  Require cycle: src/session/BotGroupMessageText.tsx -> src/session/MessageRenderer.tsx -> src/session/CompanionThreads.tsx -> src/session/BotGroupMessageText.tsx
+   41 2026-11-27T04:50:44.898 
+   42 2026-11-27T04:50:44.898 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+   43 2026-11-27T04:50:44.898  WARN  Deep imports from the 'react-native' package are deprecated ('react-native/Libraries/Text/requireNativeTextEffect'). Source: /Users/<local-user>/Documents/Codex/cindy-plugin-market-ios-qa/source/apps/mobile/src/session/MarkdownListParagraph.tsx 32:24
+   44 2026-11-27T04:50:45.846 iOS Bundled 321ms apps/mobile/src/session/incomingShareNative.ts (514 modules)
+   45 2026-11-27T04:50:45.846 iOS Bundled 199ms apps/mobile/src/session/historyDiskStoreExpo.ts (528 modules)
+   46 2026-11-27T04:50:46.776 iOS Bundled 311ms apps/mobile/src/session/incomingShareCleanup.ts (535 modules)
+   47 2026-11-27T04:50:47.872 iOS Bundled 146ms node_modules/expo-image-manipulator/build/index.js (587 modules)
+   48 2026-11-27T04:50:47.873 iOS Bundled 177ms node_modules/expo-file-system/build/index.js (1 module)
+   49 2026-11-27T04:50:50.034  WARN  [js-stall] JS thread stalled ~3.4s (event-loop tick gap)
+   50 2026-11-27T04:50:53.291  WARN  [js-stall] JS thread stalled ~2.5s (event-loop tick gap)
+   51 2026-11-27T04:51:02.391 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+   52 2026-11-27T04:51:02.546 iOS Bundled 123ms apps/mobile/index.js (1 module)
+   53 2026-11-27T04:51:03.639 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+   54 2026-11-27T04:51:04.574  WARN  Require cycle: ../../packages/model-providers/src/modelMetadataLayers.ts -> ../../packages/model-providers/src/modelGeneration.ts -> ../../packages/model-providers/src/modelMetadataLayers.ts
+   55 2026-11-27T04:51:04.574 
+   56 2026-11-27T04:51:04.575 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+   57 2026-11-27T04:51:08.218  WARN  Require cycle: src/session/BotGroupMessageText.tsx -> src/session/MessageRenderer.tsx -> src/session/CompanionThreads.tsx -> src/session/BotGroupMessageText.tsx
+   58 2026-11-27T04:51:08.218 
+   59 2026-11-27T04:51:08.218 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+   60 2026-11-27T04:51:08.218  WARN  Deep imports from the 'react-native' package are deprecated ('react-native/Libraries/Text/requireNativeTextEffect'). Source: /Users/<local-user>/Documents/Codex/cindy-plugin-market-ios-qa/source/apps/mobile/src/session/MarkdownListParagraph.tsx 32:24
+   61 2026-11-27T04:51:08.995 iOS Bundled 23ms apps/mobile/src/session/incomingShareNative.ts (1 module)
+   62 2026-11-27T04:51:08.996 iOS Bundled 37ms apps/mobile/src/session/historyDiskStoreExpo.ts (1 module)
+   63 2026-11-27T04:51:09.784 iOS Bundled 37ms apps/mobile/src/session/incomingShareCleanup.ts (1 module)
+   64 2026-11-27T04:51:10.880 iOS Bundled 18ms node_modules/expo-image-manipulator/build/index.js (1 module)
+   65 2026-11-27T04:51:10.881 iOS Bundled 16ms node_modules/expo-file-system/build/index.js (1 module)
+   66 2026-11-27T04:51:12.919  WARN  [js-stall] JS thread stalled ~3.1s (event-loop tick gap)
+   67 2026-11-27T04:52:01.685 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+   68 2026-11-27T04:52:01.840 iOS Bundled 212ms apps/mobile/index.js (1 module)
+   69 2026-11-27T04:52:03.410 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+   70 2026-11-27T04:52:04.024  WARN  Require cycle: ../../packages/model-providers/src/modelMetadataLayers.ts -> ../../packages/model-providers/src/modelGeneration.ts -> ../../packages/model-providers/src/modelMetadataLayers.ts
+
+==== m2-ios-js-stall-03 ====
+Metro mock 00daccee9b. Local receive times. Source lines 46–86. Paths, identity and credential-related data sanitized.
+Case at warning: initial-probe ('official', 1, False). Most recent entry bundle: 04:51:02.546 app entry bundle. Action tap times in case: 04:51:41.226.
+
+   46 2026-11-27T04:50:46.776 iOS Bundled 311ms apps/mobile/src/session/incomingShareCleanup.ts (535 modules)
+   47 2026-11-27T04:50:47.872 iOS Bundled 146ms node_modules/expo-image-manipulator/build/index.js (587 modules)
+   48 2026-11-27T04:50:47.873 iOS Bundled 177ms node_modules/expo-file-system/build/index.js (1 module)
+   49 2026-11-27T04:50:50.034  WARN  [js-stall] JS thread stalled ~3.4s (event-loop tick gap)
+   50 2026-11-27T04:50:53.291  WARN  [js-stall] JS thread stalled ~2.5s (event-loop tick gap)
+   51 2026-11-27T04:51:02.391 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+   52 2026-11-27T04:51:02.546 iOS Bundled 123ms apps/mobile/index.js (1 module)
+   53 2026-11-27T04:51:03.639 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+   54 2026-11-27T04:51:04.574  WARN  Require cycle: ../../packages/model-providers/src/modelMetadataLayers.ts -> ../../packages/model-providers/src/modelGeneration.ts -> ../../packages/model-providers/src/modelMetadataLayers.ts
+   55 2026-11-27T04:51:04.574 
+   56 2026-11-27T04:51:04.575 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+   57 2026-11-27T04:51:08.218  WARN  Require cycle: src/session/BotGroupMessageText.tsx -> src/session/MessageRenderer.tsx -> src/session/CompanionThreads.tsx -> src/session/BotGroupMessageText.tsx
+   58 2026-11-27T04:51:08.218 
+   59 2026-11-27T04:51:08.218 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+   60 2026-11-27T04:51:08.218  WARN  Deep imports from the 'react-native' package are deprecated ('react-native/Libraries/Text/requireNativeTextEffect'). Source: /Users/<local-user>/Documents/Codex/cindy-plugin-market-ios-qa/source/apps/mobile/src/session/MarkdownListParagraph.tsx 32:24
+   61 2026-11-27T04:51:08.995 iOS Bundled 23ms apps/mobile/src/session/incomingShareNative.ts (1 module)
+   62 2026-11-27T04:51:08.996 iOS Bundled 37ms apps/mobile/src/session/historyDiskStoreExpo.ts (1 module)
+   63 2026-11-27T04:51:09.784 iOS Bundled 37ms apps/mobile/src/session/incomingShareCleanup.ts (1 module)
+   64 2026-11-27T04:51:10.880 iOS Bundled 18ms node_modules/expo-image-manipulator/build/index.js (1 module)
+   65 2026-11-27T04:51:10.881 iOS Bundled 16ms node_modules/expo-file-system/build/index.js (1 module)
+   66 2026-11-27T04:51:12.919  WARN  [js-stall] JS thread stalled ~3.1s (event-loop tick gap)
+   67 2026-11-27T04:52:01.685 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+   68 2026-11-27T04:52:01.840 iOS Bundled 212ms apps/mobile/index.js (1 module)
+   69 2026-11-27T04:52:03.410 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+   70 2026-11-27T04:52:04.024  WARN  Require cycle: ../../packages/model-providers/src/modelMetadataLayers.ts -> ../../packages/model-providers/src/modelGeneration.ts -> ../../packages/model-providers/src/modelMetadataLayers.ts
+   71 2026-11-27T04:52:04.024 
+   72 2026-11-27T04:52:04.024 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+   73 2026-11-27T04:52:07.164  WARN  Require cycle: src/session/BotGroupMessageText.tsx -> src/session/MessageRenderer.tsx -> src/session/CompanionThreads.tsx -> src/session/BotGroupMessageText.tsx
+   74 2026-11-27T04:52:07.164 
+   75 2026-11-27T04:52:07.164 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+   76 2026-11-27T04:52:07.164  WARN  Deep imports from the 'react-native' package are deprecated ('react-native/Libraries/Text/requireNativeTextEffect'). Source: /Users/<local-user>/Documents/Codex/cindy-plugin-market-ios-qa/source/apps/mobile/src/session/MarkdownListParagraph.tsx 32:24
+   77 2026-11-27T04:52:07.790 iOS Bundled 19ms apps/mobile/src/session/incomingShareNative.ts (1 module)
+   78 2026-11-27T04:52:07.941 iOS Bundled 19ms apps/mobile/src/session/historyDiskStoreExpo.ts (1 module)
+   79 2026-11-27T04:52:08.728 iOS Bundled 30ms apps/mobile/src/session/incomingShareCleanup.ts (1 module)
+   80 2026-11-27T04:52:09.990 iOS Bundled 22ms node_modules/expo-image-manipulator/build/index.js (1 module)
+   81 2026-11-27T04:52:09.991 iOS Bundled 19ms node_modules/expo-file-system/build/index.js (1 module)
+   82 2026-11-27T04:52:12.361  WARN  [js-stall] JS thread stalled ~3.7s (event-loop tick gap)
+   83 2026-11-27T04:52:33.405 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+   84 2026-11-27T04:52:33.720 iOS Bundled 208ms apps/mobile/index.js (1 module)
+   85 2026-11-27T04:52:34.970 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+   86 2026-11-27T04:52:35.595  WARN  Require cycle: ../../packages/model-providers/src/modelMetadataLayers.ts -> ../../packages/model-providers/src/modelGeneration.ts -> ../../packages/model-providers/src/modelMetadataLayers.ts
+
+==== m2-ios-js-stall-04 ====
+Metro mock 00daccee9b. Local receive times. Source lines 62–102. Paths, identity and credential-related data sanitized.
+Case at warning: between recorded cases. Most recent entry bundle: 04:52:01.840 app entry bundle.
+
+   62 2026-11-27T04:51:08.996 iOS Bundled 37ms apps/mobile/src/session/historyDiskStoreExpo.ts (1 module)
+   63 2026-11-27T04:51:09.784 iOS Bundled 37ms apps/mobile/src/session/incomingShareCleanup.ts (1 module)
+   64 2026-11-27T04:51:10.880 iOS Bundled 18ms node_modules/expo-image-manipulator/build/index.js (1 module)
+   65 2026-11-27T04:51:10.881 iOS Bundled 16ms node_modules/expo-file-system/build/index.js (1 module)
+   66 2026-11-27T04:51:12.919  WARN  [js-stall] JS thread stalled ~3.1s (event-loop tick gap)
+   67 2026-11-27T04:52:01.685 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+   68 2026-11-27T04:52:01.840 iOS Bundled 212ms apps/mobile/index.js (1 module)
+   69 2026-11-27T04:52:03.410 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+   70 2026-11-27T04:52:04.024  WARN  Require cycle: ../../packages/model-providers/src/modelMetadataLayers.ts -> ../../packages/model-providers/src/modelGeneration.ts -> ../../packages/model-providers/src/modelMetadataLayers.ts
+   71 2026-11-27T04:52:04.024 
+   72 2026-11-27T04:52:04.024 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+   73 2026-11-27T04:52:07.164  WARN  Require cycle: src/session/BotGroupMessageText.tsx -> src/session/MessageRenderer.tsx -> src/session/CompanionThreads.tsx -> src/session/BotGroupMessageText.tsx
+   74 2026-11-27T04:52:07.164 
+   75 2026-11-27T04:52:07.164 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+   76 2026-11-27T04:52:07.164  WARN  Deep imports from the 'react-native' package are deprecated ('react-native/Libraries/Text/requireNativeTextEffect'). Source: /Users/<local-user>/Documents/Codex/cindy-plugin-market-ios-qa/source/apps/mobile/src/session/MarkdownListParagraph.tsx 32:24
+   77 2026-11-27T04:52:07.790 iOS Bundled 19ms apps/mobile/src/session/incomingShareNative.ts (1 module)
+   78 2026-11-27T04:52:07.941 iOS Bundled 19ms apps/mobile/src/session/historyDiskStoreExpo.ts (1 module)
+   79 2026-11-27T04:52:08.728 iOS Bundled 30ms apps/mobile/src/session/incomingShareCleanup.ts (1 module)
+   80 2026-11-27T04:52:09.990 iOS Bundled 22ms node_modules/expo-image-manipulator/build/index.js (1 module)
+   81 2026-11-27T04:52:09.991 iOS Bundled 19ms node_modules/expo-file-system/build/index.js (1 module)
+   82 2026-11-27T04:52:12.361  WARN  [js-stall] JS thread stalled ~3.7s (event-loop tick gap)
+   83 2026-11-27T04:52:33.405 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+   84 2026-11-27T04:52:33.720 iOS Bundled 208ms apps/mobile/index.js (1 module)
+   85 2026-11-27T04:52:34.970 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+   86 2026-11-27T04:52:35.595  WARN  Require cycle: ../../packages/model-providers/src/modelMetadataLayers.ts -> ../../packages/model-providers/src/modelGeneration.ts -> ../../packages/model-providers/src/modelMetadataLayers.ts
+   87 2026-11-27T04:52:35.595 
+   88 2026-11-27T04:52:35.595 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+   89 2026-11-27T04:52:38.577  WARN  Require cycle: src/session/BotGroupMessageText.tsx -> src/session/MessageRenderer.tsx -> src/session/CompanionThreads.tsx -> src/session/BotGroupMessageText.tsx
+   90 2026-11-27T04:52:38.577 
+   91 2026-11-27T04:52:38.577 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+   92 2026-11-27T04:52:38.577  WARN  Deep imports from the 'react-native' package are deprecated ('react-native/Libraries/Text/requireNativeTextEffect'). Source: /Users/<local-user>/Documents/Codex/cindy-plugin-market-ios-qa/source/apps/mobile/src/session/MarkdownListParagraph.tsx 32:24
+   93 2026-11-27T04:52:39.211 iOS Bundled 17ms apps/mobile/src/session/incomingShareNative.ts (1 module)
+   94 2026-11-27T04:52:39.211 iOS Bundled 43ms apps/mobile/src/session/historyDiskStoreExpo.ts (1 module)
+   95 2026-11-27T04:52:39.844 iOS Bundled 23ms apps/mobile/src/session/incomingShareCleanup.ts (1 module)
+   96 2026-11-27T04:52:41.098 iOS Bundled 36ms node_modules/expo-image-manipulator/build/index.js (1 module)
+   97 2026-11-27T04:52:41.251 iOS Bundled 141ms node_modules/expo-file-system/build/index.js (1 module)
+   98 2026-11-27T04:52:43.116  WARN  [js-stall] JS thread stalled ~3.1s (event-loop tick gap)
+   99 2026-11-27T04:53:14.807 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  100 2026-11-27T04:53:14.968 iOS Bundled 225ms apps/mobile/index.js (1 module)
+  101 2026-11-27T04:53:16.382 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  102 2026-11-27T04:53:17.008  WARN  Require cycle: ../../packages/model-providers/src/modelMetadataLayers.ts -> ../../packages/model-providers/src/modelGeneration.ts -> ../../packages/model-providers/src/modelMetadataLayers.ts
+
+==== m2-ios-js-stall-05 ====
+Metro mock 00daccee9b. Local receive times. Source lines 78–118. Paths, identity and credential-related data sanitized.
+Case at warning: initial-settled-official ('official', 1, False). Most recent entry bundle: 04:52:33.720 app entry bundle. Action tap times in case: 04:52:57.544, 04:53:02.016.
+
+   78 2026-11-27T04:52:07.941 iOS Bundled 19ms apps/mobile/src/session/historyDiskStoreExpo.ts (1 module)
+   79 2026-11-27T04:52:08.728 iOS Bundled 30ms apps/mobile/src/session/incomingShareCleanup.ts (1 module)
+   80 2026-11-27T04:52:09.990 iOS Bundled 22ms node_modules/expo-image-manipulator/build/index.js (1 module)
+   81 2026-11-27T04:52:09.991 iOS Bundled 19ms node_modules/expo-file-system/build/index.js (1 module)
+   82 2026-11-27T04:52:12.361  WARN  [js-stall] JS thread stalled ~3.7s (event-loop tick gap)
+   83 2026-11-27T04:52:33.405 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+   84 2026-11-27T04:52:33.720 iOS Bundled 208ms apps/mobile/index.js (1 module)
+   85 2026-11-27T04:52:34.970 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+   86 2026-11-27T04:52:35.595  WARN  Require cycle: ../../packages/model-providers/src/modelMetadataLayers.ts -> ../../packages/model-providers/src/modelGeneration.ts -> ../../packages/model-providers/src/modelMetadataLayers.ts
+   87 2026-11-27T04:52:35.595 
+   88 2026-11-27T04:52:35.595 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+   89 2026-11-27T04:52:38.577  WARN  Require cycle: src/session/BotGroupMessageText.tsx -> src/session/MessageRenderer.tsx -> src/session/CompanionThreads.tsx -> src/session/BotGroupMessageText.tsx
+   90 2026-11-27T04:52:38.577 
+   91 2026-11-27T04:52:38.577 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+   92 2026-11-27T04:52:38.577  WARN  Deep imports from the 'react-native' package are deprecated ('react-native/Libraries/Text/requireNativeTextEffect'). Source: /Users/<local-user>/Documents/Codex/cindy-plugin-market-ios-qa/source/apps/mobile/src/session/MarkdownListParagraph.tsx 32:24
+   93 2026-11-27T04:52:39.211 iOS Bundled 17ms apps/mobile/src/session/incomingShareNative.ts (1 module)
+   94 2026-11-27T04:52:39.211 iOS Bundled 43ms apps/mobile/src/session/historyDiskStoreExpo.ts (1 module)
+   95 2026-11-27T04:52:39.844 iOS Bundled 23ms apps/mobile/src/session/incomingShareCleanup.ts (1 module)
+   96 2026-11-27T04:52:41.098 iOS Bundled 36ms node_modules/expo-image-manipulator/build/index.js (1 module)
+   97 2026-11-27T04:52:41.251 iOS Bundled 141ms node_modules/expo-file-system/build/index.js (1 module)
+   98 2026-11-27T04:52:43.116  WARN  [js-stall] JS thread stalled ~3.1s (event-loop tick gap)
+   99 2026-11-27T04:53:14.807 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  100 2026-11-27T04:53:14.968 iOS Bundled 225ms apps/mobile/index.js (1 module)
+  101 2026-11-27T04:53:16.382 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  102 2026-11-27T04:53:17.008  WARN  Require cycle: ../../packages/model-providers/src/modelMetadataLayers.ts -> ../../packages/model-providers/src/modelGeneration.ts -> ../../packages/model-providers/src/modelMetadataLayers.ts
+  103 2026-11-27T04:53:17.008 
+  104 2026-11-27T04:53:17.008 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+  105 2026-11-27T04:53:19.828  WARN  Require cycle: src/session/BotGroupMessageText.tsx -> src/session/MessageRenderer.tsx -> src/session/CompanionThreads.tsx -> src/session/BotGroupMessageText.tsx
+  106 2026-11-27T04:53:19.828 
+  107 2026-11-27T04:53:19.828 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+  108 2026-11-27T04:53:19.984  WARN  Deep imports from the 'react-native' package are deprecated ('react-native/Libraries/Text/requireNativeTextEffect'). Source: /Users/<local-user>/Documents/Codex/cindy-plugin-market-ios-qa/source/apps/mobile/src/session/MarkdownListParagraph.tsx 32:24
+  109 2026-11-27T04:53:20.450 iOS Bundled 25ms apps/mobile/src/session/incomingShareNative.ts (1 module)
+  110 2026-11-27T04:53:20.609 iOS Bundled 59ms apps/mobile/src/session/historyDiskStoreExpo.ts (1 module)
+  111 2026-11-27T04:53:21.232 iOS Bundled 25ms apps/mobile/src/session/incomingShareCleanup.ts (1 module)
+  112 2026-11-27T04:53:22.640 iOS Bundled 85ms node_modules/expo-image-manipulator/build/index.js (1 module)
+  113 2026-11-27T04:53:22.640 iOS Bundled 47ms node_modules/expo-file-system/build/index.js (1 module)
+  114 2026-11-27T04:53:24.659  WARN  [js-stall] JS thread stalled ~3.4s (event-loop tick gap)
+  115 2026-11-27T04:53:57.079 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  116 2026-11-27T04:53:57.233 iOS Bundled 201ms apps/mobile/index.js (1 module)
+  117 2026-11-27T04:53:58.624 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  118 2026-11-27T04:53:59.248  WARN  Require cycle: ../../packages/model-providers/src/modelMetadataLayers.ts -> ../../packages/model-providers/src/modelGeneration.ts -> ../../packages/model-providers/src/modelMetadataLayers.ts
+
+==== m2-ios-js-stall-06 ====
+Metro mock 00daccee9b. Local receive times. Source lines 94–134. Paths, identity and credential-related data sanitized.
+Case at warning: initial-settled-official ('official', 2, False). Most recent entry bundle: 04:53:14.968 app entry bundle. Action tap times in case: 04:53:38.482, 04:53:42.860.
+
+   94 2026-11-27T04:52:39.211 iOS Bundled 43ms apps/mobile/src/session/historyDiskStoreExpo.ts (1 module)
+   95 2026-11-27T04:52:39.844 iOS Bundled 23ms apps/mobile/src/session/incomingShareCleanup.ts (1 module)
+   96 2026-11-27T04:52:41.098 iOS Bundled 36ms node_modules/expo-image-manipulator/build/index.js (1 module)
+   97 2026-11-27T04:52:41.251 iOS Bundled 141ms node_modules/expo-file-system/build/index.js (1 module)
+   98 2026-11-27T04:52:43.116  WARN  [js-stall] JS thread stalled ~3.1s (event-loop tick gap)
+   99 2026-11-27T04:53:14.807 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  100 2026-11-27T04:53:14.968 iOS Bundled 225ms apps/mobile/index.js (1 module)
+  101 2026-11-27T04:53:16.382 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  102 2026-11-27T04:53:17.008  WARN  Require cycle: ../../packages/model-providers/src/modelMetadataLayers.ts -> ../../packages/model-providers/src/modelGeneration.ts -> ../../packages/model-providers/src/modelMetadataLayers.ts
+  103 2026-11-27T04:53:17.008 
+  104 2026-11-27T04:53:17.008 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+  105 2026-11-27T04:53:19.828  WARN  Require cycle: src/session/BotGroupMessageText.tsx -> src/session/MessageRenderer.tsx -> src/session/CompanionThreads.tsx -> src/session/BotGroupMessageText.tsx
+  106 2026-11-27T04:53:19.828 
+  107 2026-11-27T04:53:19.828 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+  108 2026-11-27T04:53:19.984  WARN  Deep imports from the 'react-native' package are deprecated ('react-native/Libraries/Text/requireNativeTextEffect'). Source: /Users/<local-user>/Documents/Codex/cindy-plugin-market-ios-qa/source/apps/mobile/src/session/MarkdownListParagraph.tsx 32:24
+  109 2026-11-27T04:53:20.450 iOS Bundled 25ms apps/mobile/src/session/incomingShareNative.ts (1 module)
+  110 2026-11-27T04:53:20.609 iOS Bundled 59ms apps/mobile/src/session/historyDiskStoreExpo.ts (1 module)
+  111 2026-11-27T04:53:21.232 iOS Bundled 25ms apps/mobile/src/session/incomingShareCleanup.ts (1 module)
+  112 2026-11-27T04:53:22.640 iOS Bundled 85ms node_modules/expo-image-manipulator/build/index.js (1 module)
+  113 2026-11-27T04:53:22.640 iOS Bundled 47ms node_modules/expo-file-system/build/index.js (1 module)
+  114 2026-11-27T04:53:24.659  WARN  [js-stall] JS thread stalled ~3.4s (event-loop tick gap)
+  115 2026-11-27T04:53:57.079 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  116 2026-11-27T04:53:57.233 iOS Bundled 201ms apps/mobile/index.js (1 module)
+  117 2026-11-27T04:53:58.624 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  118 2026-11-27T04:53:59.248  WARN  Require cycle: ../../packages/model-providers/src/modelMetadataLayers.ts -> ../../packages/model-providers/src/modelGeneration.ts -> ../../packages/model-providers/src/modelMetadataLayers.ts
+  119 2026-11-27T04:53:59.248 
+  120 2026-11-27T04:53:59.248 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+  121 2026-11-27T04:54:02.208  WARN  Require cycle: src/session/BotGroupMessageText.tsx -> src/session/MessageRenderer.tsx -> src/session/CompanionThreads.tsx -> src/session/BotGroupMessageText.tsx
+  122 2026-11-27T04:54:02.208 
+  123 2026-11-27T04:54:02.209 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+  124 2026-11-27T04:54:02.209  WARN  Deep imports from the 'react-native' package are deprecated ('react-native/Libraries/Text/requireNativeTextEffect'). Source: /Users/<local-user>/Documents/Codex/cindy-plugin-market-ios-qa/source/apps/mobile/src/session/MarkdownListParagraph.tsx 32:24
+  125 2026-11-27T04:54:02.838 iOS Bundled 25ms apps/mobile/src/session/incomingShareNative.ts (1 module)
+  126 2026-11-27T04:54:02.839 iOS Bundled 19ms apps/mobile/src/session/historyDiskStoreExpo.ts (1 module)
+  127 2026-11-27T04:54:03.782 iOS Bundled 41ms apps/mobile/src/session/incomingShareCleanup.ts (1 module)
+  128 2026-11-27T04:54:04.891 iOS Bundled 24ms node_modules/expo-image-manipulator/build/index.js (1 module)
+  129 2026-11-27T04:54:04.891 iOS Bundled 29ms node_modules/expo-file-system/build/index.js (1 module)
+  130 2026-11-27T04:54:07.087  WARN  [js-stall] JS thread stalled ~3.4s (event-loop tick gap)
+  131 2026-11-27T04:54:43.978 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  132 2026-11-27T04:54:44.138 iOS Bundled 133ms apps/mobile/index.js (1 module)
+  133 2026-11-27T04:54:49.473 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  134 2026-11-27T04:54:49.473  WARN  Require cycle: ../../packages/model-providers/src/modelMetadataLayers.ts -> ../../packages/model-providers/src/modelGeneration.ts -> ../../packages/model-providers/src/modelMetadataLayers.ts
+
+==== m2-ios-js-stall-07 ====
+Metro mock 00daccee9b. Local receive times. Source lines 110–150. Paths, identity and credential-related data sanitized.
+Case at warning: between recorded cases. Most recent entry bundle: 04:53:57.233 app entry bundle.
+
+  110 2026-11-27T04:53:20.609 iOS Bundled 59ms apps/mobile/src/session/historyDiskStoreExpo.ts (1 module)
+  111 2026-11-27T04:53:21.232 iOS Bundled 25ms apps/mobile/src/session/incomingShareCleanup.ts (1 module)
+  112 2026-11-27T04:53:22.640 iOS Bundled 85ms node_modules/expo-image-manipulator/build/index.js (1 module)
+  113 2026-11-27T04:53:22.640 iOS Bundled 47ms node_modules/expo-file-system/build/index.js (1 module)
+  114 2026-11-27T04:53:24.659  WARN  [js-stall] JS thread stalled ~3.4s (event-loop tick gap)
+  115 2026-11-27T04:53:57.079 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  116 2026-11-27T04:53:57.233 iOS Bundled 201ms apps/mobile/index.js (1 module)
+  117 2026-11-27T04:53:58.624 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  118 2026-11-27T04:53:59.248  WARN  Require cycle: ../../packages/model-providers/src/modelMetadataLayers.ts -> ../../packages/model-providers/src/modelGeneration.ts -> ../../packages/model-providers/src/modelMetadataLayers.ts
+  119 2026-11-27T04:53:59.248 
+  120 2026-11-27T04:53:59.248 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+  121 2026-11-27T04:54:02.208  WARN  Require cycle: src/session/BotGroupMessageText.tsx -> src/session/MessageRenderer.tsx -> src/session/CompanionThreads.tsx -> src/session/BotGroupMessageText.tsx
+  122 2026-11-27T04:54:02.208 
+  123 2026-11-27T04:54:02.209 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+  124 2026-11-27T04:54:02.209  WARN  Deep imports from the 'react-native' package are deprecated ('react-native/Libraries/Text/requireNativeTextEffect'). Source: /Users/<local-user>/Documents/Codex/cindy-plugin-market-ios-qa/source/apps/mobile/src/session/MarkdownListParagraph.tsx 32:24
+  125 2026-11-27T04:54:02.838 iOS Bundled 25ms apps/mobile/src/session/incomingShareNative.ts (1 module)
+  126 2026-11-27T04:54:02.839 iOS Bundled 19ms apps/mobile/src/session/historyDiskStoreExpo.ts (1 module)
+  127 2026-11-27T04:54:03.782 iOS Bundled 41ms apps/mobile/src/session/incomingShareCleanup.ts (1 module)
+  128 2026-11-27T04:54:04.891 iOS Bundled 24ms node_modules/expo-image-manipulator/build/index.js (1 module)
+  129 2026-11-27T04:54:04.891 iOS Bundled 29ms node_modules/expo-file-system/build/index.js (1 module)
+  130 2026-11-27T04:54:07.087  WARN  [js-stall] JS thread stalled ~3.4s (event-loop tick gap)
+  131 2026-11-27T04:54:43.978 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  132 2026-11-27T04:54:44.138 iOS Bundled 133ms apps/mobile/index.js (1 module)
+  133 2026-11-27T04:54:49.473 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  134 2026-11-27T04:54:49.473  WARN  Require cycle: ../../packages/model-providers/src/modelMetadataLayers.ts -> ../../packages/model-providers/src/modelGeneration.ts -> ../../packages/model-providers/src/modelMetadataLayers.ts
+  135 2026-11-27T04:54:49.473 
+  136 2026-11-27T04:54:49.473 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+  137 2026-11-27T04:54:49.473  WARN  Require cycle: src/session/BotGroupMessageText.tsx -> src/session/MessageRenderer.tsx -> src/session/CompanionThreads.tsx -> src/session/BotGroupMessageText.tsx
+  138 2026-11-27T04:54:49.473 
+  139 2026-11-27T04:54:49.473 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+  140 2026-11-27T04:54:49.473  WARN  Deep imports from the 'react-native' package are deprecated ('react-native/Libraries/Text/requireNativeTextEffect'). Source: /Users/<local-user>/Documents/Codex/cindy-plugin-market-ios-qa/source/apps/mobile/src/session/MarkdownListParagraph.tsx 32:24
+  141 2026-11-27T04:54:49.785 iOS Bundled 20ms apps/mobile/src/session/incomingShareNative.ts (1 module)
+  142 2026-11-27T04:54:49.940 iOS Bundled 16ms apps/mobile/src/session/historyDiskStoreExpo.ts (1 module)
+  143 2026-11-27T04:54:50.896 iOS Bundled 36ms apps/mobile/src/session/incomingShareCleanup.ts (1 module)
+  144 2026-11-27T04:54:51.531  WARN  Sending `onAnimatedValueUpdate` with no listeners registered.
+  145 2026-11-27T04:54:52.152 iOS Bundled 17ms node_modules/expo-image-manipulator/build/index.js (1 module)
+  146 2026-11-27T04:54:52.152 iOS Bundled 25ms node_modules/expo-file-system/build/index.js (1 module)
+  147 2026-11-27T04:54:54.192  WARN  [js-stall] JS thread stalled ~3.5s (event-loop tick gap)
+  148 2026-11-27T04:55:26.155 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  149 2026-11-27T04:55:26.309 iOS Bundled 145ms apps/mobile/index.js (1 module)
+  150 2026-11-27T04:55:27.728 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+
+==== m2-ios-js-stall-08 ====
+Metro mock 00daccee9b. Local receive times. Source lines 127–167. Paths, identity and credential-related data sanitized.
+Case at warning: initial-official-fast ('official', 3, True). Most recent entry bundle: 04:54:44.138 app entry bundle. Action tap times in case: 04:55:10.262, 04:55:12.999.
+
+  127 2026-11-27T04:54:03.782 iOS Bundled 41ms apps/mobile/src/session/incomingShareCleanup.ts (1 module)
+  128 2026-11-27T04:54:04.891 iOS Bundled 24ms node_modules/expo-image-manipulator/build/index.js (1 module)
+  129 2026-11-27T04:54:04.891 iOS Bundled 29ms node_modules/expo-file-system/build/index.js (1 module)
+  130 2026-11-27T04:54:07.087  WARN  [js-stall] JS thread stalled ~3.4s (event-loop tick gap)
+  131 2026-11-27T04:54:43.978 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  132 2026-11-27T04:54:44.138 iOS Bundled 133ms apps/mobile/index.js (1 module)
+  133 2026-11-27T04:54:49.473 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  134 2026-11-27T04:54:49.473  WARN  Require cycle: ../../packages/model-providers/src/modelMetadataLayers.ts -> ../../packages/model-providers/src/modelGeneration.ts -> ../../packages/model-providers/src/modelMetadataLayers.ts
+  135 2026-11-27T04:54:49.473 
+  136 2026-11-27T04:54:49.473 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+  137 2026-11-27T04:54:49.473  WARN  Require cycle: src/session/BotGroupMessageText.tsx -> src/session/MessageRenderer.tsx -> src/session/CompanionThreads.tsx -> src/session/BotGroupMessageText.tsx
+  138 2026-11-27T04:54:49.473 
+  139 2026-11-27T04:54:49.473 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+  140 2026-11-27T04:54:49.473  WARN  Deep imports from the 'react-native' package are deprecated ('react-native/Libraries/Text/requireNativeTextEffect'). Source: /Users/<local-user>/Documents/Codex/cindy-plugin-market-ios-qa/source/apps/mobile/src/session/MarkdownListParagraph.tsx 32:24
+  141 2026-11-27T04:54:49.785 iOS Bundled 20ms apps/mobile/src/session/incomingShareNative.ts (1 module)
+  142 2026-11-27T04:54:49.940 iOS Bundled 16ms apps/mobile/src/session/historyDiskStoreExpo.ts (1 module)
+  143 2026-11-27T04:54:50.896 iOS Bundled 36ms apps/mobile/src/session/incomingShareCleanup.ts (1 module)
+  144 2026-11-27T04:54:51.531  WARN  Sending `onAnimatedValueUpdate` with no listeners registered.
+  145 2026-11-27T04:54:52.152 iOS Bundled 17ms node_modules/expo-image-manipulator/build/index.js (1 module)
+  146 2026-11-27T04:54:52.152 iOS Bundled 25ms node_modules/expo-file-system/build/index.js (1 module)
+  147 2026-11-27T04:54:54.192  WARN  [js-stall] JS thread stalled ~3.5s (event-loop tick gap)
+  148 2026-11-27T04:55:26.155 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  149 2026-11-27T04:55:26.309 iOS Bundled 145ms apps/mobile/index.js (1 module)
+  150 2026-11-27T04:55:27.728 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  151 2026-11-27T04:55:28.357  WARN  Require cycle: ../../packages/model-providers/src/modelMetadataLayers.ts -> ../../packages/model-providers/src/modelGeneration.ts -> ../../packages/model-providers/src/modelMetadataLayers.ts
+  152 2026-11-27T04:55:28.357 
+  153 2026-11-27T04:55:28.358 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+  154 2026-11-27T04:55:31.492  WARN  Require cycle: src/session/BotGroupMessageText.tsx -> src/session/MessageRenderer.tsx -> src/session/CompanionThreads.tsx -> src/session/BotGroupMessageText.tsx
+  155 2026-11-27T04:55:31.492 
+  156 2026-11-27T04:55:31.492 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+  157 2026-11-27T04:55:31.492  WARN  Deep imports from the 'react-native' package are deprecated ('react-native/Libraries/Text/requireNativeTextEffect'). Source: /Users/<local-user>/Documents/Codex/cindy-plugin-market-ios-qa/source/apps/mobile/src/session/MarkdownListParagraph.tsx 32:24
+  158 2026-11-27T04:55:31.970 iOS Bundled 29ms apps/mobile/src/session/incomingShareNative.ts (1 module)
+  159 2026-11-27T04:55:32.141 iOS Bundled 32ms apps/mobile/src/session/historyDiskStoreExpo.ts (1 module)
+  160 2026-11-27T04:55:32.954 iOS Bundled 26ms apps/mobile/src/session/incomingShareCleanup.ts (1 module)
+  161 2026-11-27T04:55:33.588  WARN  Sending `onAnimatedValueUpdate` with no listeners registered.
+  162 2026-11-27T04:55:34.060 iOS Bundled 17ms node_modules/expo-image-manipulator/build/index.js (1 module)
+  163 2026-11-27T04:55:34.060 iOS Bundled 17ms node_modules/expo-file-system/build/index.js (1 module)
+  164 2026-11-27T04:55:36.240  WARN  [js-stall] JS thread stalled ~3.4s (event-loop tick gap)
+  165 2026-11-27T04:56:06.091 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  166 2026-11-27T04:56:06.250 iOS Bundled 128ms apps/mobile/index.js (1 module)
+  167 2026-11-27T04:56:07.513 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+
+==== m2-ios-js-stall-09 ====
+Metro mock 00daccee9b. Local receive times. Source lines 144–184. Paths, identity and credential-related data sanitized.
+Case at warning: initial-custom ('custom', 1, False). Most recent entry bundle: 04:55:26.309 app entry bundle. Action tap times in case: 04:55:49.391, 04:55:53.736.
+
+  144 2026-11-27T04:54:51.531  WARN  Sending `onAnimatedValueUpdate` with no listeners registered.
+  145 2026-11-27T04:54:52.152 iOS Bundled 17ms node_modules/expo-image-manipulator/build/index.js (1 module)
+  146 2026-11-27T04:54:52.152 iOS Bundled 25ms node_modules/expo-file-system/build/index.js (1 module)
+  147 2026-11-27T04:54:54.192  WARN  [js-stall] JS thread stalled ~3.5s (event-loop tick gap)
+  148 2026-11-27T04:55:26.155 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  149 2026-11-27T04:55:26.309 iOS Bundled 145ms apps/mobile/index.js (1 module)
+  150 2026-11-27T04:55:27.728 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  151 2026-11-27T04:55:28.357  WARN  Require cycle: ../../packages/model-providers/src/modelMetadataLayers.ts -> ../../packages/model-providers/src/modelGeneration.ts -> ../../packages/model-providers/src/modelMetadataLayers.ts
+  152 2026-11-27T04:55:28.357 
+  153 2026-11-27T04:55:28.358 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+  154 2026-11-27T04:55:31.492  WARN  Require cycle: src/session/BotGroupMessageText.tsx -> src/session/MessageRenderer.tsx -> src/session/CompanionThreads.tsx -> src/session/BotGroupMessageText.tsx
+  155 2026-11-27T04:55:31.492 
+  156 2026-11-27T04:55:31.492 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+  157 2026-11-27T04:55:31.492  WARN  Deep imports from the 'react-native' package are deprecated ('react-native/Libraries/Text/requireNativeTextEffect'). Source: /Users/<local-user>/Documents/Codex/cindy-plugin-market-ios-qa/source/apps/mobile/src/session/MarkdownListParagraph.tsx 32:24
+  158 2026-11-27T04:55:31.970 iOS Bundled 29ms apps/mobile/src/session/incomingShareNative.ts (1 module)
+  159 2026-11-27T04:55:32.141 iOS Bundled 32ms apps/mobile/src/session/historyDiskStoreExpo.ts (1 module)
+  160 2026-11-27T04:55:32.954 iOS Bundled 26ms apps/mobile/src/session/incomingShareCleanup.ts (1 module)
+  161 2026-11-27T04:55:33.588  WARN  Sending `onAnimatedValueUpdate` with no listeners registered.
+  162 2026-11-27T04:55:34.060 iOS Bundled 17ms node_modules/expo-image-manipulator/build/index.js (1 module)
+  163 2026-11-27T04:55:34.060 iOS Bundled 17ms node_modules/expo-file-system/build/index.js (1 module)
+  164 2026-11-27T04:55:36.240  WARN  [js-stall] JS thread stalled ~3.4s (event-loop tick gap)
+  165 2026-11-27T04:56:06.091 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  166 2026-11-27T04:56:06.250 iOS Bundled 128ms apps/mobile/index.js (1 module)
+  167 2026-11-27T04:56:07.513 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  168 2026-11-27T04:56:08.145  WARN  Require cycle: ../../packages/model-providers/src/modelMetadataLayers.ts -> ../../packages/model-providers/src/modelGeneration.ts -> ../../packages/model-providers/src/modelMetadataLayers.ts
+  169 2026-11-27T04:56:08.145 
+  170 2026-11-27T04:56:08.145 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+  171 2026-11-27T04:56:11.276  WARN  Require cycle: src/session/BotGroupMessageText.tsx -> src/session/MessageRenderer.tsx -> src/session/CompanionThreads.tsx -> src/session/BotGroupMessageText.tsx
+  172 2026-11-27T04:56:11.276 
+  173 2026-11-27T04:56:11.276 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+  174 2026-11-27T04:56:11.276  WARN  Deep imports from the 'react-native' package are deprecated ('react-native/Libraries/Text/requireNativeTextEffect'). Source: /Users/<local-user>/Documents/Codex/cindy-plugin-market-ios-qa/source/apps/mobile/src/session/MarkdownListParagraph.tsx 32:24
+  175 2026-11-27T04:56:11.743 iOS Bundled 15ms apps/mobile/src/session/incomingShareNative.ts (1 module)
+  176 2026-11-27T04:56:11.899 iOS Bundled 88ms apps/mobile/src/session/historyDiskStoreExpo.ts (1 module)
+  177 2026-11-27T04:56:12.690 iOS Bundled 28ms apps/mobile/src/session/incomingShareCleanup.ts (1 module)
+  178 2026-11-27T04:56:13.308  WARN  Sending `onAnimatedValueUpdate` with no listeners registered.
+  179 2026-11-27T04:56:13.308  WARN  Sending `onAnimatedValueUpdate` with no listeners registered.
+  180 2026-11-27T04:56:13.308  WARN  Sending `onAnimatedValueUpdate` with no listeners registered.
+  181 2026-11-27T04:56:13.308  WARN  Sending `onAnimatedValueUpdate` with no listeners registered.
+  182 2026-11-27T04:56:13.308  WARN  Sending `onAnimatedValueUpdate` with no listeners registered.
+  183 2026-11-27T04:56:13.308  WARN  Sending `onAnimatedValueUpdate` with no listeners registered.
+  184 2026-11-27T04:56:13.782 iOS Bundled 15ms node_modules/expo-image-manipulator/build/index.js (1 module)
+
+==== m2-ios-js-stall-10 ====
+Metro mock 00daccee9b. Local receive times. Source lines 166–206. Paths, identity and credential-related data sanitized.
+Case at warning: initial-custom ('custom', 2, False). Most recent entry bundle: 04:56:06.250 app entry bundle. Action tap times in case: 04:56:27.409, 04:56:33.123.
+
+  166 2026-11-27T04:56:06.250 iOS Bundled 128ms apps/mobile/index.js (1 module)
+  167 2026-11-27T04:56:07.513 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  168 2026-11-27T04:56:08.145  WARN  Require cycle: ../../packages/model-providers/src/modelMetadataLayers.ts -> ../../packages/model-providers/src/modelGeneration.ts -> ../../packages/model-providers/src/modelMetadataLayers.ts
+  169 2026-11-27T04:56:08.145 
+  170 2026-11-27T04:56:08.145 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+  171 2026-11-27T04:56:11.276  WARN  Require cycle: src/session/BotGroupMessageText.tsx -> src/session/MessageRenderer.tsx -> src/session/CompanionThreads.tsx -> src/session/BotGroupMessageText.tsx
+  172 2026-11-27T04:56:11.276 
+  173 2026-11-27T04:56:11.276 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+  174 2026-11-27T04:56:11.276  WARN  Deep imports from the 'react-native' package are deprecated ('react-native/Libraries/Text/requireNativeTextEffect'). Source: /Users/<local-user>/Documents/Codex/cindy-plugin-market-ios-qa/source/apps/mobile/src/session/MarkdownListParagraph.tsx 32:24
+  175 2026-11-27T04:56:11.743 iOS Bundled 15ms apps/mobile/src/session/incomingShareNative.ts (1 module)
+  176 2026-11-27T04:56:11.899 iOS Bundled 88ms apps/mobile/src/session/historyDiskStoreExpo.ts (1 module)
+  177 2026-11-27T04:56:12.690 iOS Bundled 28ms apps/mobile/src/session/incomingShareCleanup.ts (1 module)
+  178 2026-11-27T04:56:13.308  WARN  Sending `onAnimatedValueUpdate` with no listeners registered.
+  179 2026-11-27T04:56:13.308  WARN  Sending `onAnimatedValueUpdate` with no listeners registered.
+  180 2026-11-27T04:56:13.308  WARN  Sending `onAnimatedValueUpdate` with no listeners registered.
+  181 2026-11-27T04:56:13.308  WARN  Sending `onAnimatedValueUpdate` with no listeners registered.
+  182 2026-11-27T04:56:13.308  WARN  Sending `onAnimatedValueUpdate` with no listeners registered.
+  183 2026-11-27T04:56:13.308  WARN  Sending `onAnimatedValueUpdate` with no listeners registered.
+  184 2026-11-27T04:56:13.782 iOS Bundled 15ms node_modules/expo-image-manipulator/build/index.js (1 module)
+  185 2026-11-27T04:56:13.782 iOS Bundled 15ms node_modules/expo-file-system/build/index.js (1 module)
+  186 2026-11-27T04:56:15.825  WARN  [js-stall] JS thread stalled ~3.2s (event-loop tick gap)
+  187 2026-11-27T04:56:46.117 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  188 2026-11-27T04:56:46.117 iOS Bundled 138ms apps/mobile/index.js (1 module)
+  189 2026-11-27T04:56:47.542 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  190 2026-11-27T04:56:48.164  WARN  Require cycle: ../../packages/model-providers/src/modelMetadataLayers.ts -> ../../packages/model-providers/src/modelGeneration.ts -> ../../packages/model-providers/src/modelMetadataLayers.ts
+  191 2026-11-27T04:56:48.165 
+  192 2026-11-27T04:56:48.165 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+  193 2026-11-27T04:56:51.290  WARN  Require cycle: src/session/BotGroupMessageText.tsx -> src/session/MessageRenderer.tsx -> src/session/CompanionThreads.tsx -> src/session/BotGroupMessageText.tsx
+  194 2026-11-27T04:56:51.290 
+  195 2026-11-27T04:56:51.290 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+  196 2026-11-27T04:56:51.290  WARN  Deep imports from the 'react-native' package are deprecated ('react-native/Libraries/Text/requireNativeTextEffect'). Source: /Users/<local-user>/Documents/Codex/cindy-plugin-market-ios-qa/source/apps/mobile/src/session/MarkdownListParagraph.tsx 32:24
+  197 2026-11-27T04:56:51.921 iOS Bundled 20ms apps/mobile/src/session/incomingShareNative.ts (1 module)
+  198 2026-11-27T04:56:52.085 iOS Bundled 84ms apps/mobile/src/session/historyDiskStoreExpo.ts (1 module)
+  199 2026-11-27T04:56:52.856 iOS Bundled 26ms apps/mobile/src/session/incomingShareCleanup.ts (1 module)
+  200 2026-11-27T04:56:54.110 iOS Bundled 23ms node_modules/expo-image-manipulator/build/index.js (1 module)
+  201 2026-11-27T04:56:54.110 iOS Bundled 17ms node_modules/expo-file-system/build/index.js (1 module)
+  202 2026-11-27T04:56:55.822  WARN  [js-stall] JS thread stalled ~3.2s (event-loop tick gap)
+  203 2026-11-27T04:57:23.749 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  204 2026-11-27T04:57:23.908 iOS Bundled 112ms apps/mobile/index.js (1 module)
+  205 2026-11-27T04:57:25.147 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  206 2026-11-27T04:57:25.785  WARN  Require cycle: ../../packages/model-providers/src/modelMetadataLayers.ts -> ../../packages/model-providers/src/modelGeneration.ts -> ../../packages/model-providers/src/modelMetadataLayers.ts
+
+==== m2-ios-js-stall-11 ====
+Metro mock 00daccee9b. Local receive times. Source lines 182–222. Paths, identity and credential-related data sanitized.
+Case at warning: initial-custom ('custom', 3, True). Most recent entry bundle: 04:56:46.117 app entry bundle. Action tap times in case: 04:57:07.940, 04:57:10.818.
+
+  182 2026-11-27T04:56:13.308  WARN  Sending `onAnimatedValueUpdate` with no listeners registered.
+  183 2026-11-27T04:56:13.308  WARN  Sending `onAnimatedValueUpdate` with no listeners registered.
+  184 2026-11-27T04:56:13.782 iOS Bundled 15ms node_modules/expo-image-manipulator/build/index.js (1 module)
+  185 2026-11-27T04:56:13.782 iOS Bundled 15ms node_modules/expo-file-system/build/index.js (1 module)
+  186 2026-11-27T04:56:15.825  WARN  [js-stall] JS thread stalled ~3.2s (event-loop tick gap)
+  187 2026-11-27T04:56:46.117 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  188 2026-11-27T04:56:46.117 iOS Bundled 138ms apps/mobile/index.js (1 module)
+  189 2026-11-27T04:56:47.542 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  190 2026-11-27T04:56:48.164  WARN  Require cycle: ../../packages/model-providers/src/modelMetadataLayers.ts -> ../../packages/model-providers/src/modelGeneration.ts -> ../../packages/model-providers/src/modelMetadataLayers.ts
+  191 2026-11-27T04:56:48.165 
+  192 2026-11-27T04:56:48.165 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+  193 2026-11-27T04:56:51.290  WARN  Require cycle: src/session/BotGroupMessageText.tsx -> src/session/MessageRenderer.tsx -> src/session/CompanionThreads.tsx -> src/session/BotGroupMessageText.tsx
+  194 2026-11-27T04:56:51.290 
+  195 2026-11-27T04:56:51.290 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+  196 2026-11-27T04:56:51.290  WARN  Deep imports from the 'react-native' package are deprecated ('react-native/Libraries/Text/requireNativeTextEffect'). Source: /Users/<local-user>/Documents/Codex/cindy-plugin-market-ios-qa/source/apps/mobile/src/session/MarkdownListParagraph.tsx 32:24
+  197 2026-11-27T04:56:51.921 iOS Bundled 20ms apps/mobile/src/session/incomingShareNative.ts (1 module)
+  198 2026-11-27T04:56:52.085 iOS Bundled 84ms apps/mobile/src/session/historyDiskStoreExpo.ts (1 module)
+  199 2026-11-27T04:56:52.856 iOS Bundled 26ms apps/mobile/src/session/incomingShareCleanup.ts (1 module)
+  200 2026-11-27T04:56:54.110 iOS Bundled 23ms node_modules/expo-image-manipulator/build/index.js (1 module)
+  201 2026-11-27T04:56:54.110 iOS Bundled 17ms node_modules/expo-file-system/build/index.js (1 module)
+  202 2026-11-27T04:56:55.822  WARN  [js-stall] JS thread stalled ~3.2s (event-loop tick gap)
+  203 2026-11-27T04:57:23.749 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  204 2026-11-27T04:57:23.908 iOS Bundled 112ms apps/mobile/index.js (1 module)
+  205 2026-11-27T04:57:25.147 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  206 2026-11-27T04:57:25.785  WARN  Require cycle: ../../packages/model-providers/src/modelMetadataLayers.ts -> ../../packages/model-providers/src/modelGeneration.ts -> ../../packages/model-providers/src/modelMetadataLayers.ts
+  207 2026-11-27T04:57:25.785 
+  208 2026-11-27T04:57:25.785 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+  209 2026-11-27T04:57:28.924  WARN  Require cycle: src/session/BotGroupMessageText.tsx -> src/session/MessageRenderer.tsx -> src/session/CompanionThreads.tsx -> src/session/BotGroupMessageText.tsx
+  210 2026-11-27T04:57:28.924 
+  211 2026-11-27T04:57:28.924 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+  212 2026-11-27T04:57:28.924  WARN  Deep imports from the 'react-native' package are deprecated ('react-native/Libraries/Text/requireNativeTextEffect'). Source: /Users/<local-user>/Documents/Codex/cindy-plugin-market-ios-qa/source/apps/mobile/src/session/MarkdownListParagraph.tsx 32:24
+  213 2026-11-27T04:57:29.548 iOS Bundled 18ms apps/mobile/src/session/incomingShareNative.ts (1 module)
+  214 2026-11-27T04:57:29.548 iOS Bundled 13ms apps/mobile/src/session/historyDiskStoreExpo.ts (1 module)
+  215 2026-11-27T04:57:30.679 iOS Bundled 82ms apps/mobile/src/session/incomingShareCleanup.ts (1 module)
+  216 2026-11-27T04:57:31.623 iOS Bundled 24ms node_modules/expo-image-manipulator/build/index.js (1 module)
+  217 2026-11-27T04:57:31.624 iOS Bundled 29ms node_modules/expo-file-system/build/index.js (1 module)
+  218 2026-11-27T04:57:33.964  WARN  [js-stall] JS thread stalled ~3.5s (event-loop tick gap)
+  219 2026-11-27T04:59:24.203 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  220 2026-11-27T04:59:24.356 iOS Bundled 143ms apps/mobile/index.js (1 module)
+  221 2026-11-27T04:59:29.866 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  222 2026-11-27T04:59:29.866  WARN  Require cycle: ../../packages/model-providers/src/modelMetadataLayers.ts -> ../../packages/model-providers/src/modelGeneration.ts -> ../../packages/model-providers/src/modelMetadataLayers.ts
+
+==== m2-ios-js-stall-12 ====
+Metro mock 00daccee9b. Local receive times. Source lines 198–238. Paths, identity and credential-related data sanitized.
+Case at warning: sweep-official ('official', ['L', 'XL', 'XXL', 'XXXL', 'AX1', 'AX2', 'AX3', 'AX4', 'AX5']). Most recent entry bundle: 04:57:23.908 app entry bundle. Action tap times in case: not individually timed.
+
+  198 2026-11-27T04:56:52.085 iOS Bundled 84ms apps/mobile/src/session/historyDiskStoreExpo.ts (1 module)
+  199 2026-11-27T04:56:52.856 iOS Bundled 26ms apps/mobile/src/session/incomingShareCleanup.ts (1 module)
+  200 2026-11-27T04:56:54.110 iOS Bundled 23ms node_modules/expo-image-manipulator/build/index.js (1 module)
+  201 2026-11-27T04:56:54.110 iOS Bundled 17ms node_modules/expo-file-system/build/index.js (1 module)
+  202 2026-11-27T04:56:55.822  WARN  [js-stall] JS thread stalled ~3.2s (event-loop tick gap)
+  203 2026-11-27T04:57:23.749 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  204 2026-11-27T04:57:23.908 iOS Bundled 112ms apps/mobile/index.js (1 module)
+  205 2026-11-27T04:57:25.147 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  206 2026-11-27T04:57:25.785  WARN  Require cycle: ../../packages/model-providers/src/modelMetadataLayers.ts -> ../../packages/model-providers/src/modelGeneration.ts -> ../../packages/model-providers/src/modelMetadataLayers.ts
+  207 2026-11-27T04:57:25.785 
+  208 2026-11-27T04:57:25.785 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+  209 2026-11-27T04:57:28.924  WARN  Require cycle: src/session/BotGroupMessageText.tsx -> src/session/MessageRenderer.tsx -> src/session/CompanionThreads.tsx -> src/session/BotGroupMessageText.tsx
+  210 2026-11-27T04:57:28.924 
+  211 2026-11-27T04:57:28.924 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+  212 2026-11-27T04:57:28.924  WARN  Deep imports from the 'react-native' package are deprecated ('react-native/Libraries/Text/requireNativeTextEffect'). Source: /Users/<local-user>/Documents/Codex/cindy-plugin-market-ios-qa/source/apps/mobile/src/session/MarkdownListParagraph.tsx 32:24
+  213 2026-11-27T04:57:29.548 iOS Bundled 18ms apps/mobile/src/session/incomingShareNative.ts (1 module)
+  214 2026-11-27T04:57:29.548 iOS Bundled 13ms apps/mobile/src/session/historyDiskStoreExpo.ts (1 module)
+  215 2026-11-27T04:57:30.679 iOS Bundled 82ms apps/mobile/src/session/incomingShareCleanup.ts (1 module)
+  216 2026-11-27T04:57:31.623 iOS Bundled 24ms node_modules/expo-image-manipulator/build/index.js (1 module)
+  217 2026-11-27T04:57:31.624 iOS Bundled 29ms node_modules/expo-file-system/build/index.js (1 module)
+  218 2026-11-27T04:57:33.964  WARN  [js-stall] JS thread stalled ~3.5s (event-loop tick gap)
+  219 2026-11-27T04:59:24.203 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  220 2026-11-27T04:59:24.356 iOS Bundled 143ms apps/mobile/index.js (1 module)
+  221 2026-11-27T04:59:29.866 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  222 2026-11-27T04:59:29.866  WARN  Require cycle: ../../packages/model-providers/src/modelMetadataLayers.ts -> ../../packages/model-providers/src/modelGeneration.ts -> ../../packages/model-providers/src/modelMetadataLayers.ts
+  223 2026-11-27T04:59:29.866 
+  224 2026-11-27T04:59:29.866 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+  225 2026-11-27T04:59:29.867  WARN  Require cycle: src/session/BotGroupMessageText.tsx -> src/session/MessageRenderer.tsx -> src/session/CompanionThreads.tsx -> src/session/BotGroupMessageText.tsx
+  226 2026-11-27T04:59:29.867 
+  227 2026-11-27T04:59:29.867 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+  228 2026-11-27T04:59:29.867  WARN  Deep imports from the 'react-native' package are deprecated ('react-native/Libraries/Text/requireNativeTextEffect'). Source: /Users/<local-user>/Documents/Codex/cindy-plugin-market-ios-qa/source/apps/mobile/src/session/MarkdownListParagraph.tsx 32:24
+  229 2026-11-27T04:59:30.185 iOS Bundled 117ms apps/mobile/src/session/incomingShareNative.ts (1 module)
+  230 2026-11-27T04:59:30.185 iOS Bundled 15ms apps/mobile/src/session/historyDiskStoreExpo.ts (1 module)
+  231 2026-11-27T04:59:30.962 iOS Bundled 26ms apps/mobile/src/session/incomingShareCleanup.ts (1 module)
+  232 2026-11-27T04:59:32.207 iOS Bundled 18ms node_modules/expo-image-manipulator/build/index.js (1 module)
+  233 2026-11-27T04:59:32.208 iOS Bundled 20ms node_modules/expo-file-system/build/index.js (1 module)
+  234 2026-11-27T04:59:34.538  WARN  [js-stall] JS thread stalled ~3.5s (event-loop tick gap)
+  235 2026-11-27T05:01:54.205 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  236 2026-11-27T05:01:54.686 iOS Bundled 534ms apps/mobile/index.js (1 module)
+  237 2026-11-27T05:02:02.340 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  238 2026-11-27T05:02:02.340  WARN  Require cycle: ../../packages/model-providers/src/modelMetadataLayers.ts -> ../../packages/model-providers/src/modelGeneration.ts -> ../../packages/model-providers/src/modelMetadataLayers.ts
+
+==== m2-ios-js-stall-13 ====
+Metro mock 00daccee9b. Local receive times. Source lines 214–254. Paths, identity and credential-related data sanitized.
+Case at warning: sweep-custom ('custom', ['L', 'XL', 'XXL', 'XXXL', 'AX1', 'AX2', 'AX3', 'AX4', 'AX5']). Most recent entry bundle: 04:59:24.356 app entry bundle. Action tap times in case: not individually timed.
+
+  214 2026-11-27T04:57:29.548 iOS Bundled 13ms apps/mobile/src/session/historyDiskStoreExpo.ts (1 module)
+  215 2026-11-27T04:57:30.679 iOS Bundled 82ms apps/mobile/src/session/incomingShareCleanup.ts (1 module)
+  216 2026-11-27T04:57:31.623 iOS Bundled 24ms node_modules/expo-image-manipulator/build/index.js (1 module)
+  217 2026-11-27T04:57:31.624 iOS Bundled 29ms node_modules/expo-file-system/build/index.js (1 module)
+  218 2026-11-27T04:57:33.964  WARN  [js-stall] JS thread stalled ~3.5s (event-loop tick gap)
+  219 2026-11-27T04:59:24.203 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  220 2026-11-27T04:59:24.356 iOS Bundled 143ms apps/mobile/index.js (1 module)
+  221 2026-11-27T04:59:29.866 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  222 2026-11-27T04:59:29.866  WARN  Require cycle: ../../packages/model-providers/src/modelMetadataLayers.ts -> ../../packages/model-providers/src/modelGeneration.ts -> ../../packages/model-providers/src/modelMetadataLayers.ts
+  223 2026-11-27T04:59:29.866 
+  224 2026-11-27T04:59:29.866 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+  225 2026-11-27T04:59:29.867  WARN  Require cycle: src/session/BotGroupMessageText.tsx -> src/session/MessageRenderer.tsx -> src/session/CompanionThreads.tsx -> src/session/BotGroupMessageText.tsx
+  226 2026-11-27T04:59:29.867 
+  227 2026-11-27T04:59:29.867 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+  228 2026-11-27T04:59:29.867  WARN  Deep imports from the 'react-native' package are deprecated ('react-native/Libraries/Text/requireNativeTextEffect'). Source: /Users/<local-user>/Documents/Codex/cindy-plugin-market-ios-qa/source/apps/mobile/src/session/MarkdownListParagraph.tsx 32:24
+  229 2026-11-27T04:59:30.185 iOS Bundled 117ms apps/mobile/src/session/incomingShareNative.ts (1 module)
+  230 2026-11-27T04:59:30.185 iOS Bundled 15ms apps/mobile/src/session/historyDiskStoreExpo.ts (1 module)
+  231 2026-11-27T04:59:30.962 iOS Bundled 26ms apps/mobile/src/session/incomingShareCleanup.ts (1 module)
+  232 2026-11-27T04:59:32.207 iOS Bundled 18ms node_modules/expo-image-manipulator/build/index.js (1 module)
+  233 2026-11-27T04:59:32.208 iOS Bundled 20ms node_modules/expo-file-system/build/index.js (1 module)
+  234 2026-11-27T04:59:34.538  WARN  [js-stall] JS thread stalled ~3.5s (event-loop tick gap)
+  235 2026-11-27T05:01:54.205 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  236 2026-11-27T05:01:54.686 iOS Bundled 534ms apps/mobile/index.js (1 module)
+  237 2026-11-27T05:02:02.340 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  238 2026-11-27T05:02:02.340  WARN  Require cycle: ../../packages/model-providers/src/modelMetadataLayers.ts -> ../../packages/model-providers/src/modelGeneration.ts -> ../../packages/model-providers/src/modelMetadataLayers.ts
+  239 2026-11-27T05:02:02.340 
+  240 2026-11-27T05:02:02.340 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+  241 2026-11-27T05:02:02.340  WARN  Require cycle: src/session/BotGroupMessageText.tsx -> src/session/MessageRenderer.tsx -> src/session/CompanionThreads.tsx -> src/session/BotGroupMessageText.tsx
+  242 2026-11-27T05:02:02.340 
+  243 2026-11-27T05:02:02.340 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+  244 2026-11-27T05:02:02.340  WARN  Deep imports from the 'react-native' package are deprecated ('react-native/Libraries/Text/requireNativeTextEffect'). Source: /Users/<local-user>/Documents/Codex/cindy-plugin-market-ios-qa/source/apps/mobile/src/session/MarkdownListParagraph.tsx 32:24
+  245 2026-11-27T05:02:02.809 iOS Bundled 60ms apps/mobile/src/session/incomingShareNative.ts (1 module)
+  246 2026-11-27T05:02:02.961 iOS Bundled 32ms apps/mobile/src/session/historyDiskStoreExpo.ts (1 module)
+  247 2026-11-27T05:02:04.056 iOS Bundled 42ms apps/mobile/src/session/incomingShareCleanup.ts (1 module)
+  248 2026-11-27T05:02:05.624 iOS Bundled 32ms node_modules/expo-image-manipulator/build/index.js (1 module)
+  249 2026-11-27T05:02:05.624 iOS Bundled 26ms node_modules/expo-file-system/build/index.js (1 module)
+  250 2026-11-27T05:02:09.174  WARN  [js-stall] JS thread stalled ~5.6s (event-loop tick gap)
+  251 2026-11-27T05:02:49.301 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  252 2026-11-27T05:02:49.453 iOS Bundled 251ms apps/mobile/index.js (1 module)
+  253 2026-11-27T05:02:55.860 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  254 2026-11-27T05:02:56.011  WARN  Require cycle: ../../packages/model-providers/src/modelMetadataLayers.ts -> ../../packages/model-providers/src/modelGeneration.ts -> ../../packages/model-providers/src/modelMetadataLayers.ts
+
+==== m2-ios-js-stall-14 ====
+Metro mock 00daccee9b. Local receive times. Source lines 230–270. Paths, identity and credential-related data sanitized.
+Case at warning: sweep-custom ('custom', ['L', 'XL', 'XXL', 'XXXL', 'AX1', 'AX2', 'AX3', 'AX4', 'AX5']). Most recent entry bundle: 05:01:54.686 app entry bundle. Action tap times in case: not individually timed.
+
+  230 2026-11-27T04:59:30.185 iOS Bundled 15ms apps/mobile/src/session/historyDiskStoreExpo.ts (1 module)
+  231 2026-11-27T04:59:30.962 iOS Bundled 26ms apps/mobile/src/session/incomingShareCleanup.ts (1 module)
+  232 2026-11-27T04:59:32.207 iOS Bundled 18ms node_modules/expo-image-manipulator/build/index.js (1 module)
+  233 2026-11-27T04:59:32.208 iOS Bundled 20ms node_modules/expo-file-system/build/index.js (1 module)
+  234 2026-11-27T04:59:34.538  WARN  [js-stall] JS thread stalled ~3.5s (event-loop tick gap)
+  235 2026-11-27T05:01:54.205 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  236 2026-11-27T05:01:54.686 iOS Bundled 534ms apps/mobile/index.js (1 module)
+  237 2026-11-27T05:02:02.340 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  238 2026-11-27T05:02:02.340  WARN  Require cycle: ../../packages/model-providers/src/modelMetadataLayers.ts -> ../../packages/model-providers/src/modelGeneration.ts -> ../../packages/model-providers/src/modelMetadataLayers.ts
+  239 2026-11-27T05:02:02.340 
+  240 2026-11-27T05:02:02.340 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+  241 2026-11-27T05:02:02.340  WARN  Require cycle: src/session/BotGroupMessageText.tsx -> src/session/MessageRenderer.tsx -> src/session/CompanionThreads.tsx -> src/session/BotGroupMessageText.tsx
+  242 2026-11-27T05:02:02.340 
+  243 2026-11-27T05:02:02.340 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+  244 2026-11-27T05:02:02.340  WARN  Deep imports from the 'react-native' package are deprecated ('react-native/Libraries/Text/requireNativeTextEffect'). Source: /Users/<local-user>/Documents/Codex/cindy-plugin-market-ios-qa/source/apps/mobile/src/session/MarkdownListParagraph.tsx 32:24
+  245 2026-11-27T05:02:02.809 iOS Bundled 60ms apps/mobile/src/session/incomingShareNative.ts (1 module)
+  246 2026-11-27T05:02:02.961 iOS Bundled 32ms apps/mobile/src/session/historyDiskStoreExpo.ts (1 module)
+  247 2026-11-27T05:02:04.056 iOS Bundled 42ms apps/mobile/src/session/incomingShareCleanup.ts (1 module)
+  248 2026-11-27T05:02:05.624 iOS Bundled 32ms node_modules/expo-image-manipulator/build/index.js (1 module)
+  249 2026-11-27T05:02:05.624 iOS Bundled 26ms node_modules/expo-file-system/build/index.js (1 module)
+  250 2026-11-27T05:02:09.174  WARN  [js-stall] JS thread stalled ~5.6s (event-loop tick gap)
+  251 2026-11-27T05:02:49.301 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  252 2026-11-27T05:02:49.453 iOS Bundled 251ms apps/mobile/index.js (1 module)
+  253 2026-11-27T05:02:55.860 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  254 2026-11-27T05:02:56.011  WARN  Require cycle: ../../packages/model-providers/src/modelMetadataLayers.ts -> ../../packages/model-providers/src/modelGeneration.ts -> ../../packages/model-providers/src/modelMetadataLayers.ts
+  255 2026-11-27T05:02:56.011 
+  256 2026-11-27T05:02:56.011 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+  257 2026-11-27T05:02:56.011  WARN  Require cycle: src/session/BotGroupMessageText.tsx -> src/session/MessageRenderer.tsx -> src/session/CompanionThreads.tsx -> src/session/BotGroupMessageText.tsx
+  258 2026-11-27T05:02:56.011 
+  259 2026-11-27T05:02:56.011 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+  260 2026-11-27T05:02:56.011  WARN  Deep imports from the 'react-native' package are deprecated ('react-native/Libraries/Text/requireNativeTextEffect'). Source: /Users/<local-user>/Documents/Codex/cindy-plugin-market-ios-qa/source/apps/mobile/src/session/MarkdownListParagraph.tsx 32:24
+  261 2026-11-27T05:02:56.508 iOS Bundled 38ms apps/mobile/src/session/incomingShareNative.ts (1 module)
+  262 2026-11-27T05:02:56.508 iOS Bundled 52ms apps/mobile/src/session/historyDiskStoreExpo.ts (1 module)
+  263 2026-11-27T05:02:57.477 iOS Bundled 141ms apps/mobile/src/session/incomingShareCleanup.ts (1 module)
+  264 2026-11-27T05:02:58.251  WARN  Sending `onAnimatedValueUpdate` with no listeners registered.
+  265 2026-11-27T05:02:58.252  WARN  Sending `onAnimatedValueUpdate` with no listeners registered.
+  266 2026-11-27T05:02:58.252  WARN  Sending `onAnimatedValueUpdate` with no listeners registered.
+  267 2026-11-27T05:02:58.252  WARN  Sending `onAnimatedValueUpdate` with no listeners registered.
+  268 2026-11-27T05:02:58.724 iOS Bundled 37ms node_modules/expo-image-manipulator/build/index.js (1 module)
+  269 2026-11-27T05:02:58.724 iOS Bundled 54ms node_modules/expo-file-system/build/index.js (1 module)
+  270 2026-11-27T05:03:00.928  WARN  [js-stall] JS thread stalled ~3.7s (event-loop tick gap)
+
+==== m2-ios-js-stall-15 ====
+Metro mock 00daccee9b. Local receive times. Source lines 250–290. Paths, identity and credential-related data sanitized.
+Case at warning: compact ('official',). Most recent entry bundle: 05:02:49.453 app entry bundle. Action tap times in case: 05:03:26.049.
+
+  250 2026-11-27T05:02:09.174  WARN  [js-stall] JS thread stalled ~5.6s (event-loop tick gap)
+  251 2026-11-27T05:02:49.301 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  252 2026-11-27T05:02:49.453 iOS Bundled 251ms apps/mobile/index.js (1 module)
+  253 2026-11-27T05:02:55.860 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  254 2026-11-27T05:02:56.011  WARN  Require cycle: ../../packages/model-providers/src/modelMetadataLayers.ts -> ../../packages/model-providers/src/modelGeneration.ts -> ../../packages/model-providers/src/modelMetadataLayers.ts
+  255 2026-11-27T05:02:56.011 
+  256 2026-11-27T05:02:56.011 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+  257 2026-11-27T05:02:56.011  WARN  Require cycle: src/session/BotGroupMessageText.tsx -> src/session/MessageRenderer.tsx -> src/session/CompanionThreads.tsx -> src/session/BotGroupMessageText.tsx
+  258 2026-11-27T05:02:56.011 
+  259 2026-11-27T05:02:56.011 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+  260 2026-11-27T05:02:56.011  WARN  Deep imports from the 'react-native' package are deprecated ('react-native/Libraries/Text/requireNativeTextEffect'). Source: /Users/<local-user>/Documents/Codex/cindy-plugin-market-ios-qa/source/apps/mobile/src/session/MarkdownListParagraph.tsx 32:24
+  261 2026-11-27T05:02:56.508 iOS Bundled 38ms apps/mobile/src/session/incomingShareNative.ts (1 module)
+  262 2026-11-27T05:02:56.508 iOS Bundled 52ms apps/mobile/src/session/historyDiskStoreExpo.ts (1 module)
+  263 2026-11-27T05:02:57.477 iOS Bundled 141ms apps/mobile/src/session/incomingShareCleanup.ts (1 module)
+  264 2026-11-27T05:02:58.251  WARN  Sending `onAnimatedValueUpdate` with no listeners registered.
+  265 2026-11-27T05:02:58.252  WARN  Sending `onAnimatedValueUpdate` with no listeners registered.
+  266 2026-11-27T05:02:58.252  WARN  Sending `onAnimatedValueUpdate` with no listeners registered.
+  267 2026-11-27T05:02:58.252  WARN  Sending `onAnimatedValueUpdate` with no listeners registered.
+  268 2026-11-27T05:02:58.724 iOS Bundled 37ms node_modules/expo-image-manipulator/build/index.js (1 module)
+  269 2026-11-27T05:02:58.724 iOS Bundled 54ms node_modules/expo-file-system/build/index.js (1 module)
+  270 2026-11-27T05:03:00.928  WARN  [js-stall] JS thread stalled ~3.7s (event-loop tick gap)
+  271 2026-11-27T05:03:38.208 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  272 2026-11-27T05:03:38.368 iOS Bundled 181ms apps/mobile/index.js (1 module)
+  273 2026-11-27T05:03:39.623 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  274 2026-11-27T05:03:40.245  WARN  Require cycle: ../../packages/model-providers/src/modelMetadataLayers.ts -> ../../packages/model-providers/src/modelGeneration.ts -> ../../packages/model-providers/src/modelMetadataLayers.ts
+  275 2026-11-27T05:03:40.245 
+  276 2026-11-27T05:03:40.245 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+  277 2026-11-27T05:03:43.221  WARN  Require cycle: src/session/BotGroupMessageText.tsx -> src/session/MessageRenderer.tsx -> src/session/CompanionThreads.tsx -> src/session/BotGroupMessageText.tsx
+  278 2026-11-27T05:03:43.221 
+  279 2026-11-27T05:03:43.221 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+  280 2026-11-27T05:03:43.221  WARN  Deep imports from the 'react-native' package are deprecated ('react-native/Libraries/Text/requireNativeTextEffect'). Source: /Users/<local-user>/Documents/Codex/cindy-plugin-market-ios-qa/source/apps/mobile/src/session/MarkdownListParagraph.tsx 32:24
+  281 2026-11-27T05:03:43.685 iOS Bundled 36ms apps/mobile/src/session/incomingShareNative.ts (1 module)
+  282 2026-11-27T05:03:43.862 iOS Bundled 110ms apps/mobile/src/session/historyDiskStoreExpo.ts (1 module)
+  283 2026-11-27T05:03:44.656 iOS Bundled 39ms apps/mobile/src/session/incomingShareCleanup.ts (1 module)
+  284 2026-11-27T05:03:45.128  WARN  Sending `onAnimatedValueUpdate` with no listeners registered.
+  285 2026-11-27T05:03:45.128  WARN  Sending `onAnimatedValueUpdate` with no listeners registered.
+  286 2026-11-27T05:03:45.128  WARN  Sending `onAnimatedValueUpdate` with no listeners registered.
+  287 2026-11-27T05:03:45.128  WARN  Sending `onAnimatedValueUpdate` with no listeners registered.
+  288 2026-11-27T05:03:45.128  WARN  Sending `onAnimatedValueUpdate` with no listeners registered.
+  289 2026-11-27T05:03:45.128  WARN  Sending `onAnimatedValueUpdate` with no listeners registered.
+  290 2026-11-27T05:03:45.584 iOS Bundled 25ms node_modules/expo-image-manipulator/build/index.js (1 module)
+
+==== m2-ios-js-stall-16 ====
+Metro mock 00daccee9b. Local receive times. Source lines 272–312. Paths, identity and credential-related data sanitized.
+Case at warning: compact ('custom',). Most recent entry bundle: 05:03:38.368 app entry bundle. Action tap times in case: 05:04:08.186.
+
+  272 2026-11-27T05:03:38.368 iOS Bundled 181ms apps/mobile/index.js (1 module)
+  273 2026-11-27T05:03:39.623 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  274 2026-11-27T05:03:40.245  WARN  Require cycle: ../../packages/model-providers/src/modelMetadataLayers.ts -> ../../packages/model-providers/src/modelGeneration.ts -> ../../packages/model-providers/src/modelMetadataLayers.ts
+  275 2026-11-27T05:03:40.245 
+  276 2026-11-27T05:03:40.245 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+  277 2026-11-27T05:03:43.221  WARN  Require cycle: src/session/BotGroupMessageText.tsx -> src/session/MessageRenderer.tsx -> src/session/CompanionThreads.tsx -> src/session/BotGroupMessageText.tsx
+  278 2026-11-27T05:03:43.221 
+  279 2026-11-27T05:03:43.221 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+  280 2026-11-27T05:03:43.221  WARN  Deep imports from the 'react-native' package are deprecated ('react-native/Libraries/Text/requireNativeTextEffect'). Source: /Users/<local-user>/Documents/Codex/cindy-plugin-market-ios-qa/source/apps/mobile/src/session/MarkdownListParagraph.tsx 32:24
+  281 2026-11-27T05:03:43.685 iOS Bundled 36ms apps/mobile/src/session/incomingShareNative.ts (1 module)
+  282 2026-11-27T05:03:43.862 iOS Bundled 110ms apps/mobile/src/session/historyDiskStoreExpo.ts (1 module)
+  283 2026-11-27T05:03:44.656 iOS Bundled 39ms apps/mobile/src/session/incomingShareCleanup.ts (1 module)
+  284 2026-11-27T05:03:45.128  WARN  Sending `onAnimatedValueUpdate` with no listeners registered.
+  285 2026-11-27T05:03:45.128  WARN  Sending `onAnimatedValueUpdate` with no listeners registered.
+  286 2026-11-27T05:03:45.128  WARN  Sending `onAnimatedValueUpdate` with no listeners registered.
+  287 2026-11-27T05:03:45.128  WARN  Sending `onAnimatedValueUpdate` with no listeners registered.
+  288 2026-11-27T05:03:45.128  WARN  Sending `onAnimatedValueUpdate` with no listeners registered.
+  289 2026-11-27T05:03:45.128  WARN  Sending `onAnimatedValueUpdate` with no listeners registered.
+  290 2026-11-27T05:03:45.584 iOS Bundled 25ms node_modules/expo-image-manipulator/build/index.js (1 module)
+  291 2026-11-27T05:03:45.584 iOS Bundled 37ms node_modules/expo-file-system/build/index.js (1 module)
+  292 2026-11-27T05:03:47.470  WARN  [js-stall] JS thread stalled ~2.8s (event-loop tick gap)
+  293 2026-11-27T05:04:20.678 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  294 2026-11-27T05:04:20.678 iOS Bundled 123ms apps/mobile/index.js (1 module)
+  295 2026-11-27T05:04:22.104 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  296 2026-11-27T05:04:22.572  WARN  Require cycle: ../../packages/model-providers/src/modelMetadataLayers.ts -> ../../packages/model-providers/src/modelGeneration.ts -> ../../packages/model-providers/src/modelMetadataLayers.ts
+  297 2026-11-27T05:04:22.572 
+  298 2026-11-27T05:04:22.572 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+  299 2026-11-27T05:04:25.714  WARN  Require cycle: src/session/BotGroupMessageText.tsx -> src/session/MessageRenderer.tsx -> src/session/CompanionThreads.tsx -> src/session/BotGroupMessageText.tsx
+  300 2026-11-27T05:04:25.714 
+  301 2026-11-27T05:04:25.714 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+  302 2026-11-27T05:04:25.714  WARN  Deep imports from the 'react-native' package are deprecated ('react-native/Libraries/Text/requireNativeTextEffect'). Source: /Users/<local-user>/Documents/Codex/cindy-plugin-market-ios-qa/source/apps/mobile/src/session/MarkdownListParagraph.tsx 32:24
+  303 2026-11-27T05:04:26.200 iOS Bundled 14ms apps/mobile/src/session/incomingShareNative.ts (1 module)
+  304 2026-11-27T05:04:26.359 iOS Bundled 42ms apps/mobile/src/session/historyDiskStoreExpo.ts (1 module)
+  305 2026-11-27T05:04:26.986 iOS Bundled 25ms apps/mobile/src/session/incomingShareCleanup.ts (1 module)
+  306 2026-11-27T05:04:27.930 iOS Bundled 18ms node_modules/expo-image-manipulator/build/index.js (1 module)
+  307 2026-11-27T05:04:27.930 iOS Bundled 21ms node_modules/expo-file-system/build/index.js (1 module)
+  308 2026-11-27T05:04:29.969  WARN  [js-stall] JS thread stalled ~2.9s (event-loop tick gap)
+  309 2026-11-27T05:05:00.731 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  310 2026-11-27T05:05:00.895 iOS Bundled 108ms apps/mobile/index.js (1 module)
+  311 2026-11-27T05:05:02.142 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  312 2026-11-27T05:05:02.776  WARN  Require cycle: ../../packages/model-providers/src/modelMetadataLayers.ts -> ../../packages/model-providers/src/modelGeneration.ts -> ../../packages/model-providers/src/modelMetadataLayers.ts
+
+==== m2-ios-js-stall-17 ====
+Metro mock 00daccee9b. Local receive times. Source lines 288–328. Paths, identity and credential-related data sanitized.
+Case at warning: second ('AX1',). Most recent entry bundle: 05:04:20.678 app entry bundle. Action tap times in case: 05:04:45.467, 05:04:53.780, 05:04:54.829.
+
+  288 2026-11-27T05:03:45.128  WARN  Sending `onAnimatedValueUpdate` with no listeners registered.
+  289 2026-11-27T05:03:45.128  WARN  Sending `onAnimatedValueUpdate` with no listeners registered.
+  290 2026-11-27T05:03:45.584 iOS Bundled 25ms node_modules/expo-image-manipulator/build/index.js (1 module)
+  291 2026-11-27T05:03:45.584 iOS Bundled 37ms node_modules/expo-file-system/build/index.js (1 module)
+  292 2026-11-27T05:03:47.470  WARN  [js-stall] JS thread stalled ~2.8s (event-loop tick gap)
+  293 2026-11-27T05:04:20.678 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  294 2026-11-27T05:04:20.678 iOS Bundled 123ms apps/mobile/index.js (1 module)
+  295 2026-11-27T05:04:22.104 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  296 2026-11-27T05:04:22.572  WARN  Require cycle: ../../packages/model-providers/src/modelMetadataLayers.ts -> ../../packages/model-providers/src/modelGeneration.ts -> ../../packages/model-providers/src/modelMetadataLayers.ts
+  297 2026-11-27T05:04:22.572 
+  298 2026-11-27T05:04:22.572 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+  299 2026-11-27T05:04:25.714  WARN  Require cycle: src/session/BotGroupMessageText.tsx -> src/session/MessageRenderer.tsx -> src/session/CompanionThreads.tsx -> src/session/BotGroupMessageText.tsx
+  300 2026-11-27T05:04:25.714 
+  301 2026-11-27T05:04:25.714 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+  302 2026-11-27T05:04:25.714  WARN  Deep imports from the 'react-native' package are deprecated ('react-native/Libraries/Text/requireNativeTextEffect'). Source: /Users/<local-user>/Documents/Codex/cindy-plugin-market-ios-qa/source/apps/mobile/src/session/MarkdownListParagraph.tsx 32:24
+  303 2026-11-27T05:04:26.200 iOS Bundled 14ms apps/mobile/src/session/incomingShareNative.ts (1 module)
+  304 2026-11-27T05:04:26.359 iOS Bundled 42ms apps/mobile/src/session/historyDiskStoreExpo.ts (1 module)
+  305 2026-11-27T05:04:26.986 iOS Bundled 25ms apps/mobile/src/session/incomingShareCleanup.ts (1 module)
+  306 2026-11-27T05:04:27.930 iOS Bundled 18ms node_modules/expo-image-manipulator/build/index.js (1 module)
+  307 2026-11-27T05:04:27.930 iOS Bundled 21ms node_modules/expo-file-system/build/index.js (1 module)
+  308 2026-11-27T05:04:29.969  WARN  [js-stall] JS thread stalled ~2.9s (event-loop tick gap)
+  309 2026-11-27T05:05:00.731 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  310 2026-11-27T05:05:00.895 iOS Bundled 108ms apps/mobile/index.js (1 module)
+  311 2026-11-27T05:05:02.142 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  312 2026-11-27T05:05:02.776  WARN  Require cycle: ../../packages/model-providers/src/modelMetadataLayers.ts -> ../../packages/model-providers/src/modelGeneration.ts -> ../../packages/model-providers/src/modelMetadataLayers.ts
+  313 2026-11-27T05:05:02.777 
+  314 2026-11-27T05:05:02.777 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+  315 2026-11-27T05:05:05.740  WARN  Require cycle: src/session/BotGroupMessageText.tsx -> src/session/MessageRenderer.tsx -> src/session/CompanionThreads.tsx -> src/session/BotGroupMessageText.tsx
+  316 2026-11-27T05:05:05.740 
+  317 2026-11-27T05:05:05.740 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+  318 2026-11-27T05:05:05.740  WARN  Deep imports from the 'react-native' package are deprecated ('react-native/Libraries/Text/requireNativeTextEffect'). Source: /Users/<local-user>/Documents/Codex/cindy-plugin-market-ios-qa/source/apps/mobile/src/session/MarkdownListParagraph.tsx 32:24
+  319 2026-11-27T05:05:06.370 iOS Bundled 15ms apps/mobile/src/session/incomingShareNative.ts (1 module)
+  320 2026-11-27T05:05:06.370 iOS Bundled 11ms apps/mobile/src/session/historyDiskStoreExpo.ts (1 module)
+  321 2026-11-27T05:05:06.998 iOS Bundled 20ms apps/mobile/src/session/incomingShareCleanup.ts (1 module)
+  322 2026-11-27T05:05:08.093 iOS Bundled 15ms node_modules/expo-image-manipulator/build/index.js (1 module)
+  323 2026-11-27T05:05:08.093 iOS Bundled 14ms node_modules/expo-file-system/build/index.js (1 module)
+  324 2026-11-27T05:05:09.982  WARN  [js-stall] JS thread stalled ~2.8s (event-loop tick gap)
+  325 2026-11-27T05:05:39.718 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  326 2026-11-27T05:05:39.876 iOS Bundled 129ms apps/mobile/index.js (1 module)
+  327 2026-11-27T05:05:41.114 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  328 2026-11-27T05:05:41.583  WARN  Require cycle: ../../packages/model-providers/src/modelMetadataLayers.ts -> ../../packages/model-providers/src/modelGeneration.ts -> ../../packages/model-providers/src/modelMetadataLayers.ts
+
+==== m2-ios-js-stall-18 ====
+Metro mock 00daccee9b. Local receive times. Source lines 304–344. Paths, identity and credential-related data sanitized.
+Case at warning: second ('XXXL',). Most recent entry bundle: 05:05:00.895 app entry bundle. Action tap times in case: 05:05:24.777, 05:05:32.773, 05:05:33.796.
+
+  304 2026-11-27T05:04:26.359 iOS Bundled 42ms apps/mobile/src/session/historyDiskStoreExpo.ts (1 module)
+  305 2026-11-27T05:04:26.986 iOS Bundled 25ms apps/mobile/src/session/incomingShareCleanup.ts (1 module)
+  306 2026-11-27T05:04:27.930 iOS Bundled 18ms node_modules/expo-image-manipulator/build/index.js (1 module)
+  307 2026-11-27T05:04:27.930 iOS Bundled 21ms node_modules/expo-file-system/build/index.js (1 module)
+  308 2026-11-27T05:04:29.969  WARN  [js-stall] JS thread stalled ~2.9s (event-loop tick gap)
+  309 2026-11-27T05:05:00.731 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  310 2026-11-27T05:05:00.895 iOS Bundled 108ms apps/mobile/index.js (1 module)
+  311 2026-11-27T05:05:02.142 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  312 2026-11-27T05:05:02.776  WARN  Require cycle: ../../packages/model-providers/src/modelMetadataLayers.ts -> ../../packages/model-providers/src/modelGeneration.ts -> ../../packages/model-providers/src/modelMetadataLayers.ts
+  313 2026-11-27T05:05:02.777 
+  314 2026-11-27T05:05:02.777 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+  315 2026-11-27T05:05:05.740  WARN  Require cycle: src/session/BotGroupMessageText.tsx -> src/session/MessageRenderer.tsx -> src/session/CompanionThreads.tsx -> src/session/BotGroupMessageText.tsx
+  316 2026-11-27T05:05:05.740 
+  317 2026-11-27T05:05:05.740 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+  318 2026-11-27T05:05:05.740  WARN  Deep imports from the 'react-native' package are deprecated ('react-native/Libraries/Text/requireNativeTextEffect'). Source: /Users/<local-user>/Documents/Codex/cindy-plugin-market-ios-qa/source/apps/mobile/src/session/MarkdownListParagraph.tsx 32:24
+  319 2026-11-27T05:05:06.370 iOS Bundled 15ms apps/mobile/src/session/incomingShareNative.ts (1 module)
+  320 2026-11-27T05:05:06.370 iOS Bundled 11ms apps/mobile/src/session/historyDiskStoreExpo.ts (1 module)
+  321 2026-11-27T05:05:06.998 iOS Bundled 20ms apps/mobile/src/session/incomingShareCleanup.ts (1 module)
+  322 2026-11-27T05:05:08.093 iOS Bundled 15ms node_modules/expo-image-manipulator/build/index.js (1 module)
+  323 2026-11-27T05:05:08.093 iOS Bundled 14ms node_modules/expo-file-system/build/index.js (1 module)
+  324 2026-11-27T05:05:09.982  WARN  [js-stall] JS thread stalled ~2.8s (event-loop tick gap)
+  325 2026-11-27T05:05:39.718 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  326 2026-11-27T05:05:39.876 iOS Bundled 129ms apps/mobile/index.js (1 module)
+  327 2026-11-27T05:05:41.114 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  328 2026-11-27T05:05:41.583  WARN  Require cycle: ../../packages/model-providers/src/modelMetadataLayers.ts -> ../../packages/model-providers/src/modelGeneration.ts -> ../../packages/model-providers/src/modelMetadataLayers.ts
+  329 2026-11-27T05:05:41.583 
+  330 2026-11-27T05:05:41.583 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+  331 2026-11-27T05:05:44.709  WARN  Require cycle: src/session/BotGroupMessageText.tsx -> src/session/MessageRenderer.tsx -> src/session/CompanionThreads.tsx -> src/session/BotGroupMessageText.tsx
+  332 2026-11-27T05:05:44.709 
+  333 2026-11-27T05:05:44.710 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+  334 2026-11-27T05:05:44.710  WARN  Deep imports from the 'react-native' package are deprecated ('react-native/Libraries/Text/requireNativeTextEffect'). Source: /Users/<local-user>/Documents/Codex/cindy-plugin-market-ios-qa/source/apps/mobile/src/session/MarkdownListParagraph.tsx 32:24
+  335 2026-11-27T05:05:45.330 iOS Bundled 18ms apps/mobile/src/session/incomingShareNative.ts (1 module)
+  336 2026-11-27T05:05:45.495 iOS Bundled 37ms apps/mobile/src/session/historyDiskStoreExpo.ts (1 module)
+  337 2026-11-27T05:05:46.280 iOS Bundled 33ms apps/mobile/src/session/incomingShareCleanup.ts (1 module)
+  338 2026-11-27T05:05:47.522 iOS Bundled 17ms node_modules/expo-image-manipulator/build/index.js (1 module)
+  339 2026-11-27T05:05:47.522 iOS Bundled 12ms node_modules/expo-file-system/build/index.js (1 module)
+  340 2026-11-27T05:05:49.553  WARN  [js-stall] JS thread stalled ~3.4s (event-loop tick gap)
+  341 2026-11-27T05:05:55.820  WARN  [js-stall] JS thread stalled ~2.1s (event-loop tick gap)
+  342 2026-11-27T05:06:40.110 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  343 2026-11-27T05:06:40.271 iOS Bundled 135ms apps/mobile/index.js (1 module)
+  344 2026-11-27T05:06:46.078 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+
+==== m2-ios-js-stall-19 ====
+Metro mock 00daccee9b. Local receive times. Source lines 320–360. Paths, identity and credential-related data sanitized.
+Case at warning: record (). Most recent entry bundle: 05:05:39.876 app entry bundle. Action tap times in case: not individually timed.
+
+  320 2026-11-27T05:05:06.370 iOS Bundled 11ms apps/mobile/src/session/historyDiskStoreExpo.ts (1 module)
+  321 2026-11-27T05:05:06.998 iOS Bundled 20ms apps/mobile/src/session/incomingShareCleanup.ts (1 module)
+  322 2026-11-27T05:05:08.093 iOS Bundled 15ms node_modules/expo-image-manipulator/build/index.js (1 module)
+  323 2026-11-27T05:05:08.093 iOS Bundled 14ms node_modules/expo-file-system/build/index.js (1 module)
+  324 2026-11-27T05:05:09.982  WARN  [js-stall] JS thread stalled ~2.8s (event-loop tick gap)
+  325 2026-11-27T05:05:39.718 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  326 2026-11-27T05:05:39.876 iOS Bundled 129ms apps/mobile/index.js (1 module)
+  327 2026-11-27T05:05:41.114 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  328 2026-11-27T05:05:41.583  WARN  Require cycle: ../../packages/model-providers/src/modelMetadataLayers.ts -> ../../packages/model-providers/src/modelGeneration.ts -> ../../packages/model-providers/src/modelMetadataLayers.ts
+  329 2026-11-27T05:05:41.583 
+  330 2026-11-27T05:05:41.583 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+  331 2026-11-27T05:05:44.709  WARN  Require cycle: src/session/BotGroupMessageText.tsx -> src/session/MessageRenderer.tsx -> src/session/CompanionThreads.tsx -> src/session/BotGroupMessageText.tsx
+  332 2026-11-27T05:05:44.709 
+  333 2026-11-27T05:05:44.710 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+  334 2026-11-27T05:05:44.710  WARN  Deep imports from the 'react-native' package are deprecated ('react-native/Libraries/Text/requireNativeTextEffect'). Source: /Users/<local-user>/Documents/Codex/cindy-plugin-market-ios-qa/source/apps/mobile/src/session/MarkdownListParagraph.tsx 32:24
+  335 2026-11-27T05:05:45.330 iOS Bundled 18ms apps/mobile/src/session/incomingShareNative.ts (1 module)
+  336 2026-11-27T05:05:45.495 iOS Bundled 37ms apps/mobile/src/session/historyDiskStoreExpo.ts (1 module)
+  337 2026-11-27T05:05:46.280 iOS Bundled 33ms apps/mobile/src/session/incomingShareCleanup.ts (1 module)
+  338 2026-11-27T05:05:47.522 iOS Bundled 17ms node_modules/expo-image-manipulator/build/index.js (1 module)
+  339 2026-11-27T05:05:47.522 iOS Bundled 12ms node_modules/expo-file-system/build/index.js (1 module)
+  340 2026-11-27T05:05:49.553  WARN  [js-stall] JS thread stalled ~3.4s (event-loop tick gap)
+  341 2026-11-27T05:05:55.820  WARN  [js-stall] JS thread stalled ~2.1s (event-loop tick gap)
+  342 2026-11-27T05:06:40.110 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  343 2026-11-27T05:06:40.271 iOS Bundled 135ms apps/mobile/index.js (1 module)
+  344 2026-11-27T05:06:46.078 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  345 2026-11-27T05:06:46.078  WARN  Require cycle: ../../packages/model-providers/src/modelMetadataLayers.ts -> ../../packages/model-providers/src/modelGeneration.ts -> ../../packages/model-providers/src/modelMetadataLayers.ts
+  346 2026-11-27T05:06:46.078 
+  347 2026-11-27T05:06:46.078 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+  348 2026-11-27T05:06:46.078  WARN  Require cycle: src/session/BotGroupMessageText.tsx -> src/session/MessageRenderer.tsx -> src/session/CompanionThreads.tsx -> src/session/BotGroupMessageText.tsx
+  349 2026-11-27T05:06:46.078 
+  350 2026-11-27T05:06:46.078 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+  351 2026-11-27T05:06:46.078  WARN  Deep imports from the 'react-native' package are deprecated ('react-native/Libraries/Text/requireNativeTextEffect'). Source: /Users/<local-user>/Documents/Codex/cindy-plugin-market-ios-qa/source/apps/mobile/src/session/MarkdownListParagraph.tsx 32:24
+  352 2026-11-27T05:06:46.400 iOS Bundled 14ms apps/mobile/src/session/incomingShareNative.ts (1 module)
+  353 2026-11-27T05:06:46.400 iOS Bundled 17ms apps/mobile/src/session/historyDiskStoreExpo.ts (1 module)
+  354 2026-11-27T05:06:47.187 iOS Bundled 25ms apps/mobile/src/session/incomingShareCleanup.ts (1 module)
+  355 2026-11-27T05:06:48.283 iOS Bundled 24ms node_modules/expo-image-manipulator/build/index.js (1 module)
+  356 2026-11-27T05:06:48.283 iOS Bundled 21ms node_modules/expo-file-system/build/index.js (1 module)
+  357 2026-11-27T05:06:50.166  WARN  [js-stall] JS thread stalled ~3.0s (event-loop tick gap)
+  358 2026-11-27T05:06:54.903  WARN  [js-stall] JS thread stalled ~3.1s (event-loop tick gap)
+  359 2026-11-27T05:07:32.708 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  360 2026-11-27T05:07:32.858 iOS Bundled 113ms apps/mobile/index.js (1 module)
+
+==== m2-ios-js-stall-20 ====
+Metro mock 00daccee9b. Local receive times. Source lines 321–361. Paths, identity and credential-related data sanitized.
+Case at warning: record (). Most recent entry bundle: 05:05:39.876 app entry bundle. Action tap times in case: not individually timed.
+
+  321 2026-11-27T05:05:06.998 iOS Bundled 20ms apps/mobile/src/session/incomingShareCleanup.ts (1 module)
+  322 2026-11-27T05:05:08.093 iOS Bundled 15ms node_modules/expo-image-manipulator/build/index.js (1 module)
+  323 2026-11-27T05:05:08.093 iOS Bundled 14ms node_modules/expo-file-system/build/index.js (1 module)
+  324 2026-11-27T05:05:09.982  WARN  [js-stall] JS thread stalled ~2.8s (event-loop tick gap)
+  325 2026-11-27T05:05:39.718 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  326 2026-11-27T05:05:39.876 iOS Bundled 129ms apps/mobile/index.js (1 module)
+  327 2026-11-27T05:05:41.114 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  328 2026-11-27T05:05:41.583  WARN  Require cycle: ../../packages/model-providers/src/modelMetadataLayers.ts -> ../../packages/model-providers/src/modelGeneration.ts -> ../../packages/model-providers/src/modelMetadataLayers.ts
+  329 2026-11-27T05:05:41.583 
+  330 2026-11-27T05:05:41.583 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+  331 2026-11-27T05:05:44.709  WARN  Require cycle: src/session/BotGroupMessageText.tsx -> src/session/MessageRenderer.tsx -> src/session/CompanionThreads.tsx -> src/session/BotGroupMessageText.tsx
+  332 2026-11-27T05:05:44.709 
+  333 2026-11-27T05:05:44.710 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+  334 2026-11-27T05:05:44.710  WARN  Deep imports from the 'react-native' package are deprecated ('react-native/Libraries/Text/requireNativeTextEffect'). Source: /Users/<local-user>/Documents/Codex/cindy-plugin-market-ios-qa/source/apps/mobile/src/session/MarkdownListParagraph.tsx 32:24
+  335 2026-11-27T05:05:45.330 iOS Bundled 18ms apps/mobile/src/session/incomingShareNative.ts (1 module)
+  336 2026-11-27T05:05:45.495 iOS Bundled 37ms apps/mobile/src/session/historyDiskStoreExpo.ts (1 module)
+  337 2026-11-27T05:05:46.280 iOS Bundled 33ms apps/mobile/src/session/incomingShareCleanup.ts (1 module)
+  338 2026-11-27T05:05:47.522 iOS Bundled 17ms node_modules/expo-image-manipulator/build/index.js (1 module)
+  339 2026-11-27T05:05:47.522 iOS Bundled 12ms node_modules/expo-file-system/build/index.js (1 module)
+  340 2026-11-27T05:05:49.553  WARN  [js-stall] JS thread stalled ~3.4s (event-loop tick gap)
+  341 2026-11-27T05:05:55.820  WARN  [js-stall] JS thread stalled ~2.1s (event-loop tick gap)
+  342 2026-11-27T05:06:40.110 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  343 2026-11-27T05:06:40.271 iOS Bundled 135ms apps/mobile/index.js (1 module)
+  344 2026-11-27T05:06:46.078 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  345 2026-11-27T05:06:46.078  WARN  Require cycle: ../../packages/model-providers/src/modelMetadataLayers.ts -> ../../packages/model-providers/src/modelGeneration.ts -> ../../packages/model-providers/src/modelMetadataLayers.ts
+  346 2026-11-27T05:06:46.078 
+  347 2026-11-27T05:06:46.078 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+  348 2026-11-27T05:06:46.078  WARN  Require cycle: src/session/BotGroupMessageText.tsx -> src/session/MessageRenderer.tsx -> src/session/CompanionThreads.tsx -> src/session/BotGroupMessageText.tsx
+  349 2026-11-27T05:06:46.078 
+  350 2026-11-27T05:06:46.078 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+  351 2026-11-27T05:06:46.078  WARN  Deep imports from the 'react-native' package are deprecated ('react-native/Libraries/Text/requireNativeTextEffect'). Source: /Users/<local-user>/Documents/Codex/cindy-plugin-market-ios-qa/source/apps/mobile/src/session/MarkdownListParagraph.tsx 32:24
+  352 2026-11-27T05:06:46.400 iOS Bundled 14ms apps/mobile/src/session/incomingShareNative.ts (1 module)
+  353 2026-11-27T05:06:46.400 iOS Bundled 17ms apps/mobile/src/session/historyDiskStoreExpo.ts (1 module)
+  354 2026-11-27T05:06:47.187 iOS Bundled 25ms apps/mobile/src/session/incomingShareCleanup.ts (1 module)
+  355 2026-11-27T05:06:48.283 iOS Bundled 24ms node_modules/expo-image-manipulator/build/index.js (1 module)
+  356 2026-11-27T05:06:48.283 iOS Bundled 21ms node_modules/expo-file-system/build/index.js (1 module)
+  357 2026-11-27T05:06:50.166  WARN  [js-stall] JS thread stalled ~3.0s (event-loop tick gap)
+  358 2026-11-27T05:06:54.903  WARN  [js-stall] JS thread stalled ~3.1s (event-loop tick gap)
+  359 2026-11-27T05:07:32.708 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  360 2026-11-27T05:07:32.858 iOS Bundled 113ms apps/mobile/index.js (1 module)
+  361 2026-11-27T05:07:38.475 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+
+==== m2-ios-js-stall-21 ====
+Metro mock 00daccee9b. Local receive times. Source lines 337–377. Paths, identity and credential-related data sanitized.
+Case at warning: vo ('L',). Most recent entry bundle: 05:06:40.271 app entry bundle. Action tap times in case: not individually timed.
+
+  337 2026-11-27T05:05:46.280 iOS Bundled 33ms apps/mobile/src/session/incomingShareCleanup.ts (1 module)
+  338 2026-11-27T05:05:47.522 iOS Bundled 17ms node_modules/expo-image-manipulator/build/index.js (1 module)
+  339 2026-11-27T05:05:47.522 iOS Bundled 12ms node_modules/expo-file-system/build/index.js (1 module)
+  340 2026-11-27T05:05:49.553  WARN  [js-stall] JS thread stalled ~3.4s (event-loop tick gap)
+  341 2026-11-27T05:05:55.820  WARN  [js-stall] JS thread stalled ~2.1s (event-loop tick gap)
+  342 2026-11-27T05:06:40.110 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  343 2026-11-27T05:06:40.271 iOS Bundled 135ms apps/mobile/index.js (1 module)
+  344 2026-11-27T05:06:46.078 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  345 2026-11-27T05:06:46.078  WARN  Require cycle: ../../packages/model-providers/src/modelMetadataLayers.ts -> ../../packages/model-providers/src/modelGeneration.ts -> ../../packages/model-providers/src/modelMetadataLayers.ts
+  346 2026-11-27T05:06:46.078 
+  347 2026-11-27T05:06:46.078 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+  348 2026-11-27T05:06:46.078  WARN  Require cycle: src/session/BotGroupMessageText.tsx -> src/session/MessageRenderer.tsx -> src/session/CompanionThreads.tsx -> src/session/BotGroupMessageText.tsx
+  349 2026-11-27T05:06:46.078 
+  350 2026-11-27T05:06:46.078 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+  351 2026-11-27T05:06:46.078  WARN  Deep imports from the 'react-native' package are deprecated ('react-native/Libraries/Text/requireNativeTextEffect'). Source: /Users/<local-user>/Documents/Codex/cindy-plugin-market-ios-qa/source/apps/mobile/src/session/MarkdownListParagraph.tsx 32:24
+  352 2026-11-27T05:06:46.400 iOS Bundled 14ms apps/mobile/src/session/incomingShareNative.ts (1 module)
+  353 2026-11-27T05:06:46.400 iOS Bundled 17ms apps/mobile/src/session/historyDiskStoreExpo.ts (1 module)
+  354 2026-11-27T05:06:47.187 iOS Bundled 25ms apps/mobile/src/session/incomingShareCleanup.ts (1 module)
+  355 2026-11-27T05:06:48.283 iOS Bundled 24ms node_modules/expo-image-manipulator/build/index.js (1 module)
+  356 2026-11-27T05:06:48.283 iOS Bundled 21ms node_modules/expo-file-system/build/index.js (1 module)
+  357 2026-11-27T05:06:50.166  WARN  [js-stall] JS thread stalled ~3.0s (event-loop tick gap)
+  358 2026-11-27T05:06:54.903  WARN  [js-stall] JS thread stalled ~3.1s (event-loop tick gap)
+  359 2026-11-27T05:07:32.708 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  360 2026-11-27T05:07:32.858 iOS Bundled 113ms apps/mobile/index.js (1 module)
+  361 2026-11-27T05:07:38.475 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  362 2026-11-27T05:07:38.475  WARN  Require cycle: ../../packages/model-providers/src/modelMetadataLayers.ts -> ../../packages/model-providers/src/modelGeneration.ts -> ../../packages/model-providers/src/modelMetadataLayers.ts
+  363 2026-11-27T05:07:38.475 
+  364 2026-11-27T05:07:38.475 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+  365 2026-11-27T05:07:38.475  WARN  Require cycle: src/session/BotGroupMessageText.tsx -> src/session/MessageRenderer.tsx -> src/session/CompanionThreads.tsx -> src/session/BotGroupMessageText.tsx
+  366 2026-11-27T05:07:38.475 
+  367 2026-11-27T05:07:38.475 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+  368 2026-11-27T05:07:38.475  WARN  Deep imports from the 'react-native' package are deprecated ('react-native/Libraries/Text/requireNativeTextEffect'). Source: /Users/<local-user>/Documents/Codex/cindy-plugin-market-ios-qa/source/apps/mobile/src/session/MarkdownListParagraph.tsx 32:24
+  369 2026-11-27T05:07:38.792 iOS Bundled 14ms apps/mobile/src/session/incomingShareNative.ts (1 module)
+  370 2026-11-27T05:07:38.792 iOS Bundled 13ms apps/mobile/src/session/historyDiskStoreExpo.ts (1 module)
+  371 2026-11-27T05:07:39.580 iOS Bundled 27ms apps/mobile/src/session/incomingShareCleanup.ts (1 module)
+  372 2026-11-27T05:07:39.737  WARN  Sending `onAnimatedValueUpdate` with no listeners registered.
+  373 2026-11-27T05:07:39.737  WARN  Sending `onAnimatedValueUpdate` with no listeners registered.
+  374 2026-11-27T05:07:39.737  WARN  Sending `onAnimatedValueUpdate` with no listeners registered.
+  375 2026-11-27T05:07:39.737  WARN  Sending `onAnimatedValueUpdate` with no listeners registered.
+  376 2026-11-27T05:07:40.676 iOS Bundled 16ms node_modules/expo-image-manipulator/build/index.js (1 module)
+  377 2026-11-27T05:07:40.676 iOS Bundled 14ms node_modules/expo-file-system/build/index.js (1 module)
+
+==== m2-ios-js-stall-22 ====
+Metro mock 00daccee9b. Local receive times. Source lines 338–378. Paths, identity and credential-related data sanitized.
+Case at warning: vo ('L',). Most recent entry bundle: 05:06:40.271 app entry bundle. Action tap times in case: not individually timed.
+
+  338 2026-11-27T05:05:47.522 iOS Bundled 17ms node_modules/expo-image-manipulator/build/index.js (1 module)
+  339 2026-11-27T05:05:47.522 iOS Bundled 12ms node_modules/expo-file-system/build/index.js (1 module)
+  340 2026-11-27T05:05:49.553  WARN  [js-stall] JS thread stalled ~3.4s (event-loop tick gap)
+  341 2026-11-27T05:05:55.820  WARN  [js-stall] JS thread stalled ~2.1s (event-loop tick gap)
+  342 2026-11-27T05:06:40.110 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  343 2026-11-27T05:06:40.271 iOS Bundled 135ms apps/mobile/index.js (1 module)
+  344 2026-11-27T05:06:46.078 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  345 2026-11-27T05:06:46.078  WARN  Require cycle: ../../packages/model-providers/src/modelMetadataLayers.ts -> ../../packages/model-providers/src/modelGeneration.ts -> ../../packages/model-providers/src/modelMetadataLayers.ts
+  346 2026-11-27T05:06:46.078 
+  347 2026-11-27T05:06:46.078 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+  348 2026-11-27T05:06:46.078  WARN  Require cycle: src/session/BotGroupMessageText.tsx -> src/session/MessageRenderer.tsx -> src/session/CompanionThreads.tsx -> src/session/BotGroupMessageText.tsx
+  349 2026-11-27T05:06:46.078 
+  350 2026-11-27T05:06:46.078 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+  351 2026-11-27T05:06:46.078  WARN  Deep imports from the 'react-native' package are deprecated ('react-native/Libraries/Text/requireNativeTextEffect'). Source: /Users/<local-user>/Documents/Codex/cindy-plugin-market-ios-qa/source/apps/mobile/src/session/MarkdownListParagraph.tsx 32:24
+  352 2026-11-27T05:06:46.400 iOS Bundled 14ms apps/mobile/src/session/incomingShareNative.ts (1 module)
+  353 2026-11-27T05:06:46.400 iOS Bundled 17ms apps/mobile/src/session/historyDiskStoreExpo.ts (1 module)
+  354 2026-11-27T05:06:47.187 iOS Bundled 25ms apps/mobile/src/session/incomingShareCleanup.ts (1 module)
+  355 2026-11-27T05:06:48.283 iOS Bundled 24ms node_modules/expo-image-manipulator/build/index.js (1 module)
+  356 2026-11-27T05:06:48.283 iOS Bundled 21ms node_modules/expo-file-system/build/index.js (1 module)
+  357 2026-11-27T05:06:50.166  WARN  [js-stall] JS thread stalled ~3.0s (event-loop tick gap)
+  358 2026-11-27T05:06:54.903  WARN  [js-stall] JS thread stalled ~3.1s (event-loop tick gap)
+  359 2026-11-27T05:07:32.708 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  360 2026-11-27T05:07:32.858 iOS Bundled 113ms apps/mobile/index.js (1 module)
+  361 2026-11-27T05:07:38.475 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  362 2026-11-27T05:07:38.475  WARN  Require cycle: ../../packages/model-providers/src/modelMetadataLayers.ts -> ../../packages/model-providers/src/modelGeneration.ts -> ../../packages/model-providers/src/modelMetadataLayers.ts
+  363 2026-11-27T05:07:38.475 
+  364 2026-11-27T05:07:38.475 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+  365 2026-11-27T05:07:38.475  WARN  Require cycle: src/session/BotGroupMessageText.tsx -> src/session/MessageRenderer.tsx -> src/session/CompanionThreads.tsx -> src/session/BotGroupMessageText.tsx
+  366 2026-11-27T05:07:38.475 
+  367 2026-11-27T05:07:38.475 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+  368 2026-11-27T05:07:38.475  WARN  Deep imports from the 'react-native' package are deprecated ('react-native/Libraries/Text/requireNativeTextEffect'). Source: /Users/<local-user>/Documents/Codex/cindy-plugin-market-ios-qa/source/apps/mobile/src/session/MarkdownListParagraph.tsx 32:24
+  369 2026-11-27T05:07:38.792 iOS Bundled 14ms apps/mobile/src/session/incomingShareNative.ts (1 module)
+  370 2026-11-27T05:07:38.792 iOS Bundled 13ms apps/mobile/src/session/historyDiskStoreExpo.ts (1 module)
+  371 2026-11-27T05:07:39.580 iOS Bundled 27ms apps/mobile/src/session/incomingShareCleanup.ts (1 module)
+  372 2026-11-27T05:07:39.737  WARN  Sending `onAnimatedValueUpdate` with no listeners registered.
+  373 2026-11-27T05:07:39.737  WARN  Sending `onAnimatedValueUpdate` with no listeners registered.
+  374 2026-11-27T05:07:39.737  WARN  Sending `onAnimatedValueUpdate` with no listeners registered.
+  375 2026-11-27T05:07:39.737  WARN  Sending `onAnimatedValueUpdate` with no listeners registered.
+  376 2026-11-27T05:07:40.676 iOS Bundled 16ms node_modules/expo-image-manipulator/build/index.js (1 module)
+  377 2026-11-27T05:07:40.676 iOS Bundled 14ms node_modules/expo-file-system/build/index.js (1 module)
+  378 2026-11-27T05:07:42.547  WARN  [js-stall] JS thread stalled ~2.9s (event-loop tick gap)
+
+==== m2-ios-js-stall-23 ====
+Metro mock 00daccee9b. Local receive times. Source lines 358–398. Paths, identity and credential-related data sanitized.
+Case at warning: vo ('AX5',). Most recent entry bundle: 05:07:32.858 app entry bundle. Action tap times in case: not individually timed.
+
+  358 2026-11-27T05:06:54.903  WARN  [js-stall] JS thread stalled ~3.1s (event-loop tick gap)
+  359 2026-11-27T05:07:32.708 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  360 2026-11-27T05:07:32.858 iOS Bundled 113ms apps/mobile/index.js (1 module)
+  361 2026-11-27T05:07:38.475 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  362 2026-11-27T05:07:38.475  WARN  Require cycle: ../../packages/model-providers/src/modelMetadataLayers.ts -> ../../packages/model-providers/src/modelGeneration.ts -> ../../packages/model-providers/src/modelMetadataLayers.ts
+  363 2026-11-27T05:07:38.475 
+  364 2026-11-27T05:07:38.475 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+  365 2026-11-27T05:07:38.475  WARN  Require cycle: src/session/BotGroupMessageText.tsx -> src/session/MessageRenderer.tsx -> src/session/CompanionThreads.tsx -> src/session/BotGroupMessageText.tsx
+  366 2026-11-27T05:07:38.475 
+  367 2026-11-27T05:07:38.475 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+  368 2026-11-27T05:07:38.475  WARN  Deep imports from the 'react-native' package are deprecated ('react-native/Libraries/Text/requireNativeTextEffect'). Source: /Users/<local-user>/Documents/Codex/cindy-plugin-market-ios-qa/source/apps/mobile/src/session/MarkdownListParagraph.tsx 32:24
+  369 2026-11-27T05:07:38.792 iOS Bundled 14ms apps/mobile/src/session/incomingShareNative.ts (1 module)
+  370 2026-11-27T05:07:38.792 iOS Bundled 13ms apps/mobile/src/session/historyDiskStoreExpo.ts (1 module)
+  371 2026-11-27T05:07:39.580 iOS Bundled 27ms apps/mobile/src/session/incomingShareCleanup.ts (1 module)
+  372 2026-11-27T05:07:39.737  WARN  Sending `onAnimatedValueUpdate` with no listeners registered.
+  373 2026-11-27T05:07:39.737  WARN  Sending `onAnimatedValueUpdate` with no listeners registered.
+  374 2026-11-27T05:07:39.737  WARN  Sending `onAnimatedValueUpdate` with no listeners registered.
+  375 2026-11-27T05:07:39.737  WARN  Sending `onAnimatedValueUpdate` with no listeners registered.
+  376 2026-11-27T05:07:40.676 iOS Bundled 16ms node_modules/expo-image-manipulator/build/index.js (1 module)
+  377 2026-11-27T05:07:40.676 iOS Bundled 14ms node_modules/expo-file-system/build/index.js (1 module)
+  378 2026-11-27T05:07:42.547  WARN  [js-stall] JS thread stalled ~2.9s (event-loop tick gap)
+  379 2026-11-27T05:08:34.171 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  380 2026-11-27T05:08:34.323 iOS Bundled 117ms apps/mobile/index.js (1 module)
+  381 2026-11-27T05:08:35.584 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  382 2026-11-27T05:08:36.366  WARN  Require cycle: ../../packages/model-providers/src/modelMetadataLayers.ts -> ../../packages/model-providers/src/modelGeneration.ts -> ../../packages/model-providers/src/modelMetadataLayers.ts
+  383 2026-11-27T05:08:36.366 
+  384 2026-11-27T05:08:36.366 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+  385 2026-11-27T05:08:39.687  WARN  Require cycle: src/session/BotGroupMessageText.tsx -> src/session/MessageRenderer.tsx -> src/session/CompanionThreads.tsx -> src/session/BotGroupMessageText.tsx
+  386 2026-11-27T05:08:39.687 
+  387 2026-11-27T05:08:39.687 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+  388 2026-11-27T05:08:39.687  WARN  Deep imports from the 'react-native' package are deprecated ('react-native/Libraries/Text/requireNativeTextEffect'). Source: /Users/<local-user>/Documents/Codex/cindy-plugin-market-ios-qa/source/apps/mobile/src/session/MarkdownListParagraph.tsx 32:24
+  389 2026-11-27T05:08:40.317 iOS Bundled 22ms apps/mobile/src/session/incomingShareNative.ts (1 module)
+  390 2026-11-27T05:08:40.317 iOS Bundled 21ms apps/mobile/src/session/historyDiskStoreExpo.ts (1 module)
+  391 2026-11-27T05:08:41.101 iOS Bundled 23ms apps/mobile/src/session/incomingShareCleanup.ts (1 module)
+  392 2026-11-27T05:08:42.351 iOS Bundled 14ms node_modules/expo-image-manipulator/build/index.js (1 module)
+  393 2026-11-27T05:08:42.351 iOS Bundled 19ms node_modules/expo-file-system/build/index.js (1 module)
+  394 2026-11-27T05:08:44.241  WARN  [js-stall] JS thread stalled ~3.0s (event-loop tick gap)
+  395 2026-11-27T05:09:21.267 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  396 2026-11-27T05:09:21.418 iOS Bundled 144ms apps/mobile/index.js (1 module)
+  397 2026-11-27T05:09:22.829 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  398 2026-11-27T05:09:23.616  WARN  Require cycle: ../../packages/model-providers/src/modelMetadataLayers.ts -> ../../packages/model-providers/src/modelGeneration.ts -> ../../packages/model-providers/src/modelMetadataLayers.ts
+
+==== m2-ios-js-stall-24 ====
+Metro mock 00daccee9b. Local receive times. Source lines 374–414. Paths, identity and credential-related data sanitized.
+Case at warning: second-final ('AX1',). Most recent entry bundle: 05:08:34.323 app entry bundle. Action tap times in case: 05:08:58.010, 05:09:06.019, 05:09:08.019.
+
+  374 2026-11-27T05:07:39.737  WARN  Sending `onAnimatedValueUpdate` with no listeners registered.
+  375 2026-11-27T05:07:39.737  WARN  Sending `onAnimatedValueUpdate` with no listeners registered.
+  376 2026-11-27T05:07:40.676 iOS Bundled 16ms node_modules/expo-image-manipulator/build/index.js (1 module)
+  377 2026-11-27T05:07:40.676 iOS Bundled 14ms node_modules/expo-file-system/build/index.js (1 module)
+  378 2026-11-27T05:07:42.547  WARN  [js-stall] JS thread stalled ~2.9s (event-loop tick gap)
+  379 2026-11-27T05:08:34.171 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  380 2026-11-27T05:08:34.323 iOS Bundled 117ms apps/mobile/index.js (1 module)
+  381 2026-11-27T05:08:35.584 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  382 2026-11-27T05:08:36.366  WARN  Require cycle: ../../packages/model-providers/src/modelMetadataLayers.ts -> ../../packages/model-providers/src/modelGeneration.ts -> ../../packages/model-providers/src/modelMetadataLayers.ts
+  383 2026-11-27T05:08:36.366 
+  384 2026-11-27T05:08:36.366 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+  385 2026-11-27T05:08:39.687  WARN  Require cycle: src/session/BotGroupMessageText.tsx -> src/session/MessageRenderer.tsx -> src/session/CompanionThreads.tsx -> src/session/BotGroupMessageText.tsx
+  386 2026-11-27T05:08:39.687 
+  387 2026-11-27T05:08:39.687 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+  388 2026-11-27T05:08:39.687  WARN  Deep imports from the 'react-native' package are deprecated ('react-native/Libraries/Text/requireNativeTextEffect'). Source: /Users/<local-user>/Documents/Codex/cindy-plugin-market-ios-qa/source/apps/mobile/src/session/MarkdownListParagraph.tsx 32:24
+  389 2026-11-27T05:08:40.317 iOS Bundled 22ms apps/mobile/src/session/incomingShareNative.ts (1 module)
+  390 2026-11-27T05:08:40.317 iOS Bundled 21ms apps/mobile/src/session/historyDiskStoreExpo.ts (1 module)
+  391 2026-11-27T05:08:41.101 iOS Bundled 23ms apps/mobile/src/session/incomingShareCleanup.ts (1 module)
+  392 2026-11-27T05:08:42.351 iOS Bundled 14ms node_modules/expo-image-manipulator/build/index.js (1 module)
+  393 2026-11-27T05:08:42.351 iOS Bundled 19ms node_modules/expo-file-system/build/index.js (1 module)
+  394 2026-11-27T05:08:44.241  WARN  [js-stall] JS thread stalled ~3.0s (event-loop tick gap)
+  395 2026-11-27T05:09:21.267 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  396 2026-11-27T05:09:21.418 iOS Bundled 144ms apps/mobile/index.js (1 module)
+  397 2026-11-27T05:09:22.829 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  398 2026-11-27T05:09:23.616  WARN  Require cycle: ../../packages/model-providers/src/modelMetadataLayers.ts -> ../../packages/model-providers/src/modelGeneration.ts -> ../../packages/model-providers/src/modelMetadataLayers.ts
+  399 2026-11-27T05:09:23.616 
+  400 2026-11-27T05:09:23.616 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+  401 2026-11-27T05:09:26.773  WARN  Require cycle: src/session/BotGroupMessageText.tsx -> src/session/MessageRenderer.tsx -> src/session/CompanionThreads.tsx -> src/session/BotGroupMessageText.tsx
+  402 2026-11-27T05:09:26.773 
+  403 2026-11-27T05:09:26.774 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+  404 2026-11-27T05:09:26.774  WARN  Deep imports from the 'react-native' package are deprecated ('react-native/Libraries/Text/requireNativeTextEffect'). Source: /Users/<local-user>/Documents/Codex/cindy-plugin-market-ios-qa/source/apps/mobile/src/session/MarkdownListParagraph.tsx 32:24
+  405 2026-11-27T05:09:27.398 iOS Bundled 26ms apps/mobile/src/session/incomingShareNative.ts (1 module)
+  406 2026-11-27T05:09:27.398 iOS Bundled 52ms apps/mobile/src/session/historyDiskStoreExpo.ts (1 module)
+  407 2026-11-27T05:09:28.187 iOS Bundled 26ms apps/mobile/src/session/incomingShareCleanup.ts (1 module)
+  408 2026-11-27T05:09:29.280 iOS Bundled 19ms node_modules/expo-image-manipulator/build/index.js (1 module)
+  409 2026-11-27T05:09:29.280 iOS Bundled 17ms node_modules/expo-file-system/build/index.js (1 module)
+  410 2026-11-27T05:09:31.314  WARN  [js-stall] JS thread stalled ~3.1s (event-loop tick gap)
+  411 2026-11-27T05:10:24.381 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  412 2026-11-27T05:10:24.539 iOS Bundled 167ms apps/mobile/index.js (1 module)
+  413 2026-11-27T05:10:25.942 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  414 2026-11-27T05:10:26.733  WARN  Require cycle: ../../packages/model-providers/src/modelMetadataLayers.ts -> ../../packages/model-providers/src/modelGeneration.ts -> ../../packages/model-providers/src/modelMetadataLayers.ts
+
+==== m2-ios-js-stall-25 ====
+Metro mock 00daccee9b. Local receive times. Source lines 390–430. Paths, identity and credential-related data sanitized.
+Case at warning: compact-final ('official',). Most recent entry bundle: 05:09:21.418 app entry bundle. Action tap times in case: 05:09:52.415, 05:10:08.945.
+
+  390 2026-11-27T05:08:40.317 iOS Bundled 21ms apps/mobile/src/session/historyDiskStoreExpo.ts (1 module)
+  391 2026-11-27T05:08:41.101 iOS Bundled 23ms apps/mobile/src/session/incomingShareCleanup.ts (1 module)
+  392 2026-11-27T05:08:42.351 iOS Bundled 14ms node_modules/expo-image-manipulator/build/index.js (1 module)
+  393 2026-11-27T05:08:42.351 iOS Bundled 19ms node_modules/expo-file-system/build/index.js (1 module)
+  394 2026-11-27T05:08:44.241  WARN  [js-stall] JS thread stalled ~3.0s (event-loop tick gap)
+  395 2026-11-27T05:09:21.267 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  396 2026-11-27T05:09:21.418 iOS Bundled 144ms apps/mobile/index.js (1 module)
+  397 2026-11-27T05:09:22.829 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  398 2026-11-27T05:09:23.616  WARN  Require cycle: ../../packages/model-providers/src/modelMetadataLayers.ts -> ../../packages/model-providers/src/modelGeneration.ts -> ../../packages/model-providers/src/modelMetadataLayers.ts
+  399 2026-11-27T05:09:23.616 
+  400 2026-11-27T05:09:23.616 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+  401 2026-11-27T05:09:26.773  WARN  Require cycle: src/session/BotGroupMessageText.tsx -> src/session/MessageRenderer.tsx -> src/session/CompanionThreads.tsx -> src/session/BotGroupMessageText.tsx
+  402 2026-11-27T05:09:26.773 
+  403 2026-11-27T05:09:26.774 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+  404 2026-11-27T05:09:26.774  WARN  Deep imports from the 'react-native' package are deprecated ('react-native/Libraries/Text/requireNativeTextEffect'). Source: /Users/<local-user>/Documents/Codex/cindy-plugin-market-ios-qa/source/apps/mobile/src/session/MarkdownListParagraph.tsx 32:24
+  405 2026-11-27T05:09:27.398 iOS Bundled 26ms apps/mobile/src/session/incomingShareNative.ts (1 module)
+  406 2026-11-27T05:09:27.398 iOS Bundled 52ms apps/mobile/src/session/historyDiskStoreExpo.ts (1 module)
+  407 2026-11-27T05:09:28.187 iOS Bundled 26ms apps/mobile/src/session/incomingShareCleanup.ts (1 module)
+  408 2026-11-27T05:09:29.280 iOS Bundled 19ms node_modules/expo-image-manipulator/build/index.js (1 module)
+  409 2026-11-27T05:09:29.280 iOS Bundled 17ms node_modules/expo-file-system/build/index.js (1 module)
+  410 2026-11-27T05:09:31.314  WARN  [js-stall] JS thread stalled ~3.1s (event-loop tick gap)
+  411 2026-11-27T05:10:24.381 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  412 2026-11-27T05:10:24.539 iOS Bundled 167ms apps/mobile/index.js (1 module)
+  413 2026-11-27T05:10:25.942 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  414 2026-11-27T05:10:26.733  WARN  Require cycle: ../../packages/model-providers/src/modelMetadataLayers.ts -> ../../packages/model-providers/src/modelGeneration.ts -> ../../packages/model-providers/src/modelMetadataLayers.ts
+  415 2026-11-27T05:10:26.733 
+  416 2026-11-27T05:10:26.733 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+  417 2026-11-27T05:10:30.341  WARN  Require cycle: src/session/BotGroupMessageText.tsx -> src/session/MessageRenderer.tsx -> src/session/CompanionThreads.tsx -> src/session/BotGroupMessageText.tsx
+  418 2026-11-27T05:10:30.342 
+  419 2026-11-27T05:10:30.342 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+  420 2026-11-27T05:10:30.342  WARN  Deep imports from the 'react-native' package are deprecated ('react-native/Libraries/Text/requireNativeTextEffect'). Source: /Users/<local-user>/Documents/Codex/cindy-plugin-market-ios-qa/source/apps/mobile/src/session/MarkdownListParagraph.tsx 32:24
+  421 2026-11-27T05:10:31.127 iOS Bundled 53ms apps/mobile/src/session/incomingShareNative.ts (1 module)
+  422 2026-11-27T05:10:31.286 iOS Bundled 26ms apps/mobile/src/session/historyDiskStoreExpo.ts (1 module)
+  423 2026-11-27T05:10:32.086 iOS Bundled 38ms apps/mobile/src/session/incomingShareCleanup.ts (1 module)
+  424 2026-11-27T05:10:33.336 iOS Bundled 22ms node_modules/expo-image-manipulator/build/index.js (1 module)
+  425 2026-11-27T05:10:33.337 iOS Bundled 20ms node_modules/expo-file-system/build/index.js (1 module)
+  426 2026-11-27T05:10:35.560  WARN  [js-stall] JS thread stalled ~3.6s (event-loop tick gap)
+  427 2026-11-27T05:11:26.228 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  428 2026-11-27T05:11:26.385 iOS Bundled 143ms apps/mobile/index.js (1 module)
+  429 2026-11-27T05:11:32.043 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  430 2026-11-27T05:11:32.044  WARN  Require cycle: ../../packages/model-providers/src/modelMetadataLayers.ts -> ../../packages/model-providers/src/modelGeneration.ts -> ../../packages/model-providers/src/modelMetadataLayers.ts
+
+==== m2-ios-js-stall-26 ====
+Metro mock 00daccee9b. Local receive times. Source lines 406–446. Paths, identity and credential-related data sanitized.
+Case at warning: compact-final ('custom',). Most recent entry bundle: 05:10:24.539 app entry bundle. Action tap times in case: 05:10:56.816, 05:11:08.987.
+
+  406 2026-11-27T05:09:27.398 iOS Bundled 52ms apps/mobile/src/session/historyDiskStoreExpo.ts (1 module)
+  407 2026-11-27T05:09:28.187 iOS Bundled 26ms apps/mobile/src/session/incomingShareCleanup.ts (1 module)
+  408 2026-11-27T05:09:29.280 iOS Bundled 19ms node_modules/expo-image-manipulator/build/index.js (1 module)
+  409 2026-11-27T05:09:29.280 iOS Bundled 17ms node_modules/expo-file-system/build/index.js (1 module)
+  410 2026-11-27T05:09:31.314  WARN  [js-stall] JS thread stalled ~3.1s (event-loop tick gap)
+  411 2026-11-27T05:10:24.381 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  412 2026-11-27T05:10:24.539 iOS Bundled 167ms apps/mobile/index.js (1 module)
+  413 2026-11-27T05:10:25.942 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  414 2026-11-27T05:10:26.733  WARN  Require cycle: ../../packages/model-providers/src/modelMetadataLayers.ts -> ../../packages/model-providers/src/modelGeneration.ts -> ../../packages/model-providers/src/modelMetadataLayers.ts
+  415 2026-11-27T05:10:26.733 
+  416 2026-11-27T05:10:26.733 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+  417 2026-11-27T05:10:30.341  WARN  Require cycle: src/session/BotGroupMessageText.tsx -> src/session/MessageRenderer.tsx -> src/session/CompanionThreads.tsx -> src/session/BotGroupMessageText.tsx
+  418 2026-11-27T05:10:30.342 
+  419 2026-11-27T05:10:30.342 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+  420 2026-11-27T05:10:30.342  WARN  Deep imports from the 'react-native' package are deprecated ('react-native/Libraries/Text/requireNativeTextEffect'). Source: /Users/<local-user>/Documents/Codex/cindy-plugin-market-ios-qa/source/apps/mobile/src/session/MarkdownListParagraph.tsx 32:24
+  421 2026-11-27T05:10:31.127 iOS Bundled 53ms apps/mobile/src/session/incomingShareNative.ts (1 module)
+  422 2026-11-27T05:10:31.286 iOS Bundled 26ms apps/mobile/src/session/historyDiskStoreExpo.ts (1 module)
+  423 2026-11-27T05:10:32.086 iOS Bundled 38ms apps/mobile/src/session/incomingShareCleanup.ts (1 module)
+  424 2026-11-27T05:10:33.336 iOS Bundled 22ms node_modules/expo-image-manipulator/build/index.js (1 module)
+  425 2026-11-27T05:10:33.337 iOS Bundled 20ms node_modules/expo-file-system/build/index.js (1 module)
+  426 2026-11-27T05:10:35.560  WARN  [js-stall] JS thread stalled ~3.6s (event-loop tick gap)
+  427 2026-11-27T05:11:26.228 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  428 2026-11-27T05:11:26.385 iOS Bundled 143ms apps/mobile/index.js (1 module)
+  429 2026-11-27T05:11:32.043 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  430 2026-11-27T05:11:32.044  WARN  Require cycle: ../../packages/model-providers/src/modelMetadataLayers.ts -> ../../packages/model-providers/src/modelGeneration.ts -> ../../packages/model-providers/src/modelMetadataLayers.ts
+  431 2026-11-27T05:11:32.044 
+  432 2026-11-27T05:11:32.044 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+  433 2026-11-27T05:11:32.044  WARN  Require cycle: src/session/BotGroupMessageText.tsx -> src/session/MessageRenderer.tsx -> src/session/CompanionThreads.tsx -> src/session/BotGroupMessageText.tsx
+  434 2026-11-27T05:11:32.044 
+  435 2026-11-27T05:11:32.044 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+  436 2026-11-27T05:11:32.044  WARN  Deep imports from the 'react-native' package are deprecated ('react-native/Libraries/Text/requireNativeTextEffect'). Source: /Users/<local-user>/Documents/Codex/cindy-plugin-market-ios-qa/source/apps/mobile/src/session/MarkdownListParagraph.tsx 32:24
+  437 2026-11-27T05:11:32.348 iOS Bundled 22ms apps/mobile/src/session/incomingShareNative.ts (1 module)
+  438 2026-11-27T05:11:32.348 iOS Bundled 17ms apps/mobile/src/session/historyDiskStoreExpo.ts (1 module)
+  439 2026-11-27T05:11:33.159 iOS Bundled 26ms apps/mobile/src/session/incomingShareCleanup.ts (1 module)
+  440 2026-11-27T05:11:33.944  WARN  Sending `onAnimatedValueUpdate` with no listeners registered.
+  441 2026-11-27T05:11:33.944  WARN  Sending `onAnimatedValueUpdate` with no listeners registered.
+  442 2026-11-27T05:11:33.944  WARN  Sending `onAnimatedValueUpdate` with no listeners registered.
+  443 2026-11-27T05:11:33.945  WARN  Sending `onAnimatedValueUpdate` with no listeners registered.
+  444 2026-11-27T05:11:33.946  WARN  Sending `onAnimatedValueUpdate` with no listeners registered.
+  445 2026-11-27T05:11:34.267 iOS Bundled 17ms node_modules/expo-image-manipulator/build/index.js (1 module)
+  446 2026-11-27T05:11:34.267 iOS Bundled 18ms node_modules/expo-file-system/build/index.js (1 module)
+
+==== m2-ios-js-stall-27 ====
+Metro mock 00daccee9b. Local receive times. Source lines 427–447. Paths, identity and credential-related data sanitized.
+Case at warning: film ('custom', 4, False). Most recent entry bundle: 05:11:26.385 app entry bundle. Action tap times in case: 05:11:49.388, 05:11:53.856.
+
+  427 2026-11-27T05:11:26.228 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  428 2026-11-27T05:11:26.385 iOS Bundled 143ms apps/mobile/index.js (1 module)
+  429 2026-11-27T05:11:32.043 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  430 2026-11-27T05:11:32.044  WARN  Require cycle: ../../packages/model-providers/src/modelMetadataLayers.ts -> ../../packages/model-providers/src/modelGeneration.ts -> ../../packages/model-providers/src/modelMetadataLayers.ts
+  431 2026-11-27T05:11:32.044 
+  432 2026-11-27T05:11:32.044 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+  433 2026-11-27T05:11:32.044  WARN  Require cycle: src/session/BotGroupMessageText.tsx -> src/session/MessageRenderer.tsx -> src/session/CompanionThreads.tsx -> src/session/BotGroupMessageText.tsx
+  434 2026-11-27T05:11:32.044 
+  435 2026-11-27T05:11:32.044 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+  436 2026-11-27T05:11:32.044  WARN  Deep imports from the 'react-native' package are deprecated ('react-native/Libraries/Text/requireNativeTextEffect'). Source: /Users/<local-user>/Documents/Codex/cindy-plugin-market-ios-qa/source/apps/mobile/src/session/MarkdownListParagraph.tsx 32:24
+  437 2026-11-27T05:11:32.348 iOS Bundled 22ms apps/mobile/src/session/incomingShareNative.ts (1 module)
+  438 2026-11-27T05:11:32.348 iOS Bundled 17ms apps/mobile/src/session/historyDiskStoreExpo.ts (1 module)
+  439 2026-11-27T05:11:33.159 iOS Bundled 26ms apps/mobile/src/session/incomingShareCleanup.ts (1 module)
+  440 2026-11-27T05:11:33.944  WARN  Sending `onAnimatedValueUpdate` with no listeners registered.
+  441 2026-11-27T05:11:33.944  WARN  Sending `onAnimatedValueUpdate` with no listeners registered.
+  442 2026-11-27T05:11:33.944  WARN  Sending `onAnimatedValueUpdate` with no listeners registered.
+  443 2026-11-27T05:11:33.945  WARN  Sending `onAnimatedValueUpdate` with no listeners registered.
+  444 2026-11-27T05:11:33.946  WARN  Sending `onAnimatedValueUpdate` with no listeners registered.
+  445 2026-11-27T05:11:34.267 iOS Bundled 17ms node_modules/expo-image-manipulator/build/index.js (1 module)
+  446 2026-11-27T05:11:34.267 iOS Bundled 18ms node_modules/expo-file-system/build/index.js (1 module)
+  447 2026-11-27T05:11:36.149  WARN  [js-stall] JS thread stalled ~3.0s (event-loop tick gap)
