@@ -13,7 +13,7 @@ export default function GroupExecutionPreview() {
   const { colors } = useTheme();
   if (!MOBILE_VISUAL_MOCK_ENABLED) return <Redirect href="/" />;
   const width = Math.min(geometry.width, params.width === '393' ? 393 : 320);
-  const groupId = ['execution-qa', 'execution-qa-work', 'execution-qa-talk'].includes(params.groupId ?? '') ? params.groupId! : 'execution-qa';
+  const groupId = ['execution-qa', 'execution-qa-work', 'execution-qa-talk', 'execution-qa-mention'].includes(params.groupId ?? '') ? params.groupId! : 'execution-qa';
   return <View style={{ flex: 1, alignItems: 'center', backgroundColor: colors.surface }}>
     <View style={{ flex: 1, width }}>
       <GeometryContext.Provider value={{ ...geometry, width, regularWidth: false }}>

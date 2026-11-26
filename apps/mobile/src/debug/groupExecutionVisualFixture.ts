@@ -5,7 +5,61 @@ import { BOT_GROUP_CHAT_PRIMITIVE, BOT_GROUP_CLIENT_ID, BOT_GROUP_REMOTE_COLLECT
 import type { PendingInteraction } from '@/session/types';
 
 const GROUP = 'execution-qa';
+const MENTION_GROUP = `${GROUP}-mention`;
 const NOW = Date.now();
+const mentionMembers = [
+  { botId: 'ann-blue', name: 'Ann', nickname: 'Ann', displayName: 'Ann Blue', avatar: 'cindy://avatar/preset/cindy' },
+  { botId: 'ann-gold', name: 'Ann', nickname: 'Ann', displayName: 'Ann Gold', avatar: 'cindy://avatar/preset/lizi' },
+  { botId: 'ann-lee', name: 'Ann Lee' },
+  { botId: 'team-ann', name: 'Team @Ann' },
+  { botId: 'riley', name: 'Riley' },
+].map(member => ({ ...member, actorId: member.botId, actorKind: 'bot', isOwned: true, status: 'active' }));
+type MentionFixtureMessage = {
+  id: string; authorKind: 'bot' | 'user'; authorBotId?: string; authorName: string; content: string;
+  mentions?: { all: boolean; allBots?: boolean; botIds: string[] };
+};
+const mentionMessages: MentionFixtureMessage[] = [
+  ...mentionMembers.map(member => ({ id: `sample-${member.botId}`, authorKind: 'bot' as const, authorBotId: member.botId,
+    authorName: member.name, content: `普通消息 · ${member.displayName ?? member.name}` })),
+  { id: 'mention-sample', authorKind: 'user', authorName: 'QA', content: '@Ann 这是只给 Ann Blue 的示例。', mentions: { all: false, botIds: ['ann-blue'] } },
+  { id: 'repeat-sample', authorKind: 'user', authorName: 'QA', content: '@Riley 你好 @Riley', mentions: { all: false, botIds: ['riley'] } },
+  { id: 'overlap-sample', authorKind: 'user', authorName: 'QA', content: '@Team @Ann @Team @Ann', mentions: { all: false, botIds: ['ann-blue', 'team-ann'] } },
+  { id: 'markdown-sample', authorKind: 'bot', authorBotId: 'ann-lee', authorName: 'Ann Lee',
+    content: '@Riley 第一段\n\n第二段 @Riley，请看 `demo()`。', mentions: { all: false, botIds: ['riley'] } },
+];
+const sentMentions: MentionFixtureMessage[] = [];
+
+function mentionExecutionFixture(channel: string, actionId?: string, input?: { text?: string; clientId?: string; mentions?: MentionFixtureMessage['mentions'] }) {
+  if (channel === 'maker:remote-resources:invoke' && actionId === 'send' && input?.text && input.clientId && input.mentions) {
+    const id = `qa-send-${input.clientId}`;
+    if (!sentMentions.some(message => message.id === id)) {
+      sentMentions.push({ id, authorKind: 'user', authorName: 'QA', content: input.text, mentions: input.mentions });
+      const recipients = input.mentions.botIds.map(botId => {
+        const member = mentionMembers.find(candidate => candidate.botId === botId);
+        return member?.displayName ?? member?.name ?? botId;
+      }).join('、');
+      sentMentions.push({ id: `${id}-receipt`, authorKind: 'bot', authorBotId: 'riley', authorName: 'Riley',
+        content: `模拟发送回执 · 收件人：${recipients || '无'}` });
+    }
+    return { effects: [] };
+  }
+  if (channel !== 'maker:remote-resources:get') return undefined;
+  return {
+    ref: { collectionId: BOT_GROUP_REMOTE_COLLECTION_ID, kind: BOT_GROUP_REMOTE_RESOURCE_KIND, id: MENTION_GROUP },
+    revision: String(sentMentions.length), display: { title: '头像点名 · 模拟数据' }, actions: [], links: [],
+    blocks: [{ id: 'chat', primitive: BOT_GROUP_CHAT_PRIMITIVE, fallbackMarkdown: '', data: {
+      id: MENTION_GROUP, name: '头像点名 · 模拟数据', serverBacked: true, replyMode: 'mentioned', speakingMode: 'auto',
+      members: mentionMembers, plans: [], createdAt: NOW, updatedAt: NOW,
+      messages: [...mentionMessages, ...sentMentions].map((message, index) => ({
+        ...message, kind: 'message', sequence: index + 1, isSelf: message.authorKind === 'user',
+        createdAt: NOW - 60000 + index * 1000,
+      })),
+      round: { status: 'running', canContinue: false, speakers: [
+        { botId: 'ann-gold', sessionId: null, activity: 'reply', executionId: 'qa-mention-running', executionStatus: 'running' },
+      ] },
+    } }],
+  };
+}
 const members = [
   { botId: 'qa-research', name: '资料伙伴', avatar: 'cindy://avatar/preset/cindy' },
   { botId: 'qa-design', name: '设计伙伴 · 很长的成员名称用于窄屏检查', avatar: 'cindy://avatar/preset/lizi' },
@@ -24,7 +78,8 @@ const prompts: Record<string, PendingInteraction[]> = {
 let running = true;
 let othersRunning = true;
 export function groupExecutionVisualFixture(channel: string, args: unknown[]): unknown | undefined {
-  const request = args[0] as { ref?: { id?: string }; resourceRef?: { id?: string }; actionId?: string; input?: { scope?: string } } | undefined;
+  const request = args[0] as { ref?: { id?: string }; resourceRef?: { id?: string }; actionId?: string;
+    input?: { scope?: string; text?: string; clientId?: string; mentions?: MentionFixtureMessage['mentions'] } } | undefined;
   if (channel === 'maker:resolve-interaction' && typeof args[0] === 'string' && args[0].startsWith('qa-')) {
     for (const [session, list] of Object.entries(prompts)) if (list.some(item => item.request.requestId === args[0])) prompts[session] = [];
     return { accepted: true };
@@ -42,6 +97,7 @@ export function groupExecutionVisualFixture(channel: string, args: unknown[]): u
       ] : [])];
   }
   const groupId = request?.ref?.id ?? request?.resourceRef?.id;
+  if (groupId === MENTION_GROUP) return mentionExecutionFixture(channel, request?.actionId, request?.input);
   if (!groupId || ![GROUP, `${GROUP}-work`, `${GROUP}-talk`, `${GROUP}-member`, `${GROUP}-legacy`, `${GROUP}-requesters`, `${GROUP}-peer`].includes(groupId)) return undefined;
   if (channel === 'maker:remote-resources:invoke') { if (request?.actionId === 'stop') { running = false; if (request.input?.scope === 'all') othersRunning = false; } return { effects: [] }; }
   if (channel !== 'maker:remote-resources:get') return undefined;
