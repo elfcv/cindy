@@ -1,0 +1,34 @@
+Source detached@dd1db4767. System iPhone SE 3, iOS 27.2, mock via port 8082. Native package: rebuilt.
+vm.swapusage: total = 5120.00M  used = 4215.00M  free = 905.00M  (encrypted)
+Seconds below use the time the local watcher read each Metro line.
+
+launch: 0.000s
+home: 15.432s
+plugins: 19.704s
+finished: 40.082s
+
+js-stall recorded: 1
+14.667s (before plugin page entered)  WARN  [js-stall] JS thread stalled ~2.9s (event-loop tick gap)
+
+Context around stall 22 (20 before, 0 after)
+   5.001 iOS Bundled 165ms apps/mobile/index.js (1 module)
+  10.585 [cindy] self-host-regions 的 global 身份字段留空,本地构建回落内置身份 com.xd.cindy / com.xd.cindy(真机安装可能与商店版同 id 冲突,可在 self-host-regions.json 填自己的 bundle id)。
+  10.585  WARN  Require cycle: ../../packages/model-providers/src/modelMetadataLayers.ts -> ../../packages/model-providers/src/modelGeneration.ts -> ../../packages/model-providers/src/modelMetadataLayers.ts
+  10.585 
+  10.585 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+  10.585  WARN  Require cycle: src/session/BotGroupMessageText.tsx -> src/session/MessageRenderer.tsx -> src/session/CompanionThreads.tsx -> src/session/BotGroupMessageText.tsx
+  10.585 
+  10.585 Require cycles are allowed, but can result in uninitialized values. Consider refactoring to remove the need for a cycle.
+  10.585  WARN  Deep imports from the 'react-native' package are deprecated ('react-native/Libraries/Text/requireNativeTextEffect'). Source: /Users/<local-user>/Documents/Codex/cindy-plugin-market-ios-qa/source/apps/mobile/src/session/MarkdownListParagraph.tsx 32:24
+  10.927 iOS Bundled 12ms apps/mobile/src/session/incomingShareNative.ts (1 module)
+  10.993 iOS Bundled 15ms apps/mobile/src/session/historyDiskStoreExpo.ts (1 module)
+  11.678 iOS Bundled 33ms apps/mobile/src/session/incomingShareCleanup.ts (1 module)
+  12.474  WARN  Sending `onAnimatedValueUpdate` with no listeners registered.
+  12.474  WARN  Sending `onAnimatedValueUpdate` with no listeners registered.
+  12.474  WARN  Sending `onAnimatedValueUpdate` with no listeners registered.
+  12.474  WARN  Sending `onAnimatedValueUpdate` with no listeners registered.
+  12.474  WARN  Sending `onAnimatedValueUpdate` with no listeners registered.
+  12.474  WARN  Sending `onAnimatedValueUpdate` with no listeners registered.
+  12.985 iOS Bundled 24ms node_modules/expo-image-manipulator/build/index.js (1 module)
+  12.985 iOS Bundled 21ms node_modules/expo-file-system/build/index.js (1 module)
+  14.667  WARN  [js-stall] JS thread stalled ~2.9s (event-loop tick gap)
