@@ -1,0 +1,2 @@
+<node index="0" text="please check this composer shows the beginning of a long text on one line with an ellipsis after it collapses and more" resource-id="botGroup.composer.input.collapsedPreview" class="android.widget.TextView" content-desc="" clickable="false" enabled="true" focusable="false" focused="false" bounds="[57,2138][
+<node NAF="true" index="2" text="" resource-id="botGroup.composer.row.collapsedOpen" class="android.view.ViewGroup" content-desc="" clickable="true" enabled="true" focusable="true" focused="false" bounds="[57,2138][904,2227]" />
