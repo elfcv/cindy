@@ -1,0 +1,12 @@
+on-tab	TAB1	focus=class="android.view.ViewGroup"  description="关闭面板"	box=[0,1065][1077,2397]	said=关闭面板 按钮 点按两次即可激活 
+on-tab	TAB2	focus=class="android.view.ViewGroup"  description="返回"	box=[54,1128][144,1218]	said=返回 按钮 点按两次即可激活 
+on-tab	TAB3	focus=class="android.view.ViewGroup"  text="text=[没有 @ 人的时候, 大家都可以接话]	box=[54,1338][1026,1473]	said=已收起 没有 @ 人的时候 按钮 点按两次即可激活 
+on-tab	TAB4	focus=	box=[54,1338][1026,1473]	said=可以操作 做出手势 三指点按 即可查看 
+on-tab	TAB5	focus=class="android.view.ViewGroup"  description="群里的 Cindy"	box=[849,1689][984,1812]	said=已开启 群里的 Cindy 开关 
+offline-tab	TAB1	focus=class="android.view.ViewGroup"  description="关闭面板"	said=关闭面板 按钮 点按两次即可激活 
+offline-tab	TAB2	focus=class="android.view.ViewGroup"  description="返回"	said=返回 按钮 
+offline-tab	TAB3	focus=	said=伙伴怎么接话 没有 @ 人的时候 大家都可以接话 没什么可补充的伙伴不会说话 每轮最多聊 3 圈 10 条 
+offline-tab	TAB4	focus=class="android.view.ViewGroup"  description="关闭面板"	said=关闭面板 按钮 点按两次即可激活 
+offline-tab	TAB5	focus=class="android.view.ViewGroup"  description="返回"	said=返回 按钮 点按两次即可激活 
+offline-tab	TAB6	focus=	said=伙伴怎么接话 没有 @ 人的时候 大家都可以接话 没什么可补充的伙伴不会说话 每轮最多聊 3 圈 10 条 
+offline-tab	TAB7	focus=class="android.view.ViewGroup"  description="关闭面板"	said=关闭面板 按钮 点按两次即可激活 
