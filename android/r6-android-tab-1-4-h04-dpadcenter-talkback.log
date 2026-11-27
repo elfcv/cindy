@@ -1,0 +1,280 @@
+11-27 00:34:52.227  2395  2395 W talkback: CallStateMonitor: CALL_STATE_IDLE supportTelephony: false callStatePermissionGranted: true
+11-27 00:34:52.377  2395  2395 W talkback: CallStateMonitor: CALL_STATE_IDLE supportTelephony: false callStatePermissionGranted: true
+11-27 00:34:52.377  2395  2395 V talkback: A11yEventProcessor: Event listeners: Pipeline,ProcessorEventQueue
+11-27 00:34:52.383  2395  2395 V talkback: Mappers:  mapToFeedback() eventId=type:EVENT_TYPE_ACCESSIBILITY subtype:TYPE_WINDOW_CONTENT_CHANGED time:4124780533 event=EventType: TYPE_WINDOW_CONTENT_CHANGED; EventTime: 4124780533; PackageName: com.xd.cindy; MovementGranularity: 0; Action: 0; ContentChangeTypes: [CONTENT_CHANGE_TYPE_SUBTREE]; WindowChangeTypes: [] [ ClassName: android.widget.ScrollView; Text: []; ContentDescription: null; ItemCount: -1; CurrentItemIndex: -1; Enabled: true; Password: false; Checked: false; FullScreen: false; Scrollable: true; ImportantForAccessibility: true; AccessibilityDataSensitive: false; BeforeText: null; FromIndex: -1; ToIndex: -1; ScrollX: 0; ScrollY: 0; MaxScrollX: 0; MaxScrollY: 776; ScrollDeltaX: -1; ScrollDeltaY: -1; AddedCount: -1; RemovedCount: -1; ParcelableData: null; DisplayId: 0 ]; recordCount: 0 interpretation=ScrollEventInterpretation{userAction=ACTION_UNKNOWN, scrollDirection=SEARCH_FOCUS_UNKNOWN, hasValidIndex=true, isDuplicateEvent=false, isFromScrollable=false, isMediaPlayerAutoScroll=false, scrollInstanceId=-1} eventSourceNode=null
+11-27 00:34:52.383  2395  2395 V talkback: Mappers:    isMediaPlayerAutoScroll=false
+11-27 00:34:52.383  2395  2395 V talkback: Mappers:    isFromScrollable=false
+11-27 00:34:52.383  2395  2395 V talkback: A11yEventProcessor: Event listeners: UiChangeEventInterpreter,Pipeline,ProcessorEventQueue,ProcessorPhoneticLetters,ProcessorGestureVibrator
+11-27 00:34:52.386  2395  2395 V talkback: Mappers:  mapToFeedback() eventId=type:EVENT_TYPE_ACCESSIBILITY subtype:TYPE_VIEW_CLICKED time:4124780384 event=null interpretation=UiChange{sourceBoundsInScreen=Rect(75, 1257 - 1006, 1346), uiChangeType=VIEW_CLICKED} eventSourceNode=null
+11-27 00:34:52.386  2395  2395 V talkback: Mappers:    sourceBoundsInScreen=Rect(75, 1257 - 1006, 1346)
+11-27 00:34:52.386  2395  2395 V talkback: Mappers:    uiChangeType=VIEW_CLICKED
+11-27 00:34:52.386  2395  2395 D talkback: Pipeline: execute() feedback=Feedback{eventId=type:EVENT_TYPE_ACCESSIBILITY subtype:TYPE_VIEW_CLICKED time:4124780384, failovers=[Part= uiChange= UiChange{action=CLEAR_CACHE_FOR_VIEW, sourceBoundsInScreen=Rect(75, 1257 - 1006, 1346)}  ]}
+11-27 00:34:52.386  2395  2395 D talkback: Actors: act() eventId=type:EVENT_TYPE_ACCESSIBILITY subtype:TYPE_VIEW_CLICKED time:4124780384 part=Part= uiChange= UiChange{action=CLEAR_CACHE_FOR_VIEW, sourceBoundsInScreen=Rect(75, 1257 - 1006, 1346)}  
+11-27 00:34:52.386  2395  2395 V talkback: Pipeline: execute() success=false for part=Part= uiChange= UiChange{action=CLEAR_CACHE_FOR_VIEW, sourceBoundsInScreen=Rect(75, 1257 - 1006, 1346)}  
+11-27 00:34:52.386  2395  2395 V talkback: Mappers:  mapToFeedback() eventId=type:EVENT_TYPE_ACCESSIBILITY subtype:TYPE_VIEW_CLICKED time:4124780384 event=EventType: TYPE_VIEW_CLICKED; EventTime: 4124780384; PackageName: com.xd.cindy; MovementGranularity: 0; Action: 0; ContentChangeTypes: []; WindowChangeTypes: [] [ ClassName: android.widget.EditText; Text: [please check this composer shows the beginning of a long text on one line with an ellipsis after it collapses and more words here]; ContentDescription: 群聊消息; ItemCount: -1; CurrentItemIndex: -1; Enabled: true; Password: false; Checked: false; FullScreen: false; Scrollable: false; ImportantForAccessibility: true; AccessibilityDataSensitive: false; BeforeText: null; FromIndex: -1; ToIndex: -1; ScrollX: 0; ScrollY: 98; MaxScrollX: 0; MaxScrollY: 0; ScrollDeltaX: -1; ScrollDeltaY: -1; AddedCount: -1; RemovedCount: -1; ParcelableData: null; DisplayId: 0 ]; recordCount: 0 interpretation=HintableEvent{  }   eventSourceNode=null
+11-27 00:34:52.386  2395  2395 V talkback: ProcessorAccessibilityHints:    toFeedback()()
+11-27 00:34:52.386  2395  2395 V talkback: Mappers:      eventType=1
+11-27 00:34:52.386  2395  2395 D talkback: Pipeline: execute() feedback=Feedback{eventId=type:EVENT_TYPE_ACCESSIBILITY subtype:TYPE_VIEW_CLICKED time:4124780384, failovers=[Part= interruptGroup=0  interruptLevel=1  ]}
+11-27 00:34:52.386  2395  2395 D talkback: Actors: act() eventId=type:EVENT_TYPE_ACCESSIBILITY subtype:TYPE_VIEW_CLICKED time:4124780384 part=Part= interruptGroup=0  interruptLevel=1  
+11-27 00:34:52.386  2395  2395 V talkback: Pipeline: execute() success=true for part=Part= interruptGroup=0  interruptLevel=1  
+11-27 00:34:52.386  2395  2395 D talkback: Pipeline: execute() feedback=Feedback{eventId=type:EVENT_TYPE_ACCESSIBILITY subtype:TYPE_VIEW_CLICKED time:4124780384, failovers=[Part= interruptGroup=0  interruptLevel=1  ]}
+11-27 00:34:52.386  2395  2395 D talkback: Actors: act() eventId=type:EVENT_TYPE_ACCESSIBILITY subtype:TYPE_VIEW_CLICKED time:4124780384 part=Part= interruptGroup=0  interruptLevel=1  
+11-27 00:34:52.386  2395  2395 V talkback: Pipeline: execute() success=true for part=Part= interruptGroup=0  interruptLevel=1  
+11-27 00:34:52.386  2395  2395 D talkback: ProcessorEventQueue: Processing event: AccessibilityEvent  TYPE_WINDOW_CONTENT_CHANGED  ContentChangeTypes=CONTENT_CHANGE_TYPE_SUBTREE  time=4124780533  class="android.widget.ScrollView"  package="com.xd.cindy"  enabled  scrollable  ScrollX=0  ScrollY=0  MaxScrollX=0  MaxScrollY=776      
+11-27 00:34:52.386  2395  2395 V talkback: Compositor: eventInterpretation= TYPE_WINDOW_CONTENT_CHANGED  
+11-27 00:34:52.401  2395  2395 V talkback: EventTypeWindowContentChangedFeedbackRule:   computeWindowContentChangedStateText:   contentChangeType=1, isSelfOrAncestorFocused=false
+11-27 00:34:52.401  2395  2395 V talkback: EventTypeWindowContentChangedFeedbackRule: windowContentChanged: (871786) , ttsOutput= {}, eventSrcRole=ROLE_SCROLL_VIEW, nodeRole=ROLE_SCROLL_VIEW, nodeLiveRegion=0, nodeNotFrequentAnnounced=true
+11-27 00:34:52.401  2395  2395 V talkback: TalkBackFeedbackProvider:  TYPE_WINDOW_CONTENT_CHANGED:  ttsOutput=     queueMode=0  ttsAddToHistory  forceFeedbackEvenIfAudioPlaybackActive  forceFeedbackEvenIfPhoneCallActive  ttsSkipDuplicate  
+11-27 00:34:52.401  2395  2395 D talkback: ProcessorEventQueue: Processing event: AccessibilityEvent  TYPE_VIEW_CLICKED  time=4124780384  class="android.widget.EditText"  package="com.xd.cindy"  text="text=[please check this composer shows the beginning of a long text on one line with an ellipsis after it collapses and more words here]"  description="群聊消息"  enabled  ScrollX=0  ScrollY=98  MaxScrollX=0  MaxScrollY=0      
+11-27 00:34:52.401  2395  2395 V talkback: Compositor: eventInterpretation= TYPE_VIEW_CLICKED  
+11-27 00:34:52.404  2395  2395 V talkback: EventTypeViewClickedFeedbackRule: 
+11-27 00:34:52.404  2395  2395 V talkback: EventTypeViewClickedFeedbackRule:  ttsOutputRule= collapsedOrExpandedStateText
+11-27 00:34:52.404  2395  2395 V talkback: TalkBackFeedbackProvider:  TYPE_VIEW_CLICKED:  ttsOutput=     queueMode=0  ttsAddToHistory  forceFeedbackEvenIfAudioPlaybackActive  forceFeedbackEvenIfMicrophoneActive  forceFeedbackEvenIfSsbActive  forceFeedbackEvenIfPhoneCallActive  ttsSkipDuplicate  haptic=2130903122  earcon=2131951653  
+11-27 00:34:52.404  2395  2395 D talkback: Pipeline: execute() feedback=Feedback{eventId=type:EVENT_TYPE_ACCESSIBILITY subtype:TYPE_VIEW_CLICKED time:4124780384, failovers=[Part= speech= action=SPEAK  text=""  options= earcons=[2131951653]  haptics=[2130903122]  queueMode=QUEUE  flags=FLAG_NO_SPEECH  nonSpeechParams=Bundle[{}]    hint= null  hintSpeakOptions= null    ]}
+11-27 00:34:52.404  2395  2395 D talkback: Actors: act() eventId=type:EVENT_TYPE_ACCESSIBILITY subtype:TYPE_VIEW_CLICKED time:4124780384 part=Part= speech= action=SPEAK  text=""  options= earcons=[2131951653]  haptics=[2130903122]  queueMode=QUEUE  flags=FLAG_NO_SPEECH  nonSpeechParams=Bundle[{}]    hint= null  hintSpeakOptions= null    
+11-27 00:34:52.404  2395  2395 V talkback: FeedbackController: playAuditory() resId=2131951653 eventId=type:EVENT_TYPE_ACCESSIBILITY subtype:TYPE_VIEW_CLICKED time:4124780384
+11-27 00:34:52.404  2395  2395 V talkback: Pipeline: execute() success=true for part=Part= speech= action=SPEAK  text=""  options= earcons=[2131951653]  haptics=[2130903122]  queueMode=QUEUE  flags=FLAG_NO_SPEECH  nonSpeechParams=Bundle[{}]    hint= null  hintSpeakOptions= null    
+11-27 00:34:52.443  2395  2395 W talkback: CallStateMonitor: CALL_STATE_IDLE supportTelephony: false callStatePermissionGranted: true
+11-27 00:34:52.443  2395  2395 V talkback: A11yEventProcessor: Event listeners: Pipeline,ProcessorEventQueue,ProcessorPhoneticLetters,ScreenFeedbackManager
+11-27 00:34:52.443  2395  2395 D talkback: Pipeline: execute() feedback=Feedback{eventId=type:EVENT_TYPE_ACCESSIBILITY subtype:TYPE_WINDOW_STATE_CHANGED time:4124780406, failovers=[Part= interruptGroup=0  interruptLevel=1  ]}
+11-27 00:34:52.443  2395  2395 D talkback: Actors: act() eventId=type:EVENT_TYPE_ACCESSIBILITY subtype:TYPE_WINDOW_STATE_CHANGED time:4124780406 part=Part= interruptGroup=0  interruptLevel=1  
+11-27 00:34:52.443  2395  2395 V talkback: Pipeline: execute() success=true for part=Part= interruptGroup=0  interruptLevel=1  
+11-27 00:34:52.443  2395  2395 V talkback: WindowEventInterpreter: START interpret() event type=TYPE_WINDOW_STATE_CHANGED time=4124780406 allowEvent=true
+11-27 00:34:52.443  2395  2395 V talkback: WindowEventInterpreter:  interpret() windowRoles=a:190:Cindy b:-1:null accessOverlay:-1:null picInPic:-1:null inputMethod:-1:null
+11-27 00:34:52.444  2395  2395 V talkback: WindowEventInterpreter:    updateFirstTimeInterpretationWhenWakeUp() windowIdToData={189={ title="Navigation bar"  titleFromWindowChange="Navigation bar"  eventSourceRole="ROLE_NONE"  }, 190={ title="Cindy"  titleFromWindowChange="Cindy"  eventSourceRole="ROLE_NONE"  }}
+11-27 00:34:52.444  2395  2395 V talkback: WindowEventInterpreter:    updateWindowTitles() windowIdToData={189={ title="Navigation bar"  titleFromWindowChange="Navigation bar"  eventSourceRole="ROLE_NONE"  }, 190={ title="Cindy"  titleFromWindowChange="Cindy"  eventSourceRole="ROLE_NONE"  }}
+11-27 00:34:52.444  2395  2395 V talkback: WindowEventInterpreter:    updateWindowRoles() interpretation=WindowIdFromEvent=188  OriginalEvent  allowAnnounce  EventType=TYPE_WINDOW_STATE_CHANGED  maxDelayMs=550  sourceBoundsInScreen= Rect(0, 351 - 1080, 2688)  
+11-27 00:34:52.444  2395  2395 V talkback: WindowEventInterpreter:   WindowA= OldID=190  OldTitle="Cindy"  
+11-27 00:34:52.444  2395  2395 V talkback: WindowEventInterpreter:   WindowB= 
+11-27 00:34:52.444  2395  2395 V talkback: WindowEventInterpreter:   A11yOverlay= 
+11-27 00:34:52.444  2395  2395 V talkback: WindowEventInterpreter:   PicInPic= 
+11-27 00:34:52.444  2395  2395 V talkback: WindowEventInterpreter:   inputMethod= 
+11-27 00:34:52.444  2395  2395 V talkback: WindowEventInterpreter:   AnchorNodeRole= 0
+11-27 00:34:52.444  2395  2395 V talkback: WindowEventInterpreter:   
+11-27 00:34:52.444  2395  2395 V talkback: WindowEventInterpreter:    updateWindowRoles() accessibilityOverlayWindows.size()=0
+11-27 00:34:52.444  2395  2395 V talkback: WindowEventInterpreter:    updateWindowRoles() applicationWindows.size()=1
+11-27 00:34:52.444  2395  2395 V talkback: WindowEventInterpreter:    updateWindowRoles() One application window case
+11-27 00:34:52.445  2395  2395 V talkback: WindowEventInterpreter:    detectWindowChanges()=false roles=a:190:Cindy b:-1:null accessOverlay:-1:null picInPic:-1:null inputMethod:188:null
+11-27 00:34:52.446  2395  2395 V talkback: WindowEventInterpreter:    detectInputMethodChanged()=true
+11-27 00:34:52.447  2395  2395 V talkback: WindowEventInterpreter:  interpret() delayMs=550, interpretation=WindowIdFromEvent=188  inputMethodChanged  OriginalEvent  allowAnnounce  EventType=TYPE_WINDOW_STATE_CHANGED  maxDelayMs=550  sourceBoundsInScreen= Rect(0, 351 - 1080, 2688)  
+11-27 00:34:52.447  2395  2395 V talkback: WindowEventInterpreter:   WindowA= ID=190  Title="Cindy"  TitleForFeedback="Cindy"  OldID=190  OldTitle="Cindy"  
+11-27 00:34:52.447  2395  2395 V talkback: WindowEventInterpreter:   WindowB= TitleForFeedback="无标题"  
+11-27 00:34:52.447  2395  2395 V talkback: WindowEventInterpreter:   A11yOverlay= TitleForFeedback="无标题"  
+11-27 00:34:52.447  2395  2395 V talkback: WindowEventInterpreter:   PicInPic= TitleForFeedback="无标题"  
+11-27 00:34:52.447  2395  2395 V talkback: WindowEventInterpreter:   inputMethod= ID=188  TitleForFeedback="Android 键盘 (AOSP)"  
+11-27 00:34:52.447  2395  2395 V talkback: WindowEventInterpreter:   AnchorNodeRole= 0
+11-27 00:34:52.447  2395  2395 V talkback: WindowEventInterpreter:   
+11-27 00:34:52.447  2395  2395 V talkback: Mappers:  mapToFeedback() eventId=type:EVENT_TYPE_ACCESSIBILITY subtype:TYPE_WINDOW_STATE_CHANGED time:4124780406 event=null interpretation=UiChange{sourceBoundsInScreen=null, uiChangeType=WHOLE_SCREEN_UI_CHANGED} eventSourceNode=null
+11-27 00:34:52.447  2395  2395 V talkback: Mappers:    sourceBoundsInScreen=null
+11-27 00:34:52.447  2395  2395 V talkback: Mappers:    uiChangeType=WHOLE_SCREEN_UI_CHANGED
+11-27 00:34:52.447  2395  2395 D talkback: Pipeline: execute() feedback=Feedback{eventId=type:EVENT_TYPE_ACCESSIBILITY subtype:TYPE_WINDOW_STATE_CHANGED time:4124780406, failovers=[Part= uiChange= UiChange{action=CLEAR_SCREEN_CACHE, sourceBoundsInScreen=null}  ]}
+11-27 00:34:52.447  2395  2395 D talkback: Actors: act() eventId=type:EVENT_TYPE_ACCESSIBILITY subtype:TYPE_WINDOW_STATE_CHANGED time:4124780406 part=Part= uiChange= UiChange{action=CLEAR_SCREEN_CACHE, sourceBoundsInScreen=null}  
+11-27 00:34:52.447  2395  2395 V talkback: Pipeline: execute() success=false for part=Part= uiChange= UiChange{action=CLEAR_SCREEN_CACHE, sourceBoundsInScreen=null}  
+11-27 00:34:52.447  2395  2395 D talkback: Pipeline: execute() feedback=Feedback{eventId=type:EVENT_TYPE_ACCESSIBILITY subtype:TYPE_WINDOW_STATE_CHANGED time:4124780406, failovers=[Part= universalSearch= UniversalSearch{action=HANDLE_SCREEN_STATE, config=null}  ]}
+11-27 00:34:52.447  2395  2395 D talkback: Actors: act() eventId=type:EVENT_TYPE_ACCESSIBILITY subtype:TYPE_WINDOW_STATE_CHANGED time:4124780406 part=Part= universalSearch= UniversalSearch{action=HANDLE_SCREEN_STATE, config=null}  
+11-27 00:34:52.447  2395  2395 V talkback: Pipeline: execute() success=true for part=Part= universalSearch= UniversalSearch{action=HANDLE_SCREEN_STATE, config=null}  
+11-27 00:34:52.447  2395  2395 W talkback: CallStateMonitor: CALL_STATE_IDLE supportTelephony: false callStatePermissionGranted: true
+11-27 00:34:52.447  2395  2395 V talkback: A11yEventProcessor: Event listeners: Pipeline,ProcessorEventQueue,ProcessorPhoneticLetters,ScreenFeedbackManager
+11-27 00:34:52.447  2395  2395 D talkback: Pipeline: execute() feedback=Feedback{eventId=type:EVENT_TYPE_ACCESSIBILITY subtype:TYPE_WINDOW_STATE_CHANGED time:4124780403, failovers=[Part= interruptGroup=0  interruptLevel=1  ]}
+11-27 00:34:52.447  2395  2395 D talkback: Actors: act() eventId=type:EVENT_TYPE_ACCESSIBILITY subtype:TYPE_WINDOW_STATE_CHANGED time:4124780403 part=Part= interruptGroup=0  interruptLevel=1  
+11-27 00:34:52.447  2395  2395 V talkback: Pipeline: execute() success=true for part=Part= interruptGroup=0  interruptLevel=1  
+11-27 00:34:52.447  2395  2395 V talkback: WindowEventInterpreter: START interpret() event type=TYPE_WINDOW_STATE_CHANGED time=4124780403 allowEvent=true
+11-27 00:34:52.447  2395  2395 V talkback: WindowEventInterpreter:  interpret() windowRoles=a:190:Cindy b:-1:null accessOverlay:-1:null picInPic:-1:null inputMethod:-1:null
+11-27 00:34:52.451  2395  2395 V talkback: WindowEventInterpreter:    updateFirstTimeInterpretationWhenWakeUp() windowIdToData={189={ title="Navigation bar"  titleFromWindowChange="Navigation bar"  eventSourceRole="ROLE_NONE"  }, 190={ title="Cindy"  titleFromWindowChange="Cindy"  eventSourceRole="ROLE_NONE"  }}
+11-27 00:34:52.451  2395  2395 V talkback: WindowEventInterpreter:      windowId=188 { title="English (US)"  titleFromWindowChange="English (US)"  eventSourceRole="ROLE_NONE"  eventPackageName="com.android.inputmethod.latin"  }
+11-27 00:34:52.451  2395  2395 V talkback: WindowEventInterpreter:    updateWindowTitles() windowIdToData={188={ title="English (US)"  titleFromWindowChange="English (US)"  eventSourceRole="ROLE_NONE"  eventPackageName="com.android.inputmethod.latin"  }, 189={ title="Navigation bar"  titleFromWindowChange="Navigation bar"  eventSourceRole="ROLE_NONE"  }, 190={ title="Cindy"  titleFromWindowChange="Cindy"  eventSourceRole="ROLE_NONE"  }}
+11-27 00:34:52.451  2395  2395 V talkback: WindowEventInterpreter:    updateWindowRoles() interpretation=WindowIdFromEvent=188  OriginalEvent  allowAnnounce  EventType=TYPE_WINDOW_STATE_CHANGED  maxDelayMs=550  sourceBoundsInScreen= Rect(0, 1892 - 1080, 2562)  
+11-27 00:34:52.451  2395  2395 V talkback: WindowEventInterpreter:   WindowA= OldID=190  OldTitle="Cindy"  
+11-27 00:34:52.451  2395  2395 V talkback: WindowEventInterpreter:   WindowB= 
+11-27 00:34:52.451  2395  2395 V talkback: WindowEventInterpreter:   A11yOverlay= 
+11-27 00:34:52.451  2395  2395 V talkback: WindowEventInterpreter:   PicInPic= 
+11-27 00:34:52.451  2395  2395 V talkback: WindowEventInterpreter:   inputMethod= 
+11-27 00:34:52.451  2395  2395 V talkback: WindowEventInterpreter:   AnchorNodeRole= 0
+11-27 00:34:52.451  2395  2395 V talkback: WindowEventInterpreter:   
+11-27 00:34:52.451  2395  2395 V talkback: WindowEventInterpreter:    updateWindowRoles() accessibilityOverlayWindows.size()=0
+11-27 00:34:52.451  2395  2395 V talkback: WindowEventInterpreter:    updateWindowRoles() applicationWindows.size()=1
+11-27 00:34:52.451  2395  2395 V talkback: WindowEventInterpreter:    updateWindowRoles() One application window case
+11-27 00:34:52.451  2395  2395 V talkback: WindowEventInterpreter:    detectWindowChanges()=false roles=a:190:Cindy b:-1:null accessOverlay:-1:null picInPic:-1:null inputMethod:188:English (US)
+11-27 00:34:52.451  2395  2395 V talkback: WindowEventInterpreter:    detectInputMethodChanged()=true
+11-27 00:34:52.451  2395  2395 V talkback: WindowEventInterpreter:  interpret() delayMs=550, interpretation=WindowIdFromEvent=188  inputMethodChanged  OriginalEvent  allowAnnounce  EventType=TYPE_WINDOW_STATE_CHANGED  maxDelayMs=550  sourceBoundsInScreen= Rect(0, 1892 - 1080, 2562)  
+11-27 00:34:52.451  2395  2395 V talkback: WindowEventInterpreter:   WindowA= ID=190  Title="Cindy"  TitleForFeedback="Cindy"  OldID=190  OldTitle="Cindy"  
+11-27 00:34:52.451  2395  2395 V talkback: WindowEventInterpreter:   WindowB= TitleForFeedback="无标题"  
+11-27 00:34:52.451  2395  2395 V talkback: WindowEventInterpreter:   A11yOverlay= TitleForFeedback="无标题"  
+11-27 00:34:52.451  2395  2395 V talkback: WindowEventInterpreter:   PicInPic= TitleForFeedback="无标题"  
+11-27 00:34:52.451  2395  2395 V talkback: WindowEventInterpreter:   inputMethod= ID=188  Title="English (US)"  titleFromStateChange="English (US)"  TitleForFeedback="English (US)"  
+11-27 00:34:52.451  2395  2395 V talkback: WindowEventInterpreter:   AnchorNodeRole= 0
+11-27 00:34:52.451  2395  2395 V talkback: WindowEventInterpreter:   
+11-27 00:34:52.451  2395  2395 V talkback: Mappers:  mapToFeedback() eventId=type:EVENT_TYPE_ACCESSIBILITY subtype:TYPE_WINDOW_STATE_CHANGED time:4124780403 event=null interpretation=UiChange{sourceBoundsInScreen=null, uiChangeType=WHOLE_SCREEN_UI_CHANGED} eventSourceNode=null
+11-27 00:34:52.451  2395  2395 V talkback: Mappers:    sourceBoundsInScreen=null
+11-27 00:34:52.452  2395  2395 V talkback: Mappers:    uiChangeType=WHOLE_SCREEN_UI_CHANGED
+11-27 00:34:52.452  2395  2395 D talkback: Pipeline: execute() feedback=Feedback{eventId=type:EVENT_TYPE_ACCESSIBILITY subtype:TYPE_WINDOW_STATE_CHANGED time:4124780403, failovers=[Part= uiChange= UiChange{action=CLEAR_SCREEN_CACHE, sourceBoundsInScreen=null}  ]}
+11-27 00:34:52.452  2395  2395 D talkback: Actors: act() eventId=type:EVENT_TYPE_ACCESSIBILITY subtype:TYPE_WINDOW_STATE_CHANGED time:4124780403 part=Part= uiChange= UiChange{action=CLEAR_SCREEN_CACHE, sourceBoundsInScreen=null}  
+11-27 00:34:52.452  2395  2395 V talkback: Pipeline: execute() success=false for part=Part= uiChange= UiChange{action=CLEAR_SCREEN_CACHE, sourceBoundsInScreen=null}  
+11-27 00:34:52.452  2395  2395 D talkback: Pipeline: execute() feedback=Feedback{eventId=type:EVENT_TYPE_ACCESSIBILITY subtype:TYPE_WINDOW_STATE_CHANGED time:4124780403, failovers=[Part= universalSearch= UniversalSearch{action=HANDLE_SCREEN_STATE, config=null}  ]}
+11-27 00:34:52.452  2395  2395 D talkback: Actors: act() eventId=type:EVENT_TYPE_ACCESSIBILITY subtype:TYPE_WINDOW_STATE_CHANGED time:4124780403 part=Part= universalSearch= UniversalSearch{action=HANDLE_SCREEN_STATE, config=null}  
+11-27 00:34:52.452  2395  2395 V talkback: Pipeline: execute() success=true for part=Part= universalSearch= UniversalSearch{action=HANDLE_SCREEN_STATE, config=null}  
+11-27 00:34:52.452  2395  2395 W talkback: CallStateMonitor: CALL_STATE_IDLE supportTelephony: false callStatePermissionGranted: true
+11-27 00:34:52.452  2395  2395 V talkback: A11yEventProcessor: Event listeners: Pipeline,ProcessorEventQueue,ScreenFeedbackManager
+11-27 00:34:52.452  2395  2395 W talkback: CallStateMonitor: CALL_STATE_IDLE supportTelephony: false callStatePermissionGranted: true
+11-27 00:34:52.452  2395  2395 V talkback: A11yEventProcessor: Event listeners: Pipeline,ProcessorEventQueue,ScreenFeedbackManager
+11-27 00:34:52.452  2395  2395 W talkback: CallStateMonitor: CALL_STATE_IDLE supportTelephony: false callStatePermissionGranted: true
+11-27 00:34:52.452  2395  2395 V talkback: A11yEventProcessor: Event listeners: Pipeline,ProcessorEventQueue,ScreenFeedbackManager
+11-27 00:34:52.452  2395  2395 V talkback: WindowEventInterpreter: START interpret() event type=TYPE_WINDOWS_CHANGED time=4124780600 allowEvent=true
+11-27 00:34:52.452  2395  2395 V talkback: WindowEventInterpreter:  interpret() windowRoles=a:190:Cindy b:-1:null accessOverlay:-1:null picInPic:-1:null inputMethod:-1:null
+11-27 00:34:52.452  2395  2395 V talkback: WindowEventInterpreter:    updateFirstTimeInterpretationWhenWakeUp() windowIdToData={188={ title="English (US)"  titleFromWindowChange="English (US)"  eventSourceRole="ROLE_NONE"  eventPackageName="com.android.inputmethod.latin"  }, 189={ title="Navigation bar"  titleFromWindowChange="Navigation bar"  eventSourceRole="ROLE_NONE"  }, 190={ title="Cindy"  titleFromWindowChange="Cindy"  eventSourceRole="ROLE_NONE"  }}
+11-27 00:34:52.452  2395  2395 V talkback: WindowEventInterpreter:      windowId=189 { title="Navigation bar"  titleFromWindowChange="Navigation bar"  eventSourceRole="ROLE_NONE"  }
+11-27 00:34:52.452  2395  2395 V talkback: WindowEventInterpreter:      windowId=190 { title="Cindy"  titleFromWindowChange="Cindy"  eventSourceRole="ROLE_NONE"  }
+11-27 00:34:52.452  2395  2395 V talkback: WindowEventInterpreter:    updateWindowTitles() windowIdToData={188={ title="English (US)"  titleFromWindowChange="English (US)"  eventSourceRole="ROLE_NONE"  eventPackageName="com.android.inputmethod.latin"  }, 189={ title="Navigation bar"  titleFromWindowChange="Navigation bar"  eventSourceRole="ROLE_NONE"  }, 190={ title="Cindy"  titleFromWindowChange="Cindy"  eventSourceRole="ROLE_NONE"  }}
+11-27 00:34:52.452  2395  2395 V talkback: WindowEventInterpreter:    updateWindowRoles() interpretation=WindowIdFromEvent=188  OriginalEvent  allowAnnounce  EventType=TYPE_WINDOWS_CHANGED  ChangeTypes=WINDOWS_CHANGE_ADDED  maxDelayMs=550  
+11-27 00:34:52.452  2395  2395 V talkback: WindowEventInterpreter:   WindowA= OldID=190  OldTitle="Cindy"  
+11-27 00:34:52.452  2395  2395 V talkback: WindowEventInterpreter:   WindowB= 
+11-27 00:34:52.452  2395  2395 V talkback: WindowEventInterpreter:   A11yOverlay= 
+11-27 00:34:52.452  2395  2395 V talkback: WindowEventInterpreter:   PicInPic= 
+11-27 00:34:52.452  2395  2395 V talkback: WindowEventInterpreter:   inputMethod= 
+11-27 00:34:52.452  2395  2395 V talkback: WindowEventInterpreter:   AnchorNodeRole= 0
+11-27 00:34:52.452  2395  2395 V talkback: WindowEventInterpreter:   
+11-27 00:34:52.452  2395  2395 V talkback: WindowEventInterpreter:    updateWindowRoles() accessibilityOverlayWindows.size()=0
+11-27 00:34:52.452  2395  2395 V talkback: WindowEventInterpreter:    updateWindowRoles() applicationWindows.size()=1
+11-27 00:34:52.452  2395  2395 V talkback: WindowEventInterpreter:    updateWindowRoles() One application window case
+11-27 00:34:52.452  2395  2395 V talkback: WindowEventInterpreter:    detectWindowChanges()=false roles=a:190:Cindy b:-1:null accessOverlay:-1:null picInPic:-1:null inputMethod:188:English (US)
+11-27 00:34:52.452  2395  2395 V talkback: WindowEventInterpreter:    detectInputMethodChanged()=true
+11-27 00:34:52.452  2395  2395 V talkback: WindowEventInterpreter:  interpret() delayMs=550, interpretation=WindowIdFromEvent=188  inputMethodChanged  OriginalEvent  allowAnnounce  EventType=TYPE_WINDOWS_CHANGED  ChangeTypes=WINDOWS_CHANGE_ADDED  maxDelayMs=550  
+11-27 00:34:52.452  2395  2395 V talkback: WindowEventInterpreter:   WindowA= ID=190  Title="Cindy"  TitleForFeedback="Cindy"  OldID=190  OldTitle="Cindy"  
+11-27 00:34:52.452  2395  2395 V talkback: WindowEventInterpreter:   WindowB= TitleForFeedback="无标题"  
+11-27 00:34:52.452  2395  2395 V talkback: WindowEventInterpreter:   A11yOverlay= TitleForFeedback="无标题"  
+11-27 00:34:52.452  2395  2395 V talkback: WindowEventInterpreter:   PicInPic= TitleForFeedback="无标题"  
+11-27 00:34:52.452  2395  2395 V talkback: WindowEventInterpreter:   inputMethod= ID=188  Title="English (US)"  titleFromStateChange="English (US)"  TitleForFeedback="English (US)"  
+11-27 00:34:52.452  2395  2395 V talkback: WindowEventInterpreter:   AnchorNodeRole= 0
+11-27 00:34:52.452  2395  2395 V talkback: WindowEventInterpreter:   
+11-27 00:34:52.453  2395  2395 V talkback: Mappers:  mapToFeedback() eventId=type:EVENT_TYPE_ACCESSIBILITY subtype:TYPE_WINDOWS_CHANGED time:4124780600 event=null interpretation=UiChange{sourceBoundsInScreen=null, uiChangeType=WHOLE_SCREEN_UI_CHANGED} eventSourceNode=null
+11-27 00:34:52.453  2395  2395 V talkback: Mappers:    sourceBoundsInScreen=null
+11-27 00:34:52.453  2395  2395 V talkback: Mappers:    uiChangeType=WHOLE_SCREEN_UI_CHANGED
+11-27 00:34:52.453  2395  2395 D talkback: Pipeline: execute() feedback=Feedback{eventId=type:EVENT_TYPE_ACCESSIBILITY subtype:TYPE_WINDOWS_CHANGED time:4124780600, failovers=[Part= uiChange= UiChange{action=CLEAR_SCREEN_CACHE, sourceBoundsInScreen=null}  ]}
+11-27 00:34:52.453  2395  2395 D talkback: Actors: act() eventId=type:EVENT_TYPE_ACCESSIBILITY subtype:TYPE_WINDOWS_CHANGED time:4124780600 part=Part= uiChange= UiChange{action=CLEAR_SCREEN_CACHE, sourceBoundsInScreen=null}  
+11-27 00:34:52.453  2395  2395 V talkback: Pipeline: execute() success=false for part=Part= uiChange= UiChange{action=CLEAR_SCREEN_CACHE, sourceBoundsInScreen=null}  
+11-27 00:34:52.453  2395  2395 D talkback: Pipeline: execute() feedback=Feedback{eventId=type:EVENT_TYPE_ACCESSIBILITY subtype:TYPE_WINDOWS_CHANGED time:4124780600, failovers=[Part= universalSearch= UniversalSearch{action=HANDLE_SCREEN_STATE, config=null}  ]}
+11-27 00:34:52.453  2395  2395 D talkback: Actors: act() eventId=type:EVENT_TYPE_ACCESSIBILITY subtype:TYPE_WINDOWS_CHANGED time:4124780600 part=Part= universalSearch= UniversalSearch{action=HANDLE_SCREEN_STATE, config=null}  
+11-27 00:34:52.453  2395  2395 V talkback: Pipeline: execute() success=true for part=Part= universalSearch= UniversalSearch{action=HANDLE_SCREEN_STATE, config=null}  
+11-27 00:34:52.453  2395  2395 D talkback: ProcessorEventQueue: Processing event: AccessibilityEvent  TYPE_WINDOW_STATE_CHANGED  time=4124780406  class="android.inputmethodservice.SoftInputWindow"  package="com.android.inputmethod.latin"  enabled  fullScreen  ScrollX=0  ScrollY=0  MaxScrollX=0  MaxScrollY=0      
+11-27 00:34:52.453  2395  2395 V talkback: Compositor: eventInterpretation= TYPE_WINDOW_STATE_CHANGED  
+11-27 00:34:52.454  2395  2395 V talkback: EventTypeWindowStateChangedFeedbackRule:  ttsOutputRule= windowStateChangedState,   role="ROLE_VIEW_GROUP"  
+11-27 00:34:52.454  2395  2395 W talkback: AccessibilityInterpretationUtils: Falling back to safe AccessibilityFocusEventInterpretation
+11-27 00:34:52.454  2395  2395 V talkback: TalkBackFeedbackProvider:  TYPE_WINDOW_STATE_CHANGED:  ttsOutput=     ttsAddToHistory  forceFeedbackEvenIfAudioPlaybackActive  forceFeedbackEvenIfMicrophoneActive  forceFeedbackEvenIfSsbActive  forceFeedbackEvenIfPhoneCallActive  
+11-27 00:34:52.454  2395  2395 D talkback: ProcessorEventQueue: Processing event: AccessibilityEvent  TYPE_WINDOW_STATE_CHANGED  time=4124780403  class="android.view.View"  package="com.android.inputmethod.latin"  text="text=[English (US)]"  enabled  ScrollX=0  ScrollY=0  MaxScrollX=0  MaxScrollY=0      
+11-27 00:34:52.454  2395  2395 V talkback: Compositor: eventInterpretation= TYPE_WINDOW_STATE_CHANGED  
+11-27 00:34:52.455  2395  2395 V talkback: EventTypeWindowStateChangedFeedbackRule:  ttsOutputRule= windowStateChangedState,   role="ROLE_NONE"  
+11-27 00:34:52.455  2395  2395 W talkback: AccessibilityInterpretationUtils: Falling back to safe AccessibilityFocusEventInterpretation
+11-27 00:34:52.455  2395  2395 V talkback: TalkBackFeedbackProvider:  TYPE_WINDOW_STATE_CHANGED:  ttsOutput=     ttsAddToHistory  forceFeedbackEvenIfAudioPlaybackActive  forceFeedbackEvenIfMicrophoneActive  forceFeedbackEvenIfSsbActive  forceFeedbackEvenIfPhoneCallActive  
+11-27 00:34:52.455  2395  2395 D talkback: ProcessorEventQueue: Processing event: AccessibilityEvent  TYPE_WINDOWS_CHANGED  WindowChangeTypes=WINDOWS_CHANGE_LAYER  time=4124780600  ScrollX=0  ScrollY=0  MaxScrollX=0  MaxScrollY=0      
+11-27 00:34:52.455  2395  2395 V talkback: Compositor: eventInterpretation= EVENT_UNKNOWN  
+11-27 00:34:52.455  2395  2395 D talkback: ProcessorEventQueue: Processing event: AccessibilityEvent  TYPE_WINDOWS_CHANGED  WindowChangeTypes=WINDOWS_CHANGE_LAYER  time=4124780600  ScrollX=0  ScrollY=0  MaxScrollX=0  MaxScrollY=0      
+11-27 00:34:52.455  2395  2395 V talkback: Compositor: eventInterpretation= EVENT_UNKNOWN  
+11-27 00:34:52.455  2395  2395 D talkback: ProcessorEventQueue: Processing event: AccessibilityEvent  TYPE_WINDOWS_CHANGED  WindowChangeTypes=WINDOWS_CHANGE_ADDED  time=4124780600  ScrollX=0  ScrollY=0  MaxScrollX=0  MaxScrollY=0      
+11-27 00:34:52.455  2395  2395 V talkback: Compositor: eventInterpretation= EVENT_UNKNOWN  
+11-27 00:34:52.455  2395  2395 W talkback: CallStateMonitor: CALL_STATE_IDLE supportTelephony: false callStatePermissionGranted: true
+11-27 00:34:52.455  2395  2395 V talkback: A11yEventProcessor: Event listeners: Pipeline,ProcessorEventQueue
+11-27 00:34:52.455  2395  2395 D talkback: ProcessorEventQueue: Processing event: AccessibilityEvent  TYPE_WINDOW_CONTENT_CHANGED  ContentChangeTypes=CONTENT_CHANGE_TYPE_SUBTREE  time=4124780607  class="android.widget.FrameLayout"  package="com.android.inputmethod.latin"  enabled  ScrollX=0  ScrollY=0  MaxScrollX=0  MaxScrollY=0      
+11-27 00:34:52.456  2395  2395 V talkback: Compositor: eventInterpretation= TYPE_WINDOW_CONTENT_CHANGED  
+11-27 00:34:52.456  2395  2395 V talkback: EventTypeWindowContentChangedFeedbackRule:   computeWindowContentChangedStateText:   contentChangeType=1, isSelfOrAncestorFocused=false
+11-27 00:34:52.456  2395  2395 V talkback: EventTypeWindowContentChangedFeedbackRule: windowContentChanged: (-2147455622) , ttsOutput= {}, eventSrcRole=ROLE_VIEW_GROUP, nodeRole=ROLE_VIEW_GROUP, nodeLiveRegion=0, nodeNotFrequentAnnounced=true
+11-27 00:34:52.456  2395  2395 V talkback: TalkBackFeedbackProvider:  TYPE_WINDOW_CONTENT_CHANGED:  ttsOutput=     queueMode=0  ttsAddToHistory  forceFeedbackEvenIfAudioPlaybackActive  forceFeedbackEvenIfPhoneCallActive  ttsSkipDuplicate  
+11-27 00:34:52.463  2395  2395 V talkback: WindowEventInterpreter:  delayedInterpret()
+11-27 00:34:52.463  2395  2395 V talkback: WindowEventInterpreter:    updateWindowRoles() interpretation=WindowIdFromEvent=188  inputMethodChanged  allowAnnounce  EventType=TYPE_WINDOWS_CHANGED  ChangeTypes=WINDOWS_CHANGE_ADDED  eventStartTime=4124780406  maxDelayMs=550  totalDelayMs=10  
+11-27 00:34:52.463  2395  2395 V talkback: WindowEventInterpreter:   WindowA= ID=190  Title="Cindy"  TitleForFeedback="Cindy"  OldID=190  OldTitle="Cindy"  
+11-27 00:34:52.463  2395  2395 V talkback: WindowEventInterpreter:   WindowB= TitleForFeedback="无标题"  
+11-27 00:34:52.463  2395  2395 V talkback: WindowEventInterpreter:   A11yOverlay= TitleForFeedback="无标题"  
+11-27 00:34:52.463  2395  2395 V talkback: WindowEventInterpreter:   PicInPic= TitleForFeedback="无标题"  
+11-27 00:34:52.463  2395  2395 V talkback: WindowEventInterpreter:   inputMethod= ID=188  Title="English (US)"  titleFromStateChange="English (US)"  TitleForFeedback="English (US)"  
+11-27 00:34:52.463  2395  2395 V talkback: WindowEventInterpreter:   AnchorNodeRole= 0
+11-27 00:34:52.463  2395  2395 V talkback: WindowEventInterpreter:   
+11-27 00:34:52.464  2395  2395 V talkback: WindowEventInterpreter:    updateWindowRoles() accessibilityOverlayWindows.size()=0
+11-27 00:34:52.464  2395  2395 V talkback: WindowEventInterpreter:    updateWindowRoles() applicationWindows.size()=1
+11-27 00:34:52.464  2395  2395 V talkback: WindowEventInterpreter:    updateWindowRoles() One application window case
+11-27 00:34:52.464  2395  2395 V talkback: WindowEventInterpreter:    detectWindowChanges()=false roles=a:190:Cindy b:-1:null accessOverlay:-1:null picInPic:-1:null inputMethod:188:English (US)
+11-27 00:34:52.464  2395  2395 V talkback: WindowEventInterpreter:    detectInputMethodChanged()=true
+11-27 00:34:52.464  2395  2395 V talkback: WindowEventInterpreter: END delayedInterpret() interpretation=WindowIdFromEvent=188  inputMethodChanged  allowAnnounce  EventType=TYPE_WINDOWS_CHANGED  ChangeTypes=WINDOWS_CHANGE_ADDED  eventStartTime=4124780406  maxDelayMs=550  totalDelayMs=10  
+11-27 00:34:52.464  2395  2395 V talkback: WindowEventInterpreter:   WindowA= ID=190  Title="Cindy"  TitleForFeedback="Cindy"  OldID=190  OldTitle="Cindy"  
+11-27 00:34:52.464  2395  2395 V talkback: WindowEventInterpreter:   WindowB= TitleForFeedback="无标题"  
+11-27 00:34:52.464  2395  2395 V talkback: WindowEventInterpreter:   A11yOverlay= TitleForFeedback="无标题"  
+11-27 00:34:52.464  2395  2395 V talkback: WindowEventInterpreter:   PicInPic= TitleForFeedback="无标题"  
+11-27 00:34:52.464  2395  2395 V talkback: WindowEventInterpreter:   inputMethod= ID=188  Title="English (US)"  titleFromStateChange="English (US)"  TitleForFeedback="English (US)"  
+11-27 00:34:52.464  2395  2395 V talkback: WindowEventInterpreter:   AnchorNodeRole= 0
+11-27 00:34:52.464  2395  2395 V talkback: WindowEventInterpreter:   
+11-27 00:34:52.464  2395  2395 V talkback: ScreenFeedbackManager: composeFeedback() interpretation=WindowIdFromEvent=188  inputMethodChanged  WindowsStable  allowAnnounce  EventType=TYPE_WINDOWS_CHANGED  ChangeTypes=WINDOWS_CHANGE_ADDED  eventStartTime=4124780406  maxDelayMs=550  totalDelayMs=10  
+11-27 00:34:52.464  2395  2395 V talkback: ScreenFeedbackManager:   WindowA= ID=190  Title="Cindy"  TitleForFeedback="Cindy"  OldID=190  OldTitle="Cindy"  
+11-27 00:34:52.464  2395  2395 V talkback: ScreenFeedbackManager:   WindowB= TitleForFeedback="无标题"  
+11-27 00:34:52.464  2395  2395 V talkback: ScreenFeedbackManager:   A11yOverlay= TitleForFeedback="无标题"  
+11-27 00:34:52.464  2395  2395 V talkback: ScreenFeedbackManager:   PicInPic= TitleForFeedback="无标题"  
+11-27 00:34:52.464  2395  2395 V talkback: ScreenFeedbackManager:   inputMethod= ID=188  Title="English (US)"  titleFromStateChange="English (US)"  TitleForFeedback="English (US)"  
+11-27 00:34:52.464  2395  2395 V talkback: ScreenFeedbackManager:   AnchorNodeRole= 0
+11-27 00:34:52.464  2395  2395 V talkback: ScreenFeedbackManager:   
+11-27 00:34:52.464  2395  2395 V talkback: ScreenFeedbackManager: composeFeedback() input method
+11-27 00:34:52.464  2395  2395 V talkback: ScreenFeedbackManager: feedback=["当前显示的是“English (US)”窗口"  forceFeedbackEvenIfAudioPlaybackActive   forceFeedbackEvenIfMicrophoneActive  ] 
+11-27 00:34:52.464  2395  2395 D talkback: Pipeline: execute() feedback=Feedback{eventId=type:EVENT_TYPE_ACCESSIBILITY subtype:TYPE_WINDOWS_CHANGED time:4124780600, failovers=[Part= interruptGroup=0  interruptLevel=2  ]}
+11-27 00:34:52.464  2395  2395 D talkback: Actors: act() eventId=type:EVENT_TYPE_ACCESSIBILITY subtype:TYPE_WINDOWS_CHANGED time:4124780600 part=Part= interruptGroup=0  interruptLevel=2  
+11-27 00:34:52.464  2395  2395 V talkback: Pipeline: execute() success=true for part=Part= interruptGroup=0  interruptLevel=2  
+11-27 00:34:52.464  2395  2395 D talkback: Pipeline: execute() feedback=Feedback{eventId=type:EVENT_TYPE_ACCESSIBILITY subtype:TYPE_WINDOWS_CHANGED time:4124780600, failovers=[Part= speech= action=SPEAK  text="当前显示的是“English (US)”窗口"  options= queueMode=QUEUE/UNINTERRUPTIBLE  flags=FLAG_FORCE_FEEDBACK_EVEN_IF_AUDIO_PLAYBACK_ACTIVE,FLAG_FORCE_FEEDBACK_EVEN_IF_MICROPHONE_ACTIVE,FLAG_FORCE_FEEDBACK_EVEN_IF_PHONE_CALL_ACTIVE    hint= null  hintSpeakOptions= null    sound= Sound{resourceId=2131951661, rate=1.0, volume=1.0, separationMillisec=0}  vibration= Vibration{resourceId=2130903127}  ]}
+11-27 00:34:52.464  2395  2395 D talkback: Actors: act() eventId=type:EVENT_TYPE_ACCESSIBILITY subtype:TYPE_WINDOWS_CHANGED time:4124780600 part=Part= speech= action=SPEAK  text="当前显示的是“English (US)”窗口"  options= queueMode=QUEUE/UNINTERRUPTIBLE  flags=FLAG_FORCE_FEEDBACK_EVEN_IF_AUDIO_PLAYBACK_ACTIVE,FLAG_FORCE_FEEDBACK_EVEN_IF_MICROPHONE_ACTIVE,FLAG_FORCE_FEEDBACK_EVEN_IF_PHONE_CALL_ACTIVE    hint= null  hintSpeakOptions= null    sound= Sound{resourceId=2131951661, rate=1.0, volume=1.0, separationMillisec=0}  vibration= Vibration{resourceId=2130903127}  
+11-27 00:34:52.464  2395  2395 V talkback: SpeechControllerImpl: Queued speech item, waiting for "talkback_12"
+11-27 00:34:52.464  2395  2395 V talkback: FeedbackController: playAuditory() resId=2131951661 eventId=type:EVENT_TYPE_ACCESSIBILITY subtype:TYPE_WINDOWS_CHANGED time:4124780600
+11-27 00:34:52.464  2395  2395 V talkback: Pipeline: execute() success=true for part=Part= speech= action=SPEAK  text="当前显示的是“English (US)”窗口"  options= queueMode=QUEUE/UNINTERRUPTIBLE  flags=FLAG_FORCE_FEEDBACK_EVEN_IF_AUDIO_PLAYBACK_ACTIVE,FLAG_FORCE_FEEDBACK_EVEN_IF_MICROPHONE_ACTIVE,FLAG_FORCE_FEEDBACK_EVEN_IF_PHONE_CALL_ACTIVE    hint= null  hintSpeakOptions= null    sound= Sound{resourceId=2131951661, rate=1.0, volume=1.0, separationMillisec=0}  vibration= Vibration{resourceId=2130903127}  
+11-27 00:34:52.464  2395  2395 V talkback: Mappers:  mapToFeedback() eventId=type:EVENT_TYPE_ACCESSIBILITY subtype:TYPE_WINDOWS_CHANGED time:4124780600 event=null interpretation=UiChange{sourceBoundsInScreen=null, uiChangeType=WHOLE_SCREEN_UI_CHANGED} eventSourceNode=null
+11-27 00:34:52.464  2395  2395 V talkback: Mappers:    sourceBoundsInScreen=null
+11-27 00:34:52.464  2395  2395 V talkback: Mappers:    uiChangeType=WHOLE_SCREEN_UI_CHANGED
+11-27 00:34:52.464  2395  2395 D talkback: Pipeline: execute() feedback=Feedback{eventId=type:EVENT_TYPE_ACCESSIBILITY subtype:TYPE_WINDOWS_CHANGED time:4124780600, failovers=[Part= uiChange= UiChange{action=CLEAR_SCREEN_CACHE, sourceBoundsInScreen=null}  ]}
+11-27 00:34:52.464  2395  2395 D talkback: Actors: act() eventId=type:EVENT_TYPE_ACCESSIBILITY subtype:TYPE_WINDOWS_CHANGED time:4124780600 part=Part= uiChange= UiChange{action=CLEAR_SCREEN_CACHE, sourceBoundsInScreen=null}  
+11-27 00:34:52.464  2395  2395 V talkback: Pipeline: execute() success=false for part=Part= uiChange= UiChange{action=CLEAR_SCREEN_CACHE, sourceBoundsInScreen=null}  
+11-27 00:34:52.465  2395  2395 D talkback: Pipeline: execute() feedback=Feedback{eventId=type:EVENT_TYPE_ACCESSIBILITY subtype:TYPE_WINDOWS_CHANGED time:4124780600, failovers=[Part= universalSearch= UniversalSearch{action=HANDLE_SCREEN_STATE, config=null}  ]}
+11-27 00:34:52.465  2395  2395 D talkback: Actors: act() eventId=type:EVENT_TYPE_ACCESSIBILITY subtype:TYPE_WINDOWS_CHANGED time:4124780600 part=Part= universalSearch= UniversalSearch{action=HANDLE_SCREEN_STATE, config=null}  
+11-27 00:34:52.465  2395  2395 V talkback: Pipeline: execute() success=true for part=Part= universalSearch= UniversalSearch{action=HANDLE_SCREEN_STATE, config=null}  
+11-27 00:34:52.476  2395  2395 W talkback: CallStateMonitor: CALL_STATE_IDLE supportTelephony: false callStatePermissionGranted: true
+11-27 00:34:52.477  2395  2395 V talkback: A11yEventProcessor: Event listeners: Pipeline,ProcessorEventQueue
+11-27 00:34:52.477  2395  2395 D talkback: ProcessorEventQueue: Processing event: AccessibilityEvent  TYPE_WINDOW_CONTENT_CHANGED  ContentChangeTypes=CONTENT_CHANGE_TYPE_SUBTREE  time=4124780633  class="android.view.ViewGroup"  package="com.xd.cindy"  enabled  ScrollX=0  ScrollY=0  MaxScrollX=0  MaxScrollY=0      
+11-27 00:34:52.479  2395  2395 V talkback: Compositor: eventInterpretation= TYPE_WINDOW_CONTENT_CHANGED  
+11-27 00:34:52.503  2395  2395 V talkback: EventTypeWindowContentChangedFeedbackRule:   computeWindowContentChangedStateText:   contentChangeType=1, isSelfOrAncestorFocused=false
+11-27 00:34:52.503  2395  2395 V talkback: EventTypeWindowContentChangedFeedbackRule: windowContentChanged: (831424) , ttsOutput= {}, eventSrcRole=ROLE_SCROLL_VIEW, nodeRole=ROLE_SCROLL_VIEW, nodeLiveRegion=0, nodeNotFrequentAnnounced=true
+11-27 00:34:52.503  2395  2395 V talkback: TalkBackFeedbackProvider:  TYPE_WINDOW_CONTENT_CHANGED:  ttsOutput=     queueMode=0  ttsAddToHistory  forceFeedbackEvenIfAudioPlaybackActive  forceFeedbackEvenIfPhoneCallActive  ttsSkipDuplicate  
+11-27 00:34:52.545  2395  2395 W talkback: CallStateMonitor: CALL_STATE_IDLE supportTelephony: false callStatePermissionGranted: true
+11-27 00:34:52.545  2395  2395 V talkback: A11yEventProcessor: Event listeners: Pipeline,ProcessorEventQueue,ScreenFeedbackManager
+11-27 00:34:52.545  2395  2395 D talkback: ProcessorEventQueue: Processing event: AccessibilityEvent  TYPE_WINDOWS_CHANGED  WindowChangeTypes=WINDOWS_CHANGE_BOUNDS  time=4124780702  ScrollX=0  ScrollY=0  MaxScrollX=0  MaxScrollY=0      
+11-27 00:34:52.545  2395  2395 V talkback: Compositor: eventInterpretation= EVENT_UNKNOWN  
+11-27 00:34:52.581  2395  2395 W talkback: CallStateMonitor: CALL_STATE_IDLE supportTelephony: false callStatePermissionGranted: true
+11-27 00:34:52.581  2395  2395 V talkback: A11yEventProcessor: Event listeners: Pipeline,ProcessorEventQueue
+11-27 00:34:52.583  2395  2395 V talkback: Mappers:  mapToFeedback() eventId=type:EVENT_TYPE_ACCESSIBILITY subtype:TYPE_WINDOW_CONTENT_CHANGED time:4124780737 event=EventType: TYPE_WINDOW_CONTENT_CHANGED; EventTime: 4124780737; PackageName: com.xd.cindy; MovementGranularity: 0; Action: 0; ContentChangeTypes: [CONTENT_CHANGE_TYPE_SUBTREE]; WindowChangeTypes: [] [ ClassName: android.widget.ScrollView; Text: []; ContentDescription: null; ItemCount: -1; CurrentItemIndex: -1; Enabled: true; Password: false; Checked: false; FullScreen: false; Scrollable: true; ImportantForAccessibility: true; AccessibilityDataSensitive: false; BeforeText: null; FromIndex: -1; ToIndex: -1; ScrollX: 0; ScrollY: 670; MaxScrollX: 0; MaxScrollY: 670; ScrollDeltaX: -1; ScrollDeltaY: -1; AddedCount: -1; RemovedCount: -1; ParcelableData: null; DisplayId: 0 ]; recordCount: 0 interpretation=ScrollEventInterpretation{userAction=ACTION_UNKNOWN, scrollDirection=SEARCH_FOCUS_UNKNOWN, hasValidIndex=true, isDuplicateEvent=false, isFromScrollable=false, isMediaPlayerAutoScroll=false, scrollInstanceId=-1} eventSourceNode=null
+11-27 00:34:52.583  2395  2395 V talkback: Mappers:    isMediaPlayerAutoScroll=false
+11-27 00:34:52.583  2395  2395 V talkback: Mappers:    isFromScrollable=false
+11-27 00:34:52.583  2395  2395 D talkback: ProcessorEventQueue: Processing event: AccessibilityEvent  TYPE_WINDOW_CONTENT_CHANGED  ContentChangeTypes=CONTENT_CHANGE_TYPE_SUBTREE  time=4124780737  class="android.widget.ScrollView"  package="com.xd.cindy"  enabled  scrollable  ScrollX=0  ScrollY=670  MaxScrollX=0  MaxScrollY=670      
+11-27 00:34:52.583  2395  2395 V talkback: Compositor: eventInterpretation= TYPE_WINDOW_CONTENT_CHANGED  
+11-27 00:34:52.597  2395  2395 V talkback: EventTypeWindowContentChangedFeedbackRule:   computeWindowContentChangedStateText:   contentChangeType=1, isSelfOrAncestorFocused=false
+11-27 00:34:52.597  2395  2395 V talkback: EventTypeWindowContentChangedFeedbackRule: windowContentChanged: (871786) , ttsOutput= {}, eventSrcRole=ROLE_SCROLL_VIEW, nodeRole=ROLE_SCROLL_VIEW, nodeLiveRegion=0, nodeNotFrequentAnnounced=true
+11-27 00:34:52.597  2395  2395 V talkback: TalkBackFeedbackProvider:  TYPE_WINDOW_CONTENT_CHANGED:  ttsOutput=     queueMode=0  ttsAddToHistory  forceFeedbackEvenIfAudioPlaybackActive  forceFeedbackEvenIfPhoneCallActive  ttsSkipDuplicate  
+11-27 00:34:52.609  2395  2395 V talkback: A11yEventProcessor: Drop event after window state change (event=AccessibilityEvent  TYPE_VIEW_SCROLLED  time=4124780766  class="android.widget.ScrollView"  package="com.xd.cindy"  enabled  scrollable  ScrollX=0  ScrollY=670  scrollDelta=0,670  MaxScrollX=0  MaxScrollY=670      , lastWindowStateChanged=4124780604)
+11-27 00:34:52.612  2395  2395 W talkback: CallStateMonitor: CALL_STATE_IDLE supportTelephony: false callStatePermissionGranted: true
+11-27 00:34:52.612  2395  2395 V talkback: A11yEventProcessor: Event listeners: Pipeline,ProcessorEventQueue,ScreenFeedbackManager
+11-27 00:34:52.612  2395  2395 D talkback: ProcessorEventQueue: Processing event: AccessibilityEvent  TYPE_WINDOWS_CHANGED  WindowChangeTypes=WINDOWS_CHANGE_BOUNDS  time=4124780769  ScrollX=0  ScrollY=0  MaxScrollX=0  MaxScrollY=0      
+11-27 00:34:52.612  2395  2395 V talkback: Compositor: eventInterpretation= EVENT_UNKNOWN  
+11-27 00:34:52.733  2395  2395 V talkback: Mappers:  mapToFeedback() eventId=type:EVENT_TYPE_ACCESSIBILITY subtype:TYPE_WINDOW_CONTENT_CHANGED time:4124780737 event=null interpretation=SUBTREE_CHANGED eventSourceNode=null
+11-27 00:34:52.733  2395  2395 V talkback: Mappers:    interpretationID=SUBTREE_CHANGED
+11-27 00:34:52.733  2395  2395 D talkback: Pipeline: execute() feedback=Feedback{eventId=type:EVENT_TYPE_ACCESSIBILITY subtype:TYPE_WINDOW_CONTENT_CHANGED time:4124780737, failovers=[Part= focus= action=ENSURE_ACCESSIBILITY_FOCUS_ON_SCREEN  start= null  target= null  stealNextWindowTarget= null    ]}
+11-27 00:34:52.733  2395  2395 D talkback: Actors: act() eventId=type:EVENT_TYPE_ACCESSIBILITY subtype:TYPE_WINDOW_CONTENT_CHANGED time:4124780737 part=Part= focus= action=ENSURE_ACCESSIBILITY_FOCUS_ON_SCREEN  start= null  target= null  stealNextWindowTarget= null    
+11-27 00:34:52.739  2395  2395 D talkback: FocusManagerInternal: EnsureOnScreen: Return, accessibility focus is already there.
+11-27 00:34:52.739  2395  2395 V talkback: Pipeline: execute() success=true for part=Part= focus= action=ENSURE_ACCESSIBILITY_FOCUS_ON_SCREEN  start= null  target= null  stealNextWindowTarget= null    
+11-27 00:34:53.236  2395  4239 D talkback: FailoverTextToSpeech: Received callback for "talkback_12", returned true
+11-27 00:34:53.236  2395  2395 V talkback: FeedbackFragmentsIterator: next --currentFeedbackFragment text = 当前显示的是“English (US)”窗口.
+11-27 00:34:53.236  2395  2395 V talkback: SpeechControllerImpl: Speaking fragment text "当前显示的是“English (US)”窗口" with spans null for event type:EVENT_TYPE_ACCESSIBILITY subtype:TYPE_WINDOWS_CHANGED time:4124780600
+11-27 00:34:53.236  2395  2395 D talkback: FailoverTextToSpeech: Speak call for talkback_13 returned 0
+11-27 00:34:53.309  2395  2395 V talkback: EventLatencyLogger: onFeedbackOutput -- eventData= labels=TYPE_WINDOWS_CHANGED eventId=type:EVENT_TYPE_ACCESSIBILITY subtype:TYPE_WINDOWS_CHANGED time:4124780600 uptimeReceivedAtTalkback=4124780609 timeReceivedAtTalkback=1795739692452 mTimeFeedbackQueued=1795739692464 timeFeedbackComposed=1795739693236 mTimeFeedbackOutput=1795739693269 timeInlineHandled=1795739692453 mUtteranceId=talkback_13 actionDetails=null
+11-27 00:34:53.309  2395  2395 V talkback: FeedbackFragmentsIterator: onFragmentRangeStarted ,  speak word = 当前显示的是
+11-27 00:34:53.464  2395  2395 V talkback: WindowEventInterpreter: IME transition finished & start to support Announcement from IME.
+11-27 00:34:55.196  2395  2395 V talkback: FeedbackFragmentsIterator: onFragmentRangeStarted ,  speak word = English
+11-27 00:34:55.612  2395  2395 D talkback: A11yEventProcessor: Processor idle state.
+11-27 00:34:55.612  2395  2395 V talkback: Mappers:  mapToFeedback() eventId=null event=null interpretation=ACCESSIBILITY_EVENT_IDLE eventSourceNode=null
+11-27 00:34:55.612  2395  2395 V talkback: Mappers:    interpretationID=ACCESSIBILITY_EVENT_IDLE
+11-27 00:34:55.612  2395  2395 D talkback: Pipeline: execute() feedback=Feedback{eventId=null, failovers=[Part= focus= action=ENSURE_ACCESSIBILITY_FOCUS_ON_SCREEN  start= null  target= null  stealNextWindowTarget= null    ]}
+11-27 00:34:55.613  2395  2395 D talkback: Actors: act() eventId=null part=Part= focus= action=ENSURE_ACCESSIBILITY_FOCUS_ON_SCREEN  start= null  target= null  stealNextWindowTarget= null    
+11-27 00:34:55.617  2395  2395 D talkback: FocusManagerInternal: EnsureOnScreen: Return, accessibility focus is already there.
+11-27 00:34:55.617  2395  2395 V talkback: Pipeline: execute() success=true for part=Part= focus= action=ENSURE_ACCESSIBILITY_FOCUS_ON_SCREEN  start= null  target= null  stealNextWindowTarget= null    
+11-27 00:34:55.675  2395  2395 V talkback: FeedbackFragmentsIterator: onFragmentRangeStarted ,  speak word = US
+11-27 00:34:56.112  2395  2395 V talkback: FeedbackFragmentsIterator: onFragmentRangeStarted ,  speak word = 窗口
+11-27 00:34:57.251  2395  4239 D talkback: FailoverTextToSpeech: Received callback for "talkback_13", returned true
+11-27 00:34:57.251  2395  2395 V talkback: SpeechControllerImpl: No next item, stopping speech queue
