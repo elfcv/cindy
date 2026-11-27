@@ -1,11 +1,13 @@
 /** Development-only fixture: the production settings sheet of a group the phone reaches directly,
  * with synthetic in-memory settings (no chat service, computer or account writes).
  * cindy://group-settings-preview?state=on|off|offline|legacy|conflict → 群管理 → 「群里的 Cindy」
- * cindy://group-settings-preview?state=members → 成员 → 搜「Cindy」: the group's Cindy among same-name companions. */
+ * cindy://group-settings-preview?state=members → 成员 → 搜「Cindy」: the group's Cindy among same-name companions.
+ * cindy://group-settings-preview?state=fallback-on|fallback-off → 群管理: the switch was read online, then the phone went offline
+ * and the settings read failed; the sheet shows the chat page's group, as DirectGroupSettings does, read-only. */
 import { useMemo, useState } from 'react';
 import { Redirect, useLocalSearchParams, useRouter } from 'expo-router';
 import { View } from 'react-native';
-import { chatGroupView, type ChatSnapshot } from '@/chat/chatServerClient';
+import { chatGroupAssistant, chatGroupView, type ChatSnapshot } from '@/chat/chatServerClient';
 import { MOBILE_VISUAL_MOCK_ENABLED } from '@/config/env';
 import { useBotGroupIdentities } from '@/session/BotGroupAvatars';
 import { ChatGroupSettingsSheet } from '@/session/ChatGroupSettingsSheet';
@@ -14,7 +16,7 @@ import { useTheme } from '@/theme';
 import { goBackGuarded } from '@/utils/backGuard';
 
 const id = (n: number) => `00000000-0000-4000-8000-${String(n).padStart(12, '0')}`;
-const STATES = ['on', 'off', 'offline', 'legacy', 'conflict', 'members'] as const;
+const STATES = ['on', 'off', 'offline', 'legacy', 'conflict', 'members', 'fallback-on', 'fallback-off'] as const;
 type State = typeof STATES[number];
 
 const person = (n: number, name: string, role: 'owner' | 'admin' | 'member' = 'member') =>
@@ -41,11 +43,20 @@ export default function GroupSettingsPreview() {
   const router = useRouter();
   const { colors } = useTheme();
   const lookup = useBotGroupIdentities('');
-  const [room, setRoom] = useState({ assistant: state !== 'off', revision: 5 });
-  const group = useMemo(() => ({ ...chatGroupView({ snapshot: snapshot(room.assistant, room.revision, state === 'members'), messages: [], before: null }, id(2)),
-    ...(state === 'legacy' ? {} : { supportsGroupAssistant: true, assistantEnabled: room.assistant }) }), [room, state]);
+  const fallback = state === 'fallback-on' || state === 'fallback-off';
+  const [room, setRoom] = useState({ assistant: state !== 'off' && state !== 'fallback-off', revision: 5 });
+  // The fallback is the chat page's group: its known value comes through the same projection the chat page uses.
+  const group = useMemo(() => {
+    const shown = snapshot(room.assistant, room.revision, state === 'members');
+    const view = chatGroupView({ snapshot: shown, messages: [], before: null }, id(2));
+    if (fallback) return { ...view, supportsGroupAssistant: true, ...chatGroupAssistant(shown.room, { supportsGroupAssistant: true }) };
+    return { ...view, ...(state === 'legacy' ? {} : { supportsGroupAssistant: true, assistantEnabled: room.assistant }) };
+  }, [room, state, fallback]);
   if (!MOBILE_VISUAL_MOCK_ENABLED) return <Redirect href="/" />;
-  const management = { group, editable: true, ready: true, loading: false, reason: null, refresh: async () => undefined,
+  // A failed settings read has no settings of its own and refuses writes, as useBotGroupSettingsManagement does.
+  const management = fallback ? { group: undefined, editable: false, ready: false, loading: false, reason: 'unavailable', refresh: async () => undefined,
+    invite: async () => { throw new Error('PERMISSION_DENIED'); }, act: async () => { throw new Error('PERMISSION_DENIED'); } } as unknown as ReturnType<typeof useBotGroupSettingsManagement>
+    : { group, editable: true, ready: true, loading: false, reason: null, refresh: async () => undefined,
     invite: async () => null,
     act: async (actionId: string, input: Record<string, unknown> = {}) => {
       // A conflict leaves the saved value; the switch must show it again.
@@ -54,7 +65,7 @@ export default function GroupSettingsPreview() {
       return { effects: [] };
     } } as unknown as ReturnType<typeof useBotGroupSettingsManagement>;
   return <View style={{ flex: 1, backgroundColor: colors.surface }}>
-    <ChatGroupSettingsSheet visible group={group} host={{ deviceId: '', deviceName: '' }} online={state !== 'offline'}
+    <ChatGroupSettingsSheet visible group={group} host={{ deviceId: '', deviceName: '' }} online={state !== 'offline' && !fallback}
       identityFor={(botId, name) => lookup(botId, name, group.members.find(member => member.botId === botId))} act={async () => ({ effects: [] })}
       management={management} onClose={() => goBackGuarded(router)} />
   </View>;
