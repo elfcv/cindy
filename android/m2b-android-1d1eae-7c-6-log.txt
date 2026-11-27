@@ -1,0 +1,13 @@
+7c-1d1eae-list before install (no search): mInputShown=false | 
+7c-1d1eae-list sheet open: mInputShown=false | sheet=[取消@261,2164 取消@261,2163 允许并继续@759,2164 允许并继续@759,2163 ]
+7c-1d1eae-list 1s after allow: mInputShown=false
+7c-1d1eae-list 3.5s after allow: mInputShown=false
+
+  focusedNode: 
+C [53,273][1028,410] 「Demo Vault Bridge」在「Mac Studio」上的操作还没结束
+  [111,315][884,410] 「Demo Vault Bridge」在「Mac Studio」上的操作还没结束
+6-close-allow-1 open: 取消@261,2164 取消@261,2163 允许并继续@759,2164 允许并继续@759,2163 
+6-close-allow-1 frames=76
+6-close-allow-2 open: 取消@261,2164 取消@261,2163 允许并继续@759,2164 允许并继续@759,2163 
+6-close-allow-2 frames=75
+DONE

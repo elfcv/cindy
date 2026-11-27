@@ -1,0 +1,8 @@
+ref 1950 f1.0 measured earlier
+3a-font-up-d01 open@1080x1950 f1.0: 取消@261,1713 取消@261,1713 允许并继续@759,1713 允许并继续@759,1713 
+3a-font-up-d01 result: sheet=[] installing=0
+3a-font-up-d03 open@1080x1950 f1.0: 取消@261,1713 取消@261,1713 允许并继续@759,1713 允许并继续@759,1713 
+3a-font-up-d03 result: sheet=[] installing=0
+3a-font-up-d06 open@1080x1950 f1.0: 取消@261,1713 取消@261,1713 允许并继续@759,1713 允许并继续@759,1713 
+3a-font-up-d06 result: sheet=[] installing=0
+DONE
