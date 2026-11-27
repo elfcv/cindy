@@ -1,0 +1,32 @@
+== b01-tab box=[96,2004][984,2148]
+TYPE_VIEW_FOCUSED  class="android.view.ViewGroup"  text="text=[C, Cindy Example, 成员]"  description="Cindy Example"  itemCount=16  currentItemIndex=6  
+  SPEAK "Cindy Example"
+TYPE_VIEW_ACCESSIBILITY_FOCUSED  class="android.view.ViewGroup"  text="text=[C, Cindy Example, 成员]"  description="Cindy Example"  action=64  
+  SPEAK "已收起, Cindy Example, 按钮"
+  SPEAK "点按两次即可激活, 可以操作，做出手势“三指点按”即可查看"
+== b02-tab box=[96,2004][984,2148]
+== b03-tab box=[96,2127][984,2271]
+TYPE_VIEW_FOCUSED  class="android.view.ViewGroup"  text="text=[Cindy (Quinn Example), 伙伴 · 仅主人可用]"  description="Cindy (Quinn Example)"  itemCount=16  currentItemIndex=8  
+  SPEAK "Cindy (Quinn Example)"
+TYPE_VIEW_ACCESSIBILITY_FOCUSED  class="android.view.ViewGroup"  text="text=[Cindy (Quinn Example), 伙伴 · 仅主人可用]"  description="Cindy (Quinn Example)"  action=64  
+  SPEAK "已收起, Cindy (Quinn Example), 按钮"
+  SPEAK "点按两次即可激活, 可以操作，做出手势“三指点按”即可查看"
+== b04-up box=[96,1968][984,2112]
+TYPE_VIEW_FOCUSED  class="android.view.ViewGroup"  text="text=[C, Cindy Example, 成员]"  description="Cindy Example"  itemCount=16  currentItemIndex=6  
+  SPEAK "Cindy Example"
+TYPE_VIEW_ACCESSIBILITY_FOCUSED  class="android.view.ViewGroup"  text="text=[C, Cindy Example, 成员]"  description="Cindy Example"  action=64  
+  SPEAK "已收起, Cindy Example, 按钮"
+  SPEAK "点按两次即可激活, 可以操作，做出手势“三指点按”即可查看"
+== b05-up box=[54,1599][1026,1710]
+TYPE_VIEW_FOCUSED  class="android.widget.EditText"  text="text=[Cindy]"  description="搜索成员"  itemCount=16  currentItemIndex=5  
+  SPEAK "搜索成员"
+TYPE_VIEW_ACCESSIBILITY_FOCUSED  class="android.widget.EditText"  text="text=[Cindy]"  description="搜索成员"  action=64  
+  SPEAK "Cindy, 编辑框, 搜索成员"
+  SPEAK "点按两次并按住即可长按"
+== b06-stab box=[543,1410][1017,1524]
+TYPE_VIEW_FOCUSED  class="android.view.ViewGroup"  text="text=[成员 12]"  description="成员 12"  itemCount=16  currentItemIndex=4  
+  SPEAK "成员 12"
+TYPE_VIEW_ACCESSIBILITY_FOCUSED  class="android.view.ViewGroup"  text="text=[成员 12]"  description="成员 12"  action=64  
+  SPEAK "已选中, 成员 12, 选项卡"
+  SPEAK "点按两次即可激活"
+DONE

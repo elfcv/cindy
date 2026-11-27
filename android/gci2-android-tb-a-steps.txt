@@ -1,0 +1,42 @@
+== a01-tab box=[0,1065][1077,2397]
+TYPE_VIEW_FOCUSED  class="android.widget.ImageView"  text="text=[Back]"  description="Back"  itemCount=3  currentItemIndex=0  
+  SPEAK "Back"
+TYPE_VIEW_FOCUSED  class="android.view.ViewGroup"  description="关闭面板"  itemCount=24  currentItemIndex=0  
+  SPEAK "关闭面板"
+TYPE_VIEW_ACCESSIBILITY_FOCUSED  class="android.widget.ImageView"  text="text=[Back]"  description="Back"  action=64  
+  SPEAK "Back"
+TYPE_VIEW_ACCESSIBILITY_FOCUSED  class="android.view.ViewGroup"  description="关闭面板"  action=64  
+  SPEAK "关闭面板, 按钮"
+  SPEAK "点按两次即可激活"
+== a02-tab box=[834,1254][1026,1368]
+TYPE_VIEW_FOCUSED  class="android.view.ViewGroup"  text="text=[邀请]"  description="邀请"  itemCount=24  currentItemIndex=1  
+  SPEAK "邀请"
+TYPE_VIEW_ACCESSIBILITY_FOCUSED  class="android.view.ViewGroup"  text="text=[邀请]"  description="邀请"  action=64  
+  SPEAK "已收起, 邀请, 按钮"
+  SPEAK "点按两次即可激活, 可以操作，做出手势“三指点按”即可查看"
+== a03-tab box=[834,1254][1026,1368]
+== a04-tab box=[66,1446][540,1557]
+TYPE_VIEW_FOCUSED  class="android.view.ViewGroup"  text="text=[群设置]"  description="群设置"  itemCount=24  currentItemIndex=3  
+  SPEAK "群设置"
+TYPE_VIEW_ACCESSIBILITY_FOCUSED  class="android.view.ViewGroup"  text="text=[群设置]"  description="群设置"  action=64  
+  SPEAK "群设置, 选项卡"
+  SPEAK "点按两次即可激活"
+== a05-tab box=[543,1446][1017,1557]
+TYPE_VIEW_FOCUSED  class="android.view.ViewGroup"  text="text=[成员 12]"  description="成员 12"  itemCount=24  currentItemIndex=4  
+  SPEAK "成员 12"
+TYPE_VIEW_ACCESSIBILITY_FOCUSED  class="android.view.ViewGroup"  text="text=[成员 12]"  description="成员 12"  action=64  
+  SPEAK "已选中, 成员 12, 选项卡"
+  SPEAK "点按两次即可激活"
+== a06-tab box=[54,1632][1026,1746]
+TYPE_VIEW_FOCUSED  class="android.widget.EditText"  text="text=[搜索成员]"  description="搜索成员"  itemCount=24  currentItemIndex=5  
+  SPEAK "搜索成员"
+TYPE_VIEW_ACCESSIBILITY_FOCUSED  class="android.widget.EditText"  text="text=[搜索成员]"  description="搜索成员"  action=64  
+  SPEAK "搜索成员, 编辑框"
+  SPEAK "点按两次并按住即可长按"
+== a07-tab box=[96,2127][984,2271]
+TYPE_VIEW_FOCUSED  class="android.view.ViewGroup"  text="text=[Q, Quinn Example, 成员]"  description="Quinn Example"  itemCount=24  currentItemIndex=6  
+  SPEAK "Quinn Example"
+TYPE_VIEW_ACCESSIBILITY_FOCUSED  class="android.view.ViewGroup"  text="text=[Q, Quinn Example, 成员]"  description="Quinn Example"  action=64  
+  SPEAK "已收起, Quinn Example, 按钮"
+  SPEAK "点按两次即可激活, 可以操作，做出手势“三指点按”即可查看"
+DONE

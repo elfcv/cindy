@@ -1,0 +1,21 @@
+11-27 02:24:30.111  4092  4092 W talkback: CallStateMonitor: CALL_STATE_IDLE supportTelephony: false callStatePermissionGranted: true
+11-27 02:24:30.111  4092  4092 V talkback: A11yEventProcessor: Event listeners: Pipeline,ProcessorEventQueue
+11-27 02:24:30.168  4092  4092 V talkback: SelectionInterpreter: Skip ROLE_CHECK_BOX for de-selection
+11-27 02:24:30.168  4092  4092 D talkback: ProcessorEventQueue: Processing event: AccessibilityEvent  TYPE_WINDOW_CONTENT_CHANGED  time=4131358267  class="android.view.ViewGroup"  package="com.xd.cindy"  description="邀请"  enabled  ScrollX=0  ScrollY=0  MaxScrollX=0  MaxScrollY=0      
+11-27 02:24:30.168  4092  4092 V talkback: Compositor: eventInterpretation= TYPE_WINDOW_CONTENT_CHANGED  
+11-27 02:24:30.169  4092  4092 V talkback: EventTypeWindowContentChangedFeedbackRule:   computeWindowContentChangedStateText:   contentChangeType=0, isSelfOrAncestorFocused=true
+11-27 02:24:30.169  4092  4092 V talkback: EventTypeWindowContentChangedFeedbackRule: windowContentChanged: (872785) , ttsOutput= {}, eventSrcRole=ROLE_BUTTON, nodeRole=ROLE_BUTTON, nodeLiveRegion=0, nodeNotFrequentAnnounced=true
+11-27 02:24:30.169  4092  4092 V talkback: TalkBackFeedbackProvider:  TYPE_WINDOW_CONTENT_CHANGED:  ttsOutput=     queueMode=0  ttsAddToHistory  forceFeedbackEvenIfAudioPlaybackActive  forceFeedbackEvenIfPhoneCallActive  ttsSkipDuplicate  
+11-27 02:24:31.381  4092  4092 V talkback: FeedbackFragmentsIterator: onFragmentRangeStarted ,  speak word = 可以操作
+11-27 02:24:32.744  4092  4092 V talkback: FeedbackFragmentsIterator: onFragmentRangeStarted ,  speak word = 做出手势
+11-27 02:24:33.168  4092  4092 D talkback: A11yEventProcessor: Processor idle state.
+11-27 02:24:33.168  4092  4092 V talkback: Mappers:  mapToFeedback() eventId=null event=null interpretation=ACCESSIBILITY_EVENT_IDLE eventSourceNode=null
+11-27 02:24:33.168  4092  4092 V talkback: Mappers:    interpretationID=ACCESSIBILITY_EVENT_IDLE
+11-27 02:24:33.168  4092  4092 D talkback: Pipeline: execute() feedback=Feedback{eventId=null, failovers=[Part= focus= action=ENSURE_ACCESSIBILITY_FOCUS_ON_SCREEN  start= null  target= null  stealNextWindowTarget= null    ]}
+11-27 02:24:33.168  4092  4092 D talkback: Actors: act() eventId=null part=Part= focus= action=ENSURE_ACCESSIBILITY_FOCUS_ON_SCREEN  start= null  target= null  stealNextWindowTarget= null    
+11-27 02:24:33.172  4092  4092 D talkback: FocusManagerInternal: EnsureOnScreen: Return, accessibility focus is already there.
+11-27 02:24:33.172  4092  4092 V talkback: Pipeline: execute() success=true for part=Part= focus= action=ENSURE_ACCESSIBILITY_FOCUS_ON_SCREEN  start= null  target= null  stealNextWindowTarget= null    
+11-27 02:24:34.186  4092  4092 V talkback: FeedbackFragmentsIterator: onFragmentRangeStarted ,  speak word = 三指点按
+11-27 02:24:35.342  4092  4092 V talkback: FeedbackFragmentsIterator: onFragmentRangeStarted ,  speak word = 即可查看
+11-27 02:24:36.704  4092  4111 D talkback: FailoverTextToSpeech: Received callback for "talkback_11", returned true
+11-27 02:24:36.704  4092  4092 V talkback: SpeechControllerImpl: No next item, stopping speech queue
