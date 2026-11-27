@@ -1,0 +1,8 @@
+3 pasted:  text="普通消息 · Ann Lee" focused="true" ime=true receipts=
+riley at 103 1063
+3a after longpress Riley:  text="普通消息 · Ann Lee @Riley " focused="true" ime=true receipts=
+3a typed OK:  text="普通消息 · Ann Lee @Riley OK" focused="true" ime=true receipts=
+riley at 103 1013
+3b after longpress Riley:  text="普通消息 · Ann Lee @Riley " focused="true" ime=true receipts=
+3b typed OK:  text="普通消息 · Ann Lee @Riley OK" focused="true" ime=true receipts=
+DONE

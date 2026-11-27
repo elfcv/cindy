@@ -1,0 +1,5 @@
+node at 667 1214: 
+single tap 667 1214 -> card: [text="R" text="Riley"]
+node at 233 1796: 
+single tap 233 1796 -> card: [text="R" text="Riley"]
+DONE

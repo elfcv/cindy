@@ -1,0 +1,11 @@
+4a after Ann Blue:  text="@Ann " focused="true" ime=true receipts=
+team-ann at 103 1411
+4a after Team @Ann:  text="@Ann @Team @Ann " focused="true" ime=true receipts=
+4a after send:  text="" focused="false" ime=false receipts=模拟发送回执 · 收件人：Ann Blue、Team @Ann
+ann-gold exec at 103 290
+4b draft:  text="@Ann Lee, can you check?" focused="true" ime=true receipts=
+4b after send:  text="" focused="false" ime=false receipts=模拟发送回执 · 收件人：Ann Blue、Team @Ann|模拟发送回执 · 收件人：Ann Gold
+5x before back:  text="keep" focused="true" ime=true receipts=模拟发送回执 · 收件人：Ann Blue、Team @Ann|模拟发送回执 · 收件人：Ann Gold
+5x after back:  text="keep" focused="true" ime=false receipts=模拟发送回执 · 收件人：Ann Blue、Team @Ann|模拟发送回执 · 收件人：Ann Gold
+5x after longpress Riley:  text="keep @Riley " focused="true" ime=true receipts=
+DONE

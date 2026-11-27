@@ -1,0 +1,13 @@
+enter start:  text="" focused="false" ime=false receipts=
+enter at: TYPE_VIEW_FOCUSED  class="android.view.ViewGroup"  description="复制"  currentItemIndex=19  
+enter focused: TYPE_VIEW_FOCUSED  class="android.view.ViewGroup"  text="text=[A]"  description="Ann Lee"  currentItemIndex=13  
+enter after KEYCODE_ENTER:
+TYPE_VIEW_CLICKED  class="android.view.ViewGroup"  text="text=[A]"  description="Ann Lee"  
+enter draft after (TalkBack off):  text="" focused="false" ime=false receipts=
+dpadcenter start:  text="" focused="false" ime=false receipts=
+dpadcenter at: TYPE_VIEW_FOCUSED  class="android.view.ViewGroup"  description="复制"  currentItemIndex=19  
+dpadcenter focused: TYPE_VIEW_FOCUSED  class="android.view.ViewGroup"  text="text=[A]"  description="Ann Lee"  currentItemIndex=13  
+dpadcenter after KEYCODE_DPAD_CENTER:
+TYPE_VIEW_CLICKED  class="android.view.ViewGroup"  text="text=[A]"  description="Ann Lee"  
+dpadcenter draft after (TalkBack off):  text="" focused="false" ime=false receipts=
+DONE

@@ -1,0 +1,255 @@
+<node text="" resource-id="" class="android.widget.FrameLayout" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[0,0][1080,2400]">
+<node text="" resource-id="" class="android.widget.LinearLayout" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[0,0][1080,2400]">
+<node text="" resource-id="" class="android.widget.FrameLayout" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[0,0][1080,2400]">
+<node text="" resource-id="com.xd.cindy:id/action_bar_root" class="android.widget.LinearLayout" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[0,0][1080,2400]">
+<node text="" resource-id="android:id/content" class="android.widget.FrameLayout" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[0,0][1080,2400]">
+<node text="" resource-id="" class="android.widget.FrameLayout" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[0,0][1080,2400]">
+<node text="" resource-id="" class="android.view.ViewGroup" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[0,0][1080,2400]">
+<node text="" resource-id="" class="android.view.View" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[0,0][1080,2400]" />
+<node text="" resource-id="" class="android.view.ViewGroup" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[0,0][1080,2400]">
+<node text="" resource-id="" class="android.view.ViewGroup" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[0,0][1080,2400]">
+<node text="" resource-id="" class="android.view.ViewGroup" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[0,0][1080,2400]">
+<node text="" resource-id="" class="android.view.ViewGroup" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[0,0][1080,2400]">
+<node text="" resource-id="" class="android.widget.LinearLayout" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[0,0][1080,2400]" />
+<node text="" resource-id="" class="android.view.ViewGroup" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[0,0][1080,2400]">
+<node text="" resource-id="" class="android.view.ViewGroup" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[0,0][1080,2400]" />
+<node text="" resource-id="" class="android.view.ViewGroup" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[0,0][1080,2400]">
+<node text="" resource-id="" class="android.view.ViewGroup" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[0,0][1080,2400]">
+<node text="" resource-id="" class="android.view.ViewGroup" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[0,0][1080,2400]">
+<node text="" resource-id="" class="android.widget.ScrollView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[0,0][1080,2400]">
+<node text="" resource-id="" class="android.view.ViewGroup" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[0,0][1080,2400]">
+<node text="" resource-id="" class="android.view.ViewGroup" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[0,0][1080,2400]">
+<node text="" resource-id="" class="android.view.ViewGroup" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[0,0][1080,2400]" />
+<node text="" resource-id="botGroup.screen" class="android.view.ViewGroup" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[24,0][1056,2400]" />
+<node text="" resource-id="botGroup.header" class="android.view.ViewGroup" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[24,63][1056,200]" />
+<node text="" resource-id="botGroup.back" class="android.widget.Button" content-desc="返回" clickable="true" focusable="true" focused="false" long-clickable="false" bounds="[66,74][182,189]">
+<node text="" resource-id="" class="com.horcrux.svg.SvgView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[98,106][150,159]">
+<node text="" resource-id="" class="com.horcrux.svg.GroupView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[117,119][130,145]">
+<node text="" resource-id="" class="com.horcrux.svg.PathView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[117,119][130,145]" />
+<node text="" resource-id="botGroup.identity" class="android.widget.Button" content-desc="头像点名 · 模拟数据, 5 位成员, Ann、Ann、Ann Lee、Team @Ann、Riley" clickable="true" focusable="true" focused="false" long-clickable="false" bounds="[213,74][867,189]">
+<node text="" resource-id="" class="android.view.ViewGroup" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[213,90][297,174]">
+<node text="" resource-id="" class="android.view.ViewGroup" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[215,121][257,163]">
+<node text="" resource-id="companion.presenceRing" class="android.view.ViewGroup" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[215,121][257,163]" />
+<node text="" resource-id="" class="android.widget.ImageView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[220,126][251,158]" />
+<node text="" resource-id="" class="android.view.ViewGroup" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[219,96][261,138]">
+<node text="" resource-id="" class="android.view.ViewGroup" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[224,101][255,132]">
+<node text="R" resource-id="" class="android.widget.TextView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[234,106][244,127]" />
+<node text="" resource-id="" class="android.view.ViewGroup" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[237,132][279,174]">
+<node text="" resource-id="" class="android.widget.ImageView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[242,137][273,169]" />
+<node text="" resource-id="" class="android.view.ViewGroup" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[244,92][286,134]">
+<node text="" resource-id="" class="android.view.ViewGroup" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[249,97][280,128]">
+<node text="T" resource-id="" class="android.widget.TextView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[259,102][269,123]" />
+<node text="" resource-id="" class="android.view.ViewGroup" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[255,114][297,156]">
+<node text="" resource-id="" class="android.view.ViewGroup" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[260,119][292,150]">
+<node text="A" resource-id="" class="android.widget.TextView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[270,124][280,145]" />
+<node text="头像点名 · 模拟数据" resource-id="" class="android.widget.TextView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[323,79][867,137]" />
+<node text="有伙伴正在忙" resource-id="" class="android.widget.TextView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[323,137][867,185]" />
+<node text="" resource-id="botGroup.settingsButton" class="android.widget.Button" content-desc="群设置" clickable="true" focusable="true" focused="false" long-clickable="false" bounds="[898,74][1014,189]">
+<node text="" resource-id="" class="com.horcrux.svg.SvgView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[932,108][980,155]">
+<node text="" resource-id="" class="com.horcrux.svg.GroupView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[940,115][972,147]">
+<node text="" resource-id="" class="com.horcrux.svg.CircleView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[940,115][952,127]" />
+<node text="" resource-id="" class="com.horcrux.svg.PathView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[954,121][972,121]" />
+<node text="" resource-id="" class="com.horcrux.svg.PathView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[942,141][960,141]" />
+<node text="" resource-id="" class="com.horcrux.svg.CircleView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[959,135][971,147]" />
+<node text="" resource-id="" class="android.view.ViewGroup" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[24,200][1056,2098]" />
+<node text="" resource-id="botGroup.timeline" class="android.widget.ScrollView" content-desc="" clickable="false" focusable="true" focused="false" long-clickable="false" bounds="[24,200][1056,2098]">
+<node text="" resource-id="" class="android.view.ViewGroup" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[24,200][1056,2098]">
+<node text="" resource-id="" class="android.view.ViewGroup" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[66,200][1014,2098]">
+<node text="" resource-id="botGroup.row.sample-ann-gold" class="android.view.ViewGroup" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[66,200][1014,125]" />
+<node text="" resource-id="botGroup.message.bot" class="android.view.ViewGroup" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[66,200][1014,104]" />
+<node text="" resource-id="botGroup.messageActions.sample-ann-gold" class="android.view.ViewGroup" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[166,200][512,105]" />
+<node text="" resource-id="botGroup.thread.context.sample-ann-gold.action.copy" class="android.widget.Button" content-desc="复制" clickable="true" focusable="true" focused="false" long-clickable="false" bounds="[166,200][281,105]">
+<node text="" resource-id="" class="com.horcrux.svg.SvgView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[166,200][203,47]">
+<node text="" resource-id="" class="com.horcrux.svg.GroupView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[169,13][200,44]">
+<node text="" resource-id="" class="com.horcrux.svg.PathView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[169,13][191,35]" />
+<node text="" resource-id="" class="com.horcrux.svg.RectView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[178,22][200,44]" />
+<node text="" resource-id="botGroup.thread.context.sample-ann-gold.action.quote" class="android.widget.Button" content-desc="回复" clickable="true" focusable="true" focused="false" long-clickable="false" bounds="[282,200][398,105]">
+<node text="" resource-id="" class="com.horcrux.svg.SvgView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[282,200][319,47]">
+<node text="" resource-id="" class="com.horcrux.svg.GroupView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[286,16][314,42]">
+<node text="" resource-id="" class="com.horcrux.svg.PathView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[286,16][314,42]" />
+<node text="" resource-id="botGroup.thread.more.sample-ann-gold" class="android.widget.Button" content-desc="更多消息操作" clickable="true" focusable="true" focused="false" long-clickable="false" bounds="[397,200][512,105]">
+<node text="" resource-id="" class="com.horcrux.svg.SvgView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[397,200][434,47]">
+<node text="" resource-id="" class="com.horcrux.svg.GroupView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[403,26][428,30]">
+<node text="" resource-id="" class="com.horcrux.svg.CircleView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[403,26][407,30]" />
+<node text="" resource-id="" class="com.horcrux.svg.CircleView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[413,26][417,30]" />
+<node text="" resource-id="" class="com.horcrux.svg.CircleView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[424,26][428,30]" />
+<node text="" resource-id="botGroup.row.sample-ann-lee" class="android.view.ViewGroup" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[66,200][1014,425]" />
+<node text="" resource-id="botGroup.message.bot" class="android.view.ViewGroup" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[66,200][1014,404]" />
+<node text="" resource-id="botGroup.avatarMention.ann-lee" class="android.widget.Button" content-desc="Ann Lee" clickable="true" focusable="true" focused="false" long-clickable="false" bounds="[66,200][140,203]">
+<node text="" resource-id="" class="android.view.ViewGroup" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[66,200][140,203]">
+<node text="A" resource-id="" class="android.widget.TextView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[90,200][114,193]" />
+<node text="Ann Lee" resource-id="" class="android.widget.TextView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[166,200][311,188]" />
+<node text="" resource-id="" class="android.view.ViewGroup" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[166,209][1014,278]">
+<node text="普通消息 · Ann Lee" resource-id="" class="android.widget.TextView" content-desc="" clickable="false" focusable="true" focused="false" long-clickable="false" bounds="[166,209][1014,278]" />
+<node text="" resource-id="botGroup.messageActions.sample-ann-lee" class="android.view.ViewGroup" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[166,289][512,405]" />
+<node text="" resource-id="botGroup.thread.context.sample-ann-lee.action.copy" class="android.widget.Button" content-desc="复制" clickable="true" focusable="true" focused="false" long-clickable="false" bounds="[166,289][281,405]">
+<node text="" resource-id="" class="com.horcrux.svg.SvgView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[166,310][203,347]">
+<node text="" resource-id="" class="com.horcrux.svg.GroupView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[169,313][200,344]">
+<node text="" resource-id="" class="com.horcrux.svg.PathView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[169,313][191,335]" />
+<node text="" resource-id="" class="com.horcrux.svg.RectView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[178,322][200,344]" />
+<node text="" resource-id="botGroup.thread.context.sample-ann-lee.action.quote" class="android.widget.Button" content-desc="回复" clickable="true" focusable="true" focused="false" long-clickable="false" bounds="[282,289][398,405]">
+<node text="" resource-id="" class="com.horcrux.svg.SvgView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[282,310][319,347]">
+<node text="" resource-id="" class="com.horcrux.svg.GroupView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[286,316][314,342]">
+<node text="" resource-id="" class="com.horcrux.svg.PathView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[286,316][314,342]" />
+<node text="" resource-id="botGroup.thread.more.sample-ann-lee" class="android.widget.Button" content-desc="更多消息操作" clickable="true" focusable="true" focused="false" long-clickable="false" bounds="[397,289][512,405]">
+<node text="" resource-id="" class="com.horcrux.svg.SvgView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[397,310][434,347]">
+<node text="" resource-id="" class="com.horcrux.svg.GroupView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[403,326][428,330]">
+<node text="" resource-id="" class="com.horcrux.svg.CircleView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[403,326][407,330]" />
+<node text="" resource-id="" class="com.horcrux.svg.CircleView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[413,326][417,330]" />
+<node text="" resource-id="" class="com.horcrux.svg.CircleView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[424,326][428,330]" />
+<node text="" resource-id="botGroup.row.sample-team-ann" class="android.view.ViewGroup" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[66,425][1014,725]" />
+<node text="" resource-id="botGroup.message.bot" class="android.view.ViewGroup" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[66,425][1014,704]" />
+<node text="" resource-id="botGroup.avatarMention.team-ann" class="android.widget.Button" content-desc="Team @Ann" clickable="true" focusable="true" focused="false" long-clickable="false" bounds="[66,430][140,503]">
+<node text="" resource-id="" class="android.view.ViewGroup" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[66,430][140,503]">
+<node text="T" resource-id="" class="android.widget.TextView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[91,440][113,493]" />
+<node text="Team @Ann" resource-id="" class="android.widget.TextView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[166,435][383,488]" />
+<node text="" resource-id="" class="android.view.ViewGroup" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[166,509][1014,578]">
+<node text="普通消息 · Team @Ann" resource-id="" class="android.widget.TextView" content-desc="" clickable="false" focusable="true" focused="false" long-clickable="false" bounds="[166,509][1014,578]" />
+<node text="" resource-id="botGroup.messageActions.sample-team-ann" class="android.view.ViewGroup" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[166,589][512,705]" />
+<node text="" resource-id="botGroup.thread.context.sample-team-ann.action.copy" class="android.widget.Button" content-desc="复制" clickable="true" focusable="true" focused="false" long-clickable="false" bounds="[166,589][281,705]">
+<node text="" resource-id="" class="com.horcrux.svg.SvgView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[166,610][203,647]">
+<node text="" resource-id="" class="com.horcrux.svg.GroupView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[169,613][200,644]">
+<node text="" resource-id="" class="com.horcrux.svg.PathView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[169,613][191,635]" />
+<node text="" resource-id="" class="com.horcrux.svg.RectView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[178,622][200,644]" />
+<node text="" resource-id="botGroup.thread.context.sample-team-ann.action.quote" class="android.widget.Button" content-desc="回复" clickable="true" focusable="true" focused="false" long-clickable="false" bounds="[282,589][398,705]">
+<node text="" resource-id="" class="com.horcrux.svg.SvgView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[282,610][319,647]">
+<node text="" resource-id="" class="com.horcrux.svg.GroupView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[286,616][314,642]">
+<node text="" resource-id="" class="com.horcrux.svg.PathView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[286,616][314,642]" />
+<node text="" resource-id="botGroup.thread.more.sample-team-ann" class="android.widget.Button" content-desc="更多消息操作" clickable="true" focusable="true" focused="false" long-clickable="false" bounds="[397,589][512,705]">
+<node text="" resource-id="" class="com.horcrux.svg.SvgView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[397,610][434,647]">
+<node text="" resource-id="" class="com.horcrux.svg.GroupView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[403,626][428,630]">
+<node text="" resource-id="" class="com.horcrux.svg.CircleView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[403,626][407,630]" />
+<node text="" resource-id="" class="com.horcrux.svg.CircleView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[413,626][417,630]" />
+<node text="" resource-id="" class="com.horcrux.svg.CircleView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[424,626][428,630]" />
+<node text="" resource-id="botGroup.row.sample-riley" class="android.view.ViewGroup" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[66,725][1014,1025]" />
+<node text="" resource-id="botGroup.message.bot" class="android.view.ViewGroup" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[66,725][1014,1004]" />
+<node text="" resource-id="botGroup.avatarMention.riley" class="android.widget.Button" content-desc="Riley" clickable="true" focusable="true" focused="false" long-clickable="false" bounds="[66,730][140,803]">
+<node text="" resource-id="" class="android.view.ViewGroup" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[66,730][140,803]">
+<node text="R" resource-id="" class="android.widget.TextView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[91,740][114,793]" />
+<node text="Riley" resource-id="" class="android.widget.TextView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[166,735][250,788]" />
+<node text="" resource-id="" class="android.view.ViewGroup" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[166,809][1014,878]">
+<node text="普通消息 · Riley" resource-id="" class="android.widget.TextView" content-desc="" clickable="false" focusable="true" focused="false" long-clickable="false" bounds="[166,809][1014,878]" />
+<node text="" resource-id="botGroup.messageActions.sample-riley" class="android.view.ViewGroup" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[166,889][512,1005]" />
+<node text="" resource-id="botGroup.thread.context.sample-riley.action.copy" class="android.widget.Button" content-desc="复制" clickable="true" focusable="true" focused="false" long-clickable="false" bounds="[166,889][281,1005]">
+<node text="" resource-id="" class="com.horcrux.svg.SvgView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[166,910][203,947]">
+<node text="" resource-id="" class="com.horcrux.svg.GroupView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[169,913][200,944]">
+<node text="" resource-id="" class="com.horcrux.svg.PathView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[169,913][191,935]" />
+<node text="" resource-id="" class="com.horcrux.svg.RectView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[178,922][200,944]" />
+<node text="" resource-id="botGroup.thread.context.sample-riley.action.quote" class="android.widget.Button" content-desc="回复" clickable="true" focusable="true" focused="false" long-clickable="false" bounds="[282,889][398,1005]">
+<node text="" resource-id="" class="com.horcrux.svg.SvgView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[282,910][319,947]">
+<node text="" resource-id="" class="com.horcrux.svg.GroupView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[286,916][314,942]">
+<node text="" resource-id="" class="com.horcrux.svg.PathView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[286,916][314,942]" />
+<node text="" resource-id="botGroup.thread.more.sample-riley" class="android.widget.Button" content-desc="更多消息操作" clickable="true" focusable="true" focused="false" long-clickable="false" bounds="[397,889][512,1005]">
+<node text="" resource-id="" class="com.horcrux.svg.SvgView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[397,910][434,947]">
+<node text="" resource-id="" class="com.horcrux.svg.GroupView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[403,926][428,930]">
+<node text="" resource-id="" class="com.horcrux.svg.CircleView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[403,926][407,930]" />
+<node text="" resource-id="" class="com.horcrux.svg.CircleView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[413,926][417,930]" />
+<node text="" resource-id="" class="com.horcrux.svg.CircleView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[424,926][428,930]" />
+<node text="" resource-id="botGroup.row.mention-sample" class="android.view.ViewGroup" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[66,1024][1014,1284]" />
+<node text="" resource-id="botGroup.message.user" class="android.view.ViewGroup" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[66,1024][1014,1263]" />
+<node text="" resource-id="botGroup.message.userBubble" class="android.view.ViewGroup" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[259,1024][1014,1137]">
+<node text="" resource-id="" class="android.view.ViewGroup" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[292,1046][982,1115]">
+<node text="@Ann 这是只给 Ann Blue 的示例。" resource-id="" class="android.widget.TextView" content-desc="" clickable="false" focusable="true" focused="false" long-clickable="false" bounds="[292,1046][982,1115]">
+<node text="" resource-id="" class="android.widget.Button" content-desc="@Ann" clickable="true" focusable="true" focused="false" long-clickable="false" bounds="[292,1046][411,1115]" />
+<node text="" resource-id="botGroup.messageActions.mention-sample" class="android.view.ViewGroup" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[667,1148][1014,1263]" />
+<node text="" resource-id="botGroup.thread.context.mention-sample.action.copy" class="android.widget.Button" content-desc="复制" clickable="true" focusable="true" focused="false" long-clickable="false" bounds="[667,1148][783,1263]">
+<node text="" resource-id="" class="com.horcrux.svg.SvgView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[746,1169][783,1206]">
+<node text="" resource-id="" class="com.horcrux.svg.GroupView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[749,1172][780,1203]">
+<node text="" resource-id="" class="com.horcrux.svg.PathView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[749,1172][771,1194]" />
+<node text="" resource-id="" class="com.horcrux.svg.RectView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[758,1181][780,1203]" />
+<node text="" resource-id="botGroup.thread.context.mention-sample.action.quote" class="android.widget.Button" content-desc="回复" clickable="true" focusable="true" focused="false" long-clickable="false" bounds="[783,1148][898,1263]">
+<node text="" resource-id="" class="com.horcrux.svg.SvgView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[862,1169][898,1206]">
+<node text="" resource-id="" class="com.horcrux.svg.GroupView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[866,1175][894,1200]">
+<node text="" resource-id="" class="com.horcrux.svg.PathView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[866,1175][894,1200]" />
+<node text="" resource-id="botGroup.thread.more.mention-sample" class="android.widget.Button" content-desc="更多消息操作" clickable="true" focusable="true" focused="false" long-clickable="false" bounds="[898,1148][1014,1263]">
+<node text="" resource-id="" class="com.horcrux.svg.SvgView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[977,1169][1014,1206]">
+<node text="" resource-id="" class="com.horcrux.svg.GroupView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[983,1185][1008,1189]">
+<node text="" resource-id="" class="com.horcrux.svg.CircleView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[983,1185][987,1189]" />
+<node text="" resource-id="" class="com.horcrux.svg.CircleView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[993,1185][997,1189]" />
+<node text="" resource-id="" class="com.horcrux.svg.CircleView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[1004,1185][1008,1189]" />
+<node text="" resource-id="botGroup.row.repeat-sample" class="android.view.ViewGroup" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[66,1284][1014,1544]" />
+<node text="" resource-id="botGroup.message.user" class="android.view.ViewGroup" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[66,1284][1014,1523]" />
+<node text="" resource-id="botGroup.message.userBubble" class="android.view.ViewGroup" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[567,1284][1014,1397]">
+<node text="" resource-id="" class="android.view.ViewGroup" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[600,1306][982,1375]">
+<node text="@Riley 你好 @Riley" resource-id="" class="android.widget.TextView" content-desc="" clickable="false" focusable="true" focused="false" long-clickable="false" bounds="[600,1306][982,1375]">
+<node text="" resource-id="" class="android.widget.Button" content-desc="@Riley" clickable="true" focusable="true" focused="false" long-clickable="false" bounds="[600,1306][734,1375]" />
+<node text="" resource-id="" class="android.widget.Button" content-desc="@Riley" clickable="true" focusable="true" focused="false" long-clickable="false" bounds="[846,1306][981,1375]" />
+<node text="" resource-id="botGroup.messageActions.repeat-sample" class="android.view.ViewGroup" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[667,1408][1014,1523]" />
+<node text="" resource-id="botGroup.thread.context.repeat-sample.action.copy" class="android.widget.Button" content-desc="复制" clickable="true" focusable="true" focused="false" long-clickable="false" bounds="[667,1408][783,1523]">
+<node text="" resource-id="" class="com.horcrux.svg.SvgView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[746,1429][783,1466]">
+<node text="" resource-id="" class="com.horcrux.svg.GroupView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[749,1432][780,1463]">
+<node text="" resource-id="" class="com.horcrux.svg.PathView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[749,1432][771,1454]" />
+<node text="" resource-id="" class="com.horcrux.svg.RectView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[758,1441][780,1463]" />
+<node text="" resource-id="botGroup.thread.context.repeat-sample.action.quote" class="android.widget.Button" content-desc="回复" clickable="true" focusable="true" focused="false" long-clickable="false" bounds="[783,1408][898,1523]">
+<node text="" resource-id="" class="com.horcrux.svg.SvgView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[862,1429][898,1466]">
+<node text="" resource-id="" class="com.horcrux.svg.GroupView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[866,1435][894,1460]">
+<node text="" resource-id="" class="com.horcrux.svg.PathView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[866,1435][894,1460]" />
+<node text="" resource-id="botGroup.thread.more.repeat-sample" class="android.widget.Button" content-desc="更多消息操作" clickable="true" focusable="true" focused="false" long-clickable="false" bounds="[898,1408][1014,1523]">
+<node text="" resource-id="" class="com.horcrux.svg.SvgView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[977,1429][1014,1466]">
+<node text="" resource-id="" class="com.horcrux.svg.GroupView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[983,1445][1008,1449]">
+<node text="" resource-id="" class="com.horcrux.svg.CircleView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[983,1445][987,1449]" />
+<node text="" resource-id="" class="com.horcrux.svg.CircleView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[993,1445][997,1449]" />
+<node text="" resource-id="" class="com.horcrux.svg.CircleView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[1004,1445][1008,1449]" />
+<node text="" resource-id="botGroup.row.overlap-sample" class="android.view.ViewGroup" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[66,1544][1014,1804]" />
+<node text="" resource-id="botGroup.message.user" class="android.view.ViewGroup" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[66,1544][1014,1783]" />
+<node text="" resource-id="botGroup.message.userBubble" class="android.view.ViewGroup" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[374,1544][1014,1657]">
+<node text="" resource-id="" class="android.view.ViewGroup" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[407,1566][982,1635]">
+<node text="@Team @Ann @Team @Ann" resource-id="" class="android.widget.TextView" content-desc="" clickable="false" focusable="true" focused="false" long-clickable="false" bounds="[407,1566][982,1635]" />
+<node text="" resource-id="botGroup.messageActions.overlap-sample" class="android.view.ViewGroup" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[667,1668][1014,1783]" />
+<node text="" resource-id="botGroup.thread.context.overlap-sample.action.copy" class="android.widget.Button" content-desc="复制" clickable="true" focusable="true" focused="false" long-clickable="false" bounds="[667,1668][783,1783]">
+<node text="" resource-id="" class="com.horcrux.svg.SvgView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[746,1689][783,1725]">
+<node text="" resource-id="" class="com.horcrux.svg.GroupView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[749,1692][779,1722]">
+<node text="" resource-id="" class="com.horcrux.svg.PathView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[749,1692][771,1714]" />
+<node text="" resource-id="" class="com.horcrux.svg.RectView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[758,1701][779,1722]" />
+<node text="" resource-id="botGroup.thread.context.overlap-sample.action.quote" class="android.widget.Button" content-desc="回复" clickable="true" focusable="true" focused="false" long-clickable="false" bounds="[783,1668][898,1783]">
+<node text="" resource-id="" class="com.horcrux.svg.SvgView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[862,1689][898,1725]">
+<node text="" resource-id="" class="com.horcrux.svg.GroupView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[866,1695][894,1720]">
+<node text="" resource-id="" class="com.horcrux.svg.PathView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[866,1695][894,1720]" />
+<node text="" resource-id="botGroup.thread.more.overlap-sample" class="android.widget.Button" content-desc="更多消息操作" clickable="true" focusable="true" focused="false" long-clickable="false" bounds="[898,1668][1014,1783]">
+<node text="" resource-id="" class="com.horcrux.svg.SvgView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[977,1689][1014,1725]">
+<node text="" resource-id="" class="com.horcrux.svg.GroupView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[983,1705][1008,1708]">
+<node text="" resource-id="" class="com.horcrux.svg.CircleView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[983,1705][986,1708]" />
+<node text="" resource-id="" class="com.horcrux.svg.CircleView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[994,1705][997,1708]" />
+<node text="" resource-id="" class="com.horcrux.svg.CircleView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[1004,1705][1007,1708]" />
+<node text="" resource-id="botGroup.row.markdown-sample" class="android.view.ViewGroup" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[66,1804][1014,2098]" />
+<node text="" resource-id="botGroup.message.bot" class="android.view.ViewGroup" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[66,1804][1014,2098]" />
+<node text="" resource-id="botGroup.avatarMention.ann-lee" class="android.widget.Button" content-desc="Ann Lee" clickable="true" focusable="true" focused="false" long-clickable="false" bounds="[66,1809][140,1883]">
+<node text="" resource-id="" class="android.view.ViewGroup" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[66,1809][140,1883]">
+<node text="A" resource-id="" class="android.widget.TextView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[90,1819][114,1872]" />
+<node text="Ann Lee" resource-id="" class="android.widget.TextView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[166,1814][311,1867]" />
+<node text="" resource-id="" class="android.view.ViewGroup" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[166,1888][1014,2047]">
+<node text="@Riley 第一段" resource-id="" class="android.widget.TextView" content-desc="" clickable="false" focusable="true" focused="false" long-clickable="false" bounds="[166,1888][1014,1957]">
+<node text="" resource-id="" class="android.widget.Button" content-desc="@Riley" clickable="true" focusable="true" focused="false" long-clickable="false" bounds="[166,1888][300,1957]" />
+<node text="第二段 @Riley，请看 demo()。" resource-id="" class="android.widget.TextView" content-desc="" clickable="false" focusable="true" focused="false" long-clickable="false" bounds="[166,1978][1014,2047]">
+<node text="" resource-id="" class="android.widget.Button" content-desc="@Riley" clickable="true" focusable="true" focused="false" long-clickable="false" bounds="[312,1978][446,2047]" />
+<node text="" resource-id="botGroup.messageActions.markdown-sample" class="android.view.ViewGroup" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[166,2058][512,2098]" />
+<node text="" resource-id="botGroup.thread.context.markdown-sample.action.copy" class="android.widget.Button" content-desc="复制" clickable="true" focusable="true" focused="false" long-clickable="false" bounds="[166,2058][281,2098]">
+<node text="" resource-id="" class="com.horcrux.svg.SvgView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[166,2079][203,2098]">
+<node text="" resource-id="" class="com.horcrux.svg.GroupView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[169,2082][199,2112]">
+<node text="" resource-id="" class="com.horcrux.svg.PathView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[169,2082][191,2104]" />
+<node text="" resource-id="" class="com.horcrux.svg.RectView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[178,2091][199,2112]" />
+<node text="" resource-id="botGroup.thread.context.markdown-sample.action.quote" class="android.widget.Button" content-desc="回复" clickable="true" focusable="true" focused="false" long-clickable="false" bounds="[282,2058][398,2098]">
+<node text="" resource-id="" class="com.horcrux.svg.SvgView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[282,2079][319,2098]">
+<node text="" resource-id="" class="com.horcrux.svg.GroupView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[287,2085][314,2110]">
+<node text="" resource-id="" class="com.horcrux.svg.PathView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[287,2085][314,2110]" />
+<node text="" resource-id="botGroup.thread.more.markdown-sample" class="android.widget.Button" content-desc="更多消息操作" clickable="true" focusable="true" focused="false" long-clickable="false" bounds="[397,2058][512,2098]">
+<node text="" resource-id="" class="com.horcrux.svg.SvgView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[397,2079][434,2098]">
+<node text="" resource-id="" class="com.horcrux.svg.GroupView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[403,2095][428,2098]">
+<node text="" resource-id="" class="com.horcrux.svg.CircleView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[403,2095][406,2098]" />
+<node text="" resource-id="" class="com.horcrux.svg.CircleView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[414,2095][417,2098]" />
+<node text="" resource-id="" class="com.horcrux.svg.CircleView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[424,2095][427,2098]" />
+<node text="" resource-id="botGroup.composerContainer" class="android.view.ViewGroup" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[24,2099][1056,2275]" />
+<node text="" resource-id="botGroup.composer" class="android.view.ViewGroup" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[24,2099][1056,2275]" />
+<node text="" resource-id="" class="android.view.ViewGroup" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[66,2110][1014,2254]">
+<node text="" resource-id="botGroup.composer.row" class="android.view.ViewGroup" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[66,2110][1014,2254]" />
+<node text="" resource-id="botGroup.composer.row.bodyScroll" class="android.widget.ScrollView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[81,2119][984,2245]">
+<node text="" resource-id="" class="android.view.ViewGroup" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[81,2119][984,2245]">
+<node text="" resource-id="" class="android.view.ViewGroup" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[81,2138][879,2227]">
+<node text="在群里说点什么，@ 某位伙伴就只让它回答…" resource-id="" class="android.widget.TextView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[81,2138][879,2227]" />
+<node text="" resource-id="" class="android.widget.LinearLayout" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[81,2146][879,2220]">
+<node text="" resource-id="botGroup.composer.input" class="android.widget.EditText" content-desc="群聊消息" clickable="true" focusable="true" focused="false" long-clickable="true" bounds="[81,2146][879,2220]" />
+<node text="" resource-id="botGroup.composer.send" class="android.widget.Button" content-desc="发送" clickable="true" focusable="true" focused="false" long-clickable="false" bounds="[895,2138][984,2227]">
+<node text="" resource-id="" class="com.horcrux.svg.SvgView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[916,2159][963,2206]">
+<node text="" resource-id="" class="com.horcrux.svg.GroupView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[920,2164][959,2200]">
+<node text="" resource-id="" class="com.horcrux.svg.PathView" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[920,2164][959,2200]" />
+<node text="" resource-id="android:id/navigationBarBackground" class="android.view.View" content-desc="" clickable="false" focusable="false" focused="false" long-clickable="false" bounds="[0,2274][1080,2400]" />

@@ -1,0 +1,18 @@
+8 dark longpress Ann Blue:  text="@Ann " focused="true" ime=true receipts=
+font_scale=2.0 density=Physical density: 420
+== normal ann-blue bounds [66,539][140,613] size 74x74
+normal center (103,576):  text="@Ann " focused="true" ime=true receipts=
+normal left-in-slop (51,576):  text="@Ann " focused="true" ime=true receipts=
+normal top-in-slop (103,524):  text="@Ann " focused="true" ime=true receipts=
+normal right-in-slop (155,576):  text="@Ann " focused="true" ime=true receipts=
+normal left-outside-slop (26,576):  text="在群里说点什么，@ 某位伙伴就只让它回答…" focused="true" ime=false receipts=
+normal right-outside-slop (180,576):  text="在群里说点什么，@ 某位伙伴就只让它回答…" focused="true" ime=false receipts=
+== exec ann-gold bounds [66,287][140,360] size 74x73
+exec center (103,323):  text="@Ann " focused="true" ime=true receipts=
+exec left-in-slop (51,323):  text="@Ann " focused="true" ime=true receipts=
+exec top-in-slop (103,272):  text="@Ann " focused="true" ime=true receipts=
+exec right-in-slop (155,323):  text="@Ann " focused="true" ime=true receipts=
+exec left-outside-slop (26,323):  text="在群里说点什么，@ 某位伙伴就只让它回答…" focused="true" ime=false receipts=
+exec right-outside-slop (180,323):  text="在群里说点什么，@ 某位伙伴就只让它回答…" focused="true" ime=false receipts=
+body text longpress at 590 672:  text="" focused="false" ime=false receipts=
+DONE

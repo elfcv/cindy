@@ -1,0 +1,11 @@
+Warning: Activity not started, intent has been delivered to currently running top-most instance.
+names: 
+1 start:  text="" focused="false" ime=false receipts=
+ann-blue avatar 103 510 bounds="[66,474][140,547]"
+1a after longpress Ann Blue (800ms):  text="@Ann " focused="true" ime=true receipts=
+ann-gold exec avatar 103 290 bounds="[66,253][140,327]"
+1b after longpress Ann Gold exec (800ms):  text="@Ann " focused="true" ime=true receipts=
+2 start:  text="hi" focused="true" ime=false receipts=
+2 after sequence:  text="hi @Ann " focused="true" ime=true receipts=
+ann-blue now 103 510
+DONE

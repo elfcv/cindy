@@ -1,0 +1,217 @@
+== s01-stab box=[168,1764][1011,1830]
+TYPE_VIEW_FOCUSED  class="android.widget.TextView"  text="text=[@Riley 第一段]"  currentItemIndex=42  
+  SPEAK "@Riley 第一段"
+  SPEAK "@Riley"
+  SPEAK " 第一段"
+  SPEAK "可以操作, 链接，做出手势“三指点按”即可查看"
+== s02-stab box=[168,1932][279,2046]
+TYPE_VIEW_FOCUSED  class="android.view.ViewGroup"  description="复制"  currentItemIndex=41  
+  SPEAK "复制"
+  SPEAK "复制, 按钮"
+  SPEAK "点按两次即可激活"
+== s03-stab box=[66,1683][138,1755]
+TYPE_VIEW_FOCUSED  class="android.view.ViewGroup"  text="text=[A]"  description="Ann Lee"  currentItemIndex=40  
+  SPEAK "Ann Lee"
+  SPEAK "Ann Lee, 按钮, 在草稿末尾点名这位伙伴。"
+  SPEAK "点按两次即可激活, 点按两次并按住即可点名伙伴"
+== s04-stab box=[900,1542][1011,1656]
+TYPE_VIEW_FOCUSED  class="android.view.ViewGroup"  description="更多消息操作"  currentItemIndex=39  
+  SPEAK "更多消息操作"
+  SPEAK "更多消息操作, 按钮"
+  SPEAK "点按两次即可激活"
+== s05-stab box=[783,1542][897,1656]
+TYPE_VIEW_FOCUSED  class="android.view.ViewGroup"  description="回复"  currentItemIndex=38  
+  SPEAK "回复"
+  SPEAK "回复, 按钮"
+  SPEAK "点按两次即可激活"
+== s06-stab box=[669,1542][780,1656]
+TYPE_VIEW_FOCUSED  class="android.view.ViewGroup"  description="复制"  currentItemIndex=37  
+  SPEAK "复制"
+  SPEAK "复制, 按钮"
+  SPEAK "点按两次即可激活"
+== s07-stab box=[408,1440][981,1506]
+TYPE_VIEW_FOCUSED  class="android.widget.TextView"  text="text=[@Team @Ann @Team @Ann]"  currentItemIndex=36  
+  SPEAK "@Team @Ann @Team @Ann"
+  SPEAK "@Team @Ann @Team @Ann"
+  SPEAK "可以操作，做出手势“三指点按”即可查看"
+== s08-stab box=[900,1284][1011,1395]
+TYPE_VIEW_FOCUSED  class="android.view.ViewGroup"  description="更多消息操作"  currentItemIndex=35  
+  SPEAK "更多消息操作"
+  SPEAK "更多消息操作, 按钮"
+  SPEAK "点按两次即可激活"
+== s09-stab box=[783,1284][897,1395]
+TYPE_VIEW_FOCUSED  class="android.view.ViewGroup"  description="回复"  currentItemIndex=34  
+  SPEAK "回复"
+  SPEAK "回复, 按钮"
+  SPEAK "点按两次即可激活"
+== s10-stab box=[669,1284][780,1395]
+TYPE_VIEW_FOCUSED  class="android.view.ViewGroup"  description="复制"  currentItemIndex=33  
+  SPEAK "复制"
+  SPEAK "复制, 按钮"
+  SPEAK "点按两次即可激活"
+== s11-stab box=[600,1182][981,1248]
+TYPE_VIEW_FOCUSED  class="android.widget.TextView"  text="text=[@Riley 你好 @Riley]"  currentItemIndex=32  
+  SPEAK "@Riley 你好 @Riley"
+  SPEAK "@Riley"
+  SPEAK " 你好 @"
+  SPEAK "Riley"
+  SPEAK "可以操作, 链接，做出手势“三指点按”即可查看"
+== s12-stab box=[900,1023][1011,1137]
+TYPE_VIEW_FOCUSED  class="android.view.ViewGroup"  description="更多消息操作"  currentItemIndex=31  
+  SPEAK "更多消息操作"
+  SPEAK "更多消息操作, 按钮"
+  SPEAK "点按两次即可激活"
+== s13-stab box=[783,1023][897,1137]
+TYPE_VIEW_FOCUSED  class="android.view.ViewGroup"  description="回复"  currentItemIndex=30  
+  SPEAK "回复"
+  SPEAK "回复, 按钮"
+  SPEAK "点按两次即可激活"
+== s14-stab box=[669,1023][780,1137]
+TYPE_VIEW_FOCUSED  class="android.view.ViewGroup"  description="复制"  currentItemIndex=29  
+  SPEAK "复制"
+  SPEAK "复制, 按钮"
+  SPEAK "点按两次即可激活"
+== s15-stab box=[399,765][510,876]
+TYPE_VIEW_FOCUSED  class="android.view.ViewGroup"  description="更多消息操作"  currentItemIndex=28  
+  SPEAK "更多消息操作"
+  SPEAK "更多消息操作, 按钮"
+  SPEAK "点按两次即可激活"
+== s16-stab box=[282,765][396,876]
+TYPE_VIEW_FOCUSED  class="android.view.ViewGroup"  description="回复"  currentItemIndex=27  
+  SPEAK "回复"
+  SPEAK "回复, 按钮"
+  SPEAK "点按两次即可激活"
+== s17-stab box=[294,921][981,987]
+TYPE_VIEW_FOCUSED  class="android.widget.TextView"  text="text=[@Ann 这是只给 Ann Blue 的示例。]"  currentItemIndex=26  
+  SPEAK "@Ann 这是只给 Ann Blue 的示例。"
+  SPEAK "@Ann"
+  SPEAK " 这是只给 Ann Blue 的示例。"
+  SPEAK "可以操作, 链接，做出手势“三指点按”即可查看"
+== s18-stab box=[168,684][1011,750]
+TYPE_VIEW_FOCUSED  class="android.widget.TextView"  text="text=[普通消息 · Riley]"  currentItemIndex=25  
+  SPEAK "普通消息 · Riley"
+  SPEAK "普通消息 · Riley"
+  SPEAK "可以操作，做出手势“三指点按”即可查看"
+== s19-stab box=[168,765][279,876]
+TYPE_VIEW_FOCUSED  class="android.view.ViewGroup"  description="复制"  currentItemIndex=24  
+  SPEAK "复制"
+  SPEAK "复制, 按钮"
+  SPEAK "点按两次即可激活"
+== s20-stab box=[66,606][138,675]
+TYPE_VIEW_FOCUSED  class="android.view.ViewGroup"  text="text=[R]"  description="Riley"  currentItemIndex=23  
+  SPEAK "Riley"
+  SPEAK "Riley, 按钮, 在草稿末尾点名这位伙伴。"
+  SPEAK "点按两次即可激活, 点按两次并按住即可点名伙伴"
+== s21-stab box=[399,465][510,576]
+TYPE_VIEW_FOCUSED  class="android.view.ViewGroup"  description="更多消息操作"  currentItemIndex=22  
+  SPEAK "更多消息操作"
+  SPEAK "更多消息操作, 按钮"
+  SPEAK "点按两次即可激活"
+== s22-stab box=[282,465][396,576]
+TYPE_VIEW_FOCUSED  class="android.view.ViewGroup"  description="回复"  currentItemIndex=21  
+  SPEAK "回复"
+  SPEAK "回复, 按钮"
+  SPEAK "点按两次即可激活"
+== s23-stab box=[168,384][1011,450]
+TYPE_VIEW_FOCUSED  class="android.widget.TextView"  text="text=[普通消息 · Team @Ann]"  currentItemIndex=20  
+  SPEAK "普通消息 · Team @Ann"
+  SPEAK "普通消息 · Team @Ann"
+  SPEAK "可以操作，做出手势“三指点按”即可查看"
+== s24-stab box=[168,465][279,576]
+TYPE_VIEW_FOCUSED  class="android.view.ViewGroup"  description="复制"  currentItemIndex=19  
+  SPEAK "复制"
+  SPEAK "复制, 按钮"
+  SPEAK "点按两次即可激活"
+== s25-stab box=[66,306][138,375]
+TYPE_VIEW_FOCUSED  class="android.view.ViewGroup"  text="text=[T]"  description="Team @Ann"  currentItemIndex=18  
+  SPEAK "Team @Ann"
+  SPEAK "Team @Ann, 按钮, 在草稿末尾点名这位伙伴。"
+  SPEAK "点按两次即可激活, 点按两次并按住即可点名伙伴"
+== s26-stab box=[399,201][510,315]
+TYPE_VIEW_FOCUSED  class="android.view.ViewGroup"  description="更多消息操作"  currentItemIndex=17  
+  SPEAK "更多消息操作"
+  SPEAK "更多消息操作, 按钮"
+  SPEAK "点按两次即可激活"
+== s27-stab box=[282,201][396,315]
+TYPE_VIEW_FOCUSED  class="android.view.ViewGroup"  description="回复"  currentItemIndex=16  
+  SPEAK "回复"
+  SPEAK "回复, 按钮"
+  SPEAK "点按两次即可激活"
+== s28-stab box=[168,201][1011,267]
+TYPE_VIEW_FOCUSED  class="android.widget.TextView"  text="text=[普通消息 · Ann Lee]"  currentItemIndex=15  
+  SPEAK "普通消息 · Ann Lee"
+  SPEAK "普通消息 · Ann Lee"
+  SPEAK "可以操作，做出手势“三指点按”即可查看"
+== s29-stab box=[168,282][279,393]
+TYPE_VIEW_FOCUSED  class="android.view.ViewGroup"  description="复制"  currentItemIndex=14  
+  SPEAK "复制"
+  SPEAK "复制, 按钮"
+  SPEAK "点按两次即可激活"
+== s30-stab box=[66,201][138,270]
+TYPE_VIEW_FOCUSED  class="android.view.ViewGroup"  text="text=[A]"  description="Ann Lee"  currentItemIndex=13  
+  SPEAK "Ann Lee"
+  SPEAK "Ann Lee, 按钮, 在草稿末尾点名这位伙伴。"
+  SPEAK "点按两次即可激活, 点按两次并按住即可点名伙伴"
+== s31-stab box=[399,201][510,312]
+TYPE_VIEW_FOCUSED  class="android.view.ViewGroup"  description="更多消息操作"  currentItemIndex=12  
+  SPEAK "更多消息操作"
+  SPEAK "更多消息操作, 按钮"
+  SPEAK "点按两次即可激活"
+== s32-stab box=[282,201][396,312]
+TYPE_VIEW_FOCUSED  class="android.view.ViewGroup"  description="回复"  currentItemIndex=11  
+  SPEAK "回复"
+  SPEAK "回复, 按钮"
+  SPEAK "点按两次即可激活"
+== s33-stab box=[168,201][1011,267]
+TYPE_VIEW_FOCUSED  class="android.widget.TextView"  text="text=[普通消息 · Ann Gold]"  currentItemIndex=10  
+  SPEAK "普通消息 · Ann Gold"
+  SPEAK "普通消息 · Ann Gold"
+  SPEAK "可以操作，做出手势“三指点按”即可查看"
+== s34-stab box=[168,282][279,393]
+TYPE_VIEW_FOCUSED  class="android.view.ViewGroup"  description="复制"  currentItemIndex=9  
+  SPEAK "复制"
+  SPEAK "复制, 按钮"
+  SPEAK "点按两次即可激活"
+== s35-stab box=[66,201][138,273]
+TYPE_VIEW_FOCUSED  class="android.view.ViewGroup"  description="Ann"  currentItemIndex=8  
+  SPEAK "Ann"
+  SPEAK "Ann, 按钮, 在草稿末尾点名这位伙伴。"
+  SPEAK "点按两次即可激活, 点按两次并按住即可点名伙伴"
+== s36-stab box=[93,201][510,345]
+TYPE_VIEW_FOCUSED  class="android.view.ViewGroup"  description="更多消息操作"  currentItemIndex=7  
+  SPEAK "更多消息操作"
+  SPEAK "更多消息操作, 按钮"
+  SPEAK "点按两次即可激活"
+== s37-stab box=[93,201][396,345]
+TYPE_VIEW_FOCUSED  class="android.view.ViewGroup"  description="回复"  currentItemIndex=6  
+  SPEAK "回复"
+  SPEAK "回复, 按钮"
+  SPEAK "点按两次即可激活"
+== s38-stab box=[87,201][1011,426]
+TYPE_VIEW_FOCUSED  class="android.widget.TextView"  text="text=[普通消息 · Ann Blue]"  currentItemIndex=5  
+  SPEAK "普通消息 · Ann Blue"
+  SPEAK "普通消息 · Ann Blue"
+  SPEAK "可以操作，做出手势“三指点按”即可查看"
+== s39-stab box=[87,282][279,426]
+TYPE_VIEW_FOCUSED  class="android.view.ViewGroup"  description="复制"  currentItemIndex=4  
+  SPEAK "复制"
+  SPEAK "复制, 按钮"
+  SPEAK "点按两次即可激活"
+== s40-stab box=[66,201][138,504]
+TYPE_VIEW_FOCUSED  class="android.view.ViewGroup"  description="Ann"  currentItemIndex=3  
+  SPEAK "Ann"
+  SPEAK "Ann, 按钮, 在草稿末尾点名这位伙伴。"
+  SPEAK "点按两次即可激活, 点按两次并按住即可点名伙伴"
+== s41-stab box=[87,201][1011,747]
+TYPE_VIEW_FOCUSED  class="android.view.ViewGroup"  text="text=[Ann, 正在处理]"  description="Ann · 正在处理"  currentItemIndex=2  
+  SPEAK "Ann · 正在处理"
+  SPEAK "已展开, Ann · 正在处理, 按钮"
+  SPEAK "点按两次即可激活, 可以操作，做出手势“三指点按”即可查看"
+== s42-stab box=[66,222][138,747]
+TYPE_VIEW_FOCUSED  class="android.view.ViewGroup"  description="Ann"  currentItemIndex=1  
+  SPEAK "Ann"
+  SPEAK "Ann, 按钮, 在草稿末尾点名这位伙伴。"
+  SPEAK "点按两次即可激活, 点按两次并按住即可点名伙伴"
+== s43-stab box=[66,222][138,747]
+TYPE_VIEW_FOCUSED  class="android.webkit.WebView"  currentItemIndex=0  
+DONE

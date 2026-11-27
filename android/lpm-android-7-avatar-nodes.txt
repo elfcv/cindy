@@ -1,0 +1,6 @@
+<node text="" resource-id="botGroup.avatarMention.ann-gold" class="android.widget.Button" content-desc="Ann" clickable="true" focusable="true" focused="false" long-clickable="false" bounds="[66,253][140,327]">
+<node text="" resource-id="botGroup.avatarMention.ann-blue" class="android.widget.Button" content-desc="Ann" clickable="true" focusable="true" focused="false" long-clickable="false" bounds="[66,474][140,547]">
+<node text="" resource-id="botGroup.avatarMention.ann-gold" class="android.widget.Button" content-desc="Ann" clickable="true" focusable="true" focused="false" long-clickable="false" bounds="[66,774][140,848]">
+<node text="" resource-id="botGroup.avatarMention.ann-lee" class="android.widget.Button" content-desc="Ann Lee" clickable="true" focusable="true" focused="false" long-clickable="false" bounds="[66,1074][140,1147]">
+<node text="" resource-id="botGroup.avatarMention.team-ann" class="android.widget.Button" content-desc="Team @Ann" clickable="true" focusable="true" focused="false" long-clickable="false" bounds="[66,1374][140,1448]">
+<node text="" resource-id="botGroup.avatarMention.riley" class="android.widget.Button" content-desc="Riley" clickable="true" focusable="true" focused="false" long-clickable="false" bounds="[66,1674][140,1747]">

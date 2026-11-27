@@ -1,0 +1,52 @@
+== k01-stab box=[399,1983][510,2097]
+TYPE_VIEW_FOCUSED  class="android.view.ViewGroup"  description="更多消息操作"  currentItemIndex=45  
+  SPEAK "更多消息操作"
+  SPEAK "更多消息操作, 按钮"
+  SPEAK "点按两次即可激活"
+== k02-stab box=[282,1983][396,2097]
+TYPE_VIEW_FOCUSED  class="android.view.ViewGroup"  description="回复"  currentItemIndex=44  
+  SPEAK "回复"
+  SPEAK "回复, 按钮"
+  SPEAK "点按两次即可激活"
+== k03-stab box=[168,1905][1011,1971]
+TYPE_VIEW_FOCUSED  class="android.widget.TextView"  text="text=[第二段 @Riley，请看 demo()。]"  currentItemIndex=43  
+  SPEAK "第二段 @Riley，请看 demo()。"
+  SPEAK "第二段 @"
+  SPEAK "Riley，"
+== k04-stab box=[168,1815][1011,1881]
+TYPE_VIEW_FOCUSED  class="android.widget.TextView"  text="text=[@Riley 第一段]"  currentItemIndex=42  
+  SPEAK "@Riley 第一段"
+  SPEAK "@Riley"
+  SPEAK " 第一段"
+== k05-stab box=[168,1983][279,2097]
+TYPE_VIEW_FOCUSED  class="android.view.ViewGroup"  description="复制"  currentItemIndex=41  
+  SPEAK "复制"
+  SPEAK "复制, 按钮"
+  SPEAK "点按两次即可激活"
+== k06-stab box=[66,1734][138,1806]
+TYPE_VIEW_FOCUSED  class="android.view.ViewGroup"  text="text=[A]"  description="Ann Lee"  currentItemIndex=40  
+  SPEAK "Ann Lee"
+  SPEAK "Ann Lee, 按钮, 在草稿末尾点名这位伙伴。"
+  SPEAK "点按两次即可激活, 点按两次并按住即可点名伙伴"
+== k07-down box=[168,1815][1011,1881]
+TYPE_VIEW_FOCUSED  class="android.widget.TextView"  text="text=[@Riley 第一段]"  currentItemIndex=42  
+  SPEAK "@Riley 第一段"
+  SPEAK "@Riley"
+  SPEAK " 第一段"
+== k08-down box=[168,1905][1011,1971]
+TYPE_VIEW_FOCUSED  class="android.widget.TextView"  text="text=[第二段 @Riley，请看 demo()。]"  currentItemIndex=43  
+  SPEAK "第二段 @Riley，请看 demo()。"
+  SPEAK "第二段 @"
+  SPEAK "Riley，"
+== k09-down box=[399,1983][510,2097]
+TYPE_VIEW_FOCUSED  class="android.view.ViewGroup"  description="更多消息操作"  currentItemIndex=45  
+  SPEAK "更多消息操作"
+  SPEAK "更多消息操作, 按钮"
+  SPEAK "点按两次即可激活"
+== k10-down box=[399,1932][510,2046]
+== k11-up box=[168,1854][1011,1920]
+TYPE_VIEW_FOCUSED  class="android.widget.TextView"  text="text=[第二段 @Riley，请看 demo()。]"  currentItemIndex=43  
+  SPEAK "第二段 @Riley，请看 demo()。"
+  SPEAK "第二段 @"
+  SPEAK "Riley，"
+DONE

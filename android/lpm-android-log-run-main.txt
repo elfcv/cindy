@@ -1,0 +1,27 @@
+totop title: content-desc="群内执行 · 模拟数据, 3 位成员, 资料伙伴、设计�
+totop tab01: class="android.webkit.WebView"  currentItemIndex=0  
+totop tab02: class="android.view.ViewGroup"  description="返回"  currentItemIndex=22  
+totop tab03: class="android.widget.EditText"  description="群聊消息"  currentItemIndex=23  
+totop tab04: class="android.view.ViewGroup"  text="text=[群内执行 · 模拟数据, 有伙伴正在忙]"  description="群内执行 · 模拟数据, 3 位成员
+totop tab05: class="android.view.ViewGroup"  description="群设置"  currentItemIndex=25  
+totop tab06: class="android.view.ViewGroup"  description="跳到底部"  currentItemIndex=26  
+totop tab07: class="android.webkit.WebView"  currentItemIndex=0  
+totop tab08: class="android.view.ViewGroup"  description="返回"  currentItemIndex=22  
+totop tab09: class="android.widget.EditText"  description="群聊消息"  currentItemIndex=23  
+totop tab10: class="android.view.ViewGroup"  text="text=[群内执行 · 模拟数据, 有伙伴正在忙]"  description="群内执行 · 模拟数据, 3 位成员
+totop tab11: class="android.view.ViewGroup"  description="群设置"  currentItemIndex=25  
+totop tab12: class="android.view.ViewGroup"  description="跳到底部"  currentItemIndex=26  
+tobottom title: content-desc="群内执行 · 模拟数据, 3 位成员, 资料伙伴、设计�
+tobottom tab01: class="android.webkit.WebView"  currentItemIndex=0  
+tobottom tab02: class="android.view.ViewGroup"  text="text=[设计伙伴 · 很长的成员名称用于窄屏检查, 在等你确认]"  description="设计伙伴 · �
+tobottom tab03: class="android.view.ViewGroup"  text="text=[查看详情]"  description="查看详情"  currentItemIndex=11  
+tobottom tab04: class="android.widget.TextView"  text="text=[pnpm --filter mobile typecheck]"  currentItemIndex=12  
+tobottom tab05: class="android.view.ViewGroup"  text="text=[拒绝]"  description="拒绝权限请求"  currentItemIndex=13  
+tobottom tab06: class="android.view.ViewGroup"  text="text=[允许一次]"  description="允许一次权限请求"  currentItemIndex=14  
+tobottom tab07: class="android.view.ViewGroup"  text="text=[核对伙伴, 在等你确认]"  description="核对伙伴 · 在等你确认"  currentItemIndex=15  
+tobottom tab08: class="android.view.ViewGroup"  text="text=[群内执行, 先检查三位伙伴的进展与两个等待卡。]"  description="选择回答 群内执�
+tobottom tab09: class="android.view.ViewGroup"  text="text=[分工步骤, 先检查长步骤、状态与继续操作。]"  description="选择回答 分工步骤"  cu
+tobottom tab10: class="android.view.ViewGroup"  text="text=[输入其他回答…]"  description="输入其他回答"  currentItemIndex=18  
+tobottom tab11: class="android.view.ViewGroup"  description="开始语音输入"  currentItemIndex=19  
+tobottom tab12: class="android.view.ViewGroup"  text="text=[跳过]"  description="跳过问题"  currentItemIndex=20  
+DONE

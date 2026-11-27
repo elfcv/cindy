@@ -1,0 +1,36 @@
+11-27 03:18:50.271 11329 11329 W talkback: CallStateMonitor: CALL_STATE_IDLE supportTelephony: false callStatePermissionGranted: true
+11-27 03:18:50.421 11329 11329 V talkback: A11yEventProcessor: Event listeners: UiChangeEventInterpreter,Pipeline,ProcessorEventQueue,ProcessorPhoneticLetters,ProcessorGestureVibrator
+11-27 03:18:50.423 11329 11329 V talkback: Mappers:  mapToFeedback() eventId=type:EVENT_TYPE_ACCESSIBILITY subtype:TYPE_VIEW_CLICKED time:4134618427 event=null interpretation=UiChange{sourceBoundsInScreen=Rect(66, 200 - 140, 273), uiChangeType=VIEW_CLICKED} eventSourceNode=null
+11-27 03:18:50.423 11329 11329 V talkback: Mappers:    sourceBoundsInScreen=Rect(66, 200 - 140, 273)
+11-27 03:18:50.423 11329 11329 V talkback: Mappers:    uiChangeType=VIEW_CLICKED
+11-27 03:18:50.423 11329 11329 D talkback: Pipeline: execute() feedback=Feedback{eventId=type:EVENT_TYPE_ACCESSIBILITY subtype:TYPE_VIEW_CLICKED time:4134618427, failovers=[Part= uiChange= UiChange{action=CLEAR_CACHE_FOR_VIEW, sourceBoundsInScreen=Rect(66, 200 - 140, 273)}  ]}
+11-27 03:18:50.423 11329 11329 D talkback: Actors: act() eventId=type:EVENT_TYPE_ACCESSIBILITY subtype:TYPE_VIEW_CLICKED time:4134618427 part=Part= uiChange= UiChange{action=CLEAR_CACHE_FOR_VIEW, sourceBoundsInScreen=Rect(66, 200 - 140, 273)}  
+11-27 03:18:50.423 11329 11329 V talkback: Pipeline: execute() success=false for part=Part= uiChange= UiChange{action=CLEAR_CACHE_FOR_VIEW, sourceBoundsInScreen=Rect(66, 200 - 140, 273)}  
+11-27 03:18:50.423 11329 11329 V talkback: Mappers:  mapToFeedback() eventId=type:EVENT_TYPE_ACCESSIBILITY subtype:TYPE_VIEW_CLICKED time:4134618427 event=EventType: TYPE_VIEW_CLICKED; EventTime: 4134618427; PackageName: com.xd.cindy; MovementGranularity: 0; Action: 0; ContentChangeTypes: []; WindowChangeTypes: [] [ ClassName: android.view.ViewGroup; Text: [A]; ContentDescription: Ann Lee; ItemCount: -1; CurrentItemIndex: -1; Enabled: true; Password: false; Checked: false; FullScreen: false; Scrollable: false; ImportantForAccessibility: true; AccessibilityDataSensitive: false; BeforeText: null; FromIndex: -1; ToIndex: -1; ScrollX: 0; ScrollY: 0; MaxScrollX: 0; MaxScrollY: 0; ScrollDeltaX: -1; ScrollDeltaY: -1; AddedCount: -1; RemovedCount: -1; ParcelableData: null; DisplayId: 0 ]; recordCount: 0 interpretation=HintableEvent{  }   eventSourceNode=null
+11-27 03:18:50.424 11329 11329 V talkback: ProcessorAccessibilityHints:    toFeedback()()
+11-27 03:18:50.424 11329 11329 V talkback: Mappers:      eventType=1
+11-27 03:18:50.424 11329 11329 D talkback: Pipeline: execute() feedback=Feedback{eventId=type:EVENT_TYPE_ACCESSIBILITY subtype:TYPE_VIEW_CLICKED time:4134618427, failovers=[Part= interruptGroup=0  interruptLevel=1  ]}
+11-27 03:18:50.424 11329 11329 D talkback: Actors: act() eventId=type:EVENT_TYPE_ACCESSIBILITY subtype:TYPE_VIEW_CLICKED time:4134618427 part=Part= interruptGroup=0  interruptLevel=1  
+11-27 03:18:50.424 11329 11329 V talkback: Pipeline: execute() success=true for part=Part= interruptGroup=0  interruptLevel=1  
+11-27 03:18:50.424 11329 11329 D talkback: Pipeline: execute() feedback=Feedback{eventId=type:EVENT_TYPE_ACCESSIBILITY subtype:TYPE_VIEW_CLICKED time:4134618427, failovers=[Part= interruptGroup=0  interruptLevel=1  ]}
+11-27 03:18:50.424 11329 11329 D talkback: Actors: act() eventId=type:EVENT_TYPE_ACCESSIBILITY subtype:TYPE_VIEW_CLICKED time:4134618427 part=Part= interruptGroup=0  interruptLevel=1  
+11-27 03:18:50.424 11329 11329 V talkback: Pipeline: execute() success=true for part=Part= interruptGroup=0  interruptLevel=1  
+11-27 03:18:50.424 11329 11329 D talkback: ProcessorEventQueue: Processing event: AccessibilityEvent  TYPE_VIEW_CLICKED  time=4134618427  class="android.view.ViewGroup"  package="com.xd.cindy"  text="text=[A]"  description="Ann Lee"  enabled  ScrollX=0  ScrollY=0  MaxScrollX=0  MaxScrollY=0      
+11-27 03:18:50.424 11329 11329 V talkback: Compositor: eventInterpretation= TYPE_VIEW_CLICKED  
+11-27 03:18:50.427 11329 11329 V talkback: EventTypeViewClickedFeedbackRule: 
+11-27 03:18:50.427 11329 11329 V talkback: EventTypeViewClickedFeedbackRule:  ttsOutputRule= collapsedOrExpandedStateText
+11-27 03:18:50.427 11329 11329 V talkback: TalkBackFeedbackProvider:  TYPE_VIEW_CLICKED:  ttsOutput=     queueMode=0  ttsAddToHistory  forceFeedbackEvenIfAudioPlaybackActive  forceFeedbackEvenIfMicrophoneActive  forceFeedbackEvenIfSsbActive  forceFeedbackEvenIfPhoneCallActive  ttsSkipDuplicate  haptic=2130903122  earcon=2131951653  
+11-27 03:18:50.427 11329 11329 D talkback: Pipeline: execute() feedback=Feedback{eventId=type:EVENT_TYPE_ACCESSIBILITY subtype:TYPE_VIEW_CLICKED time:4134618427, failovers=[Part= speech= action=SPEAK  text=""  options= earcons=[2131951653]  haptics=[2130903122]  queueMode=QUEUE  flags=FLAG_NO_SPEECH  nonSpeechParams=Bundle[{}]    hint= null  hintSpeakOptions= null    ]}
+11-27 03:18:50.427 11329 11329 D talkback: Actors: act() eventId=type:EVENT_TYPE_ACCESSIBILITY subtype:TYPE_VIEW_CLICKED time:4134618427 part=Part= speech= action=SPEAK  text=""  options= earcons=[2131951653]  haptics=[2130903122]  queueMode=QUEUE  flags=FLAG_NO_SPEECH  nonSpeechParams=Bundle[{}]    hint= null  hintSpeakOptions= null    
+11-27 03:18:50.427 11329 11329 V talkback: FeedbackController: playAuditory() resId=2131951653 eventId=type:EVENT_TYPE_ACCESSIBILITY subtype:TYPE_VIEW_CLICKED time:4134618427
+11-27 03:18:50.427 11329 11329 V talkback: Pipeline: execute() success=true for part=Part= speech= action=SPEAK  text=""  options= earcons=[2131951653]  haptics=[2130903122]  queueMode=QUEUE  flags=FLAG_NO_SPEECH  nonSpeechParams=Bundle[{}]    hint= null  hintSpeakOptions= null    
+11-27 03:18:51.307 11329 11329 V talkback: FeedbackFragmentsIterator: onFragmentRangeStarted ,  speak word = 点按两次并按住即可点名伙伴
+11-27 03:18:53.271 11329 11329 D talkback: A11yEventProcessor: Processor idle state.
+11-27 03:18:53.271 11329 11329 V talkback: Mappers:  mapToFeedback() eventId=null event=null interpretation=ACCESSIBILITY_EVENT_IDLE eventSourceNode=null
+11-27 03:18:53.272 11329 11329 V talkback: Mappers:    interpretationID=ACCESSIBILITY_EVENT_IDLE
+11-27 03:18:53.272 11329 11329 D talkback: Pipeline: execute() feedback=Feedback{eventId=null, failovers=[Part= focus= action=ENSURE_ACCESSIBILITY_FOCUS_ON_SCREEN  start= null  target= null  stealNextWindowTarget= null    ]}
+11-27 03:18:53.272 11329 11329 D talkback: Actors: act() eventId=null part=Part= focus= action=ENSURE_ACCESSIBILITY_FOCUS_ON_SCREEN  start= null  target= null  stealNextWindowTarget= null    
+11-27 03:18:53.275 11329 11329 D talkback: FocusManagerInternal: EnsureOnScreen: Return, accessibility focus is already there.
+11-27 03:18:53.275 11329 11329 V talkback: Pipeline: execute() success=true for part=Part= focus= action=ENSURE_ACCESSIBILITY_FOCUS_ON_SCREEN  start= null  target= null  stealNextWindowTarget= null    
+11-27 03:18:54.741 11329 11521 D talkback: FailoverTextToSpeech: Received callback for "talkback_45", returned true
+11-27 03:18:54.741 11329 11329 V talkback: SpeechControllerImpl: No next item, stopping speech queue

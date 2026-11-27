@@ -1,0 +1,3 @@
+riley avatar at 103 1710; before:  text="hi @Ann " focused="true" ime=false receipts=
+2b after fast (400ms) and slow (1200ms) upward scroll starting on Riley avatar:  text="hi @Ann " focused="true" ime=false receipts=
+DONE

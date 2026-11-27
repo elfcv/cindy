@@ -1,0 +1,125 @@
+<node text="" resource-id="botGroup.avatarMention.ann-gold" class="android.widget.Button" content-desc="Ann" clickable="true" focusable="true" focused="false" long-clickable="false" bounds="[66,253][140,327]">
+<node text="" resource-id="botGroup.avatarMention.ann-blue" class="android.widget.Button" content-desc="Ann" clickable="true" focusable="true" focused="false" long-clickable="false" bounds="[66,474][140,547]">
+<node text="" resource-id="botGroup.avatarMention.ann-gold" class="android.widget.Button" content-desc="Ann" clickable="true" focusable="true" focused="false" long-clickable="false" bounds="[66,774][140,848]">
+<node text="" resource-id="botGroup.avatarMention.ann-lee" class="android.widget.Button" content-desc="Ann Lee" clickable="true" focusable="true" focused="false" long-clickable="false" bounds="[66,1074][140,1147]">
+<node text="" resource-id="botGroup.avatarMention.team-ann" class="android.widget.Button" content-desc="Team @Ann" clickable="true" focusable="true" focused="false" long-clickable="false" bounds="[66,1374][140,1448]">
+<node text="" resource-id="botGroup.avatarMention.riley" class="android.widget.Button" content-desc="Riley" clickable="true" focusable="true" focused="false" long-clickable="false" bounds="[66,1674][140,1747]">
+== t01-tab box=[87,258][330,2397]
+TYPE_VIEW_FOCUSED  class="android.widget.ImageView"  text="text=[Back]"  description="Back"  currentItemIndex=0  
+  SPEAK "Back"
+TYPE_VIEW_FOCUSED  class="android.webkit.WebView"  currentItemIndex=0  
+  SPEAK "Back"
+== t02-tab box=[66,75][180,258]
+TYPE_VIEW_FOCUSED  class="android.view.ViewGroup"  description="返回"  currentItemIndex=46  
+  SPEAK "返回"
+  SPEAK "返回, 按钮"
+  SPEAK "点按两次即可激活"
+== t03-tab box=[87,258][978,2121]
+TYPE_VIEW_FOCUSED  class="android.widget.EditText"  description="群聊消息"  currentItemIndex=47  
+  SPEAK "群聊消息"
+  SPEAK "在群里说点什么，@ 某位伙伴就只让它回答…, 编辑框"
+  SPEAK "点按两次并按住即可长按"
+== t04-tab box=[87,75][864,258]
+grep: （标准输入）: 匹配到二进制文件
+  SPEAK "头像点名 · 模拟数据, 5 位成员, Ann、Ann、Ann Lee、Team @Ann、Riley"
+  SPEAK "头像点名 · 模拟数据, 5 位成员, Ann、Ann、Ann Lee、Team @Ann、Riley, 按钮, 群设置"
+  SPEAK "点按两次即可激活"
+== t05-tab box=[87,75][1011,258]
+TYPE_VIEW_FOCUSED  class="android.view.ViewGroup"  description="群设置"  currentItemIndex=49  
+  SPEAK "群设置"
+  SPEAK "群设置, 按钮"
+  SPEAK "点按两次即可激活"
+== t06-tab box=[87,258][1014,2055]
+TYPE_VIEW_FOCUSED  class="android.view.ViewGroup"  description="跳到底部"  currentItemIndex=50  
+  SPEAK "跳到底部"
+  SPEAK "跳到底部, 按钮"
+  SPEAK "点按两次即可激活"
+== t07-tab box=[87,258][1014,2055]
+TYPE_VIEW_FOCUSED  class="android.webkit.WebView"  currentItemIndex=0  
+== t08-tab box=[66,75][180,258]
+TYPE_VIEW_FOCUSED  class="android.view.ViewGroup"  description="返回"  currentItemIndex=46  
+  SPEAK "返回"
+  SPEAK "返回, 按钮"
+  SPEAK "点按两次即可激活"
+== t09-tab box=[87,258][978,2121]
+TYPE_VIEW_FOCUSED  class="android.widget.EditText"  description="群聊消息"  currentItemIndex=47  
+  SPEAK "群聊消息"
+  SPEAK "在群里说点什么，@ 某位伙伴就只让它回答…, 编辑框"
+  SPEAK "点按两次并按住即可长按"
+== t10-tab box=[87,75][864,258]
+grep: （标准输入）: 匹配到二进制文件
+  SPEAK "头像点名 · 模拟数据, 5 位成员, Ann、Ann、Ann Lee、Team @Ann、Riley"
+  SPEAK "头像点名 · 模拟数据, 5 位成员, Ann、Ann、Ann Lee、Team @Ann、Riley, 按钮, 群设置"
+  SPEAK "点按两次即可激活"
+== t11-tab box=[87,75][1011,258]
+TYPE_VIEW_FOCUSED  class="android.view.ViewGroup"  description="群设置"  currentItemIndex=49  
+  SPEAK "群设置"
+  SPEAK "群设置, 按钮"
+  SPEAK "点按两次即可激活"
+== t12-tab box=[87,258][1014,2055]
+TYPE_VIEW_FOCUSED  class="android.view.ViewGroup"  description="跳到底部"  currentItemIndex=50  
+  SPEAK "跳到底部"
+  SPEAK "跳到底部, 按钮"
+  SPEAK "点按两次即可激活"
+== t13-tab box=[87,258][1014,2055]
+TYPE_VIEW_FOCUSED  class="android.webkit.WebView"  currentItemIndex=0  
+== t14-tab box=[66,75][180,258]
+TYPE_VIEW_FOCUSED  class="android.view.ViewGroup"  description="返回"  currentItemIndex=46  
+  SPEAK "返回"
+  SPEAK "返回, 按钮"
+  SPEAK "点按两次即可激活"
+== t15-tab box=[87,258][978,2121]
+TYPE_VIEW_FOCUSED  class="android.widget.EditText"  description="群聊消息"  currentItemIndex=47  
+  SPEAK "群聊消息"
+  SPEAK "在群里说点什么，@ 某位伙伴就只让它回答…, 编辑框"
+  SPEAK "点按两次并按住即可长按"
+== t16-tab box=[87,75][864,258]
+grep: （标准输入）: 匹配到二进制文件
+  SPEAK "头像点名 · 模拟数据, 5 位成员, Ann、Ann、Ann Lee、Team @Ann、Riley"
+  SPEAK "头像点名 · 模拟数据, 5 位成员, Ann、Ann、Ann Lee、Team @Ann、Riley, 按钮, 群设置"
+  SPEAK "点按两次即可激活"
+== t17-tab box=[87,75][1011,258]
+TYPE_VIEW_FOCUSED  class="android.view.ViewGroup"  description="群设置"  currentItemIndex=49  
+  SPEAK "群设置"
+  SPEAK "群设置, 按钮"
+  SPEAK "点按两次即可激活"
+== t18-tab box=[87,258][1014,2055]
+TYPE_VIEW_FOCUSED  class="android.view.ViewGroup"  description="跳到底部"  currentItemIndex=50  
+  SPEAK "跳到底部"
+  SPEAK "跳到底部, 按钮"
+  SPEAK "点按两次即可激活"
+== t19-tab box=[87,258][1014,2055]
+TYPE_VIEW_FOCUSED  class="android.webkit.WebView"  currentItemIndex=0  
+== t20-tab box=[66,75][180,258]
+TYPE_VIEW_FOCUSED  class="android.view.ViewGroup"  description="返回"  currentItemIndex=46  
+  SPEAK "返回"
+  SPEAK "返回, 按钮"
+  SPEAK "点按两次即可激活"
+== t21-tab box=[87,258][978,2121]
+TYPE_VIEW_FOCUSED  class="android.widget.EditText"  description="群聊消息"  currentItemIndex=47  
+  SPEAK "群聊消息"
+  SPEAK "在群里说点什么，@ 某位伙伴就只让它回答…, 编辑框"
+  SPEAK "点按两次并按住即可长按"
+== t22-tab box=[87,75][864,258]
+grep: （标准输入）: 匹配到二进制文件
+  SPEAK "头像点名 · 模拟数据, 5 位成员, Ann、Ann、Ann Lee、Team @Ann、Riley"
+  SPEAK "头像点名 · 模拟数据, 5 位成员, Ann、Ann、Ann Lee、Team @Ann、Riley, 按钮, 群设置"
+  SPEAK "点按两次即可激活"
+== t23-tab box=[87,75][1011,258]
+TYPE_VIEW_FOCUSED  class="android.view.ViewGroup"  description="群设置"  currentItemIndex=49  
+  SPEAK "群设置"
+  SPEAK "群设置, 按钮"
+  SPEAK "点按两次即可激活"
+== t24-tab box=[87,258][1014,2055]
+TYPE_VIEW_FOCUSED  class="android.view.ViewGroup"  description="跳到底部"  currentItemIndex=50  
+  SPEAK "跳到底部"
+  SPEAK "跳到底部, 按钮"
+  SPEAK "点按两次即可激活"
+== t25-tab box=[87,258][1014,2055]
+TYPE_VIEW_FOCUSED  class="android.webkit.WebView"  currentItemIndex=0  
+== t26-tab box=[66,75][180,258]
+TYPE_VIEW_FOCUSED  class="android.view.ViewGroup"  description="返回"  currentItemIndex=46  
+  SPEAK "返回"
+  SPEAK "返回, 按钮"
+  SPEAK "点按两次即可激活"
+DONE

@@ -1,0 +1,37 @@
+11-27 03:03:42.315 11329 11329 W talkback: CallStateMonitor: CALL_STATE_IDLE supportTelephony: false callStatePermissionGranted: true
+11-27 03:03:42.315 11329 11329 V talkback: A11yEventProcessor: Event listeners: Pipeline,ProcessorEventQueue
+11-27 03:03:42.331 11329 11329 V talkback: SelectionInterpreter: Skip ROLE_CHECK_BOX for de-selection
+11-27 03:03:42.332 11329 11329 W talkback: CallStateMonitor: CALL_STATE_IDLE supportTelephony: false callStatePermissionGranted: true
+11-27 03:03:42.332 11329 11329 V talkback: A11yEventProcessor: Event listeners: ProcessorMagnification,Pipeline,ProcessorEventQueue,ProcessorPhoneticLetters
+11-27 03:03:42.333 11329 11329 V talkback: Mappers:  mapToFeedback() eventId=type:EVENT_TYPE_ACCESSIBILITY subtype:TYPE_VIEW_FOCUSED time:4133710475 event=EventType: TYPE_VIEW_FOCUSED; EventTime: 4133710475; PackageName: com.xd.cindy; MovementGranularity: 0; Action: 0; ContentChangeTypes: []; WindowChangeTypes: [] [ ClassName: android.webkit.WebView; Text: []; ContentDescription: null; ItemCount: 51; CurrentItemIndex: 0; Enabled: true; Password: false; Checked: false; FullScreen: false; Scrollable: false; ImportantForAccessibility: true; AccessibilityDataSensitive: false; BeforeText: null; FromIndex: -1; ToIndex: -1; ScrollX: 0; ScrollY: 0; MaxScrollX: 0; MaxScrollY: 0; ScrollDeltaX: -1; ScrollDeltaY: -1; AddedCount: -1; RemovedCount: -1; ParcelableData: null; DisplayId: 0 ]; recordCount: 0 interpretation=HintableEvent{  }   eventSourceNode=null
+11-27 03:03:42.333 11329 11329 V talkback: ProcessorAccessibilityHints:    toFeedback()()
+11-27 03:03:42.333 11329 11329 V talkback: Mappers:      eventType=8
+11-27 03:03:42.333 11329 11329 V talkback: HintFeedbackRule:     inputFocusHint: enableUsageHint=true, isEnabled=true, isFocused=false
+11-27 03:03:42.333 11329 11329 V talkback: HintFeedbackRule:   speakHintText: (869061) , hint={}, hintType=2,
+11-27 03:03:42.333 11329 11329 V talkback: TalkBackFeedbackProvider:  EVENT_SPEAK_HINT:  ttsOutput=     queueMode=0  forceFeedbackEvenIfPhoneCallActive  refreshSourceNode  
+11-27 03:03:42.334 11329 11329 D talkback: Pipeline: execute() feedback=Feedback{eventId=type:EVENT_TYPE_ACCESSIBILITY subtype:TYPE_VIEW_FOCUSED time:4133710475, failovers=[Part= interruptGroup=0  interruptLevel=2  ]}
+11-27 03:03:42.334 11329 11329 D talkback: Actors: act() eventId=type:EVENT_TYPE_ACCESSIBILITY subtype:TYPE_VIEW_FOCUSED time:4133710475 part=Part= interruptGroup=0  interruptLevel=2  
+11-27 03:03:42.334 11329 11329 V talkback: Pipeline: execute() success=true for part=Part= interruptGroup=0  interruptLevel=2  
+11-27 03:03:42.334 11329 11329 V talkback: AccessibilityNodeInfoUtils: Don't focus, is not visible:  AccessibilityNodeInfoCompat  id=869061  class="android.webkit.WebView"  package="com.xd.cindy"  enabled      
+11-27 03:03:42.335 11329 11329 D talkback: Pipeline: execute() feedback=Feedback{eventId=type:EVENT_TYPE_ACCESSIBILITY subtype:TYPE_VIEW_FOCUSED time:4133710475, failovers=[Part= interruptGroup=0  interruptLevel=1  ]}
+11-27 03:03:42.335 11329 11329 D talkback: Actors: act() eventId=type:EVENT_TYPE_ACCESSIBILITY subtype:TYPE_VIEW_FOCUSED time:4133710475 part=Part= interruptGroup=0  interruptLevel=1  
+11-27 03:03:42.335 11329 11329 V talkback: Pipeline: execute() success=true for part=Part= interruptGroup=0  interruptLevel=1  
+11-27 03:03:42.335 11329 11329 D talkback: ProcessorEventQueue: Processing event: AccessibilityEvent  TYPE_WINDOW_CONTENT_CHANGED  time=4133710472  class="android.view.ViewGroup"  package="com.xd.cindy"  description="Ann"  enabled  ScrollX=0  ScrollY=0  MaxScrollX=0  MaxScrollY=0      
+11-27 03:03:42.335 11329 11329 V talkback: Compositor: eventInterpretation= TYPE_WINDOW_CONTENT_CHANGED  
+11-27 03:03:42.335 11329 11329 V talkback: EventTypeWindowContentChangedFeedbackRule:   computeWindowContentChangedStateText:   contentChangeType=0, isSelfOrAncestorFocused=true
+11-27 03:03:42.335 11329 11329 V talkback: EventTypeWindowContentChangedFeedbackRule: windowContentChanged: (935370) , ttsOutput= {}, eventSrcRole=ROLE_BUTTON, nodeRole=ROLE_BUTTON, nodeLiveRegion=0, nodeNotFrequentAnnounced=true
+11-27 03:03:42.335 11329 11329 V talkback: TalkBackFeedbackProvider:  TYPE_WINDOW_CONTENT_CHANGED:  ttsOutput=     queueMode=0  ttsAddToHistory  forceFeedbackEvenIfAudioPlaybackActive  forceFeedbackEvenIfPhoneCallActive  ttsSkipDuplicate  
+11-27 03:03:42.335 11329 11329 D talkback: ProcessorEventQueue: Processing event: AccessibilityEvent  TYPE_VIEW_FOCUSED  time=4133710475  class="android.webkit.WebView"  package="com.xd.cindy"  itemCount=51  currentItemIndex=0  enabled  ScrollX=0  ScrollY=0  MaxScrollX=0  MaxScrollY=0      
+11-27 03:03:42.335 11329 11329 V talkback: Compositor: eventInterpretation= TYPE_VIEW_FOCUSED  
+11-27 03:03:42.335 11329 11329 V talkback: EventTypeViewFocusedFeedbackRule:  ttsOutputRule= eventContentDescriptionOrEventAggregateText,   
+11-27 03:03:42.335 11329 11329 V talkback: TalkBackFeedbackProvider:  TYPE_VIEW_FOCUSED:  ttsOutput=     ttsAddToHistory  forceFeedbackEvenIfPhoneCallActive  
+11-27 03:03:43.031 11329 11329 V talkback: FeedbackFragmentsIterator: onFragmentRangeStarted ,  speak word = 点按两次并按住即可点名伙伴
+11-27 03:03:45.336 11329 11329 D talkback: A11yEventProcessor: Processor idle state.
+11-27 03:03:45.336 11329 11329 V talkback: Mappers:  mapToFeedback() eventId=null event=null interpretation=ACCESSIBILITY_EVENT_IDLE eventSourceNode=null
+11-27 03:03:45.336 11329 11329 V talkback: Mappers:    interpretationID=ACCESSIBILITY_EVENT_IDLE
+11-27 03:03:45.336 11329 11329 D talkback: Pipeline: execute() feedback=Feedback{eventId=null, failovers=[Part= focus= action=ENSURE_ACCESSIBILITY_FOCUS_ON_SCREEN  start= null  target= null  stealNextWindowTarget= null    ]}
+11-27 03:03:45.336 11329 11329 D talkback: Actors: act() eventId=null part=Part= focus= action=ENSURE_ACCESSIBILITY_FOCUS_ON_SCREEN  start= null  target= null  stealNextWindowTarget= null    
+11-27 03:03:45.339 11329 11329 D talkback: FocusManagerInternal: EnsureOnScreen: Return, accessibility focus is already there.
+11-27 03:03:45.339 11329 11329 V talkback: Pipeline: execute() success=true for part=Part= focus= action=ENSURE_ACCESSIBILITY_FOCUS_ON_SCREEN  start= null  target= null  stealNextWindowTarget= null    
+11-27 03:03:46.457 11329 11521 D talkback: FailoverTextToSpeech: Received callback for "talkback_225", returned true
+11-27 03:03:46.457 11329 11329 V talkback: SpeechControllerImpl: No next item, stopping speech queue
