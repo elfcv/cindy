@@ -1,0 +1,1 @@
+<node text="" resource-id="botGroup.avatarMention.qa-research" class="android.view.ViewGroup" content-desc="资料伙伴" clickable="true" focusable="true" focused="false" long-clickable="false" bounds="[42,1052][116,1126]" />
