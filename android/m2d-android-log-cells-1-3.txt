@@ -1,0 +1,25 @@
+C1 official regular 1080x2400 f1.0: allow[en=true [491,2106][1028,2222] text="允许并继续"] reject[en=true [53,2106][470,2222] text="取消"] actions[en=true [53,2106][1028,2222] ] answerRow[en=true [53,2106][1028,2222] ] sheetBottom=2274 installing=0
+C1 official after allow: sheetBottom=0 installing=1
+C2 official 1080x1600 f1.0 open: allow[en=true [491,1306][1028,1422] text="允许并继续"] reject[en=true [53,1306][470,1422] text="取消"] actions[en=true [53,1306][1028,1422] ] answerRow[en=true [53,1306][1028,1422] ] sheetBottom=1474 installing=0
+C3 official 1080x1600 f2.0 open: allow[en=false [53,984][1028,1116] text="允许并继续"] review[en=true [53,1137][1028,1268] text="查看来源和权限"] reject[en=true [53,1290][1028,1422] text="取消"] actions[en=true [53,984][1028,1422] ] answerRow[en=true [53,1137][1028,1421] ] sheetBottom=1474 installing=0
+C3 official text text="" bounds="[53,984][1028,1116]"
+C3 official text text="允许并继续" bounds="[420,1005][660,1095]"
+C3 official text text="" bounds="[53,1137][1028,1268]"
+C3 official text text="查看来源和权限" bounds="[372,1158][708,1248]"
+C3 official text text="" bounds="[53,1290][1028,1422]"
+C3 official text text="取消" bounds="[492,1311][588,1401]"
+C3 official after review: allow[en=true [53,984][1028,1116] text="允许并继续"] reviewed[en=false [53,1137][1028,1268] text="查看来源和权限"] reject[en=true [53,1290][1028,1422] text="取消"] actions[en=true [53,984][1028,1422] ] answerRow[en=true [53,1137][1028,1421] ] sheetBottom=1474 installing=0
+C1 custom regular 1080x2400 f1.0: allow[en=true [491,2106][1028,2222] text="允许并继续"] reject[en=true [53,2106][470,2222] text="取消"] actions[en=true [53,2106][1028,2222] ] answerRow[en=true [53,2106][1028,2222] ] sheetBottom=2274 installing=0
+C1 custom after allow: sheetBottom=0 installing=1
+C2 custom 1080x1600 f1.0 open: allow[en=false [53,1170][1028,1285] text="允许并继续"] review[en=true [451,1307][1028,1423] text="查看来源和权限"] reject[en=true [53,1307][430,1423] text="取消"] actions[en=true [53,1170][1028,1422] ] answerRow[en=true [53,1307][1028,1423] ] sheetBottom=1474 installing=0
+C2 custom after review: allow[en=true [53,1170][1028,1285] text="允许并继续"] reviewed[en=false [451,1307][1028,1423] text="查看来源和权限"] reject[en=true [53,1307][430,1423] text="取消"] actions[en=true [53,1170][1028,1422] ] answerRow[en=true [53,1307][1028,1423] ] sheetBottom=1474 installing=0
+C2 custom after allow: sheetBottom=0 installing=0
+C3 custom 1080x1600 f2.0 open: allow[en=false [53,984][1028,1116] text="允许并继续"] review[en=true [53,1137][1028,1268] text="查看来源和权限"] reject[en=true [53,1290][1028,1422] text="取消"] actions[en=true [53,984][1028,1422] ] answerRow[en=true [53,1137][1028,1421] ] sheetBottom=1474 installing=0
+C3 custom text text="" bounds="[53,984][1028,1116]"
+C3 custom text text="允许并继续" bounds="[420,1005][660,1095]"
+C3 custom text text="" bounds="[53,1137][1028,1268]"
+C3 custom text text="查看来源和权限" bounds="[372,1158][708,1248]"
+C3 custom text text="" bounds="[53,1290][1028,1422]"
+C3 custom text text="取消" bounds="[492,1311][588,1401]"
+C3 custom after review: allow[en=true [53,984][1028,1116] text="允许并继续"] reviewed[en=false [53,1137][1028,1268] text="查看来源和权限"] reject[en=true [53,1290][1028,1422] text="取消"] actions[en=true [53,984][1028,1422] ] answerRow[en=true [53,1137][1028,1421] ] sheetBottom=1474 installing=0
+DONE

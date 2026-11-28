@@ -1,0 +1,36 @@
+C2 official landscape f1.0 open: allow[en=false [455,655][1820,770] text="允许并继续"] review[en=true [1148,792][1820,908] text="查看来源和权限"] reject[en=true [455,792][1127,908] text="取消"] actions[en=true [455,655][1820,907] ] answerRow[en=true [455,792][1820,908] ] sheetBottom=959 installing=0
+C2 official landscape after review: allow[en=true [455,655][1820,770] text="允许并继续"] reviewed[en=false [1148,792][1820,908] text="查看来源和权限"] reject[en=true [455,792][1127,908] text="取消"] actions[en=true [455,655][1820,907] ] answerRow[en=true [455,792][1820,908] ] sheetBottom=959 installing=0
+C2 official landscape after allow: sheetBottom=0 installing=0
+C4 custom-h open: allow[en=false [53,1170][1028,1285] text="允许并继续"] review[en=true [451,1307][1028,1423] text="查看来源和权限"] reject[en=true [53,1307][430,1423] text="取消"] actions[en=true [53,1170][1028,1422] ] answerRow[en=true [53,1307][1028,1423] ] sheetBottom=1474 installing=0
+tap1 31ms_cmd at -155 tap2 31ms_cmd at -113 tap3 29ms_cmd at -76 tap4 25ms_cmd at -40
+custom-horizontal-1080x1600-f1.0 after 4 rapid taps on review (739 1365): allow[en=true [53,1170][1028,1285] text="允许并继续"] reviewed[en=false [451,1307][1028,1423] text="查看来源和权限"] reject[en=true [53,1307][430,1423] text="取消"] actions[en=true [53,1170][1028,1422] ] answerRow[en=true [53,1307][1028,1423] ] sheetBottom=1474 installing=0
+custom-horizontal-1080x1600-f1.0 then allow: sheetBottom=0 installing=0
+C4 custom-v open: allow[en=false [53,984][1028,1116] text="允许并继续"] review[en=true [53,1137][1028,1268] text="查看来源和权限"] reject[en=true [53,1290][1028,1422] text="取消"] actions[en=true [53,984][1028,1422] ] answerRow[en=true [53,1137][1028,1421] ] sheetBottom=1474 installing=0
+tap1 36ms_cmd at 1289 tap2 32ms_cmd at 1333 tap3 27ms_cmd at 1370 tap4 52ms_cmd at 1432
+custom-vertical-1080x1600-f2.0 after 4 rapid taps on review (540 1202): allow[en=true [53,984][1028,1116] text="允许并继续"] reviewed[en=false [53,1137][1028,1268] text="查看来源和权限"] reject[en=true [53,1290][1028,1422] text="取消"] actions[en=true [53,984][1028,1422] ] answerRow[en=true [53,1137][1028,1421] ] sheetBottom=1474 installing=0
+custom-vertical-1080x1600-f2.0 then allow: sheetBottom=0 installing=0
+C4 official-v open: allow[en=false [53,984][1028,1116] text="允许并继续"] review[en=true [53,1137][1028,1268] text="查看来源和权限"] reject[en=true [53,1290][1028,1422] text="取消"] actions[en=true [53,984][1028,1422] ] answerRow[en=true [53,1137][1028,1421] ] sheetBottom=1474 installing=0
+tap1 38ms_cmd at 2111 tap2 30ms_cmd at -2139 tap3 28ms_cmd at -2100 tap4 29ms_cmd at -2060
+official-vertical-1080x1600-f2.0 after 4 rapid taps on review (540 1202): allow[en=true [53,984][1028,1116] text="允许并继续"] reviewed[en=false [53,1137][1028,1268] text="查看来源和权限"] reject[en=true [53,1290][1028,1422] text="取消"] actions[en=true [53,984][1028,1422] ] answerRow[en=true [53,1137][1028,1421] ] sheetBottom=1474 installing=0
+official-vertical-1080x1600-f2.0 then allow: sheetBottom=0 installing=0
+C4 official-h landscape open: allow[en=false [455,655][1820,770] text="允许并继续"] review[en=true [1148,792][1820,908] text="查看来源和权限"] reject[en=true [455,792][1127,908] text="取消"] actions[en=true [455,655][1820,907] ] answerRow[en=true [455,792][1820,908] ] sheetBottom=959 installing=0
+tap1 29ms_cmd at -1343 tap2 23ms_cmd at -1307 tap3 24ms_cmd at -1273 tap4 27ms_cmd at -1235
+official-horizontal-landscape-f1.0 after 4 rapid taps on review (1484 850): allow[en=true [455,655][1820,770] text="允许并继续"] reviewed[en=false [1148,792][1820,908] text="查看来源和权限"] reject[en=true [455,792][1127,908] text="取消"] actions[en=true [455,655][1820,907] ] answerRow[en=true [455,792][1820,908] ] sheetBottom=959 installing=0
+official-horizontal-landscape-f1.0 then allow: sheetBottom=0 installing=0
+not found: 安装 Demo Agenda
+not found: 安装 Demo Agenda
+not found: 安装 Demo Agenda
+/home/admin/.cache/cindy-task-briefs/mobile-plugin-market/android-env/device.sh: 行 77: $1: 未绑定的变量
+C4 short Agenda 1080x1100 f1.0 open: sheetBottom=0 installing=0
+not found: 安装 Demo Agenda
+not found: 安装 Demo Agenda
+not found: 安装 Demo Agenda
+/home/admin/.cache/cindy-task-briefs/mobile-plugin-market/android-env/device.sh: 行 77: $1: 未绑定的变量
+C4 short Agenda 1080x900 f1.0 open: sheetBottom=0 installing=0
+C5 second#1 open: allow[en=false [53,1170][1028,1285] text="允许并继续"] review[en=true [451,1307][1028,1423] text="查看来源和权限"] reject[en=true [53,1307][430,1423] text="取消"] actions[en=true [53,1170][1028,1422] ] answerRow[en=true [53,1307][1028,1423] ] sheetBottom=1474 installing=0
+C5 first after review: allow[en=true [53,1170][1028,1285] text="允许并继续"] reviewed[en=false [451,1307][1028,1423] text="查看来源和权限"] reject[en=true [53,1307][430,1423] text="取消"] actions[en=true [53,1170][1028,1422] ] answerRow[en=true [53,1307][1028,1423] ] sheetBottom=1474 installing=0
+C5 second#2 open: allow[en=false [53,1170][1028,1285] text="允许并继续"] review[en=true [451,1307][1028,1423] text="查看来源和权限"] reject[en=true [53,1307][430,1423] text="取消"] actions[en=true [53,1170][1028,1422] ] answerRow[en=true [53,1307][1028,1423] ] sheetBottom=1474 installing=0
+C5 second after review: allow[en=true [53,1170][1028,1285] text="允许并继续"] reviewed[en=false [451,1307][1028,1423] text="查看来源和权限"] reject[en=true [53,1307][430,1423] text="取消"] actions[en=true [53,1170][1028,1422] ] answerRow[en=true [53,1307][1028,1423] ] sheetBottom=1474 installing=0
+C5 second after allow: sheetBottom=0 installing=0
+C5 legacy open: sheetBottom=0 installing=0
+DONE
